@@ -1,16 +1,16 @@
-require 'selenium-webdriver'
+require 'allure-cucumber'
 require 'capybara'
 require 'capybara/cucumber'
+require 'pry'
+require 'selenium-webdriver'
 require 'rspec'
 require 'site_prism'
-require 'pry'
 
 # criar constante com nome browsers
-
 BROWSERS = ENV['BROWSERS']
 
 Capybara.register_driver :selenium do |app|
-  
+
   case BROWSERS
     when 'firefox_headless'
       option = ::Selenium::WebDriver::Firefox::Options.new(args: %w[--headless --disable-gpu --disable-infobars])
@@ -25,7 +25,7 @@ Capybara.register_driver :selenium do |app|
       option = ::Selenium::WebDriver::Chrome::Options.new(args: %w[--disable-gpu --disable-infobars --log-level=3])
       Capybara::Selenium::Driver.new(app, browser: :chrome, options: option, desired_capabilities: { accept_insecure_certs: true })
   end
-end 
+end
 
 
 Capybara.configure do |config|
