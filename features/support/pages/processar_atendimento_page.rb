@@ -68,10 +68,13 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def pesquisar_solicitacao(tipo_solicitacao, situacao_requerimento)
 
+        @tipo_solicitacao = tipo_solicitacao
+        @situacao_requerimento = situacao_requerimento
+
         periodo_inicial_input.set("01/01/2000")
         periodo_final_input.set("03/07/2019")
-        tipo_solicitacao_select.select(tipo_solicitacao)
-        situacao_requerimento_select.select(situacao_requerimento)
+        tipo_solicitacao_select.select(@tipo_solicitacao)
+        situacao_requerimento_select.select(@situacao_requerimento)
         pesquisar_requerimento_btn.click
 
         wait_until_carregamento_load_invisible
@@ -102,16 +105,23 @@ class ProcessarAtendimentoPage < SitePrism::Page
         municipio_select.select("Acrelândia")
         avancar_proximo_processar_atendimento
 
-
     end
 
     def preencher_endereco
 
-        telefone_contanto_input.click.set("61999999999")
-        avancar_proximo_processar_atendimento
+        if(@tipo_solicitacao == "Autorização de Residência" && @situacao_requerimento == "Aberto")
+
+            telefone_contanto_input.click.set("61999999999")
+            avancar_proximo_processar_atendimento
+
+        else
+
+            telefone_contanto_input.click.set("61999999999")
+            avancar_proximo_processar_atendimento
+
+        end
 
     end
-
     
     def preencher_documentos
 
@@ -122,7 +132,6 @@ class ProcessarAtendimentoPage < SitePrism::Page
         declaracao_endereco.check
         certidao_nada_consta.check
         comprovante_domicilio.check
-
         adicionar_documento_btn.click
         anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
         has_arquivos_anexados?
