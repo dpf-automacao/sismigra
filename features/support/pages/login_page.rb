@@ -7,12 +7,12 @@ class LoginPage < SitePrism::Page
 
     # Mapeamento de botoes, links
 
-    element :acessar_input, "input[id='acessarcti']"
-    element :sismigra_link, "a[id='216'] img"
+    element :acessar_btn, "input[id='acessarcti']"
 
     # Mapeamento de elementos para validação
 
     element :info_nome_span, "span[id='infoNome']"
+    element :cardapio_sistemas, "div[id='caixa_central']"
 
     # Definindo metodo para entrar no siseg
 
@@ -28,11 +28,10 @@ class LoginPage < SitePrism::Page
             usuario_input.set(@usuario)
             has_senha_input?
             senha_input.set(@senha)
-            has_acessar_input?
-            acessar_input.click
-
-            has_sismigra_link?
-            sismigra_link.click
+            has_acessar_btn?
+            acessar_btn.click
+            has_cardapio_sistemas?
+            click_link "SISMIGRA"
 
             switch_to_window(windows.last)
             has_info_nome_span?
