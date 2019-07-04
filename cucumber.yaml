@@ -1,7 +1,8 @@
 ---
 
-# default: -p html_report -p chrome
-default: -p ci -p html_report
+default: -p html_report -p firefox
+# default: -p allure -p firefox
+# default: -p ci
 
 ci: -p json_report -p firefox
 allure: --format AllureCucumber::Formatter --out=logs/allure_report

@@ -6,6 +6,9 @@ require 'selenium-webdriver'
 require 'rspec'
 require 'site_prism'
 
+require_relative '../support/helpers/page_helper.rb'
+require_relative '../support/helpers/file_helper.rb'
+
 # criar constante com nome browsers
 BROWSERS = ENV['BROWSERS']
 

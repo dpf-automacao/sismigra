@@ -33,17 +33,17 @@ end
 Quando("preencho Dados do Resultado da Pesquisa e clico em Proximo") do
 
     @processar_atendimento.preencher_resultado_da_pesquisa
-    
+
 end
 
 Quando("visualizo Dados da Previa da Carteira e clico em Concluir") do
 
     @processar_atendimento.visualizar_previa_carteira
-    
+
 end
 
 Entao("verifico o requerimento referente Em Processamento") do
 
-    
+
 
 end
