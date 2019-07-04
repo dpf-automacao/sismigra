@@ -8,3 +8,4 @@ gem "rspec"
 gem "selenium-webdriver"
 gem "site_prism"
 gem "pry"
+gem 'allure-cucumber'

@@ -5,8 +5,8 @@ class MenuPage < SitePrism::Page
 
   # Mapeamento de botoes, links
 
-  element :solicitacoes_menu, "div[id='j_id33:j_id34_span']"
-  element :processar_atendimento_submenu, "span[id='j_id33:j_id35:anchor']"
+  element :solicitacoes_menu, :xpath, "//div[text()='Solicitações']"
+  element :processar_atendimento_submenu, :xpath, "//span[text()='Processar Atendimento']"
   element :imigrante_menu, :xpath, '//div[text()="Imigrante"]'
   element :consultar_imigrante_submenu, :xpath, '//span[text()="Consultar Imigrante"]'
 
