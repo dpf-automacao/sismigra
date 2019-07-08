@@ -1,5 +1,7 @@
 #language: pt
 
+@all_features
+
 Funcionalidade: Processar Atendimento SISMIGRA
 
 # PROCESSAR ATENDIMENTO EM ABERTO
