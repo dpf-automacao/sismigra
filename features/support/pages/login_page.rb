@@ -1,44 +1,52 @@
 class LoginPage < SitePrism::Page
 
-    # Mapeamento de elementos de preenchimento
+  # pega a url default
+  set_url ''
 
-    element :usuario_input, "input[id='emailcti']"
-    element :senha_input, "input[id='senhacti']"
+  # Mapeamento de elementos de preenchimento
 
-    # Mapeamento de botoes, links
+  element :usuario_input, "input[id='emailcti']"
+  element :senha_input, "input[id='senhacti']"
 
-    element :acessar_btn, "input[id='acessarcti']"
+  # Mapeamento de botoes, links
 
-    # Mapeamento de elementos para validação
+  element :acessar_btn, "input[id='acessarcti']"
 
-    element :info_nome_span, "span[id='infoNome']"
-    element :cardapio_sistemas, "div[id='caixa_central']"
+  # Mapeamento de elementos para validação
 
-    # Definindo metodo para entrar no siseg
+  element :info_nome_span, "span[id='infoNome']"
+  element :cardapio_sistemas, "div[id='caixa_central']"
 
-    def logar_siseg(usuario, senha)
+  # Definindo metodo para entrar no siseg
 
-        visit("/")
+  def logar_siseg(usuario, senha)
 
-        @usuario = usuario
-        @senha = senha
+      visit("/")
 
-        if(has_usuario_input?)
+      @usuario = usuario
+      @senha = senha
 
-            usuario_input.set(@usuario)
-            has_senha_input?
-            senha_input.set(@senha)
-            has_acessar_btn?
-            acessar_btn.click
-            has_cardapio_sistemas?
-            click_link "SISMIGRA"
+      if(has_usuario_input?)
 
-            switch_to_window(windows.last)
-            has_info_nome_span?
-            
-        end
+          usuario_input.set(@usuario)
+          has_senha_input?
+          senha_input.set(@senha)
+          has_acessar_btn?
+          acessar_btn.click
+          has_cardapio_sistemas?
+          click_link "SISMIGRA"
 
-    end
+          switch_to_window(windows.last)
+          has_info_nome_span?
 
+      end
+
+  end
+
+  def logar(usuario, senha)
+    usuario_input.set usuario
+    senha_input.set senha
+    acessar_btn.click
+  end
 
 end
