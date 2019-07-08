@@ -3,7 +3,7 @@ require_relative "../helpers/file_helper.rb"
 class ProcessarAtendimentoPage < SitePrism::Page
     include FileHelper
 
-    def initialize 
+    def initialize
 
         @login = LoginPage.new
         @menu = MenuPage.new
@@ -190,7 +190,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     end
 
     # Definindo metodo para preencher Dados de Documentação
-    
+
     def preencher_documentos
 
         # SE ESTIVER NA ABA DOCUMENTOS
@@ -265,9 +265,9 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         # SE ESTIVER NA RESULTADO DA PESQUISA
 
-        if(has_aba_resultado_pesquisa?(wait:1))    
+        if(has_aba_resultado_pesquisa?(wait:1))
 
-            @indice = 0 
+            @indice = 0
             @tamanho_alterar_dados = alterar_dados_dos_registros.size
 
             while(@indice < @tamanho_alterar_dados)
@@ -307,7 +307,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     # Definindo metodo para avancar para proxima pagina
 
     def avancar_proximo_processar_atendimento
-    
+
         proximo_btn.click
         wait_until_carregamento_load_invisible
 
@@ -345,12 +345,12 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
                 proximo_btn.click
                 wait_until_carregamento_load_invisible
-    
+
             else
-    
+
                 proximo_btn.click
                 wait_until_carregamento_load_invisible
-    
+
             end
 
         end
@@ -366,4 +366,4 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     end
 
-end 
+end
