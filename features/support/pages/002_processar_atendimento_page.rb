@@ -26,6 +26,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :tipo_solicitacao_select, "select[id*='formulario-pesquisar:tipo']"
     element :situacao_requerimento_select, "select[id*='formulario-pesquisar:situacao']"
     element :pesquisar_requerimento_btn, "input[id*='botaoPesquisar']"
+    element :nao_possui_RNM, "input[id*='idPossuiRnm'][value='NAO']"
     element :dependente_chamante, "input[id*='idDependente'][value='NAO']"
     element :proximo_btn, "input[value*='Próximo']"
     element :uf_select, "select[id*='uf']"
@@ -33,6 +34,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :associar_checkbox, "input[name*='dataTableEstrangeiros']"
     element :confirmar_identidade_btn, "input[value*='Confirmar Identidade']"
     element :confirmar_identidade_btn_disabled, "input[value*='Confirmar Identidade'][disabled='disabled']"
+    # elements :docs_obrigatorios, '#formulario-processar-cie\:idDocumentosObrigatorios' # input[type="checkbox"]
     element :fotos, :xpath, "//label[text()='Duas fotos 3x4;']/../../td/input"
     element :documento_de_viagem_checkbox, :xpath, "//label[text()='Documento de viagem;']/../../td/input"
     element :comprovante_filiacao, :xpath, "//label[text()='Comprovante de filiação']/../../td/input"
@@ -94,7 +96,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
         periodo_final_input.set("03/07/2019")
         tipo_solicitacao_select.select(@tipo_solicitacao)
         situacao_requerimento_select.select(@situacao_requerimento)
-        
+
         pesquisar_requerimento_btn.click
 
         wait_until_carregamento_load_invisible
@@ -109,23 +111,22 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     # Definindo metodo para preencher Dados Pessoais
 
+    def preencher_amparo_legal
+      if(has_amparo_legal_disabled_input?(wait:1))
+        # SE ESTIVER DESABILITADO
+      elsif(amparo_legal_input.value == "")
+        amparo_legal_input.set("36 - ART")
+        sleep(1)
+        amparo_legal_input.send_keys(:enter)
+      end
+    end
+
     def preencher_dados_pessoais
 
         # SE ESTIVER NA ABA DADOS PESSOAIS
+        preencher_amparo_legal
 
-        if(has_aba_dados_pessoais?(wait:1))
-
-            if(has_amparo_legal_disabled_input?(wait:1))
-
-                # SE ESTIVER DESABILITADO
-
-            else
-
-                amparo_legal_input.set("36 - ART")
-                sleep(1)
-                amparo_legal_input.send_keys(:enter)
-
-            end
+        if(has_aba_dados_pessoais?(wait:5))
 
             if(has_dependente_chamante?(wait:1))
 
@@ -145,7 +146,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         # SE ESTIVER NA ABA DADOS DO REGISTRO
 
-        if(has_aba_dados_registro?(wait:1))
+        if(has_aba_dados_registro?(wait:5))
 
             if(has_uf_select?(wait:1))
 
@@ -166,7 +167,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         # SE ESTIVER NA ABA DADOS DO ENDERECO
 
-        if(has_aba_dados_endereco?(wait:1))
+        if(has_aba_dados_endereco?(wait:5))
 
             if(has_unidade_vinculada_select?)
 
@@ -204,9 +205,14 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         # SE ESTIVER NA ABA DOCUMENTOS
 
-        if(has_aba_dados_documento?(wait:1))
+        if(has_aba_dados_documento?(wait:5))
 
             choose("Sim")
+
+            # TODO:
+            # within (docs_obrigatorios) do
+            #   all('input[type="checkbox"]').each { |item| item.click}
+            # end
 
             if(has_fotos?(wait:1))
 
@@ -274,7 +280,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         # SE ESTIVER NA RESULTADO DA PESQUISA
 
-        if(has_aba_resultado_pesquisa?(wait:1))
+        if(has_aba_resultado_pesquisa?(wait:5))
 
             @indice = 0
             @tamanho_alterar_dados = alterar_dados_dos_registros.size
@@ -301,7 +307,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         # SE ESTIVER NA RESULTADO DE PREVIA DA CARTEIRA
 
-        if(has_aba_previa_carteira?(wait:1))
+        if(has_aba_previa_carteira?(wait:5))
 
             has_concluir_btn?
             concluir_btn.click
@@ -317,13 +323,17 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def avancar_proximo_processar_atendimento
 
+
         proximo_btn.click
         wait_until_carregamento_load_invisible
 
         if(has_novo_imigrante_btn?(wait:1))
-    
+
             novo_imigrante_btn.click
-    
+            preencher_amparo_legal
+            nao_possui_RNM.click
+            proximo_btn.click
+
         elsif(has_associar_checkbox?(wait:1))
 
             associar_checkbox.click
@@ -356,10 +366,12 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
             if(has_dados_divergentes_erro?(wait:1))
 
+
                 proximo_btn.click
                 wait_until_carregamento_load_invisible
 
             else
+
 
                 proximo_btn.click
                 wait_until_carregamento_load_invisible
@@ -369,6 +381,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
         end
 
         if(has_dados_divergentes_erro?(wait:1))
+
 
             proximo_btn.click
             wait_until_carregamento_load_invisible
