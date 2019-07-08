@@ -46,6 +46,8 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :encerrar_btn, "input[value='Encerrar']"
     element :confirmar_alteracoes_btn, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] input[value*='Confirmar']"
     element :confirmar_documentacao_btn, "table[id='modalJustificativaDocumentoContentTable'] input[value*='Confirmar']"
+    element :novo_imigrante_btn, "input[value='Novo Imigrante']"
+    element :unidade_vinculada_select, "select[id*='unidade_change']"
 
     # Mapeamento das abas de Processar Atendimento
 
@@ -61,12 +63,12 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     element :carregamento_load, "img[src*='spinner.gif']"
     element :dados_divergentes_erro, "dl[id='mensagens'] dt[class='mensagem_erro']"
-    elements :mensagem_erro, "div.cRed"
 
     # Mapeamento de varios elementos
 
     elements :numeros_requerimentos, "td[id*='numeroRequerimento']"
     elements :btns_atendimento, "input[class='btnAtendimento']"
+    elements :mensagem_erro, "div.cRed"
     elements :arquivos_anexados, "td a[onclick*='idTabelaArquivos']"
     elements :alterar_dados_dos_registros, "input[title='Alterar dados do registro da pesquisa.']"
 
@@ -92,6 +94,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
         periodo_final_input.set("03/07/2019")
         tipo_solicitacao_select.select(@tipo_solicitacao)
         situacao_requerimento_select.select(@situacao_requerimento)
+        
         pesquisar_requerimento_btn.click
 
         wait_until_carregamento_load_invisible
@@ -164,6 +167,12 @@ class ProcessarAtendimentoPage < SitePrism::Page
         # SE ESTIVER NA ABA DADOS DO ENDERECO
 
         if(has_aba_dados_endereco?(wait:1))
+
+            if(has_unidade_vinculada_select?)
+
+                unidade_vinculada_select.select("DELEMIG/DREX/SR/PF/SP")
+
+            end
 
             if(@tipo_solicitacao == "Autorização de Residência" && @situacao_requerimento == "Aberto")
 
@@ -311,7 +320,11 @@ class ProcessarAtendimentoPage < SitePrism::Page
         proximo_btn.click
         wait_until_carregamento_load_invisible
 
-        if(has_associar_checkbox?(wait:1))
+        if(has_novo_imigrante_btn?(wait:1))
+    
+            novo_imigrante_btn.click
+    
+        elsif(has_associar_checkbox?(wait:1))
 
             associar_checkbox.click
             wait_until_confirmar_identidade_btn_disabled_invisible
