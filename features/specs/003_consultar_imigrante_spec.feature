@@ -37,3 +37,10 @@ Funcionalidade: Consultar Imigrante
     Quando consultar o imigrante pelo RNM "F028776Q"
     E solicitar reimprimir o protocolo atual
     Então deve exibir o protocolo para impressão
+
+  @renovar_protocolo
+  Cenario: Renovar Protocolo
+    Quando consultar o imigrante pelo RNM "F0476261"
+    E solicitar renovar o protocolo atual
+    E confirmar a quantidade de dias para renovação
+    Então o protocolo deve ser renovado

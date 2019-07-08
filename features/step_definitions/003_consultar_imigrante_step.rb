@@ -93,3 +93,18 @@ end
 Então("deve exibir o protocolo para impressão") do
   @consultar_imigrante_page.visualizar_impressao
 end
+
+# @renovar_protocolo
+# Cenario: Renovar Protocolo
+Quando("solicitar renovar o protocolo atual") do
+  @consultar_imigrante_page.btn_renovar_protocolo.click
+  @consultar_imigrante_page.aguardar_carregamento
+end
+
+Quando("confirmar a quantidade de dias para renovação") do
+  @consultar_imigrante_page.confirmar_dias_renovacao(80)
+end
+
+Então("o protocolo deve ser renovado") do
+  expect(@consultar_imigrante_page).to have_text("Protocolo Renovado Com Sucesso!")
+end
