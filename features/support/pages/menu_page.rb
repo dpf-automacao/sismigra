@@ -22,10 +22,4 @@ class MenuPage < SitePrism::Page
     end
   end
 
-  def consultar_imigrante_submenu
-    imigrante_menu.hover
-    consultar_imigrante_submenu.click
-  end
-
-
 end
