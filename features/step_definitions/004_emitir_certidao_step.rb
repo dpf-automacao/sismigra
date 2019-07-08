@@ -11,6 +11,6 @@ Quando("solicitar a {string}")do |certidao|
   @emitir_certidao_page.emitir_certidao(certidao)
 end
 
-Entao("deve ser emitido a certidao em pdf") do
-    binding.pry
+Entao("deve ser emitido a certidao") do
+  @emitir_certidao_page.visualizar_impressao
 end

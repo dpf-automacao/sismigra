@@ -31,3 +31,9 @@ Funcionalidade: Consultar Imigrante
     E deve visualizar as informações dos dados do registro
     E deve visualizar as informações do endereço
     E deve visualizar as informações do histórico
+
+  @reimprimir_protocolo
+  Cenario: Reimprimir Protocolo atual
+    Quando consultar o imigrante pelo RNM "F028776Q"
+    E solicitar reimprimir o protocolo atual
+    Então deve exibir o protocolo para impressão

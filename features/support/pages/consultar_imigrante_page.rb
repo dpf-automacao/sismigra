@@ -11,6 +11,7 @@ class ConsultarImigrantePage < PageHelper
 
   element :btn_pesquisar, 'input[value="Pesquisar"]'
   element :btn_detalhar, 'input.btnDetalhar'
+  element :btn_reimprimir_protocolo_atual, 'a[title="Reimprimir Protocolo Atual"]'
   element :btn_proximo, 'input[value="Próximo"]'
 
   def pesquisar_por_RNM(rnm)

@@ -34,4 +34,9 @@ class PageHelper < SitePrism::Page
   def aguardar_carregamento
     wait_until_carregamento_ajax_invisible
   end
+
+  def visualizar_impressao
+    mudar_foco
+    sleep(5)
+  end
 end

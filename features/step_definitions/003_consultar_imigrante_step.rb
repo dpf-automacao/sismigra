@@ -82,3 +82,14 @@ Então("deve visualizar as informações do histórico") do
   expect(@consultar_imigrante_page).to have_text("Solicitações")
   expect(@consultar_imigrante_page).to have_text("Histórico de manutenções de registro")
 end
+
+# @reimprimir_protocolo
+# Cenario: Reimprimir Protocolo atual
+Quando("solicitar reimprimir o protocolo atual") do
+  @consultar_imigrante_page.btn_reimprimir_protocolo_atual.click
+  @consultar_imigrante_page.aguardar_carregamento
+end
+
+Então("deve exibir o protocolo para impressão") do
+  @consultar_imigrante_page.visualizar_impressao
+end
