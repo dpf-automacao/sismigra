@@ -2,7 +2,7 @@ class ConsultarImigrantePage < PageHelper
 
   element :rnm_input, :xpath, '//*[text()[contains(.,"RNM:")]]/../input'
   element :data_nasc_input, '#formulario-manter-estrangeiro\:calDtNascInputDate'
-  element :resultado_pesquisa, 'tbody[id*="dataModelEstrangeiros:tb"] tr'
+  element :resultado_pesquisa, 'tbody[id*="dataModelEstrangeiro"] tr'
 
   element :aba_dados_pessoais, 'td[id*="DadosPessoais_lbl"].rich-tab-active'
   element :aba_dados_registro, 'td[id*="DadosRegistro_lbl"].rich-tab-active'

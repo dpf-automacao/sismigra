@@ -26,6 +26,11 @@ class PageHelper < SitePrism::Page
     @menu.consultar_imigrante_submenu.click
   end
 
+  def emitir_certidao_submenu
+    @menu.imigrante_menu.hover
+    @menu.emitir_certidao_submenu.click
+  end
+
   def aguardar_carregamento
     wait_until_carregamento_ajax_invisible
   end
