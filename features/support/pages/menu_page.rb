@@ -16,11 +16,16 @@ class MenuPage < SitePrism::Page
 
   # Definindo metodo para selecionar submenu processar atendimento
   def processar_atendimento_sub_menu
+
     if(has_solicitacoes_menu?)
+
       solicitacoes_menu.hover
       has_processar_atendimento_submenu?
+      puts "Acessando Menu de Processar Atendimento"
       processar_atendimento_submenu.click
+
     end
+
   end
 
 end

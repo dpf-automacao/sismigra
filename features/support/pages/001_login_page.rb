@@ -34,6 +34,8 @@ class LoginPage < SitePrism::Page
           has_acessar_btn?
           acessar_btn.click
           has_cardapio_sistemas?
+
+          puts "Logando no SISMIGRA"
           click_link "SISMIGRA"
 
           switch_to_window(windows.last)
