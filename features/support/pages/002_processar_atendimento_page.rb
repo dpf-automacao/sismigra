@@ -26,16 +26,16 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :tipo_solicitacao_select, "select[id*='formulario-pesquisar:tipo']"
     element :situacao_requerimento_select, "select[id*='formulario-pesquisar:situacao']"
     element :pesquisar_requerimento_btn, "input[id*='botaoPesquisar']"
+    element :tipo_registro, :xpath, '//label[contains(text(),"Tipo De Registro:")]/../../select'
     element :possui_RNM, "input[id*='idPossuiRnm'][value='SIM']"
     element :nao_possui_RNM, "input[id*='idPossuiRnm'][value='NAO']"
     element :dependente_chamante, "input[id*='idDependente'][value='NAO']"
-    element :proximo_btn, "input[value*='Próximo']"
+    element :recalcular_prazos_btn, "input[value='Recalcular Prazos']"
     element :uf_select, "select[id*='uf']"
     element :municipio_select, "select[id*='Municipios']"
     element :associar_checkbox, "input[name*='dataTableEstrangeiros']"
     element :confirmar_identidade_btn, "input[value*='Confirmar Identidade']"
     element :confirmar_identidade_btn_disabled, "input[value*='Confirmar Identidade'][disabled='disabled']"
-    # elements :docs_obrigatorios, '#formulario-processar-cie\:idDocumentosObrigatorios' # input[type="checkbox"]
     element :confirmar_pagamento_gru_radio, "input[name*='ConfirmaPagamentoGRU'][value='SIM']"
     element :fotos, :xpath, "//label[text()='Duas fotos 3x4;']/../../td/input"
     element :documento_de_viagem_checkbox, :xpath, "//label[text()='Documento de viagem;']/../../td/input"
@@ -53,6 +53,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :novo_imigrante_btn, "input[value='Novo Imigrante']"
     element :unidade_vinculada_select, "select[id*='unidade_change']"
     element :outros_documentos_input, "input[type='text'][name*='processar'][value='']"
+    element :proximo_btn, "input[value*='Próximo']"
 
     # Mapeamento das abas de Processar Atendimento
 
@@ -62,6 +63,8 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :aba_dados_documento, "td[id*='Documentos_lbl'][class*='dr-tbpnl-tb-act']"
     element :aba_resultado_pesquisa, "td[id*='Pesquisa_lbl'][class*='dr-tbpnl-tb-act']"
     element :aba_previa_carteira, "td[id*='PreviaCarteira_lbl'][class*='dr-tbpnl-tb-act']"
+
+    element :primeira_aba, 'td[id*="DadosPessoais_lbl"]'
 
 
     # Mapeamento de elementos para validação e load
@@ -80,8 +83,6 @@ class ProcessarAtendimentoPage < SitePrism::Page
     elements :tipo_de_ducumentos_checkbox, "input[type='checkbox']"
     elements :remover_doc_recebidos_img, "img[title='Remover']"
 
-
-    # elements :tipo_de_documentos, "td[id*='formulario-processar-cie'] input[type='checkbox']"
 
     # Definindo metodo para Acessar Processar atendimento
 
@@ -118,9 +119,24 @@ class ProcessarAtendimentoPage < SitePrism::Page
         btns_atendimento[1].click
         wait_until_carregamento_load_invisible
 
+        # Vai para a primeira aba
+        primeira_aba.click
+        wait_until_carregamento_load_invisible
+
     end
 
 # 1 - INICIO METODOS PARA DADOS PESSOAIS ---------------------------------------------------------------------------------------------------------
+
+    def seleciona_tipo_registro(tipo)
+
+        if( (@tipo_solicitacao == "Registro") && (@situacao_requerimento == "Em análise") )
+
+            puts "Selecionando tipo de registro"
+            tipo_registro.select(tipo)
+
+        end
+
+    end
 
     def preencher_amparo_legal
 
@@ -149,7 +165,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
             puts "Selecionando NAO RNM"
             wait_until_nao_possui_RNM_visible
-            nao_possui_RNM.click unless possui_RNM.selected?
+            nao_possui_RNM.click
 
         else
 
@@ -181,6 +197,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         if(wait_until_aba_dados_pessoais_visible)
 
+            seleciona_tipo_registro('Registro de Visto Consular')
             preencher_amparo_legal
             preencher_rnm
             preencher_dependente_chamente
@@ -217,12 +234,19 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     end
 
+    def recalcular_prazos
+
+        recalcular_prazos_btn.click if (@tipo_solicitacao == 'Segunda via de CRNM')
+        wait_until_carregamento_load_invisible
+
+    end
 
     def preencher_dados_do_registro
 
         if(wait_until_aba_dados_registro_visible)
 
             preecher_uf_e_municipio
+            recalcular_prazos
             avancar_proximo_processar_atendimento
 
         end
@@ -371,7 +395,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def validar_dados_divergentes
 
-        if(has_dados_divergentes_erro?(wait:3))
+        if(has_dados_divergentes_erro?(wait:1))
 
             proximo_btn.click
             wait_until_carregamento_load_invisible
@@ -382,7 +406,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def preencher_justificativa_alteracao
 
-        if(has_justificativa_alteracoes_textarea?(wait:3))
+        if(has_justificativa_alteracoes_textarea?(wait:1))
 
             justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
             confirmar_alteracoes_btn.click
@@ -396,7 +420,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def validar_msg_erro
 
-        if(has_mensagem_erro?(wait:3))
+        if(has_mensagem_erro?(wait:1))
 
             puts "Clicando Proximo"
             proximo_btn.click
@@ -439,6 +463,24 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     end
 
+    def seleciona_novo_imigrante
+
+        if(has_novo_imigrante_btn?(wait:1))
+
+            if(wait_until_novo_imigrante_btn_visible)
+
+                puts "Selecionando novo imigrante"
+                novo_imigrante_btn.click
+
+                puts "Clicando Proximo"
+                proximo_btn.click
+                wait_until_carregamento_load_invisible
+
+            end
+
+        end
+
+    end
 
     def avancar_proximo_processar_atendimento
 
@@ -451,20 +493,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
         associar_imigrante
         validar_dados_divergentes
         preencher_justificativa_alteracao
-
-        if(has_novo_imigrante_btn?(wait:1))
-
-            if(wait_until_novo_imigrante_btn_visible)
-
-                puts "Selecionando novo imigrante"
-                novo_imigrante_btn.click
-                puts "Clicando Proximo"
-                proximo_btn.click
-                wait_until_carregamento_load_invisible
-
-            end
-
-        end
+        seleciona_novo_imigrante
 
         sleep(1)
 
