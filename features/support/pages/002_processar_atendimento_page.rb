@@ -26,6 +26,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :tipo_solicitacao_select, "select[id*='formulario-pesquisar:tipo']"
     element :situacao_requerimento_select, "select[id*='formulario-pesquisar:situacao']"
     element :pesquisar_requerimento_btn, "input[id*='botaoPesquisar']"
+    element :possui_RNM, "input[id*='idPossuiRnm'][value='SIM']"
     element :nao_possui_RNM, "input[id*='idPossuiRnm'][value='NAO']"
     element :dependente_chamante, "input[id*='idDependente'][value='NAO']"
     element :proximo_btn, "input[value*='Próximo']"
@@ -77,7 +78,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     elements :arquivos_anexados, "td a[onclick*='idTabelaArquivos']"
     elements :alterar_dados_dos_registros, "input[title='Alterar dados do registro da pesquisa.']"
     elements :tipo_de_ducumentos_checkbox, "input[type='checkbox']"
-    elements :remover_doc_recebidos_img, "img[title='Remover']" 
+    elements :remover_doc_recebidos_img, "img[title='Remover']"
 
 
     # elements :tipo_de_documentos, "td[id*='formulario-processar-cie'] input[type='checkbox']"
@@ -122,25 +123,21 @@ class ProcessarAtendimentoPage < SitePrism::Page
 # 1 - INICIO METODOS PARA DADOS PESSOAIS ---------------------------------------------------------------------------------------------------------
 
     def preencher_amparo_legal
-        
-      if(@tipo_solicitacao != "Substituição de CRNM")
 
-        if(wait_until_amparo_legal_disabled_input_invisible)
+      if(has_no_amparo_legal_disabled_input?(wait:5))
 
-            @amparo_legal = "36 - ART  "
+        @amparo_legal = "36 - ART  "
 
-            puts "Preenchendo amparo legal #{@amparo_legal}"
+        puts "Preenchendo amparo legal #{@amparo_legal}"
 
-            amparo_legal_input.click.set(@amparo_legal)
-            wait_until_sugestao_amparo_load_visible
-            amparo_legal_input.send_keys(:enter)
-            wait_until_carregamento_load_invisible
-
-        end
+        amparo_legal_input.click.set(@amparo_legal)
+        wait_until_sugestao_amparo_load_visible
+        amparo_legal_input.send_keys(:enter)
+        wait_until_carregamento_load_invisible
 
       else
 
-        puts "Tipo de solicitação diferente de Substituicao de CRMM"
+        puts "Amparo não habilitado"
 
       end
 
@@ -148,15 +145,15 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def preencher_rnm
 
-        if(@tipo_solicitacao != "Alteração de Prazo")
+        if( (@tipo_solicitacao != "Alteração de Prazo") && (@tipo_solicitacao != "Segunda via de CRNM") )
 
             puts "Selecionando NAO RNM"
             wait_until_nao_possui_RNM_visible
-            nao_possui_RNM.click
+            nao_possui_RNM.click unless possui_RNM.selected?
 
         else
 
-            puts "Tipo de solicitação diferente de Alteracao de Prazo"
+            puts "RNM Já habilitado"
 
         end
 
@@ -165,10 +162,18 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def preencher_dependente_chamente
 
-        puts "Selecionando NAO Chamente"
+        if(@tipo_solicitacao != "Segunda via de CRNM")
 
-        wait_until_dependente_chamante_visible
-        dependente_chamante.click
+            puts "Selecionando NAO Chamente"
+
+            wait_until_dependente_chamante_visible
+            dependente_chamante.click
+
+        else
+
+            puts "Tipo de solicitação de Segunda via de CRNM"
+
+        end
 
     end
 
@@ -192,19 +197,23 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
 
     def preecher_uf_e_municipio
-        
-        wait_until_uf_select_visible
 
-        @uf = "Acre"
-        @municipio = "Acrelândia"
+        if( (@tipo_solicitacao != "Substituição de CRNM") && (@tipo_solicitacao != "Segunda via de CRNM") )
 
-        puts "Preenchendo uf #{@uf} e municipio #{@municipio}"
+            @uf = "Acre"
+            @municipio = "Acrelândia"
 
-        uf_select.select(@uf)
-        wait_until_carregamento_load_invisible
+            puts "Preenchendo uf #{@uf} e municipio #{@municipio}"
 
-        municipio_select.select(@municipio)
-        wait_until_carregamento_load_invisible
+            uf_select.select(@uf)
+            wait_until_carregamento_load_invisible
+
+            municipio_select.select(@municipio)
+            wait_until_carregamento_load_invisible
+
+        else
+            puts "UF e Município desabilitado"
+        end
 
     end
 
@@ -265,7 +274,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
                 @indice += 1
 
             end
-        
+
         end
 
         if(wait_until_outros_documentos_input_visible)
@@ -277,17 +286,17 @@ class ProcessarAtendimentoPage < SitePrism::Page
             wait_until_remover_doc_recebidos_img_visible
 
         end
-        
+
     end
 
     # def justificativa_documentos
-                
+
     #     wait_until_justificativa_documentos_textarea_visible)
 
     #     justificativa_documentos_textarea.click.set("Justificando ausencia de documentacao")
     #     has_confirmar_documentacao_btn?
     #     confirmar_documentacao_btn.click
-        
+
     # end
 
     def preencher_documentos
@@ -360,13 +369,53 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
 # 7 - INICIO METODOS PARA AVANCAR PARA PROXIMO ---------------------------------------------------------------------------------------------------------
 
+    def validar_dados_divergentes
+
+        if(has_dados_divergentes_erro?(wait:3))
+
+            proximo_btn.click
+            wait_until_carregamento_load_invisible
+
+        end
+
+    end
+
+    def preencher_justificativa_alteracao
+
+        if(has_justificativa_alteracoes_textarea?(wait:3))
+
+            justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
+            confirmar_alteracoes_btn.click
+            wait_until_carregamento_load_invisible
+            proximo_btn.click
+            wait_until_carregamento_load_invisible
+
+        end
+
+    end
+
+    def validar_msg_erro
+
+        if(has_mensagem_erro?(wait:3))
+
+            puts "Clicando Proximo"
+            proximo_btn.click
+            wait_until_carregamento_load_invisible
+
+        end
+
+    end
+
     def associar_imigrante
 
         if(has_associar_checkbox?(wait:1))
 
-            if(@tipo_solicitacao == "Alteração de Prazo" || @tipo_solicitacao == "Substituição de CRNM")
+            if( (@tipo_solicitacao == "Alteração de Prazo") ||
+                (@tipo_solicitacao == "Recadastramento Extemporâneo") ||
+                (@tipo_solicitacao == "Substituição de CRNM") ||
+                (@tipo_solicitacao == "Segunda via de CRNM") )
 
-                associar_checkbox.click
+                associar_checkbox(match: :first).click
                 wait_until_confirmar_identidade_btn_disabled_invisible
 
                 wait_until_confirmar_identidade_btn_visible
@@ -380,22 +429,9 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
                 end
 
-
-                if(has_dados_divergentes_erro?(wait:20))
-            
-                    proximo_btn.click
-                    wait_until_carregamento_load_invisible
-
-                    if(has_justificativa_alteracoes_textarea?(wait:10))
-            
-                        justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
-                        confirmar_alteracoes_btn.click
-                        wait_until_carregamento_load_invisible
-            
-                    end
-
-            
-                end
+                validar_dados_divergentes
+                preencher_justificativa_alteracao
+                validar_msg_erro
 
             end
 
@@ -413,6 +449,8 @@ class ProcessarAtendimentoPage < SitePrism::Page
         wait_until_carregamento_load_invisible
 
         associar_imigrante
+        validar_dados_divergentes
+        preencher_justificativa_alteracao
 
         if(has_novo_imigrante_btn?(wait:1))
 
@@ -424,8 +462,6 @@ class ProcessarAtendimentoPage < SitePrism::Page
                 proximo_btn.click
                 wait_until_carregamento_load_invisible
 
-
-    
             end
 
         end
