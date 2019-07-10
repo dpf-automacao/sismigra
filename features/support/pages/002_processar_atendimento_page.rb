@@ -115,7 +115,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
         wait_until_numeros_requerimentos_visible
         @nr_requerimento = numeros_requerimentos[1].text
 
-        gravar_dados("features/arquivos/requerimentos.txt", @nr_requerimento)
+        gravar_dados("features/arquivos/requerimentos/requerimentos.txt", @nr_requerimento)
         btns_atendimento[1].click
         wait_until_carregamento_load_invisible
 
@@ -140,7 +140,8 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def preencher_amparo_legal
 
-      if(has_no_amparo_legal_disabled_input?(wait:5))
+    # if( has_no_amparo_legal_disabled_input?(wait:5) )
+      if not(amparo_legal_input.disabled? || amparo_legal_input.readonly?)
 
         @amparo_legal = "36 - ART  "
 
@@ -151,11 +152,11 @@ class ProcessarAtendimentoPage < SitePrism::Page
         amparo_legal_input.send_keys(:enter)
         wait_until_carregamento_load_invisible
 
-      else
+     else
 
-        puts "Amparo não habilitado"
+       puts "Amparo não habilitado"
 
-      end
+     end
 
     end
 
@@ -215,7 +216,9 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def preecher_uf_e_municipio
 
-        if( (@tipo_solicitacao != "Substituição de CRNM") && (@tipo_solicitacao != "Segunda via de CRNM") )
+        if( (@tipo_solicitacao != "Substituição de CRNM") &&
+            (@tipo_solicitacao != "Segunda via de CRNM") &&
+            (@situacao_requerimento != "Suspenso") )
 
             @uf = "Acre"
             @municipio = "Acrelândia"

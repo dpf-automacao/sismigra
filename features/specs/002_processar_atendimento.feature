@@ -139,3 +139,143 @@ Cenario: Processar Atendimento de Segunda via de CRNM em Análise
     E preencho Dados do Resultado da Pesquisa e clico em Proximo
     E visualizo Dados da Previa da Carteira e clico em Concluir
     Entao verifico o requerimento referente Em Processamento
+
+# PROCESSAR ATENDIMENTO SUSPENSO
+
+@processar_atendimento_registro_suspenso
+Cenario: Processar Atendimento de Registro Suspenso
+    Quando for processar um atendimento de "Registro" em "Suspenso"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_autorizacao_residencia_suspenso
+Cenario: Processar Atendimento de Solicitação de Autorização de Residencia Suspenso
+    Quando for processar um atendimento de "Autorização de Residência" em "Suspenso"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_alteracao_prazo_suspenso
+Cenario: Processar Atendimento de Alteração de Prazo Suspenso
+    Quando for processar um atendimento de "Alteração de Prazo" em "Suspenso"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_recadastramento_extemporaneo_suspenso
+Cenario: Processar Atendimento de Recadastramento Extemporâneo Suspenso
+    Quando for processar um atendimento de "Recadastramento Extemporâneo" em "Suspenso"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_substituicao_crnm_suspenso
+Cenario: Processar Atendimento de Substituição de CRNM Suspenso
+    Quando for processar um atendimento de "Substituição de CRNM" em "Suspenso"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_segunda_via_crnm_suspenso
+Cenario: Processar Atendimento de Segunda via de CRNM Suspenso
+    Quando for processar um atendimento de "Segunda via de CRNM" em "Suspenso"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+# PROCESSAR ATENDIMENTO NA SITUAÇÃO EM PROCESSAMENTO
+
+@processar_atendimento_registro_processamento
+Cenario: Processar Atendimento de Registro Em Processamento
+    Quando for processar um atendimento de "Registro" em "Em Processamento"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_autorizacao_residencia_processamento
+Cenario: Processar Atendimento de Solicitação de Autorização de Residencia Em Processamento
+    Quando for processar um atendimento de "Autorização de Residência" em "Em Processamento"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_alteracao_prazo_processamento
+Cenario: Processar Atendimento de Alteração de Prazo Em Processamento
+    Quando for processar um atendimento de "Alteração de Prazo" em "Em Processamento"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_recadastramento_extemporaneo_processamento
+Cenario: Processar Atendimento de Recadastramento Extemporâneo Em Processamento
+    Quando for processar um atendimento de "Recadastramento Extemporâneo" em "Em Processamento"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_substituicao_crnm_processamento
+Cenario: Processar Atendimento de Substituição de CRNM Em Processamento
+    Quando for processar um atendimento de "Substituição de CRNM" em "Em Processamento"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+@processar_atendimento_segunda_via_crnm_processamento
+Cenario: Processar Atendimento de Segunda via de CRNM Em Processamento
+    Quando for processar um atendimento de "Segunda via de CRNM" em "Em Processamento"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em Concluir
+    Entao verifico o requerimento referente Em Processamento
+
+# @suspender_atendimento_registro_aberto
+# Cenario: Suspender Atendimento de Registro na situação "Aberto"
+#     Quando suspender um atendimento de "Registro" na situação "Aberto"
