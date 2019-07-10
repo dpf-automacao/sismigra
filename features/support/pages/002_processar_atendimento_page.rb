@@ -29,7 +29,16 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :tipo_registro, :xpath, '//label[contains(text(),"Tipo De Registro:")]/../../select'
     element :possui_RNM, "input[id*='idPossuiRnm'][value='SIM']"
     element :nao_possui_RNM, "input[id*='idPossuiRnm'][value='NAO']"
+    element :rnm_2via_input, "input[id*='txtRne-segundaVia']"
+    element :rnm_2via_responsavel_input, 'input[id*="rneDoResponsavel-segundaVia"]'
     element :dependente_chamante, "input[id*='idDependente'][value='NAO']"
+    element :sexo_filiacao1_masculino, 'input[id*="NomeSexoMae"][value="MASCULINO"]'
+    element :sexo_filiacao1_feminino, 'input[id*="NomeSexoMae"][value="FEMININO"]'
+    element :sexo_filiacao1_nao_declarado, 'input[id*="NomeSexoMae"][value="NAO_DECLARADO"]'
+    element :sexo_filiacao2_masculino, 'input[id*="NomeSexoPai"][value="MASCULINO"]'
+    element :sexo_filiacao2_feminino, 'input[id*="NomeSexoPai"][value="FEMININO"]'
+    element :sexo_filiacao2_nao_declarado, 'input[id*="NomeSexoPai"][value="NAO_DECLARADO"]'
+    element :titular_rnm_radio, 'input[value="TITULAR"]'
     element :editar_prazos_btn, 'input[value="Editar Prazo(s)"]'
     element :justificativa_alteracao_prazo, 'textarea[id*="formModalJustificativaCancelamentoCalculoPrazo"]'
     element :data_estada_input, 'input[id*="dataEstadaRegistroInputDate"]'
@@ -117,10 +126,10 @@ class ProcessarAtendimentoPage < SitePrism::Page
         wait_until_carregamento_load_invisible
 
         wait_until_numeros_requerimentos_visible
-        @nr_requerimento = numeros_requerimentos[1].text
+        @nr_requerimento = numeros_requerimentos[0].text
 
         gravar_dados("features/arquivos/requerimentos/requerimentos.txt", @nr_requerimento)
-        btns_atendimento[1].click
+        btns_atendimento[0].click
         wait_until_carregamento_load_invisible
 
         # Vai para a primeira aba
@@ -144,7 +153,6 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def preencher_amparo_legal
 
-    # if( has_no_amparo_legal_disabled_input?(wait:5) )
       if not(amparo_legal_input.disabled? || amparo_legal_input.readonly?)
 
         @amparo_legal = "36 - ART  "
@@ -164,20 +172,25 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     end
 
-    def preencher_rnm
+    def selecionar_rnm(escolha)
 
         if( (@tipo_solicitacao != "Alteração de Prazo") && (@tipo_solicitacao != "Segunda via de CRNM") )
 
-            puts "Selecionando NAO RNM"
-            wait_until_nao_possui_RNM_visible
-            nao_possui_RNM.click
+            if escolha.eql?('Sim')
+                puts "Selecionando SIM RNM"
+                wait_until_possui_RNM_visible
+                possui_RNM.choose
+            else
+                puts "Selecionando NAO RNM"
+                wait_until_nao_possui_RNM_visible
+                nao_possui_RNM.click
+            end
 
         else
 
             puts "RNM Já habilitado"
 
         end
-
 
     end
 
@@ -198,21 +211,44 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     end
 
+    def preencher_sexo_filiacao
+
+      sexo_filiacao1_nao_declarado.click if not(sexo_filiacao1_masculino.selected? && sexo_filiacao1_feminino.selected?)
+      sexo_filiacao2_nao_declarado.click if not(sexo_filiacao2_masculino.selected? && sexo_filiacao2_feminino.selected?)
+
+    end
+
+    def preencher_rnm_responsavel
+
+        @erro_rnm_responsavel = "É necessário preencher pelo menos um dos campos: CPF do Responsável e/ou RNM do Responsável."
+
+        if(has_text?(@erro_rnm_responsavel))
+
+            choose('Dependente')
+            rnm_2via_responsavel_input.click.set(rnm_2via_input[:value])
+            rnm_2via_input.set("")
+            proximo_btn.click
+            wait_until_carregamento_load_invisible
+
+        end
+
+    end
+
     def preencher_dados_pessoais
 
         if(wait_until_aba_dados_pessoais_visible)
 
             seleciona_tipo_registro('Registro de Visto Consular')
             preencher_amparo_legal
-            preencher_rnm
             preencher_dependente_chamente
+            preencher_sexo_filiacao
             avancar_proximo_processar_atendimento
 
         end
 
     end
 
-# 1 - INICIO METODOS PARA DADOS PESSOAIS ---------------------------------------------------------------------------------------------------------
+# 1 - FIM METODOS PARA DADOS PESSOAIS ---------------------------------------------------------------------------------------------------------
 
 
 # 2 - INICIO METODOS PARA DADOS DO REGISTRO ---------------------------------------------------------------------------------------------------------
@@ -221,19 +257,25 @@ class ProcessarAtendimentoPage < SitePrism::Page
     def preecher_uf_e_municipio
 
         if( (@tipo_solicitacao != "Substituição de CRNM") &&
-            (@tipo_solicitacao != "Segunda via de CRNM") &&
             (@situacao_requerimento != "Suspenso") )
 
             @uf = "Acre"
             @municipio = "Acrelândia"
 
-            puts "Preenchendo uf #{@uf} e municipio #{@municipio}"
 
-            uf_select.select(@uf)
-            wait_until_carregamento_load_invisible
+            if(has_uf_select?(wait:5))
 
-            municipio_select.select(@municipio)
-            wait_until_carregamento_load_invisible
+                puts "Preenchendo uf #{@uf} e municipio #{@municipio}"
+
+                uf_select.select(@uf)
+                wait_until_carregamento_load_invisible
+
+                municipio_select.select(@municipio)
+                wait_until_carregamento_load_invisible
+
+            else
+              puts "UF e Município desabilitado"
+            end
 
         else
             puts "UF e Município desabilitado"
@@ -297,7 +339,9 @@ class ProcessarAtendimentoPage < SitePrism::Page
             unidade_vinculada_select.select(@unidade_vinculada)
 
             wait_until_telefone_contato_input_visible
+            sleep(1)
             telefone_contato_input.click.set(@telefone_contato)
+            sleep(1)
 
             avancar_proximo_processar_atendimento
 
@@ -332,7 +376,8 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
             @outros_documentos_texto = "Outra documentacao"
             puts "Preechendo #{@outros_documentos_texto}"
-            outros_documentos_input.set(@outros_documentos_texto)
+            sleep(0.5)
+            outros_documentos_input.click.set(@outros_documentos_texto)
             adicionar_documento_btn.click
             wait_until_remover_doc_recebidos_img_visible
 
@@ -469,9 +514,12 @@ class ProcessarAtendimentoPage < SitePrism::Page
                 associar_checkbox(match: :first).click
                 wait_until_confirmar_identidade_btn_disabled_invisible
 
+                puts "Confirmando Identidade"
                 wait_until_confirmar_identidade_btn_visible
                 confirmar_identidade_btn.click
                 wait_until_carregamento_load_invisible
+
+                selecionar_rnm('Sim')
 
                 if(wait_until_proximo_btn_visible)
 
@@ -480,9 +528,12 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
                 end
 
+                preencher_sexo_filiacao # Após confirmar a identidade alguns dados se perdem
                 validar_dados_divergentes
                 preencher_justificativa_alteracao
                 validar_msg_erro
+
+                # preencher_rnm_responsavel
 
             end
 
@@ -498,6 +549,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
                 puts "Selecionando novo imigrante"
                 novo_imigrante_btn.click
+                selecionar_rnm('Não')
 
                 puts "Clicando Proximo"
                 proximo_btn.click

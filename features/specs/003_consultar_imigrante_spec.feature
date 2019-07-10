@@ -2,13 +2,13 @@
 
 Funcionalidade: Consultar Imigrante
 
-  @consultar_imigrante_por_RNM
-  Cenario: Consultar Imigrante por RNM
-    Quando solicitar consultar imigrantes
-    E informar os dados para pesquisa
-      | filtro | RNM      |
-      | valor  | G148129W |
-    Entao deve apresentar registros correspodentes aos dados pesquisados
+  # @consultar_imigrante_por_RNM
+  # Cenario: Consultar Imigrante por RNM
+  #   Quando solicitar consultar imigrantes
+  #   E informar os dados para pesquisa
+  #     | filtro | RNM      |
+  #     | valor  | G148129W |
+  #   Entao deve apresentar registros correspodentes aos dados pesquisados
 
   @consultar_imigrante
   Esquema do Cenário: Consultar imigrante
