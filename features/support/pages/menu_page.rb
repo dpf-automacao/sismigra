@@ -10,6 +10,7 @@ class MenuPage < SitePrism::Page
   element :imigrante_menu, :xpath, '//div[text()="Imigrante"]'
   element :consultar_imigrante_submenu, :xpath, '//span[text()="Consultar Imigrante"]'
   element :emitir_certidao_submenu, :xpath, '//span[text()="Emitir Certidão"]'
+  element :situacao_requerimento_submenu, :xpath, '//span[text()="Situação de Requerimento"]'
 
   # Mapeamento de elementos para validação
 

@@ -31,6 +31,11 @@ class PageHelper < SitePrism::Page
     @menu.emitir_certidao_submenu.click
   end
 
+  def situacao_requerimento_submenu
+    @menu.solicitacoes_menu.hover
+    @menu.situacao_requerimento_submenu.click
+  end
+
   def aguardar_carregamento
     wait_until_carregamento_ajax_invisible
   end
