@@ -8,8 +8,8 @@ end
 
 Então("deve exibir o registro correspondente") do
   @consultar_situacao_requerimento_page.validar_registro_encontrado
-  binding.pry
 end
 
 Então("exibir a legenda para a situação") do
+  @consultar_situacao_requerimento_page.validar_legenda
 end
