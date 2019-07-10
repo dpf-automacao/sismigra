@@ -212,7 +212,7 @@ Cenario: Processar Atendimento de Segunda via de CRNM Suspenso
 
 @processar_atendimento_registro_processamento
 Cenario: Processar Atendimento de Registro Em Processamento
-    Quando for processar um atendimento de "Registro" em "Em Processamento"
+    Quando for processar um atendimento de "Registro" em "Processamento"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
@@ -223,7 +223,7 @@ Cenario: Processar Atendimento de Registro Em Processamento
 
 @processar_atendimento_autorizacao_residencia_processamento
 Cenario: Processar Atendimento de Solicitação de Autorização de Residencia Em Processamento
-    Quando for processar um atendimento de "Autorização de Residência" em "Em Processamento"
+    Quando for processar um atendimento de "Autorização de Residência" em "Processamento"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
@@ -234,7 +234,7 @@ Cenario: Processar Atendimento de Solicitação de Autorização de Residencia E
 
 @processar_atendimento_alteracao_prazo_processamento
 Cenario: Processar Atendimento de Alteração de Prazo Em Processamento
-    Quando for processar um atendimento de "Alteração de Prazo" em "Em Processamento"
+    Quando for processar um atendimento de "Alteração de Prazo" em "Processamento"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
@@ -245,7 +245,7 @@ Cenario: Processar Atendimento de Alteração de Prazo Em Processamento
 
 @processar_atendimento_recadastramento_extemporaneo_processamento
 Cenario: Processar Atendimento de Recadastramento Extemporâneo Em Processamento
-    Quando for processar um atendimento de "Recadastramento Extemporâneo" em "Em Processamento"
+    Quando for processar um atendimento de "Recadastramento Extemporâneo" em "Processamento"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
@@ -256,7 +256,7 @@ Cenario: Processar Atendimento de Recadastramento Extemporâneo Em Processamento
 
 @processar_atendimento_substituicao_crnm_processamento
 Cenario: Processar Atendimento de Substituição de CRNM Em Processamento
-    Quando for processar um atendimento de "Substituição de CRNM" em "Em Processamento"
+    Quando for processar um atendimento de "Substituição de CRNM" em "Processamento"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
@@ -267,7 +267,7 @@ Cenario: Processar Atendimento de Substituição de CRNM Em Processamento
 
 @processar_atendimento_segunda_via_crnm_processamento
 Cenario: Processar Atendimento de Segunda via de CRNM Em Processamento
-    Quando for processar um atendimento de "Segunda via de CRNM" em "Em Processamento"
+    Quando for processar um atendimento de "Segunda via de CRNM" em "Processamento"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo

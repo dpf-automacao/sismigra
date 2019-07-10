@@ -20,6 +20,8 @@ class ConsultarImigrantePage < PageHelper
   element :btn_proximo, 'input[value="Próximo"]'
 
   def pesquisar_por_RNM(rnm)
+    puts "Pesquisando imigrante pelo RNM"
+
     rnm_input.set(rnm)
     btn_pesquisar.click
     aguardar_carregamento
@@ -27,6 +29,8 @@ class ConsultarImigrantePage < PageHelper
   end
 
   def pesquisar_por_filtro(dados)
+    puts "Pesquisando imigrante por #{dados}"
+
     nome_input.set(dados[:valor]) if dados[:filtro] == 'nome'
     rnm_input.set(dados[:valor]) if dados[:filtro] == 'RNM'
 
@@ -43,6 +47,8 @@ class ConsultarImigrantePage < PageHelper
   end
 
   def validar_registro_encontrado
+    puts "Visualizando informações do registro encontrado"
+
     page.assert_text("MARISOL FERNANDA GALLEGOS LOPEZ")
     page.assert_text("G148129W")
     page.assert_text("01/01/2010")
@@ -50,6 +56,8 @@ class ConsultarImigrantePage < PageHelper
   end
 
   def validar_dados_pessoais
+    puts "Validando informações dos dados pessoais do imigrante"
+
     page.assert_text(aba_dados_pessoais.text) # Verifica se está na respectiva aba
     page.assert_text("F028776Q") # Nº RNM
     page.assert_text("MAGDALENNYS NAZARETH MOYA GOLDING") # Nome
@@ -62,6 +70,8 @@ class ConsultarImigrantePage < PageHelper
   end
 
   def validar_dados_registro
+    puts "Validando informações dos dados do registro do imigrante"
+
     page.assert_text(aba_dados_registro.text) # Verifica se está na respectiva aba
     page.assert_text("F028776Q")
     page.assert_text("MAGDALENNYS NAZARETH MOYA GOLDING")
@@ -74,6 +84,8 @@ class ConsultarImigrantePage < PageHelper
   end
 
   def validar_dados_endereco
+    puts "Validando informações dos dados do endereço do imigrante"
+
     page.assert_text(aba_endereco.text) # Verifica se está na respectiva aba
     page.assert_text("F028776Q")
     page.assert_text("MAGDALENNYS NAZARETH MOYA GOLDING")
@@ -86,6 +98,8 @@ class ConsultarImigrantePage < PageHelper
   end
 
   def validar_dados_historico
+    puts "Validando informações dos dados do histórico do imigrante"
+
     page.assert_text(aba_historico.text) # Verifica se está na respectiva aba
     page.assert_text("F028776Q")
     page.assert_text("MAGDALENNYS NAZARETH MOYA GOLDING")
