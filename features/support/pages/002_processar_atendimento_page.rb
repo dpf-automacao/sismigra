@@ -30,6 +30,10 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :possui_RNM, "input[id*='idPossuiRnm'][value='SIM']"
     element :nao_possui_RNM, "input[id*='idPossuiRnm'][value='NAO']"
     element :dependente_chamante, "input[id*='idDependente'][value='NAO']"
+    element :editar_prazos_btn, 'input[value="Editar Prazo(s)"]'
+    element :justificativa_alteracao_prazo, 'textarea[id*="formModalJustificativaCancelamentoCalculoPrazo"]'
+    element :data_estada_input, 'input[id*="dataEstadaRegistroInputDate"]'
+    element :data_validade_carteira_input, 'input[id*="dataValidadeCarteiraInputDate"]'
     element :recalcular_prazos_btn, "input[value='Recalcular Prazos']"
     element :uf_select, "select[id*='uf']"
     element :municipio_select, "select[id*='Municipios']"
@@ -237,6 +241,26 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     end
 
+    def alterar_prazos
+
+      if (@tipo_solicitacao == 'Alteração de Prazo')
+
+        @data_estada = '10/07/2022'
+        @data_carteira = '10/07/2022'
+
+        puts "Alterando prazos, (data da estada: #{@data_estada}) e (validade da carteira: #{@data_carteira})"
+
+        editar_prazos_btn.click
+        justificativa_alteracao_prazo.set('Justificativa alteração de prazos script de test')
+        salvar_btn.click
+        wait_until_carregamento_load_invisible
+        data_estada_input.click.set(@data_estada)
+        data_validade_carteira_input.click.set(@data_carteira)
+
+      end
+
+    end
+
     def recalcular_prazos
 
         recalcular_prazos_btn.click if (@tipo_solicitacao == 'Segunda via de CRNM')
@@ -247,7 +271,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     def preencher_dados_do_registro
 
         if(wait_until_aba_dados_registro_visible)
-
+            alterar_prazos
             preecher_uf_e_municipio
             recalcular_prazos
             avancar_proximo_processar_atendimento
