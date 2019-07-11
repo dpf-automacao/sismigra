@@ -10,6 +10,8 @@ Funcionalidade: Consultar Imigrante
   #     | valor  | G148129W |
   #   Entao deve apresentar registros correspodentes aos dados pesquisados
 
+@tst
+
   @consultar_imigrante
   Esquema do Cenário: Consultar imigrante
     Quando solicitar consultar imigrantes

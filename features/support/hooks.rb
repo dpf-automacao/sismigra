@@ -7,5 +7,6 @@ After do |scenario|
   page.save_screenshot(shot)
   embed(shot, 'image/png', 'Clique aqui para ver o print da tela')
 
+
 end
 

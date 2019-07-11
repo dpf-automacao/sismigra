@@ -1,4 +1,4 @@
-Quando("for processar um atendimento de {string} em {string}") do |tipo_solicitacao, situacao_requerimento|
+Quando("for processar um atendimento do Tipo de solicitacao {string} na Situacao {string}") do |tipo_solicitacao, situacao_requerimento|
 
     @processar_atendimento = ProcessarAtendimentoPage.new
     @processar_atendimento.acessar_processar_atendimento

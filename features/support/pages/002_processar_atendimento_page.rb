@@ -20,6 +20,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :resultado_da_pesquisa_textarea, "fieldset[class='mTop10px'] textarea[id*='resultadoPesquisa']"
     element :justificativa_alteracoes_textarea, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] textarea"
     element :justificativa_documentos_textarea, "table[id='modalJustificativaDocumentoContentTable'] textarea"
+    element :cidade_nascimento, "input[id*='txtCidadeNascimento']"
 
     # Mapeamento de botoes, links
 
@@ -67,6 +68,8 @@ class ProcessarAtendimentoPage < SitePrism::Page
     element :unidade_vinculada_select, "select[id*='unidade_change']"
     element :outros_documentos_input, "input[type='text'][name*='processar'][value='']"
     element :proximo_btn, "input[value*='Próximo']"
+    element :pais_nacionalidade, "select[id*='paisDeNacionalidade']"
+    element :pais_nascimento, "select[id*='paisDeNascimento']"
 
     # Mapeamento das abas de Processar Atendimento
 
@@ -125,15 +128,12 @@ class ProcessarAtendimentoPage < SitePrism::Page
         pesquisar_requerimento_btn.click
         wait_until_carregamento_load_invisible
 
-        wait_until_numeros_requerimentos_visible
-        @nr_requerimento = numeros_requerimentos[0].text
+        # wait_until_numeros_requerimentos_visible
+        # @nr_requerimento = numeros_requerimentos[0].text
 
-        gravar_dados("features/arquivos/requerimentos/requerimentos.txt", @nr_requerimento)
+        # gravar_dados("features/arquivos/requerimentos/requerimentos.txt", @nr_requerimento)
+        
         btns_atendimento[0].click
-        wait_until_carregamento_load_invisible
-
-        # Vai para a primeira aba
-        primeira_aba.click
         wait_until_carregamento_load_invisible
 
     end
@@ -142,9 +142,10 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def seleciona_tipo_registro(tipo)
 
-        if( (@tipo_solicitacao == "Registro") && (@situacao_requerimento == "Em análise") )
+        if(has_tipo_registro?(wait:5))
 
             puts "Selecionando tipo de registro"
+
             tipo_registro.select(tipo)
 
         end
@@ -222,11 +223,10 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         @erro_rnm_responsavel = "É necessário preencher pelo menos um dos campos: CPF do Responsável e/ou RNM do Responsável."
 
-        if(has_text?(@erro_rnm_responsavel))
+        if(has_text?(@erro_rnm_responsavel, wait:5))
 
             choose('Dependente')
-            rnm_2via_responsavel_input.click.set(rnm_2via_input[:value])
-            rnm_2via_input.set("")
+            rnm_2via_responsavel_input.click.set("123")
             proximo_btn.click
             wait_until_carregamento_load_invisible
 
@@ -234,13 +234,28 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     end
 
+    def preencher_pais_dados_pessoais
+
+        has_pais_nacionalidade?
+        pais_nacionalidade.select("COLOMBIA")
+        cidade_nascimento.set("BOGOTA")
+        pais_nascimento.select("COLOMBIA")
+
+
+    end
+
     def preencher_dados_pessoais
+
+        # Vai para a primeira aba
+        primeira_aba.click
+        wait_until_carregamento_load_invisible
 
         if(wait_until_aba_dados_pessoais_visible)
 
             seleciona_tipo_registro('Registro de Visto Consular')
             preencher_amparo_legal
             preencher_dependente_chamente
+            preencher_pais_dados_pessoais
             preencher_sexo_filiacao
             avancar_proximo_processar_atendimento
 
@@ -256,26 +271,18 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def preecher_uf_e_municipio
 
-        if( (@tipo_solicitacao != "Substituição de CRNM") &&
-            (@situacao_requerimento != "Suspenso") )
+        @uf = "Acre"
+        @municipio = "Acrelândia"
 
-            @uf = "Acre"
-            @municipio = "Acrelândia"
+        if(has_uf_select?(wait:10))
 
+            puts "Preenchendo uf #{@uf} e municipio #{@municipio}"
 
-            if(has_uf_select?(wait:5))
+            uf_select.select(@uf)
+            wait_until_carregamento_load_invisible
 
-                puts "Preenchendo uf #{@uf} e municipio #{@municipio}"
-
-                uf_select.select(@uf)
-                wait_until_carregamento_load_invisible
-
-                municipio_select.select(@municipio)
-                wait_until_carregamento_load_invisible
-
-            else
-              puts "UF e Município desabilitado"
-            end
+            municipio_select.select(@municipio)
+            wait_until_carregamento_load_invisible
 
         else
             puts "UF e Município desabilitado"
@@ -467,7 +474,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def validar_dados_divergentes
 
-        if(has_dados_divergentes_erro?(wait:1))
+        if(has_dados_divergentes_erro?(wait:3))
 
             proximo_btn.click
             wait_until_carregamento_load_invisible
@@ -478,9 +485,10 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def preencher_justificativa_alteracao
 
-        if(has_justificativa_alteracoes_textarea?(wait:1))
+        if(has_justificativa_alteracoes_textarea?(wait:3))
 
             justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
+            sleep(1)
             confirmar_alteracoes_btn.click
             wait_until_carregamento_load_invisible
             proximo_btn.click
@@ -492,7 +500,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def validar_msg_erro
 
-        if(has_mensagem_erro?(wait:1))
+        if(has_mensagem_erro?(wait:3))
 
             puts "Clicando Proximo"
             proximo_btn.click
@@ -504,7 +512,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def associar_imigrante
 
-        if(has_associar_checkbox?(wait:1))
+        if(has_associar_checkbox?(wait:3))
 
             if( (@tipo_solicitacao == "Alteração de Prazo") ||
                 (@tipo_solicitacao == "Recadastramento Extemporâneo") ||
@@ -521,8 +529,12 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
                 selecionar_rnm('Sim')
 
-                if(wait_until_proximo_btn_visible)
+                
 
+                if(wait_until_proximo_btn_visible)
+                    
+                    puts "Clicando em proximo d nv"
+                    sleep(1)
                     proximo_btn.click
                     wait_until_carregamento_load_invisible
 
@@ -532,8 +544,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
                 validar_dados_divergentes
                 preencher_justificativa_alteracao
                 validar_msg_erro
-
-                # preencher_rnm_responsavel
+                preencher_rnm_responsavel
 
             end
 
@@ -543,7 +554,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     def seleciona_novo_imigrante
 
-        if(has_novo_imigrante_btn?(wait:1))
+        if(has_novo_imigrante_btn?(wait:3))
 
             if(wait_until_novo_imigrante_btn_visible)
 

@@ -16,6 +16,7 @@ class MenuPage < SitePrism::Page
 
 
   # Definindo metodo para selecionar submenu processar atendimento
+  
   def processar_atendimento_sub_menu
 
     if(has_solicitacoes_menu?)

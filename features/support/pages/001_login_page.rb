@@ -16,6 +16,7 @@ class LoginPage < SitePrism::Page
 
   element :info_nome_span, "span[id='infoNome']"
   element :cardapio_sistemas, "div[id='caixa_central']"
+  element :deslogar_btn, "img[src*='sair']"
 
   # Definindo metodo para entrar no siseg
 
@@ -32,14 +33,31 @@ class LoginPage < SitePrism::Page
           has_senha_input?
           senha_input.set(@senha)
           has_acessar_btn?
-          acessar_btn.click
-          has_cardapio_sistemas?
+          acessar_btn.click 
 
-          puts "Logando no SISMIGRA"
-          click_link "SISMIGRA"
+          if(has_cardapio_sistemas?(wait:10))
+            
 
-          switch_to_window(windows.last)
-          has_info_nome_span?
+          else
+
+            if(has_acessar_btn?)
+
+              acessar_btn.click 
+
+            end
+
+          end
+
+
+      end
+
+      if(has_cardapio_sistemas?)
+
+        puts "Logando no SISMIGRA"
+        click_link "SISMIGRA"
+
+        switch_to_window(windows.last)
+        has_info_nome_span?
 
       end
 
@@ -50,5 +68,6 @@ class LoginPage < SitePrism::Page
     senha_input.set senha
     acessar_btn.click
   end
+
 
 end
