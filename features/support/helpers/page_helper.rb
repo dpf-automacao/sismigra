@@ -4,7 +4,7 @@ class PageHelper < SitePrism::Page
   include FileHelper
 
   def initialize
-    @menu = MenuPage.new
+    @menu = MenuIntranetPage.new
     @login = LoginPage.new
   end
 

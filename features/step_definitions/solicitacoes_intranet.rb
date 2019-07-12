@@ -1,13 +1,12 @@
 Quando("for processar um atendimento do Tipo de solicitacao {string} na Situacao {string}") do |tipo_solicitacao, situacao_requerimento|
 
-    @processar_atendimento = ProcessarAtendimentoPage.new
-    @processar_atendimento.acessar_processar_atendimento
-    @processar_atendimento.pesquisar_solicitacao(tipo_solicitacao, situacao_requerimento)
 
+    
 end
 
 Quando("preencho Dados Pessoais e clico em Proximo") do
 
+    @processar_atendimento = SolicitacoesIntranetPage.new
     @processar_atendimento.preencher_dados_pessoais
 
 end

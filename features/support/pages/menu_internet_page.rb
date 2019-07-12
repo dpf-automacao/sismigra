@@ -1,5 +1,7 @@
 class MenuInternetPage < SitePrism::Page
 
+    set_url "http://10.2.96.51:8180/sismigra-internet/home.seam"
+
     element :menu_registro_link, :xpath, "//a[text()='Registro']"
     element :menu_autorizacao_residencia_link, :xpath, "//a[text()='Autorização de Residência']"
     element :menu_alteracao_prazo_link, :xpath, "//a[text()='Alteração de Prazo']"
@@ -11,6 +13,8 @@ class MenuInternetPage < SitePrism::Page
     element :menu_andamento_requerimento_link, :xpath, "//a[text()='Andamento requerimento']"
 
     def selecionar_menu_internet(tipo_solicitacao)
+
+        load
 
         if(tipo_solicitacao == "Registro")
 
@@ -35,6 +39,19 @@ class MenuInternetPage < SitePrism::Page
         elsif(tipo_solicitacao == "Segunda_via_CRNM")
 
             menu_segunda_via_crnm
+
+        elsif(tipo_solicitacao == "Solicitacao_Alteracao_Endereco")
+
+            menu_alteracao_endereco
+
+        elsif(tipo_solicitacao == "Verificacao_de_Protocolo")
+
+            menu_verificar_protocolo
+
+
+        elsif(tipo_solicitacao == "Andamento_do_Requerimento")
+
+            menu_andamento_requerimento
 
         else
 

@@ -1,14 +1,8 @@
 require_relative "../helpers/file_helper.rb"
 
-class ProcessarAtendimentoPage < SitePrism::Page
+class SolicitacoesIntranetPage < SitePrism::Page
+    
     include FileHelper
-
-    def initialize
-
-        @login = LoginPage.new
-        @menu = MenuPage.new
-
-    end
 
     # Mapeamento de elementos de preenchimento
 
@@ -99,15 +93,15 @@ class ProcessarAtendimentoPage < SitePrism::Page
     elements :tipo_de_ducumentos_checkbox, "input[type='checkbox']"
     elements :remover_doc_recebidos_img, "img[title='Remover']"
 
+    # Mapeamento da Situacao do Requerimento
 
-    # Definindo metodo para Acessar Processar atendimento
+    element :nr_requerimento_situacao_input, 'input[id*="numeroRequerimento"]'
+    element :status_requerimento_aberto, "td[id*='status'] img[src*='aberto']"
+    element :status_requerimento_analise, "td[id*='status'] img[src*='analise']"
+    element :status_requerimento_suspenso, "td[id*='status'] img[src*='suspenso']"
+    element :status_requerimento_processamento, "td[id*='status'] img[src*='processamento']"
 
-    def acessar_processar_atendimento
-
-        @login.logar_siseg("dante.dlpf", "ctidpf")
-        @menu.processar_atendimento_sub_menu
-
-    end
+    element :btn_pesquisar, 'input[value="Pesquisar"]'
 
     # Definindo metodo para pesquisar requerimento
 
@@ -115,23 +109,22 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         @tipo_solicitacao = tipo_solicitacao
         @situacao_requerimento = situacao_requerimento
+        @dados_requerimento_pesquisa = recuperar_dados("features/arquivos/requerimentos/#{@tipo_solicitacao}.txt")
         @periodo_inicial = "01/01/2000"
-        @periodo_final = "03/07/2019"
+        @periodo_final = "12/07/2019"
+        
 
-        periodo_inicial_input.set(@periodo_inicial)
-        periodo_final_input.set(@periodo_final)
         tipo_solicitacao_select.select(@tipo_solicitacao)
         situacao_requerimento_select.select(@situacao_requerimento)
+        nr_requerimento_situacao_input.click.set(@dados_requerimento_pesquisa[0])
+        periodo_inicial_input.set(@periodo_inicial)
+        periodo_final_input.set(@periodo_final)
 
-        puts "Pesquisando tipo de solicitação #{@tipo_solicitacao} em situacao #{@situacao_requerimento} no periodo de #{@periodo_inicial} a #{@periodo_final}"
+
+        puts "Pesquisando numero do requerimento"
 
         pesquisar_requerimento_btn.click
         wait_until_carregamento_load_invisible
-
-        # wait_until_numeros_requerimentos_visible
-        # @nr_requerimento = numeros_requerimentos[0].text
-
-        # gravar_dados("features/arquivos/requerimentos/requerimentos.txt", @nr_requerimento)
         
         btns_atendimento[0].click
         wait_until_carregamento_load_invisible
@@ -140,17 +133,17 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
 # 1 - INICIO METODOS PARA DADOS PESSOAIS ---------------------------------------------------------------------------------------------------------
 
-    def seleciona_tipo_registro(tipo)
+    # def seleciona_tipo_registro(tipo)
 
-        if(has_tipo_registro?(wait:5))
+    #     if(has_tipo_registro?(wait:5))
 
-            puts "Selecionando tipo de registro"
+    #         puts "Selecionando tipo de registro"
 
-            tipo_registro.select(tipo)
+    #         tipo_registro.select(tipo)
 
-        end
+    #     end
 
-    end
+    # end
 
     def preencher_amparo_legal
 
@@ -173,76 +166,76 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
     end
 
-    def selecionar_rnm(escolha)
+    # def selecionar_rnm(escolha)
 
-        if( (@tipo_solicitacao != "Alteração de Prazo") && (@tipo_solicitacao != "Segunda via de CRNM") )
+    #     if( (@tipo_solicitacao != "Alteração de Prazo") && (@tipo_solicitacao != "Segunda via de CRNM") )
 
-            if escolha.eql?('Sim')
-                puts "Selecionando SIM RNM"
-                wait_until_possui_RNM_visible
-                possui_RNM.choose
-            else
-                puts "Selecionando NAO RNM"
-                wait_until_nao_possui_RNM_visible
-                nao_possui_RNM.click
-            end
+    #         if escolha.eql?('Sim')
+    #             puts "Selecionando SIM RNM"
+    #             wait_until_possui_RNM_visible
+    #             possui_RNM.choose
+    #         else
+    #             puts "Selecionando NAO RNM"
+    #             wait_until_nao_possui_RNM_visible
+    #             nao_possui_RNM.click
+    #         end
 
-        else
+    #     else
 
-            puts "RNM Já habilitado"
+    #         puts "RNM Já habilitado"
 
-        end
+    #     end
 
-    end
+    # end
 
-    def preencher_dependente_chamente
+    # def preencher_dependente_chamente
 
-        if(@tipo_solicitacao != "Segunda via de CRNM")
+    #     if(@tipo_solicitacao != "Segunda via de CRNM")
 
-            puts "Selecionando NAO Chamente"
+    #         puts "Selecionando NAO Chamente"
 
-            wait_until_dependente_chamante_visible
-            dependente_chamante.click
+    #         wait_until_dependente_chamante_visible
+    #         dependente_chamante.click
 
-        else
+    #     else
 
-            puts "Tipo de solicitação de Segunda via de CRNM"
+    #         puts "Tipo de solicitação de Segunda via de CRNM"
 
-        end
+    #     end
 
-    end
+    # end
 
-    def preencher_sexo_filiacao
+    # def preencher_sexo_filiacao
 
-      sexo_filiacao1_nao_declarado.click if not(sexo_filiacao1_masculino.selected? && sexo_filiacao1_feminino.selected?)
-      sexo_filiacao2_nao_declarado.click if not(sexo_filiacao2_masculino.selected? && sexo_filiacao2_feminino.selected?)
+    #   sexo_filiacao1_nao_declarado.click if not(sexo_filiacao1_masculino.selected? && sexo_filiacao1_feminino.selected?)
+    #   sexo_filiacao2_nao_declarado.click if not(sexo_filiacao2_masculino.selected? && sexo_filiacao2_feminino.selected?)
 
-    end
+    # end
 
-    def preencher_rnm_responsavel
+    # def preencher_rnm_responsavel
 
-        @erro_rnm_responsavel = "É necessário preencher pelo menos um dos campos: CPF do Responsável e/ou RNM do Responsável."
+    #     @erro_rnm_responsavel = "É necessário preencher pelo menos um dos campos: CPF do Responsável e/ou RNM do Responsável."
 
-        if(has_text?(@erro_rnm_responsavel, wait:5))
+    #     if(has_text?(@erro_rnm_responsavel, wait:5))
 
-            choose('Dependente')
-            rnm_2via_responsavel_input.click.set("123")
-            proximo_btn.click
-            wait_until_carregamento_load_invisible
+    #         choose('Dependente')
+    #         rnm_2via_responsavel_input.click.set("123")
+    #         proximo_btn.click
+    #         wait_until_carregamento_load_invisible
 
-        end
+    #     end
 
-    end
+    # end
 
-    def preencher_pais_dados_pessoais
+    # def preencher_pais_dados_pessoais
 
-        has_pais_nacionalidade?
-        pais_nacionalidade.select("COLOMBIA")
-        cidade_nascimento.set("BOGOTA")
-        pais_nascimento.select("COLOMBIA")
+    #     has_pais_nacionalidade?
+    #     pais_nacionalidade.select("COLOMBIA")
+    #     cidade_nascimento.set("BOGOTA")
+    #     pais_nascimento.select("COLOMBIA")
 
 
-    end
+    # end
 
     def preencher_dados_pessoais
 
@@ -252,11 +245,7 @@ class ProcessarAtendimentoPage < SitePrism::Page
 
         if(wait_until_aba_dados_pessoais_visible)
 
-            seleciona_tipo_registro('Registro de Visto Consular')
             preencher_amparo_legal
-            preencher_dependente_chamente
-            preencher_pais_dados_pessoais
-            preencher_sexo_filiacao
             avancar_proximo_processar_atendimento
 
         end
@@ -590,5 +579,17 @@ class ProcessarAtendimentoPage < SitePrism::Page
     end
 
 # 7 - FIM METODOS PARA AVANCAR PARA PROXIMO ---------------------------------------------------------------------------------------------------------
+
+    def verificar_situacao_requerimento(tipo_requerimento)
+
+        # element :status_requerimento_aberto, "td[id*='status'] img[src*='aberto']"
+
+        @dados_situacao_requerimento = recuperar_dados("features/arquivos/requerimentos/#{tipo_requerimento}.txt")
+        nr_requerimento_situacao_input.click.set(@dados_situacao_requerimento[0])
+        btn_pesquisar.click
+        wait_until_carregamento_load_invisible
+
+
+    end
 
 end

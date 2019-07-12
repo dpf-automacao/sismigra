@@ -1,12 +1,12 @@
 #language: pt
 
-@all_features_1
+@all_req_imigrantes_internet
 
 Funcionalidade: Procedimentos Internet SISMIGRA
 
 @req_registro_imigrante
 Cenario: Requerimento de Registro do Imigrante
-    Quando solicitar o requerimento de "Registro" de Imigrante
+    Quando realizar a solicitacao de "Registro" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo
@@ -15,7 +15,7 @@ Cenario: Requerimento de Registro do Imigrante
 
 @req_autorizacao_residencia_imigrante
 Cenario: Requerimento de Autorizacao de Residencia do Imigrante
-    Quando solicitar o requerimento de "Autorizacao_Residencia" de Imigrante
+    Quando realizar a solicitacao de "Autorizacao_Residencia" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo
@@ -24,7 +24,7 @@ Cenario: Requerimento de Autorizacao de Residencia do Imigrante
 
 @req_alteracao_prazo_imigrante
 Cenario: Requerimento de Autorizacao de Alteracao de Prazo do Imigrante
-    Quando solicitar o requerimento de "Alteracao_de_Prazo" de Imigrante
+    Quando realizar a solicitacao de "Alteracao_de_Prazo" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo
@@ -33,7 +33,7 @@ Cenario: Requerimento de Autorizacao de Alteracao de Prazo do Imigrante
 
 @req_recad_extemporaneo_imigrante
 Cenario: Requerimento de Recadastramento Extemporaneo do Imigrante
-    Quando solicitar o requerimento de "Recadastramento_Extemporaneo" de Imigrante
+    Quando realizar a solicitacao de "Recadastramento_Extemporaneo" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo
@@ -42,7 +42,7 @@ Cenario: Requerimento de Recadastramento Extemporaneo do Imigrante
 
 @req_substituicao_crnm_imigrante
 Cenario: Requerimento de Substituicao de CRNM do Imigrante
-    Quando solicitar o requerimento de "Substituicao_de_CRNM" de Imigrante
+    Quando realizar a solicitacao de "Substituicao_de_CRNM" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo
@@ -51,7 +51,7 @@ Cenario: Requerimento de Substituicao de CRNM do Imigrante
 
 @req_segunda_via_crnm_imigrante
 Cenario: Requerimento de Segunda via CRNM do Imigrante
-    Quando solicitar o requerimento de "Segunda_via_CRNM" de Imigrante
+    Quando realizar a solicitacao de "Segunda_via_CRNM" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo

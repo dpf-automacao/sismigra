@@ -1,7 +1,6 @@
-class MenuPage < SitePrism::Page
+class MenuIntranetPage < SitePrism::Page
 
   # Mapeamento de elementos de preenchimento
-
 
   # Mapeamento de botoes, links
 
@@ -16,18 +15,36 @@ class MenuPage < SitePrism::Page
 
 
   # Definindo metodo para selecionar submenu processar atendimento
-  
-  def processar_atendimento_sub_menu
 
-    if(has_solicitacoes_menu?)
+  def selecionar_menu_solicitacoes_intranet(tipo_menu)
 
-      solicitacoes_menu.hover
-      has_processar_atendimento_submenu?
-      puts "Acessando Menu de Processar Atendimento"
+    solicitacoes_menu.hover
+
+    if(tipo_menu == "Situacao_do_Requerimento")
+
+      menu_situacao_requerimento
+
+
+    elsif(tipo_menu == "Processar_Atendimento")
+
       processar_atendimento_submenu.click
 
     end
 
   end
+  
+  def menu_situacao_requerimento
+
+    situacao_requerimento_submenu.click
+
+  end
+
+  def menu_processar_atendimento
+
+    processar_atendimento_submenu.click
+
+  end
+
+
 
 end

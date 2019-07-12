@@ -1,6 +1,6 @@
 require_relative "../helpers/file_helper.rb"
 
-class RequerimentoPage < SitePrism::Page
+class SolicitacoesInternetPage < SitePrism::Page
 
 include FileHelper
 
@@ -111,6 +111,22 @@ include FileHelper
     element :carregamento_load, "img[src*='spinner.gif']"
     element :texto_imagem_input, "input[id='verifyCaptcha']"
     element :imagem_captcha, "img[id='j_id657:capimg']"
+
+    # MAPEAMENTO VERIFICACAO DE PROTOCOLO
+
+    element :numero_protocolo_requerimento_input, "input[id*='form-validar-protocolo:txt-protocolo']"
+    element :cod_controle_input, "input[id*='form-validar-protocolo:txt-codigo-controle']"
+    element :verificar_protocolo_btn, "input[value='Verificar']"
+    element :validar_protocolo_table, "table[id='modal-validar-protocoloContentTable']"
+
+    # MAPEAMENTO ANDAMENTO REQUERIMENTO
+
+    element :numero_andamento_requerimento_input, "input[id*='numeroRequerimento']"
+    element :pesquisar_btn, "input[value='Pesquisar']"
+    element :status_requerimento_aberto, "td[id*='status'] img[src*='aberto']"
+    element :status_requerimento_analise, "td[id*='status'] img[src*='analise']"
+    element :status_requerimento_suspenso, "td[id*='status'] img[src*='suspenso']"
+    element :status_requerimento_processamento, "td[id*='status'] img[src*='processamento']"
 
     def preencher_dados_pessoais(tipo_requerimento)
 
@@ -304,6 +320,27 @@ include FileHelper
             preencher_declaracao(@minutos_total)
 
         end
+
+    end
+
+    def verificar_protocolo_e_andamento_do_requerimento(tipo_requerimento, tipo_verificacao)
+
+        @dados_requerimento_protocolo = recuperar_dados("features/arquivos/requerimentos/#{tipo_requerimento}.txt")
+
+        if(tipo_verificacao == "Verificacao_de_Protocolo")
+
+            numero_protocolo_requerimento_input.click.set(@dados_requerimento_protocolo[0])
+            verificar_protocolo_btn.click
+            has_validar_protocolo_table?
+
+        elsif(tipo_verificacao == "Andamento_do_Requerimento")
+
+            numero_andamento_requerimento_input.click.set(@dados_requerimento_protocolo[0])
+            pesquisar_btn.click
+            wait_until_carregamento_load_invisible
+
+        end
+
 
     end
 
