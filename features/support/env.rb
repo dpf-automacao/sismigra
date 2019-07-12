@@ -5,6 +5,8 @@ require 'pry'
 require 'selenium-webdriver'
 require 'rspec'
 require 'site_prism'
+require 'faker'
+require 'cpf_faker'
 
 require_relative '../support/helpers/page_helper.rb'
 require_relative '../support/helpers/file_helper.rb'

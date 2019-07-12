@@ -11,7 +11,7 @@ module FileHelper
     end
   
     def gravar_dados(path, dados)
-      @path_file = normalizar_path(path)
+      @path_file = normalizar_path(path).downcase
   
       File.open(@path_file, 'w') do |file|
         file.puts(dados)
