@@ -3,7 +3,7 @@
 # execute dentro da pasta logs: "allure serve allure_report"
 
 # default: -p html_report -p firefox
-default: -p allure -p firefox
+default: -p allure -p html_report -p firefox
 # default: -p ci
 
 ci: -p json_report -p firefox

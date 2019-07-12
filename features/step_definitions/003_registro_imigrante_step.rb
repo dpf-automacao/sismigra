@@ -33,20 +33,31 @@ Quando("solicitar Situacao do Requerimento de {string} no menu {string} na Intra
 
 end
 
+Quando("processar atendimento de {string} no menu {string} na Intranet") do |tipo_requerimento, tipo_menu|
+
+    @menu_intranet = MenuIntranetPage.new
+    @requerimento_imigrante_intranet = SolicitacoesIntranetPage.new
+    @logar_siseg = LoginPage.new
+    @logar_siseg.logar_siseg("dante.dlpf", "ctidpf")
+    @tipo_requerimento = tipo_requerimento
+    @menu_intranet.selecionar_menu_solicitacoes_intranet(tipo_menu)
+
+end
+
 Quando("preencho o numero do Requerimento para verificar a Situacao do Requerimento") do
 
     @requerimento_imigrante_intranet.verificar_situacao_requerimento(@tipo_requerimento)
 
 end
 
-Entao("eu visualizo a situacao do Requerimento {string}") do |string|
+Entao("eu visualizo a situacao do Requerimento {string}") do |situacao_requerimento|
 
 
 
 end
 
-Quando("preencher as informacoes para Pesquisar Solicitacao") do
+Quando("preencher as informacoes para Pesquisar Solicitacao de {string} na Situacao {string}") do |tipo_solicitacao_pesquisa, situacao_requerimento_pesquisa|
 
-    @requerimento_imigrante_intranet.pesquisar_solicitacao("Registro", "Em Aberto")
+    @requerimento_imigrante_intranet.pesquisar_solicitacao(tipo_solicitacao_pesquisa, situacao_requerimento_pesquisa)
 
 end

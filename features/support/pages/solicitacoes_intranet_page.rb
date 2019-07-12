@@ -112,14 +112,20 @@ class SolicitacoesIntranetPage < SitePrism::Page
         @dados_requerimento_pesquisa = recuperar_dados("features/arquivos/requerimentos/#{@tipo_solicitacao}.txt")
         @periodo_inicial = "01/01/2000"
         @periodo_final = "12/07/2019"
-        
 
+        if(@tipo_solicitacao == "Autorizacao_Residencia")
+
+            @tipo_solicitacao = "Autorização de Residência"
+
+        end
+
+        sleep(1)
+        nr_requerimento_situacao_input.click.set(@dados_requerimento_pesquisa[0].chomp)
         tipo_solicitacao_select.select(@tipo_solicitacao)
         situacao_requerimento_select.select(@situacao_requerimento)
-        nr_requerimento_situacao_input.click.set(@dados_requerimento_pesquisa[0])
-        periodo_inicial_input.set(@periodo_inicial)
-        periodo_final_input.set(@periodo_final)
-
+        sleep(1)
+        periodo_inicial_input.click.set(@periodo_inicial)
+        periodo_final_input.click.set(@periodo_final)
 
         puts "Pesquisando numero do requerimento"
 
@@ -327,16 +333,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
         if(wait_until_aba_dados_endereco_visible)
 
             @unidade_vinculada = "DELEMIG/DREX/SR/PF/SP"
-            @telefone_contato = "61999999999"
 
             puts "Preenchendo unidade vinculada #{@unidade_vinculada} e telefone #{@telefone_contato}"
 
             wait_until_unidade_vinculada_select_visible
             unidade_vinculada_select.select(@unidade_vinculada)
-
-            wait_until_telefone_contato_input_visible
-            sleep(1)
-            telefone_contato_input.click.set(@telefone_contato)
             sleep(1)
 
             avancar_proximo_processar_atendimento
@@ -569,10 +570,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
         proximo_btn.click
         wait_until_carregamento_load_invisible
 
-        associar_imigrante
-        validar_dados_divergentes
-        preencher_justificativa_alteracao
-        seleciona_novo_imigrante
+        # associar_imigrante
+        # validar_dados_divergentes
+        # preencher_justificativa_alteracao
+        # seleciona_novo_imigrante
 
         sleep(1)
 
@@ -588,6 +589,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         nr_requerimento_situacao_input.click.set(@dados_situacao_requerimento[0])
         btn_pesquisar.click
         wait_until_carregamento_load_invisible
+        sleep(1)
 
 
     end

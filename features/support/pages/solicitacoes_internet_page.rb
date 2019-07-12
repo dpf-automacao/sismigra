@@ -332,12 +332,14 @@ include FileHelper
             numero_protocolo_requerimento_input.click.set(@dados_requerimento_protocolo[0])
             verificar_protocolo_btn.click
             has_validar_protocolo_table?
+            sleep(1)
 
         elsif(tipo_verificacao == "Andamento_do_Requerimento")
 
             numero_andamento_requerimento_input.click.set(@dados_requerimento_protocolo[0])
             pesquisar_btn.click
             wait_until_carregamento_load_invisible
+            sleep(1)
 
         end
 
@@ -348,6 +350,7 @@ include FileHelper
 
         avancar_proximo_btn.click
         wait_until_carregamento_load_invisible
+        sleep(1)
 
     end
 
