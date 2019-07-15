@@ -333,6 +333,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
             selecionar_documentos_obrigatorios
 
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
+            sleep(1)
             has_arquivos_anexados?
 
             avancar_proximo_processar_atendimento
@@ -410,12 +411,23 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
             sleep(1)
-
-            binding.pry
-            
             has_confirmar_alteracoes_btn?
             confirmar_alteracoes_btn.click
             wait_until_carregamento_load_invisible
+            sleep(1)
+            proximo_btn.click
+            wait_until_carregamento_load_invisible
+
+        end
+
+        if(has_justificativa_alteracoes_textarea?(wait:3))
+
+            justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
+            sleep(1)
+            has_confirmar_alteracoes_btn?
+            confirmar_alteracoes_btn.click
+            wait_until_carregamento_load_invisible
+            sleep(1)
             proximo_btn.click
             wait_until_carregamento_load_invisible
 
@@ -463,9 +475,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
                 # preencher_sexo_filiacao # Após confirmar a identidade alguns dados se perdem
 
+                validar_msg_erro
                 validar_dados_divergentes
                 preencher_justificativa_alteracao
-                validar_msg_erro
 
                 # preencher_rnm_responsavel
 
