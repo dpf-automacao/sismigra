@@ -6,6 +6,7 @@ class MenuIntranetPage < SitePrism::Page
 
   element :solicitacoes_menu, :xpath, "//div[text()='Solicitações']"
   element :processar_atendimento_submenu, :xpath, "//span[text()='Processar Atendimento']"
+  element :decisao_submenu, :xpath, '//span[text()="Decisão"]'
   element :imigrante_menu, :xpath, '//div[text()="Imigrante"]'
   element :consultar_imigrante_submenu, :xpath, '//span[text()="Consultar Imigrante"]'
   element :emitir_certidao_submenu, :xpath, '//span[text()="Emitir Certidão"]'
@@ -29,10 +30,14 @@ class MenuIntranetPage < SitePrism::Page
 
       processar_atendimento_submenu.click
 
+    elsif(tipo_menu == "Decisao")
+
+      decisao_submenu.click
+
     end
 
   end
-  
+
   def menu_situacao_requerimento
 
     situacao_requerimento_submenu.click
@@ -43,6 +48,10 @@ class MenuIntranetPage < SitePrism::Page
 
     processar_atendimento_submenu.click
 
+  end
+
+  def submenu_decisao
+    decisao_submenu.click
   end
 
 
