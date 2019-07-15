@@ -36,6 +36,9 @@ include FileHelper
     element :sexo_nao_declarado_filiacao_2_radio, "table[id='txtSexoDoPai'] input[value='NAO_DECLARADO']"
     element :rnm_dependente_radio, "input[value='DEPENDENTE']"
     element :rnm_responsavel_input, "input[id='rne-do-responsavel']"
+    element :rnm_titular_radio, "input[value='TITULAR']"
+    element :rnm_titular_input, "input[id='txt-rne']"
+
 
     # MAPEAMENTO DADOS REGISTRO
 
@@ -188,8 +191,8 @@ include FileHelper
 
         if(@tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
 
-            rnm_dependente_radio.click
-            rnm_responsavel_input.click.set("G4872036")
+            rnm_titular_radio.click
+            rnm_titular_input.click.set("V9707268")
 
         end
 
@@ -274,7 +277,7 @@ include FileHelper
         telefone2_residencial_input.click.set(@telefone2_residencial)
         
         cep_comercial_input.click.set(@cep_comercial)
-        nome_contato_input.send_keys(:tab)
+        telefone2_residencial_input.send_keys(:tab)
         sleep(5)
         nome_estabelecimento_comercial_input.click.set(@nome_estabelecimento_comercial)
         complemento_comercial_input.click.set(@complemento_comercial)

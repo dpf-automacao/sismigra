@@ -64,6 +64,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :proximo_btn, "input[value*='Próximo']"
     element :pais_nacionalidade, "select[id*='paisDeNacionalidade']"
     element :pais_nascimento, "select[id*='paisDeNascimento']"
+    element :icone_inicio_btn, "a[class='iconInicio']"
 
     # Mapeamento das abas de Processar Atendimento
 
@@ -79,6 +80,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     # Mapeamento de elementos para validação e load
 
+    element :formulario_pagina_inicial, "div[id*='formulario-home']"
     element :carregamento_load, "img[src*='spinner.gif']"
     element :dados_divergentes_erro, "dl[id='mensagens'] dt[class='mensagem_erro']"
     element :sugestao_amparo_load, "td[class*='suggestionSelectValue']"
@@ -110,12 +112,35 @@ class SolicitacoesIntranetPage < SitePrism::Page
         @tipo_solicitacao = tipo_solicitacao
         @situacao_requerimento = situacao_requerimento
         @dados_requerimento_pesquisa = recuperar_dados("features/arquivos/requerimentos/#{@tipo_solicitacao}.txt")
-        @periodo_inicial = "01/01/2000"
-        @periodo_final = "12/07/2019"
+        @periodo_inicial = "01/01/1900"
+        @data_atual = Time.now
+        @periodo_final = @data_atual.strftime("%d/%m/%Y")
+
+        # MUDAR CONTROLADORES PARA NOME DO CAMPO NORMAL PARA SELECIONAR NA PESQUISA
 
         if(@tipo_solicitacao == "Autorizacao_Residencia")
 
             @tipo_solicitacao = "Autorização de Residência"
+
+        elsif(@tipo_solicitacao == "Alteracao_de_Prazo")
+
+            @tipo_solicitacao = "Alteração de Prazo"
+
+        elsif(@tipo_solicitacao == "Recadastramento_Extemporaneo")
+
+            @tipo_solicitacao = "Recadastramento Extemporâneo"
+
+        elsif(@tipo_solicitacao == "Substituicao_de_CRNM")
+
+            @tipo_solicitacao = "Substituição de CRNM"
+
+        elsif(@tipo_solicitacao == "Segunda_via_CRNM")
+
+            @tipo_solicitacao = "Segunda via de CRNM"
+
+        else
+
+            @tipo_solicitacao = tipo_solicitacao
 
         end
 
@@ -131,25 +156,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         pesquisar_requerimento_btn.click
         wait_until_carregamento_load_invisible
+        sleep(1)
         
-        btns_atendimento[0].click
-        wait_until_carregamento_load_invisible
-
     end
-
-# 1 - INICIO METODOS PARA DADOS PESSOAIS ---------------------------------------------------------------------------------------------------------
-
-    # def seleciona_tipo_registro(tipo)
-
-    #     if(has_tipo_registro?(wait:5))
-
-    #         puts "Selecionando tipo de registro"
-
-    #         tipo_registro.select(tipo)
-
-    #     end
-
-    # end
 
     def preencher_amparo_legal
 
@@ -172,78 +181,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
-    # def selecionar_rnm(escolha)
-
-    #     if( (@tipo_solicitacao != "Alteração de Prazo") && (@tipo_solicitacao != "Segunda via de CRNM") )
-
-    #         if escolha.eql?('Sim')
-    #             puts "Selecionando SIM RNM"
-    #             wait_until_possui_RNM_visible
-    #             possui_RNM.choose
-    #         else
-    #             puts "Selecionando NAO RNM"
-    #             wait_until_nao_possui_RNM_visible
-    #             nao_possui_RNM.click
-    #         end
-
-    #     else
-
-    #         puts "RNM Já habilitado"
-
-    #     end
-
-    # end
-
-    # def preencher_dependente_chamente
-
-    #     if(@tipo_solicitacao != "Segunda via de CRNM")
-
-    #         puts "Selecionando NAO Chamente"
-
-    #         wait_until_dependente_chamante_visible
-    #         dependente_chamante.click
-
-    #     else
-
-    #         puts "Tipo de solicitação de Segunda via de CRNM"
-
-    #     end
-
-    # end
-
-    # def preencher_sexo_filiacao
-
-    #   sexo_filiacao1_nao_declarado.click if not(sexo_filiacao1_masculino.selected? && sexo_filiacao1_feminino.selected?)
-    #   sexo_filiacao2_nao_declarado.click if not(sexo_filiacao2_masculino.selected? && sexo_filiacao2_feminino.selected?)
-
-    # end
-
-    # def preencher_rnm_responsavel
-
-    #     @erro_rnm_responsavel = "É necessário preencher pelo menos um dos campos: CPF do Responsável e/ou RNM do Responsável."
-
-    #     if(has_text?(@erro_rnm_responsavel, wait:5))
-
-    #         choose('Dependente')
-    #         rnm_2via_responsavel_input.click.set("123")
-    #         proximo_btn.click
-    #         wait_until_carregamento_load_invisible
-
-    #     end
-
-    # end
-
-    # def preencher_pais_dados_pessoais
-
-    #     has_pais_nacionalidade?
-    #     pais_nacionalidade.select("COLOMBIA")
-    #     cidade_nascimento.set("BOGOTA")
-    #     pais_nascimento.select("COLOMBIA")
-
-
-    # end
 
     def preencher_dados_pessoais
+
+        btns_atendimento[0].click
+        wait_until_carregamento_load_invisible
 
         # Vai para a primeira aba
         primeira_aba.click
@@ -257,11 +199,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         end
 
     end
-
-# 1 - FIM METODOS PARA DADOS PESSOAIS ---------------------------------------------------------------------------------------------------------
-
-
-# 2 - INICIO METODOS PARA DADOS DO REGISTRO ---------------------------------------------------------------------------------------------------------
 
 
     def preecher_uf_e_municipio
@@ -287,10 +224,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def alterar_prazos
 
-      if (@tipo_solicitacao == 'Alteração de Prazo')
+      if (@tipo_solicitacao == "Alteração de Prazo")
 
-        @data_estada = '10/07/2022'
-        @data_carteira = '10/07/2022'
+        @data_atual = Time.now
+        @data_estada = @data_atual.strftime("%d/%m/2022")
+        @data_carteira = @data_atual.strftime("%d/%m/2022")
 
         puts "Alterando prazos, (data da estada: #{@data_estada}) e (validade da carteira: #{@data_carteira})"
 
@@ -315,6 +253,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
     def preencher_dados_do_registro
 
         if(wait_until_aba_dados_registro_visible)
+
             alterar_prazos
             preecher_uf_e_municipio
             recalcular_prazos
@@ -323,10 +262,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         end
 
     end
-
-# 2 - FIM METODOS PARA DADOS DO REGISTRO ---------------------------------------------------------------------------------------------------------
-
-# 3 - INICIO METODOS PARA DADOS DE ENDERECO ---------------------------------------------------------------------------------------------------------
 
     def preencher_endereco
 
@@ -345,10 +280,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         end
 
     end
-
-# 3 - FIM METODOS PARA DADOS DE ENDERECO ---------------------------------------------------------------------------------------------------------
-
-# 4 - INICIO METODOS PARA DADOS DE DOCUMENTACAO ---------------------------------------------------------------------------------------------------------
 
     def selecionar_documentos_obrigatorios
 
@@ -382,15 +313,16 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
-    # def justificativa_documentos
+    def abortar_solicitacao_para_analise
 
-    #     wait_until_justificativa_documentos_textarea_visible)
+        if(has_icone_inicio_btn?)
 
-    #     justificativa_documentos_textarea.click.set("Justificando ausencia de documentacao")
-    #     has_confirmar_documentacao_btn?
-    #     confirmar_documentacao_btn.click
+            icone_inicio_btn.click
+            has_formulario_pagina_inicial?
 
-    # end
+        end
+
+    end
 
     def preencher_documentos
 
@@ -401,17 +333,13 @@ class SolicitacoesIntranetPage < SitePrism::Page
             selecionar_documentos_obrigatorios
 
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            wait_until_arquivos_anexados_visible
+            has_arquivos_anexados?
 
             avancar_proximo_processar_atendimento
 
         end
 
     end
-
-# 4 - FIM METODOS PARA DADOS DE DOCUMENTACAO ---------------------------------------------------------------------------------------------------------
-
-# 5 - INICIO METODOS PARA RESULTADO DE PESQUISA ---------------------------------------------------------------------------------------------------------
 
     def preencher_resultado_da_pesquisa
 
@@ -438,29 +366,32 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
-# 5 - FIM METODOS PARA RESULTADO DE PESQUISA  ---------------------------------------------------------------------------------------------------------
-
-# 6 - INICIO METODOS PARA VISUALIZACAO DA PREVIA DA CARTEIRA  ---------------------------------------------------------------------------------------------------------
-
-    def visualizar_previa_carteira
+    def visualizar_previa_carteira(tipo_finalizacao)
 
         if(wait_until_aba_previa_carteira_visible)
 
-            puts "Visualizando e Encerrando Previa da carteira"
-            wait_until_concluir_btn_visible
-            concluir_btn.click
-            wait_until_encerrar_btn_visible
-            page.assert_text('Dados salvos com sucesso')
-            encerrar_btn.click
+            @tipo_finalizacao = tipo_finalizacao
+
+            if(@tipo_finalizacao == "Concluir")
+
+                puts "Visualizando e Encerrando Previa da carteira"
+                wait_until_concluir_btn_visible
+                concluir_btn.click
+                wait_until_encerrar_btn_visible
+                page.assert_text('Dados salvos com sucesso')
+                encerrar_btn.click
+
+                binding.pry
+
+            elsif(@tipo_finalizacao == "Suspenso")
+
+                puts "Visualizando Previa da Carteira e Supendendendo a Solicitacao" 
+
+            end
 
         end
 
     end
-
-# 6 - FIM METODOS PARA VISUALIZACAO DA PREVIA DA CARTEIRA  ---------------------------------------------------------------------------------------------------------
-
-
-# 7 - INICIO METODOS PARA AVANCAR PARA PROXIMO ---------------------------------------------------------------------------------------------------------
 
     def validar_dados_divergentes
 
@@ -479,6 +410,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
             sleep(1)
+
+            binding.pry
+            
+            has_confirmar_alteracoes_btn?
             confirmar_alteracoes_btn.click
             wait_until_carregamento_load_invisible
             proximo_btn.click
@@ -504,10 +439,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(has_associar_checkbox?(wait:3))
 
-            if( (@tipo_solicitacao == "Alteração de Prazo") ||
-                (@tipo_solicitacao == "Recadastramento Extemporâneo") ||
-                (@tipo_solicitacao == "Substituição de CRNM") ||
-                (@tipo_solicitacao == "Segunda via de CRNM") )
+            if(  (@tipo_solicitacao == "Substituição de CRNM") || (@tipo_solicitacao == "Segunda via de CRNM") )
 
                 associar_checkbox(match: :first).click
                 wait_until_confirmar_identidade_btn_disabled_invisible
@@ -517,24 +449,25 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 confirmar_identidade_btn.click
                 wait_until_carregamento_load_invisible
 
-                selecionar_rnm('Sim')
+                # selecionar_rnm('Sim')
 
                 
-
                 if(wait_until_proximo_btn_visible)
                     
-                    puts "Clicando em proximo d nv"
+                    puts "Clicando em proximo novamente"
                     sleep(1)
                     proximo_btn.click
                     wait_until_carregamento_load_invisible
 
                 end
 
-                preencher_sexo_filiacao # Após confirmar a identidade alguns dados se perdem
+                # preencher_sexo_filiacao # Após confirmar a identidade alguns dados se perdem
+
                 validar_dados_divergentes
                 preencher_justificativa_alteracao
                 validar_msg_erro
-                preencher_rnm_responsavel
+
+                # preencher_rnm_responsavel
 
             end
 
@@ -569,8 +502,8 @@ class SolicitacoesIntranetPage < SitePrism::Page
         puts "Clicando Proximo"
         proximo_btn.click
         wait_until_carregamento_load_invisible
+        associar_imigrante
 
-        # associar_imigrante
         # validar_dados_divergentes
         # preencher_justificativa_alteracao
         # seleciona_novo_imigrante
@@ -578,8 +511,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         sleep(1)
 
     end
-
-# 7 - FIM METODOS PARA AVANCAR PARA PROXIMO ---------------------------------------------------------------------------------------------------------
 
     def verificar_situacao_requerimento(tipo_requerimento)
 
