@@ -1,7 +1,7 @@
 require_relative "../helpers/file_helper.rb"
 
 class SolicitacoesIntranetPage < SitePrism::Page
-    
+
     include FileHelper
 
     # Mapeamento de elementos de preenchimento
@@ -77,7 +77,24 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     element :primeira_aba, 'td[id*="DadosPessoais_lbl"]'
 
+    # Mapeamento Decisão
+    element :anexar_formularios_btn, 'a[class="btnAnexar"]'
+    element :anexar_formularios_modal, 'div[id*="modalDocumentosRequerimentoHeader"]'
+    element :upload_anexo_formularios_btn, 'input[id*="upload:file"]'
+    element :selecionado_check, 'input[id*="dSelecionado"]'
+    element :deferir_btn, 'input[value="Deferir"]'
+    element :confirmar_deferimento_modal, :xpath, '//div[text()="Confirmar Deferimento de Processo"]'
+    element :deferir_sim_btn, 'input[value="Sim"]'
 
+    def anexar_formularios_decisao
+        anexar_formularios_btn.click
+        wait_until_anexar_formularios_modal_visible
+
+        binding.pry
+        anexar(upload_anexo_formularios_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
+        binding.pry
+        salvar_btn.click
+    end
     # Mapeamento de elementos para validação e load
 
     element :formulario_pagina_inicial, "div[id*='formulario-home']"
@@ -157,7 +174,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         pesquisar_requerimento_btn.click
         wait_until_carregamento_load_invisible
         sleep(1)
-        
+
     end
 
     def preencher_amparo_legal
@@ -386,7 +403,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             elsif(@tipo_finalizacao == "Suspenso")
 
-                puts "Visualizando Previa da Carteira e Supendendendo a Solicitacao" 
+                puts "Visualizando Previa da Carteira e Supendendendo a Solicitacao"
 
             end
 
@@ -463,9 +480,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
                 # selecionar_rnm('Sim')
 
-                
+
                 if(wait_until_proximo_btn_visible)
-                    
+
                     puts "Clicando em proximo novamente"
                     sleep(1)
                     proximo_btn.click

@@ -20,21 +20,21 @@ Cenario: Gerar Requerimento de Registro do Imigrante
 @verificar_protocolo_requerimento_registro_imigrante_aberto
 Cenario: Verificar Protocolo de Registro do Imigrante em Aberto na Internet
     Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet
-    E preencho os Dados de "Registro" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar 
+    E preencho os Dados de "Registro" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar
     Entao eu visualizo a Verificacao do Protocolo referente
 
 @procedimentos_requerimento_registro_imigrante_aberto
 @andamento_requerimento_registro_imigrante_aberto
 Cenario: Andamento do Requerimento de Registro do Imigrante em Aberto na Internet
     Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet
-    E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar 
+    E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar
     Entao eu visualizo o andamento do requerimento "Em Aberto"
 
 @procedimentos_requerimento_registro_imigrante_aberto
 @situacao_requerimento_registro_imigrante_aberto
 Cenario: Situacao do Requerimento de Registro do Imigrante em Aberto na Intranet
     Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet
-    E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
+    E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Aberto"
 
 @procedimentos_requerimento_registro_imigrante_aberto
@@ -54,8 +54,17 @@ Cenario: Processar Atendimento de Registro do Imigrante em Aberto na Intranet
 @situacao_requerimento_registro_imigrante_em_processamento
 Cenario: Situacao do Requerimento de Registro do Imigrante em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet
-    E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
+    E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
+
+@procedimentos_requerimento_registro_imigrante_aberto
+@deferir_registro_imigrante
+Cenário: Deferir Requerimento de Registro do Imigrante
+    Quando solicitar Deferir o requerimento de "Registro" no menu "Decisao"
+    E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Processamento"
+    E adiciono formulários ao requerimento
+    E solicito deferir o requerimento
+    E confirmo o deferimento do processo
 
 # PROCEDIMENTOS DE REQUERIMENTO DE REGISTRO EM SITUACAO EM ANALISE
 
@@ -82,21 +91,21 @@ Cenario: Gerar Requerimento de Registro do Imigrante
 @verificar_protocolo_requerimento_registro_imigrante_em_analise
 Cenario: Verificar Protocolo de Registro do Imigrante em Analise na Internet
     Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet
-    E preencho os Dados de "Registro" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar 
+    E preencho os Dados de "Registro" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar
     Entao eu visualizo a Verificacao do Protocolo referente
 
-@procedimentos_requerimento_registro_imigrante_analise   
+@procedimentos_requerimento_registro_imigrante_analise
 @andamento_requerimento_registro_imigrante_em_analise
 Cenario: Andamento do Requerimento de Registro do Imigrante em Analise na Internet
     Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet
-    E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar 
+    E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar
     Entao eu visualizo o andamento do requerimento "Em análise"
 
 @procedimentos_requerimento_registro_imigrante_analise
 @situacao_requerimento_registro_imigrante_em_analise
 Cenario: Situacao do Requerimento de Registro do Imigrante em Analise na Intranet
     Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet
-    E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
+    E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em análise"
 
 @procedimentos_requerimento_registro_imigrante_analise
@@ -116,7 +125,7 @@ Cenario: Processar Atendimento de Registro do Imigrante em Analise na Intranet
 @situacao_requerimento_registro_imigrante_em_processamento
 Cenario: Situacao do Requerimento de Registro do Imigrante em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet
-    E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
+    E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
 
 
