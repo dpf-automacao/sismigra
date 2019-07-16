@@ -11,6 +11,8 @@ class MenuIntranetPage < SitePrism::Page
   element :consultar_imigrante_submenu, :xpath, '//span[text()="Consultar Imigrante"]'
   element :emitir_certidao_submenu, :xpath, '//span[text()="Emitir Certidão"]'
   element :situacao_requerimento_submenu, :xpath, '//span[text()="Situação de Requerimento"]'
+  element :tratar_pendencias_submenu, :xpath, '//span[text()="Tratar Pendências"]'
+  element :alteracao_endereco_submenu, :xpath, '//span[text()="Alteração de Endereço"]'
 
   # Mapeamento de elementos para validação
 
@@ -25,7 +27,6 @@ class MenuIntranetPage < SitePrism::Page
 
       menu_situacao_requerimento
 
-
     elsif(tipo_menu == "Processar_Atendimento")
 
       processar_atendimento_submenu.click
@@ -34,9 +35,15 @@ class MenuIntranetPage < SitePrism::Page
 
       decisao_submenu.click
 
+    elsif(tipo_menu == "Alteracao_Endereco")
+
+      submenu_alteracao_endereco
+
     end
 
   end
+
+  # DEFINIR MENUS E SUBMENUS
 
   def menu_situacao_requerimento
 
@@ -51,7 +58,23 @@ class MenuIntranetPage < SitePrism::Page
   end
 
   def submenu_decisao
+
     decisao_submenu.click
+
+  end
+
+  def submenu_tratar_pendencias
+
+    tratar_pendencias_submenu.hover
+    
+  end
+
+  def submenu_alteracao_endereco
+    
+    submenu_tratar_pendencias
+
+    alteracao_endereco_submenu.click
+    
   end
 
 

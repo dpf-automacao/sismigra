@@ -40,7 +40,7 @@ class MenuInternetPage < SitePrism::Page
 
             menu_segunda_via_crnm
 
-        elsif(tipo_solicitacao == "Solicitacao_Alteracao_Endereco")
+        elsif(tipo_solicitacao == "Alteracao_Endereco")
 
             menu_alteracao_endereco
 

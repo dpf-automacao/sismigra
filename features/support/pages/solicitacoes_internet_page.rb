@@ -9,10 +9,10 @@ include FileHelper
     element :tipo_de_registro_select, "select[id='idTipoReg']"
     element :tipo_de_substituicao_select, "select[id='idTipoCarteira']"
     element :nome_imigrante_input, "input[id='txtNomeCompleto']"
-    element :sobrenome_imigrante_input, "input[id='txtSobrenome']"
-    element :nome_anterior_completo_input, "input[id='txtNomeAnterior']"
-    element :incluir_nome_social_checkbox, "div[id='idNomeSocial'] input[type='checkbox']"
-    element :nome_social_input, "input[id='txtNomeSocial']"
+    element :sobrenome_imigrante_input, "input[id*='txtSobrenome']"
+    element :nome_anterior_completo_input, "input[id*='Anterior']"
+    element :incluir_nome_social_checkbox, "div[id*='idNomeSocial'] input[type='checkbox']"
+    element :nome_social_input, "input[id*='txtNomeSocial']"
     element :sexo_masculino_imigrante_radio, "table[id='idRadioSexo'] input[value='MASCULINO']"
     element :sexo_feminino_imigrante_radio, "table[id='idRadioSexo'] input[value='FEMININO']"
     element :sexo_nao_declarado_imigrante_radio, "table[id='idRadioSexo'] input[value='NAO_DECLARADO']"
@@ -101,19 +101,71 @@ include FileHelper
 
     # MAPEAMENTO DADOS DECLARACAO
 
-    element :declaracao_checkbox, "input[id='declaracao']"
+    element :declaracao_checkbox, "input[id*='declaracao']"
     element :impressao_da_solicitacao_form, "form[id='form-imprime']"
     element :numero_requerimento_span, "span[class='titulo20pc']"
 
-    # MAPEAMENTO AVANCAR
+    # MAPEAMENTO ESPECIFICO PARA ALTERACAO DE ENDERECO ABA DADOS PESSOAIS
 
-    element :avancar_proximo_btn, "input[value*='Próximo']"
+    element :rnm_alteracao_endereco_input, "input[id='form-alteracao-endereco:rne']"
+    element :nome_completo_alteracao_endereco_input, "input[id*='nomeCompleto']"
+    element :sexo_masculino_imigrante_alteracao_endereco_radio, "table[id*='sexo'] input[value='MASCULINO']"
+    element :sexo_feminino_imigrante_alteracao_endereco_radio, "table[id*='sexo'] input[value='FEMININO']"
+    element :sexo_nao_declarado_imigrante_alteracao_endereco_radio, "table[id*='sexo'] input[value='NAO_DECLARADO']"
+    element :estado_civil_alteracao_endereco_select, "select[id*='estadoCivil']"
+    element :filiacao_1_alteracao_endereco_input, "input[id*='txtNomeMaeDados']"
+    element :sexo_masculino_filiacao_1_alteracao_endereco_radio, "input[id*='txtNomeSexoMae'][value='MASCULINO']"
+    element :sexo_feminino_filiacao_1_alteracao_endereco_radio, "input[id*='txtNomeSexoMae'][value='FEMININO']"
+    element :sexo_nao_declarado_filiacao_1_alteracao_endereco_radio, "input[id*='txtNomeSexoMae'][value='NAO_DECLARADO']"
+    element :filiacao_2_alteracao_endereco_input, "input[id*='txtNomePaiDadosPessoais']"
+    element :sexo_masculino_filiacao_2_alteracao_endereco_radio, "input[id*='txtNomeSexoPai'][value='MASCULINO']"
+    element :sexo_feminino_filiacao_2_alteracao_endereco_radio, "input[id*='txtNomeSexoPai'][value='FEMININO']"
+    element :sexo_nao_declarado_filiacao_2_alteracao_endereco_radio, "input[id*='txtNomeSexoPai'][value='NAO_DECLARADO']"
+    element :data_nascimento_alteracao_endereco_input, "input[id*='DtNascInputDate']"
+    element :pais_nascimento_alteracao_endereco_select, "select[id*='paisDeNascimento']"
+    element :cpf_alteracao_endereco_input, "input[id*='cpf']"
+    element :ocupacao_principal_alteracao_endereco_input, "textarea[id*='DescricaoOcupacao']"
+    element :cidade_nascimento_alteracao_endereco_input, "input[id*='cidadeDeNascimento']"
+    element :pais_nacionalidade_alteracao_endereco_select, "select[id*='paisDeNacionalidade']"
+    element :email_alteracao_endereco_input, "input[id*='email']"
 
-    # MAPEAMENTO LOAD
+    # MAPEAMENTO ESPECIFICO PARA ALTERACAO DE ENDERECO ABA NOVO ENDERECO
 
-    element :carregamento_load, "img[src*='spinner.gif']"
-    element :texto_imagem_input, "input[id='verifyCaptcha']"
-    element :imagem_captcha, "img[id='j_id657:capimg']"
+        # ENDERECO RESIDENCIAL
+
+    element :alteracao_endereco_residencial_checkbox, "input[id*='enderecoResidencial']"
+    element :cep_alteracao_endereco_residencial_input, "input[id*='cepResidencial']"
+    element :complemento_alteracao_endereco_residencial_input, "input[id*='complemento']"
+    element :telefone_residencial_alteracao_endereco_residencial_input, "input[id*='telefoneResidencial']"
+    element :telefone_celular_alteracao_endereco_residencial_input, "input[id*='celular']"
+    element :anexar_arquivo_alteracao_endereco_residencial_div, "div[id*='idUploadComprovanteResidencial:add1']"
+    element :anexar_arquivo_alteracao_endereco_residencial_input, "input[id*='idUploadComprovanteResidencial:file']"
+    element :arquivo_anexado_alteracao_endereco_residencial_link, "a[id*='linkVisualizarComprovanteResidencial']"
+
+        # ENDERECO COMERCIAL
+
+    element :alteracao_endereco_comercial_checkbox, "input[id*='novo-end-comercial']"
+    element :cep_alteracao_endereco_comercial_input, "input[id*='cepComercial']"
+    element :complemento_alteracao_endereco_comercial_input, "input[id*='complementoComercial']"
+    element :cidade_alteracao_endereco_comercial_select, "select[id*='comboCidadeEndComercial']"
+    element :estado_alteracao_endereco_comercial_select, "select[id*='ufComercial']"
+    element :telefone_residencial_alteracao_endereco_comercial_input, "input[id*='telefoneComercial']"
+    element :anexar_arquivo_alteracao_endereco_comercial_div, "div[id*='idUploadComprovanteComercial:add1']"
+    element :anexar_arquivo_alteracao_endereco_comercial_input, "input[id*='idUploadComprovanteComercial:file']"
+    element :arquivo_anexado_alteracao_endereco_comercial_link, "a[id*='linkVisualizarComprovanteComercial']"
+    
+        # ENDERECO EXTERIOR
+
+    element :alteracao_endereco_exterior_checkbox, "input[id*='novo-end-exterior']"
+    element :cep_alteracao_endereco_exterior_input, "input[id*='cepExterior']"
+    element :complemento_alteracao_endereco_exterior_input, "input[id*='idComplemento']"
+    element :cidade_alteracao_endereco_exterior_input, "input[id*='idCidade']"
+    element :logradouro_alteracao_endereco_exterior_input, "input[id*='idEnderecoExterior']"
+    element :estado_alteracao_endereco_exterior_input, "input[id*='idEstado']"
+    element :pais_alteracao_endereco_exterior_input, "select[id*='idPaisDTO']"
+    element :anexar_arquivo_alteracao_endereco_exterior_div, "div[id*='idUploadComprovanteExterior:add1']"
+    element :anexar_arquivo_alteracao_endereco_exterior_input, "input[id*='idUploadComprovanteExterior:file']"
+    element :arquivo_anexado_alteracao_endereco_exterior_link, "a[id*='linkVisualizarComprovanteExterior']"
 
     # MAPEAMENTO VERIFICACAO DE PROTOCOLO
 
@@ -131,68 +183,166 @@ include FileHelper
     element :status_requerimento_suspenso, "td[id*='status'] img[src*='suspenso']"
     element :status_requerimento_processamento, "td[id*='status'] img[src*='processamento']"
 
+    # MAPEAMENTO AVANCAR
+
+    element :avancar_proximo_btn, "input[value*='Próximo']"
+
+    # MAPEAMENTO LOAD
+
+    element :carregamento_load, "img[src*='spinner.gif']"
+    element :texto_imagem_input, "input[id*='verifyCaptcha']"
+    element :imagem_captcha, "img[id='j_id657:capimg']"
+
     def preencher_dados_pessoais(tipo_requerimento)
 
         @tipo_requerimento = tipo_requerimento
-        @tipo_registro = "Registro de Visto Consular"
-        @tipo_substituicao = "Alteração de Dados"
-        @nome_imigrante = Faker::Name.male_first_name
-        @sobrenome_imigrante = Faker::Name.last_name
-        @nome_anterior_completo = Faker::Name.name_with_middle
-        @nome_social = Faker::Name.name_with_middle
-        @email_imigrante = Faker::Internet.email(@nome_imigrante)
-        @cpf_imigrante = Faker::CPF.numeric
-        @nome_filiacao_1 = Faker::Name.name_with_middle
-        @nome_filiacao_2 = Faker::Name.name_with_middle
-        @data_nascimento = "01011970"
-        @estado_civil = "SOLTEIRO"
-        @cidade_nascimento = "BOGOTA"
-        @pais_nascimento = "COLOMBIA"
-        @pais_nacionalidade = "COLOMBIA"
-        @ocupacao_principal = "19 - ARQUITETO"
-        
-        sleep(1)
 
-        if(@tipo_requerimento == "Registro")
+        if(@tipo_requerimento != "Alteracao_Endereco")
 
-            tipo_de_registro_select.select(@tipo_registro)
+            @tipo_registro = "Registro de Visto Consular"
+            @tipo_substituicao = "Alteração de Dados"
+            @nome_imigrante = Faker::Name.male_first_name
+            @sobrenome_imigrante = Faker::Name.last_name
+            @nome_anterior_completo = Faker::Name.name_with_middle
+            @nome_social = Faker::Name.name_with_middle
+            @email_imigrante = Faker::Internet.email(@nome_imigrante)
+            @cpf_imigrante = Faker::CPF.numeric
+            @nome_filiacao_1 = Faker::Name.name_with_middle
+            @nome_filiacao_2 = Faker::Name.name_with_middle
+            @data_nascimento = "01011970"
+            @estado_civil = "SOLTEIRO"
+            @cidade_nascimento = "BOGOTA"
+            @pais_nascimento = "COLOMBIA"
+            @pais_nacionalidade = "COLOMBIA"
+            @ocupacao_principal = "19 - "
+            @rnm_titular = "V9707268"
+            
+            sleep(1)
 
-        end
+            if(@tipo_requerimento == "Registro")
 
-        if(@tipo_requerimento == "Substituicao_de_CRNM")
+                tipo_de_registro_select.select(@tipo_registro)
 
-            tipo_de_substituicao_select.select(@tipo_substituicao)
+            end
 
-        end
-        
-        nome_imigrante_input.set(@nome_imigrante)
-        sobrenome_imigrante_input.set(@sobrenome_imigrante)
-        nome_anterior_completo_input.set(@nome_anterior_completo)
-        incluir_nome_social_checkbox.check
-        nome_social_input.set(@nome_social)
-        sexo_masculino_imigrante_radio.click
-        deficiencia_fisica_nao_radio.click
-        data_nascimento_input.set(@data_nascimento)
-        estado_civil_select.select(@estado_civil)
-        cidade_nascimento_input.set(@cidade_nascimento)
-        pais_nascimento_select.select(@pais_nascimento)
-        pais_nacionalidade_select.select(@pais_nacionalidade)
-        email_imigrante_input.set(@email_imigrante)
-        ocupacao_principal_textarea.set(@ocupacao_principal)
+            if(@tipo_requerimento == "Substituicao_de_CRNM")
 
-        sleep(1)
+                tipo_de_substituicao_select.select(@tipo_substituicao)
 
-        ocupacao_principal_textarea.send_keys(:enter)
-        cpf_imigrante_input.click.set(@cpf_imigrante)
-        filiacao_1_input.set(@nome_filiacao_1)
-        sexo_masculino_filiacao_1_radio.click
-        filiacao_2_input.set(@nome_filiacao_2)
-        sexo_masculino_filiacao_2_radio.click
+            end
+            
+            wait_until_nome_imigrante_input_visible
+            nome_imigrante_input.set(@nome_imigrante)
+            wait_until_sobrenome_imigrante_input_visible
+            sobrenome_imigrante_input.set(@sobrenome_imigrante)
+            wait_until_nome_anterior_completo_input_visible
+            nome_anterior_completo_input.set(@nome_anterior_completo)
+            wait_until_incluir_nome_social_checkbox_visible
+            incluir_nome_social_checkbox.check
+            wait_until_nome_social_input_visible
+            nome_social_input.set(@nome_social)
+            wait_until_sexo_masculino_imigrante_radio_visible
+            sexo_masculino_imigrante_radio.click
+            wait_until_deficiencia_fisica_nao_radio_visible
+            deficiencia_fisica_nao_radio.click
+            wait_until_data_nascimento_input_visible
+            data_nascimento_input.set(@data_nascimento)
+            wait_until_estado_civil_select_visible
+            estado_civil_select.select(@estado_civil)
+            wait_until_cidade_nascimento_input_visible
+            cidade_nascimento_input.set(@cidade_nascimento)
+            wait_until_pais_nascimento_select_visible
+            pais_nascimento_select.select(@pais_nascimento)
+            wait_until_pais_nacionalidade_select_visible
+            pais_nacionalidade_select.select(@pais_nacionalidade)
+            wait_until_email_imigrante_input_visible
+            email_imigrante_input.set(@email_imigrante)
+            wait_until_ocupacao_principal_textarea_visible
+            ocupacao_principal_textarea.set(@ocupacao_principal)
 
-        if(@tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
+            sleep(7)
 
-            rnm_titular_radio.click
-            rnm_titular_input.click.set("V9707268")
+            ocupacao_principal_textarea.send_keys(:enter)
+            wait_until_cpf_imigrante_input_visible
+            cpf_imigrante_input.click.set(@cpf_imigrante)
+            wait_until_filiacao_1_input_visible
+            filiacao_1_input.set(@nome_filiacao_1)
+            wait_until_sexo_masculino_filiacao_1_radio_visible
+            sexo_masculino_filiacao_1_radio.click
+            wait_until_filiacao_2_input_visible
+            filiacao_2_input.set(@nome_filiacao_2)
+            wait_until_sexo_masculino_filiacao_2_radio_visible
+            sexo_masculino_filiacao_2_radio.click
+
+            if(@tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
+
+                wait_until_rnm_titular_radio_visible
+                rnm_titular_radio.click
+                wait_until_rnm_titular_input_visible
+                rnm_titular_input.click.set(@rnm_titular)
+
+            end
+
+        elsif(@tipo_requerimento == "Alteracao_Endereco")
+
+            @rnm_alteracao_alteracao_end = "V9707268"
+            @nome_imigrante_alteracao_end = Faker::Name.male_first_name
+            @sobrenome_imigrante_alteracao_end = Faker::Name.last_name
+            @nome_anterior_completo_alteracao_end = Faker::Name.name_with_middle
+            @nome_social_alteracao_end = Faker::Name.name_with_middle
+            @email_imigrante_alteracao_end = Faker::Internet.email(@nome_imigrante)
+            @cpf_imigrante_alteracao_end = Faker::CPF.numeric
+            @nome_filiacao_1_alteracao_end = Faker::Name.name_with_middle
+            @nome_filiacao_2_alteracao_end = Faker::Name.name_with_middle
+            @data_nascimento_alteracao_end = "01011980"
+            @estado_civil_alteracao_end = "CASADO"
+            @cidade_nascimento_alteracao_end = "BERLIM"
+            @pais_nascimento_alteracao_end = "ALEMANHA"
+            @pais_nacionalidade_alteracao_end = "ALEMANHA"
+            @ocupacao_principal_alteracao_end = "43 - MEDICO"
+
+            wait_until_rnm_alteracao_endereco_input_visible
+            rnm_alteracao_endereco_input.click.set(@rnm_alteracao_alteracao_end)
+            wait_until_nome_completo_alteracao_endereco_input_visible
+            nome_completo_alteracao_endereco_input.set(@nome_imigrante_alteracao_end)
+            wait_until_sobrenome_imigrante_input_visible
+            sobrenome_imigrante_input.click.set(@sobrenome_imigrante_alteracao_end)
+            wait_until_nome_anterior_completo_input_visible
+            nome_anterior_completo_input.click.set(@nome_anterior_completo_alteracao_end)
+            wait_until_incluir_nome_social_checkbox_visible
+            incluir_nome_social_checkbox.check
+            wait_until_nome_social_input_visible
+            nome_social_input.click.set(@nome_social_alteracao_end)
+            wait_until_sexo_masculino_imigrante_alteracao_endereco_radio_visible
+            sexo_masculino_imigrante_alteracao_endereco_radio.click
+            wait_until_estado_civil_alteracao_endereco_select_visible
+            estado_civil_alteracao_endereco_select.select(@estado_civil_alteracao_end)
+            wait_until_filiacao_1_alteracao_endereco_input_visible
+            filiacao_1_alteracao_endereco_input.click.set(@nome_filiacao_1_alteracao_end)
+            wait_until_sexo_masculino_filiacao_1_alteracao_endereco_radio_visible
+            sexo_masculino_filiacao_1_alteracao_endereco_radio.click
+            wait_until_filiacao_2_alteracao_endereco_input_visible
+            filiacao_2_alteracao_endereco_input.click.set(@nome_filiacao_2_alteracao_end)
+            wait_until_sexo_masculino_filiacao_2_alteracao_endereco_radio_visible
+            sexo_masculino_filiacao_2_alteracao_endereco_radio.click
+            wait_until_data_nascimento_alteracao_endereco_input_visible
+            data_nascimento_alteracao_endereco_input.click.set(@data_nascimento_alteracao_end)
+            wait_until_pais_nascimento_alteracao_endereco_select_visible
+            pais_nascimento_alteracao_endereco_select.select(@pais_nascimento_alteracao_end)
+            wait_until_cpf_alteracao_endereco_input_visible
+            cpf_alteracao_endereco_input.click.set(@cpf_imigrante_alteracao_end)
+            wait_until_ocupacao_principal_alteracao_endereco_input_visible
+            ocupacao_principal_alteracao_endereco_input.click.set(@ocupacao_principal_alteracao_end)
+
+            sleep(7)
+
+            ocupacao_principal_alteracao_endereco_input.send_keys(:enter)
+            wait_until_cidade_nascimento_alteracao_endereco_input_visible
+            cidade_nascimento_alteracao_endereco_input.click.set(@cidade_nascimento_alteracao_end)
+            wait_until_pais_nacionalidade_alteracao_endereco_select_visible
+            pais_nacionalidade_alteracao_endereco_select.select(@pais_nacionalidade_alteracao_end)
+            wait_until_email_alteracao_endereco_input_visible
+            email_alteracao_endereco_input.click.set(@email_imigrante_alteracao_end)
 
         end
 
@@ -254,50 +404,120 @@ include FileHelper
 
     def preencher_dados_endereco
 
-        @cep_residencial = "04180-112"
-        @complemento_residencial = "SANTA FE"
-        @telefone_residencial = "61998765432"
-        @telefone2_residencial = "61998765432"
-        @nome_estabelecimento_comercial = "ESTABELEC"
-        @cep_comercial = "04180-112"
-        @complemento_comercial = "SANTA FE 2"
-        @telefone_comercial = "61997775555"
-        @nome_contato = Faker::Name.name_with_middle
-        @telefone_contato = "61999998888"
-        @vinculo_contato = "Parente"
-        @pais_contato = "BRASIL"
+        if(@tipo_requerimento != "Alteracao_Endereco")
 
-        sleep(1)
+            @cep_residencial = "04180-112"
+            @complemento_residencial = "SANTA FE"
+            @telefone_residencial = "61998765432"
+            @telefone2_residencial = "61998765432"
+            @nome_estabelecimento_comercial = "ESTABELEC"
+            @cep_comercial = "04180-112"
+            @complemento_comercial = "SANTA FE 2"
+            @telefone_comercial = "61997775555"
+            @nome_contato = Faker::Name.name_with_middle
+            @telefone_contato = "61999998888"
+            @vinculo_contato = "Parente"
+            @pais_contato = "BRASIL"
 
-        cep_residencial_input.click.set(@cep_residencial)
-        complemento_residencial_input.send_keys(:tab)
-        sleep(5)
-        complemento_residencial_input.click.set(@complemento_residencial)
-        telefone_residencial_input.click.set(@telefone_residencial)
-        telefone2_residencial_input.click.set(@telefone2_residencial)
-        
-        cep_comercial_input.click.set(@cep_comercial)
-        telefone2_residencial_input.send_keys(:tab)
-        sleep(5)
-        nome_estabelecimento_comercial_input.click.set(@nome_estabelecimento_comercial)
-        complemento_comercial_input.click.set(@complemento_comercial)
-        telefone_comercial_input.click.set(@telefone_comercial)
+            sleep(1)
 
-        if(@tipo_requerimento == "Alteracao_de_Prazo" || @tipo_requerimento == "Recadastramento_Extemporaneo")
+            cep_residencial_input.click.set(@cep_residencial)
+            complemento_residencial_input.send_keys(:tab)
 
-            cep_exterior_input.click.set("12345678")
-            logradouro_exterior_input.click.set("Logradouro A")
-            complemento_exterior_input.click.set("NUMERO 10")
-            estado_exterior_input.click.set("REGIAO DE BOGOTA")
-            cidade_exterior_input.click.set("BOGOTA")
-            pais_exterior_input.select("COLOMBIA")
+            sleep(5)
+
+            complemento_residencial_input.click.set(@complemento_residencial)
+            telefone_residencial_input.click.set(@telefone_residencial)
+            telefone2_residencial_input.click.set(@telefone2_residencial)
+            
+            cep_comercial_input.click.set(@cep_comercial)
+            telefone2_residencial_input.send_keys(:tab)
+
+            sleep(5)
+
+            nome_estabelecimento_comercial_input.click.set(@nome_estabelecimento_comercial)
+            complemento_comercial_input.click.set(@complemento_comercial)
+            telefone_comercial_input.click.set(@telefone_comercial)
+
+            if(@tipo_requerimento == "Alteracao_de_Prazo" || @tipo_requerimento == "Recadastramento_Extemporaneo")
+
+                cep_exterior_input.click.set("12345678")
+                logradouro_exterior_input.click.set("Logradouro A")
+                complemento_exterior_input.click.set("NUMERO 10")
+                estado_exterior_input.click.set("REGIAO DE BOGOTA")
+                cidade_exterior_input.click.set("BOGOTA")
+                pais_exterior_input.select("COLOMBIA")
+
+            end
+
+            nome_contato_input.click.click.set(@nome_contato)
+            telefone_contato_input.click.set(@telefone_contato)
+            vinculo_contato_input.click.set(@vinculo_contato)
+            pais_contato_select.select(@pais_contato)
+
+        elsif(@tipo_requerimento == "Alteracao_Endereco")
+
+            @cep_alteracao_end_residencial = "40010-020"
+            @complemento_alteracao_end_residencial = "RUA A"
+            @telefone_residencial_alteracao_end_residencial = "61976543210"
+            @telefone_celular_alteracao_end_residencial = "61976543210"
+
+            @cep_alteracao_end_comercial = "40010-020"
+            @complemento_alteracao_end_comercial = "RUA B"
+            @cidade_alteracao_end_comercial = "Salvador"
+            @estado_alteracao_end_comercial = "BA"
+            @telefone_residencial_alteracao_end_comercial = "61933334444"
+
+            @cep_alteracao_end_exterior = "99999-999"
+            @complemento_alteracao_end_exterior = "RUA X"
+            @cidade_alteracao_end_exterior = "BERLIM"
+            @logradouro_alteracao_end_exterior = "LOGRADOURO RUA X 123"
+            @estado_alteracao_end_exterior = "ESTADO DE BERLIM"
+            @pais_alteracao_end_exterior = "ALEMANHA"
+
+            alteracao_endereco_residencial_checkbox.click
+            sleep(1)
+            cep_alteracao_endereco_residencial_input.click.set(@cep_alteracao_end_residencial)
+            complemento_alteracao_endereco_residencial_input.send_keys(:tab)
+            sleep(5)
+            complemento_alteracao_endereco_residencial_input.click.set(@complemento_alteracao_end_residencial)
+            telefone_residencial_alteracao_endereco_residencial_input.click.set(@telefone_residencial_alteracao_end_residencial)
+            telefone_celular_alteracao_endereco_residencial_input.click.set(@telefone_celular_alteracao_end_residencial)
+
+            anexar(anexar_arquivo_alteracao_endereco_residencial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
+            has_arquivo_anexado_alteracao_endereco_residencial_link?
+
+            alteracao_endereco_comercial_checkbox.click
+            sleep(1)
+            cep_alteracao_endereco_comercial_input.click.set(@cep_alteracao_end_comercial)
+            complemento_alteracao_endereco_comercial_input.send_keys(:tab)
+            sleep(5)
+            complemento_alteracao_endereco_comercial_input.click.set(@complemento_alteracao_end_comercial)
+            estado_alteracao_endereco_comercial_select.select(@estado_alteracao_end_comercial)
+            estado_alteracao_endereco_comercial_select.send_keys(:up)
+            estado_alteracao_endereco_comercial_select.send_keys(:down)
+            sleep(2)
+            cidade_alteracao_endereco_comercial_select.select(@cidade_alteracao_end_comercial)
+            telefone_residencial_alteracao_endereco_comercial_input.click.set(@telefone_residencial_alteracao_end_comercial)
+
+            anexar(anexar_arquivo_alteracao_endereco_comercial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
+            has_arquivo_anexado_alteracao_endereco_comercial_link?
+
+            alteracao_endereco_exterior_checkbox.click
+            sleep(1)
+            cep_alteracao_endereco_exterior_input.click.set(@cep_alteracao_end_exterior)
+            complemento_alteracao_endereco_exterior_input.send_keys(:tab)
+            sleep(3)
+            complemento_alteracao_endereco_exterior_input.click.set(@complemento_alteracao_end_exterior)
+            cidade_alteracao_endereco_exterior_input.click.set(@cidade_alteracao_end_exterior)
+            logradouro_alteracao_endereco_exterior_input.click.set(@logradouro_alteracao_end_exterior)
+            estado_alteracao_endereco_exterior_input.click.set(@estado_alteracao_end_exterior)
+            pais_alteracao_endereco_exterior_input.select(@pais_alteracao_end_exterior)
+
+            anexar(anexar_arquivo_alteracao_endereco_exterior_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
+            has_arquivo_anexado_alteracao_endereco_exterior_link?
 
         end
-
-        nome_contato_input.click.click.set(@nome_contato)
-        telefone_contato_input.click.set(@telefone_contato)
-        vinculo_contato_input.click.set(@vinculo_contato)
-        pais_contato_select.select(@pais_contato)
 
         avancar_proximo
 
@@ -311,7 +531,7 @@ include FileHelper
         @minuto_inicial = 1
         @minutos_total = @minuto_inicial + minutos_total
 
-        if(has_impressao_da_solicitacao_form?(wait:60))
+        if(has_impressao_da_solicitacao_form?)
 
             puts "Visualizando tela de Impressao de Solicitacao #{@tipo_requerimento}"
             @nr_req = numero_requerimento_span.text

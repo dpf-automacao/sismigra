@@ -185,3 +185,15 @@ end
 Quando("confirmo o deferimento do processo") do
 
 end
+
+Quando("preencho Dados do Endereco e clico Deferir e Encerro o deferimento") do
+
+    @requerimento_imigrante_intranet.deferir_alteracao_endereco
+
+end
+
+Entao("eu realizo o deferimento de alteracao de endereco com sucesso") do
+
+
+
+end

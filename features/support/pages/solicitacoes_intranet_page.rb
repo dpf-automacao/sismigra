@@ -62,9 +62,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :unidade_vinculada_select, "select[id*='unidade_change']"
     element :outros_documentos_input, "input[type='text'][name*='processar'][value='']"
     element :proximo_btn, "input[value*='Próximo']"
-    element :pais_nacionalidade, "select[id*='paisDeNacionalidade']"
-    element :pais_nascimento, "select[id*='paisDeNascimento']"
     element :icone_inicio_btn, "a[class='iconInicio']"
+    element :deferir_alteracao_endereco_btn, "input[value='Deferir']"
+    element :encerrar_alteracao_endereco_btn, "input[value='Encerrar']"
 
     # Mapeamento das abas de Processar Atendimento
 
@@ -87,13 +87,14 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :deferir_sim_btn, 'input[value="Sim"]'
 
     def anexar_formularios_decisao
+
         anexar_formularios_btn.click
         wait_until_anexar_formularios_modal_visible
 
-        binding.pry
         anexar(upload_anexo_formularios_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-        binding.pry
+
         salvar_btn.click
+
     end
     # Mapeamento de elementos para validação e load
 
@@ -106,6 +107,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     elements :numeros_requerimentos, "td[id*='numeroRequerimento']"
     elements :btns_atendimento, "input[class='btnAtendimento']"
+    elements :btns_alteracao_endereco, "input[title='Avaliar Alteração de Endereço']"
     elements :mensagem_erro, "div.cRed"
     elements :arquivos_anexados, "td a[onclick*='idTabelaArquivos']"
     elements :alterar_dados_dos_registros, "input[title='Alterar dados do registro da pesquisa.']"
@@ -155,24 +157,39 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             @tipo_solicitacao = "Segunda via de CRNM"
 
-        else
+        elsif(@tipo_solicitacao == "Alteracao_Endereco")
 
-            @tipo_solicitacao = tipo_solicitacao
+            @tipo_solicitacao == "Alteracao_Endereco"
+
+        end
+
+
+        sleep(1)
+
+        nr_requerimento_situacao_input.click.set(@dados_requerimento_pesquisa[0].chomp)
+
+        if(@tipo_solicitacao != "Alteracao_Endereco")
+
+            wait_until_tipo_solicitacao_select_visible
+            tipo_solicitacao_select.select(@tipo_solicitacao)
+            wait_until_situacao_requerimento_select_visible
+            situacao_requerimento_select.select(@situacao_requerimento)
 
         end
 
         sleep(1)
-        nr_requerimento_situacao_input.click.set(@dados_requerimento_pesquisa[0].chomp)
-        tipo_solicitacao_select.select(@tipo_solicitacao)
-        situacao_requerimento_select.select(@situacao_requerimento)
-        sleep(1)
+
+        wait_until_periodo_inicial_input_visible
         periodo_inicial_input.click.set(@periodo_inicial)
+        wait_until_periodo_final_input_visible
         periodo_final_input.click.set(@periodo_final)
 
         puts "Pesquisando numero do requerimento"
 
+        wait_until_pesquisar_requerimento_btn_visible
         pesquisar_requerimento_btn.click
         wait_until_carregamento_load_invisible
+
         sleep(1)
 
     end
@@ -185,8 +202,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         puts "Preenchendo amparo legal #{@amparo_legal}"
 
+        wait_until_amparo_legal_input_visible
         amparo_legal_input.click.set(@amparo_legal)
         wait_until_sugestao_amparo_load_visible
+        sleep(2)
         amparo_legal_input.send_keys(:enter)
         wait_until_carregamento_load_invisible
 
@@ -201,16 +220,36 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def preencher_dados_pessoais
 
-        btns_atendimento[0].click
-        wait_until_carregamento_load_invisible
+        if(@tipo_solicitacao == "Alteracao_Endereco")
 
-        # Vai para a primeira aba
+            wait_until_btns_alteracao_endereco_visible
+            btns_alteracao_endereco[0].click
+            wait_until_carregamento_load_invisible
+
+        else
+
+            wait_until_btns_atendimento_visible
+            btns_atendimento[0].click
+            wait_until_carregamento_load_invisible
+
+        end
+
+        wait_until_primeira_aba_visible
         primeira_aba.click
         wait_until_carregamento_load_invisible
 
         if(wait_until_aba_dados_pessoais_visible)
 
-            preencher_amparo_legal
+            if(@tipo_solicitacao == "Alteracao_Endereco")
+
+                # FAZ NADA
+
+            else
+
+                preencher_amparo_legal
+
+            end
+
             avancar_proximo_processar_atendimento
 
         end
@@ -223,18 +262,22 @@ class SolicitacoesIntranetPage < SitePrism::Page
         @uf = "Acre"
         @municipio = "Acrelândia"
 
-        if(has_uf_select?(wait:10))
+        if(has_uf_select?(wait:3))
 
             puts "Preenchendo uf #{@uf} e municipio #{@municipio}"
 
+            wait_until_uf_select_visible
             uf_select.select(@uf)
             wait_until_carregamento_load_invisible
 
+            wait_until_municipio_select_visible
             municipio_select.select(@municipio)
             wait_until_carregamento_load_invisible
 
         else
+
             puts "UF e Município desabilitado"
+
         end
 
     end
@@ -249,11 +292,16 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         puts "Alterando prazos, (data da estada: #{@data_estada}) e (validade da carteira: #{@data_carteira})"
 
+        wait_until_editar_prazos_btn_visible
         editar_prazos_btn.click
+        wait_until_justificativa_alteracao_prazo_visible
         justificativa_alteracao_prazo.set('Justificativa alteração de prazos script de test')
+        wait_until_salvar_btn_visible
         salvar_btn.click
         wait_until_carregamento_load_invisible
+        wait_until_data_estada_input_visible
         data_estada_input.click.set(@data_estada)
+        wait_until_data_validade_carteira_input_visible
         data_validade_carteira_input.click.set(@data_carteira)
 
       end
@@ -262,6 +310,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def recalcular_prazos
 
+        wait_until_recalcular_prazos_btn_visible
         recalcular_prazos_btn.click if (@tipo_solicitacao == 'Segunda via de CRNM')
         wait_until_carregamento_load_invisible
 
@@ -309,6 +358,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
             while(@indice < @tamanho_documentos) do
 
                 sleep(0.5)
+                wait_until_tipo_de_ducumentos_checkbox_visible
                 tipo_de_ducumentos_checkbox[@indice].check
                 puts "Selecionando tipo de documentacao " + tipo_de_ducumentos_checkbox[@indice].text
                 @indice += 1
@@ -322,7 +372,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
             @outros_documentos_texto = "Outra documentacao"
             puts "Preechendo #{@outros_documentos_texto}"
             sleep(0.5)
+            wait_until_outros_documentos_input_visible
             outros_documentos_input.click.set(@outros_documentos_texto)
+            wait_until_adicionar_documento_btn_visible
             adicionar_documento_btn.click
             wait_until_remover_doc_recebidos_img_visible
 
@@ -332,10 +384,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def abortar_solicitacao_para_analise
 
-        if(has_icone_inicio_btn?)
+        if(wait_until_icone_inicio_btn_visible)
 
+            wait_until_icone_inicio_btn_visible
             icone_inicio_btn.click
-            has_formulario_pagina_inicial?
+            wait_until_formulario_pagina_inicial_visible
 
         end
 
@@ -345,10 +398,12 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(wait_until_aba_dados_documento_visible)
 
+            wait_until_confirmar_pagamento_gru_radio_visible
             confirmar_pagamento_gru_radio.click
 
             selecionar_documentos_obrigatorios
 
+            wait_until_anexar_arquivo_btn_visible
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
             sleep(1)
             has_arquivos_anexados?
@@ -395,11 +450,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 puts "Visualizando e Encerrando Previa da carteira"
                 wait_until_concluir_btn_visible
                 concluir_btn.click
-                wait_until_encerrar_btn_visible
                 page.assert_text('Dados salvos com sucesso')
+                wait_until_encerrar_btn_visible
                 encerrar_btn.click
-
-                binding.pry
 
             elsif(@tipo_finalizacao == "Suspenso")
 
@@ -411,9 +464,18 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
+    def deferir_alteracao_endereco
+
+        wait_until_deferir_alteracao_endereco_btn_visible
+        deferir_alteracao_endereco_btn.click
+        wait_until_encerrar_alteracao_endereco_btn_visible
+        encerrar_alteracao_endereco_btn.click
+
+    end
+
     def validar_dados_divergentes
 
-        if(has_dados_divergentes_erro?(wait:3))
+        if(has_dados_divergentes_erro?(wait:5))
 
             proximo_btn.click
             wait_until_carregamento_load_invisible
@@ -468,7 +530,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(has_associar_checkbox?(wait:3))
 
-            if(  (@tipo_solicitacao == "Substituição de CRNM") || (@tipo_solicitacao == "Segunda via de CRNM") )
+            if(  (@tipo_solicitacao == "Substituição de CRNM") || (@tipo_solicitacao == "Segunda via de CRNM") || (@tipo_solicitacao == "Alteracao_Endereco") )
 
                 associar_checkbox(match: :first).click
                 wait_until_confirmar_identidade_btn_disabled_invisible
@@ -492,7 +554,12 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
                 # preencher_sexo_filiacao # Após confirmar a identidade alguns dados se perdem
 
-                validar_msg_erro
+                if(@tipo_solicitacao != "Alteracao_Endereco")
+
+                    validar_msg_erro
+
+                end
+
                 validar_dados_divergentes
                 preencher_justificativa_alteracao
 

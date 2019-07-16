@@ -1,5 +1,7 @@
 #language: pt
 
+@consultar_imigrante_all
+
 Funcionalidade: Consultar Imigrante
 
   # @consultar_imigrante_por_RNM
@@ -9,8 +11,6 @@ Funcionalidade: Consultar Imigrante
   #     | filtro | RNM      |
   #     | valor  | G148129W |
   #   Entao deve apresentar registros correspodentes aos dados pesquisados
-
-@tst
 
   @consultar_imigrante
   Esquema do Cenário: Consultar imigrante
