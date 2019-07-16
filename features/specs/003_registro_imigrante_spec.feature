@@ -57,14 +57,14 @@ Cenario: Situacao do Requerimento de Registro do Imigrante em Processamento na I
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
 
-@procedimentos_requerimento_registro_imigrante_aberto
-@deferir_registro_imigrante
-Cenário: Deferir Requerimento de Registro do Imigrante
-    Quando solicitar Deferir o requerimento de "Registro" no menu "Decisao"
-    E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Processamento"
-    E adiciono formulários ao requerimento
-    E solicito deferir o requerimento
-    E confirmo o deferimento do processo
+# @procedimentos_requerimento_registro_imigrante_aberto
+# @deferir_registro_imigrante
+# Cenário: Deferir Requerimento de Registro do Imigrante
+#     Quando solicitar Deferir o requerimento de "Registro" no menu "Decisao"
+#     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Processamento"
+#     E adiciono formulários ao requerimento
+#     E solicito deferir o requerimento
+#     E confirmo o deferimento do processo
 
 # PROCEDIMENTOS DE REQUERIMENTO DE REGISTRO EM SITUACAO EM ANALISE
 
