@@ -59,7 +59,7 @@ Cenario: Situacao do Requerimento de Substituicao CRNM do Imigrante em Processam
 
 @procedimentos_requerimento_substituicao_crnm_imigrante_analise
 @gerar_requerimento_substituicao_crnm_imigrante_em_analise
-Cenario: Gerar Requerimento de Substituicao CRNM do Imigrante
+Cenario: Gerar Requerimento de Substituicao CRNM do Imigrante para situacao em Analise
     Quando realizar o procedimento de "Substituicao_de_CRNM" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo

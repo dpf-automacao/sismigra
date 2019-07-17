@@ -53,14 +53,14 @@ Cenario: Situacao do Requerimento de Segunda via CRNM do Imigrante em Processame
 
 @procedimentos_requerimento_segunda_via_crnm_imigrante_analise
 @gerar_requerimento_segunda_via_crnm_imigrante_em_analise
-Cenario: Gerar Requerimento de Segunda via CRNM do Imigrante
+Cenario: Gerar Requerimento de Segunda via CRNM do Imigrante para situacao em Analise
     Quando realizar o procedimento de "Segunda_via_CRNM" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo
     E preencho Dados da Declaracao e clico em Salvar
     E processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
-    E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"
+    E preencher as informacoes para Pesquisar Solicitacao de "Segunda_via_CRNM" na Situacao "Em Aberto"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
@@ -104,7 +104,7 @@ Cenario: Processar Atendimento de Segunda via CRNM do Imigrante em Analise na In
     E visualizo Dados da Previa da Carteira e clico em "Concluir"
     Entao verifico o requerimento referente "Em Processamento"
 
-@procedimentos_requerimento_substituicao_crnm_imigrante_analise
+@procedimentos_requerimento_segunda_via_crnm_imigrante_analise
 @situacao_requerimento_segunda_via_crnm_imigrante_em_processamento
 Cenario: Situacao do Requerimento de Segunda via CRNM do Imigrante em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Segunda_via_CRNM" no menu "Situacao_do_Requerimento" na Intranet

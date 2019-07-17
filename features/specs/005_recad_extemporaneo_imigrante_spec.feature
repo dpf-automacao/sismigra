@@ -53,7 +53,7 @@ Cenario: Situacao do Requerimento de Recadastramento Extemporaneo do Imigrante e
 
 @procedimentos_requerimento_recad_extemporaneo_imigrante_analise
 @gerar_requerimento_recad_extemporaneo_imigrante_em_analise
-Cenario: Gerar Requerimento de Recadastramento Extemporaneo do Imigrante
+Cenario: Gerar Requerimento de Recadastramento Extemporaneo do Imigrante para situacao em Analise
     Quando realizar o procedimento de "Recadastramento_Extemporaneo" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo

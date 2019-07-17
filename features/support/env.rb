@@ -38,7 +38,7 @@ Capybara.configure do |config|
   config.app_host = "http://projetosdesenv.dpf.gov.br/siseg-prehom"
 end
 
-Capybara.default_max_wait_time = 180
+Capybara.default_max_wait_time = 60
 Capybara.page.driver.browser.manage.window.maximize
 
 Cucumber::Core::Test::Step.module_eval do

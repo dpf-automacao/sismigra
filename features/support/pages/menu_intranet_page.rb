@@ -47,25 +47,41 @@ class MenuIntranetPage < SitePrism::Page
 
   def menu_situacao_requerimento
 
-    situacao_requerimento_submenu.click
+    if(has_situacao_requerimento_submenu?)
+    
+      situacao_requerimento_submenu.click
+
+    end
 
   end
 
   def menu_processar_atendimento
 
-    processar_atendimento_submenu.click
+    if(has_processar_atendimento_submenu?)
+
+      processar_atendimento_submenu.click
+
+    end
 
   end
 
   def submenu_decisao
 
-    decisao_submenu.click
+    if(has_decisao_submenu?)
+    
+      decisao_submenu.click
+
+    end
 
   end
 
   def submenu_tratar_pendencias
 
-    tratar_pendencias_submenu.hover
+    if(has_tratar_pendencias_submenu?)
+      
+      tratar_pendencias_submenu.hover
+
+    end
     
   end
 
@@ -73,10 +89,13 @@ class MenuIntranetPage < SitePrism::Page
     
     submenu_tratar_pendencias
 
-    alteracao_endereco_submenu.click
-    
-  end
+    if(has_alteracao_endereco_submenu?)
 
+      alteracao_endereco_submenu.click
+
+    end
+
+  end
 
 
 end

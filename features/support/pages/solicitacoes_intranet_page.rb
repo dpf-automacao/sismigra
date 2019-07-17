@@ -306,7 +306,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def recalcular_prazos
 
-        wait_until_recalcular_prazos_btn_visible
         recalcular_prazos_btn.click if (@tipo_solicitacao == 'Segunda via de CRNM')
         wait_until_carregamento_load_invisible
 
@@ -350,13 +349,13 @@ class SolicitacoesIntranetPage < SitePrism::Page
         if(wait_until_tipo_de_ducumentos_checkbox_visible)
 
             @tamanho_documentos = tipo_de_ducumentos_checkbox.size
+            puts "Quantidade de documentos presentes: #{@tamanho_documentos}"
 
             while(@indice < @tamanho_documentos) do
 
-                sleep(0.5)
-                wait_until_tipo_de_ducumentos_checkbox_visible
+                sleep(1)
                 tipo_de_ducumentos_checkbox[@indice].check
-                puts "Selecionando tipo de documentacao " + tipo_de_ducumentos_checkbox[@indice].text
+                puts "Selecionando tipo de documentacao"
                 @indice += 1
 
             end
@@ -367,12 +366,13 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             @outros_documentos_texto = "Outra documentacao"
             puts "Preechendo #{@outros_documentos_texto}"
-            sleep(0.5)
+            sleep(1)
             wait_until_outros_documentos_input_visible
             outros_documentos_input.click.set(@outros_documentos_texto)
             wait_until_adicionar_documento_btn_visible
             adicionar_documento_btn.click
             wait_until_remover_doc_recebidos_img_visible
+            sleep(3)
 
         end
 
@@ -399,10 +399,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             selecionar_documentos_obrigatorios
 
-            wait_until_anexar_arquivo_btn_visible
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            sleep(1)
+            sleep(2)
             has_arquivos_anexados?
+            sleep(2)
 
             avancar_proximo_processar_atendimento
 
@@ -493,18 +493,16 @@ class SolicitacoesIntranetPage < SitePrism::Page
             proximo_btn.click
             wait_until_carregamento_load_invisible
 
-        end
+            if(has_justificativa_alteracoes_textarea?(wait:3))
 
-        if(has_justificativa_alteracoes_textarea?(wait:3))
-
-            justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
-            sleep(1)
-            has_confirmar_alteracoes_btn?
-            confirmar_alteracoes_btn.click
-            wait_until_carregamento_load_invisible
-            sleep(1)
-            proximo_btn.click
-            wait_until_carregamento_load_invisible
+                justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
+                sleep(1)
+                has_confirmar_alteracoes_btn?
+                confirmar_alteracoes_btn.click
+                wait_until_carregamento_load_invisible
+                sleep(1)
+    
+            end
 
         end
 
@@ -588,9 +586,16 @@ class SolicitacoesIntranetPage < SitePrism::Page
         wait_until_proximo_btn_visible
         proximo_btn.click
         wait_until_carregamento_load_invisible
-        associar_imigrante
 
-        sleep(1)
+        if(has_aba_dados_pessoais?(wait:3))
+
+            associar_imigrante
+            validar_dados_divergentes
+            preencher_justificativa_alteracao
+
+            sleep(1)
+
+        end
 
     end
 

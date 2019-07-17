@@ -61,7 +61,7 @@ Cenario: Situacao do Requerimento de Alteracao de Prazo do Imigrante em Processa
 
 @procedimentos_requerimento_alteracao_prazo_imigrante_analise
 @gerar_requerimento_alteracao_prazo_imigrante_em_analise
-Cenario: Gerar Requerimento de Alteracao de Prazo do Imigrante
+Cenario: Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em Analise
     Quando realizar o procedimento de "Alteracao_de_Prazo" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
     E preencho Dados do Registro do requerimento e clico em Proximo
