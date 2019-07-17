@@ -4,46 +4,51 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     include FileHelper
 
-    # Mapeamento de elementos de preenchimento
+    # MAPEAMENTO DE ELEMENTOS DE PESQUISA DO PROCESSAR ATENDIMENTO
 
     element :periodo_inicial_input, "input[id*='periodoInicioInputDate']"
     element :periodo_final_input, "input[id*='periodoFinalInputDate']"
-    element :amparo_legal_input, "input[id*='inputText_comboAmparo']"
-    element :amparo_legal_disabled_input, "input[id*='inputText_comboAmparo'][disabled='disabled']"
-    element :telefone_contato_input, "input[id*='telefoneResidencial']"
-    element :resultado_da_pesquisa_textarea, "fieldset[class='mTop10px'] textarea[id*='resultadoPesquisa']"
-    element :justificativa_alteracoes_textarea, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] textarea"
-    element :justificativa_documentos_textarea, "table[id='modalJustificativaDocumentoContentTable'] textarea"
-    element :cidade_nascimento, "input[id*='txtCidadeNascimento']"
-
-    # Mapeamento de botoes, links
-
     element :tipo_solicitacao_select, "select[id*='formulario-pesquisar:tipo']"
     element :situacao_requerimento_select, "select[id*='formulario-pesquisar:situacao']"
     element :pesquisar_requerimento_btn, "input[id*='botaoPesquisar']"
-    element :tipo_registro, :xpath, '//label[contains(text(),"Tipo De Registro:")]/../../select'
-    element :possui_RNM, "input[id*='idPossuiRnm'][value='SIM']"
-    element :nao_possui_RNM, "input[id*='idPossuiRnm'][value='NAO']"
-    element :rnm_2via_input, "input[id*='txtRne-segundaVia']"
-    element :rnm_2via_responsavel_input, 'input[id*="rneDoResponsavel-segundaVia"]'
-    element :dependente_chamante, "input[id*='idDependente'][value='NAO']"
-    element :sexo_filiacao1_masculino, 'input[id*="NomeSexoMae"][value="MASCULINO"]'
-    element :sexo_filiacao1_feminino, 'input[id*="NomeSexoMae"][value="FEMININO"]'
-    element :sexo_filiacao1_nao_declarado, 'input[id*="NomeSexoMae"][value="NAO_DECLARADO"]'
-    element :sexo_filiacao2_masculino, 'input[id*="NomeSexoPai"][value="MASCULINO"]'
-    element :sexo_filiacao2_feminino, 'input[id*="NomeSexoPai"][value="FEMININO"]'
-    element :sexo_filiacao2_nao_declarado, 'input[id*="NomeSexoPai"][value="NAO_DECLARADO"]'
-    element :titular_rnm_radio, 'input[value="TITULAR"]'
+
+    # MAPEAMENTO DE ELEMENTOS DA ABA DADOS PESSOAIS
+
+    element :aba_dados_pessoais, "td[id*='DadosPessoais_lbl'][class*='dr-tbpnl-tb-act']"
+    element :primeira_aba, 'td[id*="DadosPessoais_lbl"]'
+    element :amparo_legal_input, "input[id*='inputText_comboAmparo']"
+    element :amparo_legal_disabled_input, "input[id*='inputText_comboAmparo'][disabled='disabled']"
+    element :sugestao_amparo_load, "td[class*='suggestionSelectValue']"
+    element :associar_checkbox, "input[name*='dataTableEstrangeiros']"
+    element :confirmar_identidade_btn, "input[value*='Confirmar Identidade']"
+    element :confirmar_identidade_btn_disabled, "input[value*='Confirmar Identidade'][disabled='disabled']"
+    element :novo_imigrante_btn, "input[value='Novo Imigrante']"
+    element :justificativa_alteracoes_textarea, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] textarea"
+    element :confirmar_alteracoes_btn, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] input[value*='Confirmar']"
+    element :dados_divergentes_erro, "dl[id='mensagens'] dt[class='mensagem_erro']"
+
+    elements :btns_atendimento, "input[class='btnAtendimento']"
+    elements :mensagem_erro, "div.cRed"
+    
+    # MAPEAMENTO DE ELEMENTOS DA ABA DADOS DE REGISTRO
+
+    element :aba_dados_registro, "td[id*='DadosRegistro_lbl'][class*='dr-tbpnl-tb-act']"
     element :editar_prazos_btn, 'input[value="Editar Prazo(s)"]'
     element :justificativa_alteracao_prazo, 'textarea[id*="formModalJustificativaCancelamentoCalculoPrazo"]'
     element :data_estada_input, 'input[id*="dataEstadaRegistroInputDate"]'
     element :data_validade_carteira_input, 'input[id*="dataValidadeCarteiraInputDate"]'
     element :recalcular_prazos_btn, "input[value='Recalcular Prazos']"
+    
+    # MAPEAMENTO DE ELEMENTOS DA ABA DADOS DE ENDERECO
+
+    element :aba_dados_endereco, "td[id*='Endereco_lbl'][class*='dr-tbpnl-tb-act']"
     element :uf_select, "select[id*='uf']"
     element :municipio_select, "select[id*='Municipios']"
-    element :associar_checkbox, "input[name*='dataTableEstrangeiros']"
-    element :confirmar_identidade_btn, "input[value*='Confirmar Identidade']"
-    element :confirmar_identidade_btn_disabled, "input[value*='Confirmar Identidade'][disabled='disabled']"
+    element :unidade_vinculada_select, "select[id*='unidade_change']"
+
+    # MAPEAMENTO DE ELEMENTOS DA ABA DE DOCUMENTACAO
+
+    element :aba_dados_documento, "td[id*='Documentos_lbl'][class*='dr-tbpnl-tb-act']"
     element :confirmar_pagamento_gru_radio, "input[name*='ConfirmaPagamentoGRU'][value='SIM']"
     element :fotos, :xpath, "//label[text()='Duas fotos 3x4;']/../../td/input"
     element :documento_de_viagem_checkbox, :xpath, "//label[text()='Documento de viagem;']/../../td/input"
@@ -51,33 +56,56 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :declaracao_endereco, :xpath, "//label[text()='Declaração de endereço eletrônico']/../../td/input"
     element :certidao_nada_consta, :xpath, "//label[text()='Certidões de antecedentes criminais de onde residiu nos últimos cinco anos']/../../td/input"
     element :comprovante_domicilio, :xpath, "//label[text()='Comprovante de domicílio na localidade fronteiriça;']/../../td/input"
+    element :outros_documentos_input, "input[type='text'][name*='processar'][value='']"
     element :adicionar_documento_btn, "a img[title='Adicionar']"
     element :anexar_arquivo_btn, "input[id*='idUploadArquivoDocumentoAdicionar']"
+
+    elements :tipo_de_ducumentos_checkbox, "input[type='checkbox']"
+    elements :arquivos_anexados, "td a[onclick*='idTabelaArquivos']"
+    elements :remover_doc_recebidos_img, "img[title='Remover']"
+
+    # MAPEAMENTO DE ELEMENTOS DA ABA DE RESULTADO DA PESQUISA
+
+    element :aba_resultado_pesquisa, "td[id*='Pesquisa_lbl'][class*='dr-tbpnl-tb-act']"
+    element :resultado_da_pesquisa_textarea, "fieldset[class='mTop10px'] textarea[id*='resultadoPesquisa']"
     element :salvar_btn, "input[value='Salvar']"
+
+    elements :alterar_dados_dos_registros, "input[title='Alterar dados do registro da pesquisa.']"
+    
+
+    # MAPEAMENTO DE ELEMENTOS DA ABA DE PREVIA DA CARTEIRA
+
+    element :aba_previa_carteira, "td[id*='PreviaCarteira_lbl'][class*='dr-tbpnl-tb-act']"
     element :concluir_btn, "input[value='Concluir']"
     element :encerrar_btn, "input[value='Encerrar']"
-    element :confirmar_alteracoes_btn, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] input[value*='Confirmar']"
-    element :confirmar_documentacao_btn, "table[id='modalJustificativaDocumentoContentTable'] input[value*='Confirmar']"
-    element :novo_imigrante_btn, "input[value='Novo Imigrante']"
-    element :unidade_vinculada_select, "select[id*='unidade_change']"
-    element :outros_documentos_input, "input[type='text'][name*='processar'][value='']"
-    element :proximo_btn, "input[value*='Próximo']"
-    element :icone_inicio_btn, "a[class='iconInicio']"
+
+    # MAPEAMENTO DE ELEMENTOS DA ALTERACAO DE ENDERECO
+
     element :deferir_alteracao_endereco_btn, "input[value='Deferir']"
     element :encerrar_alteracao_endereco_btn, "input[value='Encerrar']"
 
-    # Mapeamento das abas de Processar Atendimento
+    elements :btns_alteracao_endereco, "input[title='Avaliar Alteração de Endereço']"
 
-    element :aba_dados_pessoais, "td[id*='DadosPessoais_lbl'][class*='dr-tbpnl-tb-act']"
-    element :aba_dados_registro, "td[id*='DadosRegistro_lbl'][class*='dr-tbpnl-tb-act']"
-    element :aba_dados_endereco, "td[id*='Endereco_lbl'][class*='dr-tbpnl-tb-act']"
-    element :aba_dados_documento, "td[id*='Documentos_lbl'][class*='dr-tbpnl-tb-act']"
-    element :aba_resultado_pesquisa, "td[id*='Pesquisa_lbl'][class*='dr-tbpnl-tb-act']"
-    element :aba_previa_carteira, "td[id*='PreviaCarteira_lbl'][class*='dr-tbpnl-tb-act']"
+    # MAPEAMENTO DE ELEMENTOS DE SITUACAO DO REQUERIMENTO
 
-    element :primeira_aba, 'td[id*="DadosPessoais_lbl"]'
+    element :status_requerimento_aberto, "td[id*='status'] img[src*='aberto']"
+    element :status_requerimento_analise, "td[id*='status'] img[src*='analise']"
+    element :status_requerimento_suspenso, "td[id*='status'] img[src*='suspenso']"
+    element :status_requerimento_processamento, "td[id*='status'] img[src*='processamento']"
 
-    # Mapeamento Decisão
+    element :btn_pesquisar, 'input[value="Pesquisar"]'
+
+    # MAPEAMENTO DE ELEMENTOS GERAIS
+
+    element :proximo_btn, "input[value*='Próximo']"
+    element :icone_inicio_btn, "a[class='iconInicio']"
+    element :formulario_pagina_inicial, "div[id*='formulario-home']"
+    element :carregamento_load, "img[src*='spinner.gif']"
+    element :nr_requerimento_situacao_input, 'input[id*="numeroRequerimento"]'
+
+
+    # MAPEAMENTO DECISAO
+
     element :anexar_formularios_btn, 'a[class="btnAnexar"]'
     element :anexar_formularios_modal, 'div[id*="modalDocumentosRequerimentoHeader"]'
     element :upload_anexo_formularios_btn, 'input[id*="upload:file"]'
@@ -86,45 +114,16 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :confirmar_deferimento_modal, :xpath, '//div[text()="Confirmar Deferimento de Processo"]'
     element :deferir_sim_btn, 'input[value="Sim"]'
 
-    def anexar_formularios_decisao
+    # def anexar_formularios_decisao
 
-        anexar_formularios_btn.click
-        wait_until_anexar_formularios_modal_visible
+    #     anexar_formularios_btn.click
+    #     wait_until_anexar_formularios_modal_visible
 
-        anexar(upload_anexo_formularios_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
+    #     anexar(upload_anexo_formularios_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
 
-        salvar_btn.click
+    #     salvar_btn.click
 
-    end
-    # Mapeamento de elementos para validação e load
-
-    element :formulario_pagina_inicial, "div[id*='formulario-home']"
-    element :carregamento_load, "img[src*='spinner.gif']"
-    element :dados_divergentes_erro, "dl[id='mensagens'] dt[class='mensagem_erro']"
-    element :sugestao_amparo_load, "td[class*='suggestionSelectValue']"
-
-    # Mapeamento de varios elementos
-
-    elements :numeros_requerimentos, "td[id*='numeroRequerimento']"
-    elements :btns_atendimento, "input[class='btnAtendimento']"
-    elements :btns_alteracao_endereco, "input[title='Avaliar Alteração de Endereço']"
-    elements :mensagem_erro, "div.cRed"
-    elements :arquivos_anexados, "td a[onclick*='idTabelaArquivos']"
-    elements :alterar_dados_dos_registros, "input[title='Alterar dados do registro da pesquisa.']"
-    elements :tipo_de_ducumentos_checkbox, "input[type='checkbox']"
-    elements :remover_doc_recebidos_img, "img[title='Remover']"
-
-    # Mapeamento da Situacao do Requerimento
-
-    element :nr_requerimento_situacao_input, 'input[id*="numeroRequerimento"]'
-    element :status_requerimento_aberto, "td[id*='status'] img[src*='aberto']"
-    element :status_requerimento_analise, "td[id*='status'] img[src*='analise']"
-    element :status_requerimento_suspenso, "td[id*='status'] img[src*='suspenso']"
-    element :status_requerimento_processamento, "td[id*='status'] img[src*='processamento']"
-
-    element :btn_pesquisar, 'input[value="Pesquisar"]'
-
-    # Definindo metodo para pesquisar requerimento
+    # end
 
     def pesquisar_solicitacao(tipo_solicitacao, situacao_requerimento)
 
@@ -166,6 +165,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         sleep(1)
 
+        wait_until_nr_requerimento_situacao_input_visible
         nr_requerimento_situacao_input.click.set(@dados_requerimento_pesquisa[0].chomp)
 
         if(@tipo_solicitacao != "Alteracao_Endereco")
@@ -240,11 +240,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(wait_until_aba_dados_pessoais_visible)
 
-            if(@tipo_solicitacao == "Alteracao_Endereco")
-
-                # FAZ NADA
-
-            else
+            if(@tipo_solicitacao != "Alteracao_Endereco")
 
                 preencher_amparo_legal
 
@@ -519,6 +515,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         if(has_mensagem_erro?(wait:3))
 
             puts "Clicando Proximo"
+            wait_until_proximo_btn_visible
             proximo_btn.click
             wait_until_carregamento_load_invisible
 
@@ -540,19 +537,15 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 confirmar_identidade_btn.click
                 wait_until_carregamento_load_invisible
 
-                # selecionar_rnm('Sim')
-
-
                 if(wait_until_proximo_btn_visible)
 
                     puts "Clicando em proximo novamente"
                     sleep(1)
+                    wait_until_proximo_btn_visible
                     proximo_btn.click
                     wait_until_carregamento_load_invisible
 
                 end
-
-                # preencher_sexo_filiacao # Após confirmar a identidade alguns dados se perdem
 
                 if(@tipo_solicitacao != "Alteracao_Endereco")
 
@@ -562,8 +555,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
                 validar_dados_divergentes
                 preencher_justificativa_alteracao
-
-                # preencher_rnm_responsavel
 
             end
 
@@ -575,17 +566,15 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(has_novo_imigrante_btn?(wait:3))
 
-            if(wait_until_novo_imigrante_btn_visible)
+            puts "Selecionando novo imigrante"
+            wait_until_novo_imigrante_btn_visible
+            novo_imigrante_btn.click
+            selecionar_rnm('Não')
 
-                puts "Selecionando novo imigrante"
-                novo_imigrante_btn.click
-                selecionar_rnm('Não')
-
-                puts "Clicando Proximo"
-                proximo_btn.click
-                wait_until_carregamento_load_invisible
-
-            end
+            puts "Clicando Proximo"
+            wait_until_proximo_btn_visible
+            proximo_btn.click
+            wait_until_carregamento_load_invisible
 
         end
 
@@ -596,13 +585,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
         sleep(1)
 
         puts "Clicando Proximo"
+        wait_until_proximo_btn_visible
         proximo_btn.click
         wait_until_carregamento_load_invisible
         associar_imigrante
-
-        # validar_dados_divergentes
-        # preencher_justificativa_alteracao
-        # seleciona_novo_imigrante
 
         sleep(1)
 
@@ -610,14 +596,13 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def verificar_situacao_requerimento(tipo_requerimento)
 
-        # element :status_requerimento_aberto, "td[id*='status'] img[src*='aberto']"
-
         @dados_situacao_requerimento = recuperar_dados("features/arquivos/requerimentos/#{tipo_requerimento}.txt")
+        wait_until_nr_requerimento_situacao_input_visible
         nr_requerimento_situacao_input.click.set(@dados_situacao_requerimento[0])
+        wait_until_btn_pesquisar_visible
         btn_pesquisar.click
         wait_until_carregamento_load_invisible
         sleep(1)
-
 
     end
 

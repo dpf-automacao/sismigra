@@ -368,32 +368,46 @@ include FileHelper
 
         if(@tipo_requerimento == "Registro" || @tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
 
+            wait_until_
             possui_visto_sim_radio.click
-            has_numero_visto_input?(wait:5)
+            wait_until_numero_visto_input_visible
             numero_visto_input.click.set(@numero_visto)
+            wait_until_data_da_concessao_input_visible
             data_da_concessao_input.click.set(@data_da_concessao)
+            wait_until_cidade_da_concessao_input_visible
             cidade_da_concessao_input.click.set(@cidade_da_concessao)
+            wait_until_pais_concedido_select_visible
             pais_concedido_select.select(@pais_concedido)
 
         end
 
+        wait_until_tipo_documento_viagem_select_visible
         tipo_documento_viagem_select.select(@tipo_documento_viagem)
+        wait_until_numero_doc_viagem_input_visible
         numero_doc_viagem_input.click.set(@numero_doc_viagem)
+        wait_until_pais_expedidor_doc_select_visible
         pais_expedidor_doc_select.select(@pais_expedidor_doc)
 
         if(@tipo_requerimento != "Alteracao_de_Prazo" && @tipo_requerimento != "Substituicao_de_CRNM" && @tipo_requerimento != "Segunda_via_CRNM")
 
+            wait_until_sigla_uf_entrada_select_visible
             sigla_uf_entrada_select.select(@sigla_uf_entrada)
+            wait_until_local_entrada_select_visible
             local_entrada_select.select(@local_entrada)
+            wait_until_meio_transporte_select_visible
             meio_transporte_select.select(@meio_transporte)
+            wait_until_data_entrada_input_visible
             data_entrada_input.click.set(@data_entrada)
 
         end
 
         if(@tipo_requerimento == "Recadastramento_Extemporaneo")
 
+            wait_until_data_publicacao_input_visible
             data_publicacao_input.click.set("01072019")
+            wait_until_pagina_publicacao_input_visible
             pagina_publicacao_input.click.set("www.publicacao.com")
+            wait_until_orgao_concedente_select_visible
             orgao_concedente_select.select("Ministerio do Trabalho")
 
         end
@@ -421,38 +435,56 @@ include FileHelper
 
             sleep(1)
 
+            wait_until_cep_residencial_input_visible
             cep_residencial_input.click.set(@cep_residencial)
+            wait_until_complemento_residencial_input_visible
             complemento_residencial_input.send_keys(:tab)
 
             sleep(5)
 
             complemento_residencial_input.click.set(@complemento_residencial)
+            wait_until_telefone_residencial_input_visible
             telefone_residencial_input.click.set(@telefone_residencial)
+            wait_until_telefone2_residencial_input_visible
             telefone2_residencial_input.click.set(@telefone2_residencial)
-            
+            wait_until_cep_comercial_input_visible
             cep_comercial_input.click.set(@cep_comercial)
+            wait_until_telefone2_residencial_input_visible
             telefone2_residencial_input.send_keys(:tab)
 
             sleep(5)
 
+            wait_until_nome_estabelecimento_comercial_input_visible
             nome_estabelecimento_comercial_input.click.set(@nome_estabelecimento_comercial)
+            wait_until_complemento_comercial_input_visible
             complemento_comercial_input.click.set(@complemento_comercial)
+            wait_until_telefone_comercial_input_visible
             telefone_comercial_input.click.set(@telefone_comercial)
 
             if(@tipo_requerimento == "Alteracao_de_Prazo" || @tipo_requerimento == "Recadastramento_Extemporaneo")
 
+                wait_until_cep_exterior_input_visible
                 cep_exterior_input.click.set("12345678")
+                wait_until_logradouro_exterior_input_visible
                 logradouro_exterior_input.click.set("Logradouro A")
+                wait_until_complemento_exterior_input_visible
                 complemento_exterior_input.click.set("NUMERO 10")
+                wait_until_estado_exterior_input_visible
                 estado_exterior_input.click.set("REGIAO DE BOGOTA")
+                wait_until_cidade_exterior_input_visible
                 cidade_exterior_input.click.set("BOGOTA")
+                wait_until_pais_exterior_input_visible
                 pais_exterior_input.select("COLOMBIA")
 
             end
 
+            wait_until_nome_contato_input_visible
             nome_contato_input.click.click.set(@nome_contato)
+            wait_until_telefone_contato_input_visible
             telefone_contato_input.click.set(@telefone_contato)
+            wait_until_vinculo_contato_input_visible
             vinculo_contato_input.click.set(@vinculo_contato)
+            wait_until_pais_contato_select_visible
             pais_contato_select.select(@pais_contato)
 
         elsif(@tipo_requerimento == "Alteracao_Endereco")
@@ -475,47 +507,96 @@ include FileHelper
             @estado_alteracao_end_exterior = "ESTADO DE BERLIM"
             @pais_alteracao_end_exterior = "ALEMANHA"
 
+            # PREENCHER ENDERECO ALTERACAO RESIDENCIAL INTERNET
+
+            wait_until_alteracao_endereco_residencial_checkbox_visible
             alteracao_endereco_residencial_checkbox.click
+
             sleep(1)
+
+            wait_until_cep_alteracao_endereco_residencial_input_visible
             cep_alteracao_endereco_residencial_input.click.set(@cep_alteracao_end_residencial)
+            wait_until_complemento_alteracao_endereco_residencial_input_visible
+
+            # --------------------------------------------- VERIFICAR POSSIBILIDADE DE MELHORIA ------------------------------------------------------
+
             complemento_alteracao_endereco_residencial_input.send_keys(:tab)
+
             sleep(5)
+
             complemento_alteracao_endereco_residencial_input.click.set(@complemento_alteracao_end_residencial)
+            wait_until_telefone_residencial_alteracao_endereco_residencial_input_visible
             telefone_residencial_alteracao_endereco_residencial_input.click.set(@telefone_residencial_alteracao_end_residencial)
+            wait_until_telefone_celular_alteracao_endereco_residencial_input_visible
             telefone_celular_alteracao_endereco_residencial_input.click.set(@telefone_celular_alteracao_end_residencial)
 
             anexar(anexar_arquivo_alteracao_endereco_residencial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            has_arquivo_anexado_alteracao_endereco_residencial_link?
+            wait_until_arquivo_anexado_alteracao_endereco_residencial_link_visible
 
+            # PREENCHER ENDERECO ALTERACAO COMERCIAL INTERNET
+
+            wait_until_alteracao_endereco_comercial_checkbox_visible
             alteracao_endereco_comercial_checkbox.click
+
             sleep(1)
+
+            wait_until_cep_alteracao_endereco_comercial_input_visible
             cep_alteracao_endereco_comercial_input.click.set(@cep_alteracao_end_comercial)
+            wait_until_complemento_alteracao_endereco_comercial_input_visible
             complemento_alteracao_endereco_comercial_input.send_keys(:tab)
+
             sleep(5)
+
             complemento_alteracao_endereco_comercial_input.click.set(@complemento_alteracao_end_comercial)
+            wait_until_estado_alteracao_endereco_comercial_select_visible
             estado_alteracao_endereco_comercial_select.select(@estado_alteracao_end_comercial)
+            wait_until_estado_alteracao_endereco_comercial_select_visible
+
+            # --------------------------------------------- VERIFICAR POSSIBILIDADE DE MELHORIA ------------------------------------------------------
+
             estado_alteracao_endereco_comercial_select.send_keys(:up)
+            wait_until_estado_alteracao_endereco_comercial_select_visible
             estado_alteracao_endereco_comercial_select.send_keys(:down)
-            sleep(2)
+
+            sleep(5)
+
+            wait_until_cidade_alteracao_endereco_comercial_select_visible
             cidade_alteracao_endereco_comercial_select.select(@cidade_alteracao_end_comercial)
+            wait_until_telefone_residencial_alteracao_endereco_comercial_input_visible
             telefone_residencial_alteracao_endereco_comercial_input.click.set(@telefone_residencial_alteracao_end_comercial)
 
             anexar(anexar_arquivo_alteracao_endereco_comercial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            has_arquivo_anexado_alteracao_endereco_comercial_link?
+            wait_until_arquivo_anexado_alteracao_endereco_comercial_link_visible
 
+            # PREENCHER ENDERECO ALTERACAO EXTERIOR INTERNET
+
+            wait_until_alteracao_endereco_exterior_checkbox_visible
             alteracao_endereco_exterior_checkbox.click
+
             sleep(1)
+
+            wait_until_cep_alteracao_endereco_exterior_input_visible
             cep_alteracao_endereco_exterior_input.click.set(@cep_alteracao_end_exterior)
+
+            # --------------------------------------------- VERIFICAR POSSIBILIDADE DE MELHORIA ------------------------------------------------------
+
+            wait_until_complemento_alteracao_endereco_exterior_input_visible
             complemento_alteracao_endereco_exterior_input.send_keys(:tab)
-            sleep(3)
+
+            sleep(5)
+
             complemento_alteracao_endereco_exterior_input.click.set(@complemento_alteracao_end_exterior)
+            wait_until_cidade_alteracao_endereco_exterior_input_visible
             cidade_alteracao_endereco_exterior_input.click.set(@cidade_alteracao_end_exterior)
+            wait_until_logradouro_alteracao_endereco_exterior_input_visible
             logradouro_alteracao_endereco_exterior_input.click.set(@logradouro_alteracao_end_exterior)
+            wait_until_estado_alteracao_endereco_exterior_input_visible
             estado_alteracao_endereco_exterior_input.click.set(@estado_alteracao_end_exterior)
+            wait_until_pais_alteracao_endereco_exterior_input_visible
             pais_alteracao_endereco_exterior_input.select(@pais_alteracao_end_exterior)
 
             anexar(anexar_arquivo_alteracao_endereco_exterior_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            has_arquivo_anexado_alteracao_endereco_exterior_link?
+            wait_until_arquivo_anexado_alteracao_endereco_exterior_visible
 
         end
 
@@ -525,7 +606,9 @@ include FileHelper
 
     def preencher_declaracao(minutos_total)
 
+        wait_until_declaracao_checkbox_visible
         declaracao_checkbox.check
+        wait_until_texto_imagem_input_visible
         texto_imagem_input.click
 
         @minuto_inicial = 1
@@ -552,16 +635,22 @@ include FileHelper
 
         if(tipo_verificacao == "Verificacao_de_Protocolo")
 
+            wait_until_numero_protocolo_requerimento_input_visible
             numero_protocolo_requerimento_input.click.set(@dados_requerimento_protocolo[0])
+            wait_until_verificar_protocolo_btn_visible
             verificar_protocolo_btn.click
-            has_validar_protocolo_table?
+            wait_until_validar_protocolo_visible
+
             sleep(1)
 
         elsif(tipo_verificacao == "Andamento_do_Requerimento")
 
+            wait_until_numero_andamento_requerimento_input_visible
             numero_andamento_requerimento_input.click.set(@dados_requerimento_protocolo[0])
+            wait_until_pesquisar_btn_visible
             pesquisar_btn.click
             wait_until_carregamento_load_invisible
+
             sleep(1)
 
         end
@@ -571,8 +660,10 @@ include FileHelper
 
     def avancar_proximo
 
+        wait_until_avancar_proximo_btn_visible
         avancar_proximo_btn.click
         wait_until_carregamento_load_invisible
+        
         sleep(1)
 
     end
