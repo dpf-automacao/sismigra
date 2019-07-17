@@ -149,7 +149,8 @@ end
 
 Quando("visualizo Dados da Previa da Carteira e clico em {string}") do |tipo_finalizacao|
 
-    @requerimento_imigrante_intranet.visualizar_previa_carteira(tipo_finalizacao)
+    @tipo_finalizacao = tipo_finalizacao
+    @requerimento_imigrante_intranet.visualizar_previa_carteira(@tipo_finalizacao)
 
 end
 

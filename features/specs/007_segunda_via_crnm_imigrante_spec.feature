@@ -44,7 +44,7 @@ Cenario: Processar Atendimento de Segunda via CRNM do Imigrante em Aberto na Int
     Entao verifico o requerimento referente "Em Processamento"
 
 @situacao_requerimento_segunda_via_crnm_imigrante_em_processamento
-Cenario: Situacao do Requerimento de Segunda via CRNM do Imigrante em Processamento na Intranet
+Cenario: Situacao do Requerimento de Segunda Via CRMM do Imigrante que estava em aberto em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Segunda_via_CRNM" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
@@ -106,7 +106,7 @@ Cenario: Processar Atendimento de Segunda via CRNM do Imigrante em Analise na In
 
 @procedimentos_requerimento_segunda_via_crnm_imigrante_analise
 @situacao_requerimento_segunda_via_crnm_imigrante_em_processamento
-Cenario: Situacao do Requerimento de Segunda via CRNM do Imigrante em Processamento na Intranet
+Cenario: Situacao do Requerimento de Segunda Via CRMM do Imigrante que estava em analise em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Segunda_via_CRNM" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Processamento"

@@ -50,7 +50,7 @@ Cenario: Processar Atendimento de Substituicao CRNM do Imigrante em Aberto na In
     
 @procedimentos_requerimento_substituicao_crnm_imigrante_aberto
 @situacao_requerimento_substituicao_crnm_imigrante_em_processamento
-Cenario: Situacao do Requerimento de Substituicao CRNM do Imigrante em Processamento na Intranet
+Cenario: Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em aberto em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
@@ -112,7 +112,7 @@ Cenario: Processar Atendimento de Substituicao CRNM do Imigrante em Analise na I
 
 @procedimentos_requerimento_substituicao_crnm_imigrante_analise
 @situacao_requerimento_substituicao_crnm_imigrante_em_processamento
-Cenario: Situacao do Requerimento de Substituicao CRNM do Imigrante em Processamento na Intranet
+Cenario: Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em analise em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Processamento"

@@ -409,7 +409,7 @@ include FileHelper
             wait_until_ocupacao_principal_alteracao_endereco_input_visible
             ocupacao_principal_alteracao_endereco_input.click.set(@ocupacao_principal_alteracao_end)
 
-            sleep(7)
+            sleep(10)
 
             ocupacao_principal_alteracao_endereco_input.send_keys(:enter)
 

@@ -59,6 +59,8 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :outros_documentos_input, "input[type='text'][name*='processar'][value='']"
     element :adicionar_documento_btn, "a img[title='Adicionar']"
     element :anexar_arquivo_btn, "input[id*='idUploadArquivoDocumentoAdicionar']"
+    element :justificativa_documentos_textarea, "textarea[id*='justificar-documento']"
+    element :confirmar_justificativa_documento, "input[id*='justificar-documento'][value='Confirmar']"
 
     elements :tipo_de_ducumentos_checkbox, "input[type='checkbox']"
     elements :arquivos_anexados, "td a[onclick*='idTabelaArquivos']"
@@ -78,6 +80,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :aba_previa_carteira, "td[id*='PreviaCarteira_lbl'][class*='dr-tbpnl-tb-act']"
     element :concluir_btn, "input[value='Concluir']"
     element :encerrar_btn, "input[value='Encerrar']"
+    element :suspender_btn, "input[value='Suspender']"
+    element :justificativa_suspensao_textarea, "textarea[name*='idForm']"
+    element :gerar_termo_suspensao_btn, "input[value*='Gerar Termo']"
+    element :processo_suspenso_msg_sucesso, "dt[class='mensagem_sucesso']"
+    element :div_processo_suspenso, "div[id='viewer']"
 
     # MAPEAMENTO DE ELEMENTOS DA ALTERACAO DE ENDERECO
 
@@ -205,7 +212,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         wait_until_amparo_legal_input_visible
         amparo_legal_input.click.set(@amparo_legal)
         wait_until_sugestao_amparo_load_visible
-        sleep(2)
+        sleep(3)
         amparo_legal_input.send_keys(:enter)
         wait_until_carregamento_load_invisible
 
@@ -353,7 +360,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             while(@indice < @tamanho_documentos) do
 
-                sleep(1)
+                sleep(2)
                 tipo_de_ducumentos_checkbox[@indice].check
                 puts "Selecionando tipo de documentacao"
                 @indice += 1
@@ -366,13 +373,13 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             @outros_documentos_texto = "Outra documentacao"
             puts "Preechendo #{@outros_documentos_texto}"
-            sleep(1)
+            sleep(2)
             wait_until_outros_documentos_input_visible
             outros_documentos_input.click.set(@outros_documentos_texto)
             wait_until_adicionar_documento_btn_visible
             adicionar_documento_btn.click
             wait_until_remover_doc_recebidos_img_visible
-            sleep(3)
+            sleep(2)
 
         end
 
@@ -405,6 +412,18 @@ class SolicitacoesIntranetPage < SitePrism::Page
             sleep(2)
 
             avancar_proximo_processar_atendimento
+
+            if(has_justificativa_documentos_textarea?(wait:5))
+
+                @justificativa_documentos = "Documentos ausentes"
+
+                wait_until_justificativa_documentos_textarea_visible
+                justificativa_documentos_textarea.set(@justificativa_documentos)
+                wait_until_confirmar_justificativa_documento_visible
+                confirmar_justificativa_documento.click
+                wait_until_carregamento_load_invisible
+
+            end
 
         end
 
@@ -450,9 +469,25 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 wait_until_encerrar_btn_visible
                 encerrar_btn.click
 
-            elsif(@tipo_finalizacao == "Suspenso")
+            elsif(@tipo_finalizacao == "Suspender")
 
-                puts "Visualizando Previa da Carteira e Supendendendo a Solicitacao"
+                binding.pry
+
+                @justificativa_suspensao = "Suspendendo Solicitacao"
+
+                wait_until_suspender_btn_visible
+                suspender_btn.click
+                wait_until_justificativa_suspensao_textarea_visible
+                justificativa_suspensao_textarea.click.set(@justificativa_suspensao)
+                wait_until_gerar_termo_suspensao_btn_visible
+                gerar_termo_suspensao_btn.click
+                wait_until_carregamento_load_invisible
+                gerar_termo_suspensao_btn.click
+                wait_until_carregamento_load_invisible
+
+                switch_to_window(windows.last)
+
+                has_div_processo_suspenso?(wait:10)
 
             end
 

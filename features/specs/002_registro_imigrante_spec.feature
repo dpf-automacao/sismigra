@@ -52,7 +52,7 @@ Cenario: Processar Atendimento de Registro do Imigrante em Aberto na Intranet
 
 @procedimentos_requerimento_registro_imigrante_aberto
 @situacao_requerimento_registro_imigrante_em_processamento
-Cenario: Situacao do Requerimento de Registro do Imigrante em Processamento na Intranet
+Cenario: Situacao do Requerimento de Registro do Imigrante que estava em aberto em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
@@ -123,9 +123,31 @@ Cenario: Processar Atendimento de Registro do Imigrante em Analise na Intranet
 
 @procedimentos_requerimento_registro_imigrante_analise
 @situacao_requerimento_registro_imigrante_em_processamento
-Cenario: Situacao do Requerimento de Registro do Imigrante em Processamento na Intranet
+Cenario: Situacao do Requerimento de Registro do Imigrante que estava em analise em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
+
+# SUSPENSO
+
+# @procedimentos_requerimento_registro_imigrante_suspenso
+# @gerar_requerimento_registro_imigrante_em_suspenso
+# Cenario: Gerar Requerimento de Registro do Imigrante para situacao em Suspenso
+#     Quando realizar o procedimento de "Registro" de Imigrante na Internet
+#     E preencho Dados Pessoais do requerimento e clico em Proximo
+#     E preencho Dados do Registro do requerimento e clico em Proximo
+#     E preencho Dados do Endereco do requerimento e clico em Proximo
+#     E preencho Dados da Declaracao e clico em Salvar
+#     E processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
+#     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Aberto"
+#     E preencho Dados Pessoais e clico em Proximo
+#     E preencho Dados do Registro e clico em Proximo
+#     E preencho Dados do Endereco e clico em Proximo
+#     E preencho Dados de Documentos e clico em Proximo
+#     E preencho Dados do Resultado da Pesquisa e clico em Proximo
+#     E visualizo Dados da Previa da Carteira e clico em "Suspender"
+#     E processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
+#     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"
+#     Entao verifico o requerimento referente "Suspenso"
 
 

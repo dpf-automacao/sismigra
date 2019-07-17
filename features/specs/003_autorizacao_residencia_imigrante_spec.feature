@@ -52,7 +52,7 @@ Cenario: Processar Atendimento de Autorizacao de Residencia do Imigrante em Aber
 
 @procedimentos_requerimento_autorizacao_residencia_imigrante_aberto
 @situacao_requerimento_autorizacao_residencia_imigrante_em_processamento
-Cenario: Situacao do Requerimento de Autorizacao de Residencia do Imigrante em Processamento na Intranet
+Cenario: Situacao do Requerimento de Autorizacao de Residencia do Imigrante que estava em aberto em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Autorizacao_Residencia" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
@@ -114,7 +114,11 @@ Cenario: Processar Atendimento de Autorizacao de Residencia do Imigrante em Anal
 
 @procedimentos_requerimento_autorizacao_residencia_imigrante_analise
 @situacao_requerimento_autorizacao_residencia_imigrante_em_processamento
-Cenario: Situacao do Requerimento de Autorizacao de Residencia do Imigrante em Processamento na Intranet
+Cenario: Situacao do Requerimento de Autorizacao de Residencia do Imigrante que estava em analise em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Autorizacao_Residencia" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
+
+
+
+
