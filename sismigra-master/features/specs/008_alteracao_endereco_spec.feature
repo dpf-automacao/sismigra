@@ -38,7 +38,7 @@ Cenario: Deferir Alteracao de Endereco do Imigrante em Aberto na Intranet
     E preencho Dados do Endereco e clico Deferir e Encerro o deferimento
     Entao eu realizo o deferimento de alteracao de endereco com sucesso
 
-@situacao_requerimento_alteracao_endereco_imigrante_em_processamento
+@situacao_requerimento_alteracao_endereco_imigrante_que_estava_em_aberto_em_processamento
 Cenario: Situacao do Requerimento de Alteracao Endereco do Imigrante Deferido na Intranet
     Quando solicitar Situacao do Requerimento de "Alteracao_Endereco" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 

@@ -46,7 +46,7 @@ class ConsultarImigrantePage < PageHelper
 
   def confirmar_dias_renovacao(quantidade)
 
-    if(label_requerimentos_imigrante.text.include?("201"))
+    if(label_requerimentos_imigrante.text.include?("2"))
 
       puts "\nPreenchendo renovacao"
       qtd_dias_renovacao.set(quantidade)

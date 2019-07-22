@@ -51,7 +51,7 @@ Cenario: Processar Atendimento de Registro do Imigrante em Aberto na Intranet
     Entao verifico o requerimento referente "Em Processamento"
 
 @procedimentos_requerimento_registro_imigrante_aberto
-@situacao_requerimento_registro_imigrante_em_processamento
+@situacao_requerimento_registro_imigrante_que_estava_em_aberto_em_processamento
 Cenario: Situacao do Requerimento de Registro do Imigrante que estava em aberto em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento
@@ -122,7 +122,7 @@ Cenario: Processar Atendimento de Registro do Imigrante em Analise na Intranet
     Entao verifico o requerimento referente "Em Processamento"
 
 @procedimentos_requerimento_registro_imigrante_analise
-@situacao_requerimento_registro_imigrante_em_processamento
+@situacao_requerimento_registro_imigrante_que_estava_em_analise_em_processamento
 Cenario: Situacao do Requerimento de Registro do Imigrante que estava em analise em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento

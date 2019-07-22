@@ -38,6 +38,7 @@ include FileHelper
     element :rnm_responsavel_input, "input[id='rne-do-responsavel']"
     element :rnm_titular_radio, "input[value='TITULAR']"
     element :rnm_titular_input, "input[id='txt-rne']"
+    element :sugestao_load, "td[class*='suggestionSelectValue']"
 
 
     # MAPEAMENTO DADOS REGISTRO
@@ -290,9 +291,8 @@ include FileHelper
             puts "Preenchendo Ocupacao Principal do Imigrante: #{@ocupacao_principal}"
             wait_until_ocupacao_principal_textarea_visible
             ocupacao_principal_textarea.set(@ocupacao_principal)
-
-            sleep(7)
-
+            
+            wait_until_sugestao_load_visible
             ocupacao_principal_textarea.send_keys(:enter)
 
             puts "Preenchendo CPF do Imigrante: #{@cpf_imigrante}"
@@ -409,8 +409,7 @@ include FileHelper
             wait_until_ocupacao_principal_alteracao_endereco_input_visible
             ocupacao_principal_alteracao_endereco_input.click.set(@ocupacao_principal_alteracao_end)
 
-            sleep(10)
-
+            wait_until_sugestao_load_visible
             ocupacao_principal_alteracao_endereco_input.send_keys(:enter)
 
             puts "Preechendo Cidade de Nascimento - Alteracao Endereco: #{@cidade_nascimento_alteracao_end}"
@@ -679,6 +678,7 @@ include FileHelper
             complemento_alteracao_endereco_residencial_input.send_keys(:tab)
 
             sleep(5)
+            
             puts "Preenchendo Complemento Residencial - Alteracao Endereco: #{@complemento_alteracao_end_residencial}"
             wait_until_complemento_alteracao_endereco_residencial_input_visible
             complemento_alteracao_endereco_residencial_input.click.set(@complemento_alteracao_end_residencial)

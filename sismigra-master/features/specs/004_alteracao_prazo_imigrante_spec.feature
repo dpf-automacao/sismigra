@@ -51,7 +51,7 @@ Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Aberto na I
     Entao verifico o requerimento referente "Em Processamento"
 
 @procedimentos_requerimento_alteracao_prazo_imigrante_aberto
-@situacao_requerimento_alteracao_prazo_imigrante_em_processamento
+@situacao_requerimento_alteracao_prazo_imigrante_que_estava_em_aberto_em_processamento
 Cenario: Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em aberto em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
@@ -113,7 +113,7 @@ Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Analise na 
     Entao verifico o requerimento referente "Em Processamento"
 
 @procedimentos_requerimento_alteracao_prazo_imigrante_analise
-@situacao_requerimento_alteracao_prazo_imigrante_em_processamento
+@situacao_requerimento_alteracao_prazo_imigrante_que_estava_em_analise_em_processamento
 Cenario: Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em analise em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
