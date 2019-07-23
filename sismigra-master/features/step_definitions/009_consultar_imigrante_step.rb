@@ -1,6 +1,8 @@
 Quando("solicitar consultar imigrantes") do
   @consultar_imigrante_page =  ConsultarImigrantePage.new
-  @consultar_imigrante_page.logar_sismigra
+  @logar_siseg = LoginPage.new
+  
+  @logar_siseg.logar_siseg("dante.dlpf", "ctidpf")
   @consultar_imigrante_page.consultar_imigrante_submenu
 end
 
@@ -17,7 +19,9 @@ end
 # Cenario: Detalhar Imigrante
 Quando("consultar o imigrante pelo RNM {string}") do |rnm|
   @consultar_imigrante_page =  ConsultarImigrantePage.new
-  @consultar_imigrante_page.logar_sismigra
+  @logar_siseg = LoginPage.new
+
+  @logar_siseg.logar_siseg("dante.dlpf", "ctidpf")
   @consultar_imigrante_page.consultar_imigrante_submenu
   @consultar_imigrante_page.pesquisar_por_RNM(rnm)
 end

@@ -21,9 +21,9 @@ Funcionalidade: Consultar Imigrante
     Entao deve apresentar registros correspodentes aos dados pesquisados
 
     Exemplos:
-    | filtro | valor                           |
-    | RNM    | G148129W                        |
-    | nome   | MARISOL FERNANDA GALLEGOS LOPEZ |
+    | filtro | valor                             |
+    | RNM    | F028776Q                          |
+    | nome   | MAGDALENNYS NAZARETH MOYA GOLDING |
 
   @detalhar_imigrante
   Cenario: Detalhar Imigrante

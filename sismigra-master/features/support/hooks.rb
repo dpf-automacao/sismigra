@@ -9,5 +9,7 @@ After do |scenario|
 
   puts "Cenario #{file_name} foi finalizado"
 
+  switch_to_window(windows.first)
+
 end
 

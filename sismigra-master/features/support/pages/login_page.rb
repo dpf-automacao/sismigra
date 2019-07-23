@@ -1,8 +1,5 @@
 class LoginPage < SitePrism::Page
 
-  # pega a url default
-  set_url ''
-
   # Mapeamento de elementos de preenchimento
 
   element :usuario_input, "input[id='emailcti']"
@@ -24,49 +21,65 @@ class LoginPage < SitePrism::Page
 
       visit("/")
 
+      sleep(1)
+
+      switch_to_window(windows.first)
+
       @usuario = usuario
       @senha = senha
 
-      if(has_usuario_input?)
+      if(has_usuario_input?(wait:5))
+
+          sleep(0.5)
+
+          puts "Logando no SISEG"
+          puts "Usuario: #{@usuario}"
+          puts "Senha: #{@senha}"
 
           usuario_input.set(@usuario)
-          has_senha_input?
+          has_senha_input?(wait:3)
           senha_input.set(@senha)
-          has_acessar_btn?
-          acessar_btn.click 
+          has_acessar_btn?(wait:3)
+          acessar_btn.click  
+          
+      elsif(has_usuario_input?(wait:5))
 
-          if(has_cardapio_sistemas?(wait:10))
-            
+        sleep(0.5)
 
-          else
+        puts "Logando no SISEG NOVAMENTE"
+        puts "Usuario: #{@usuario}"
+        puts "Senha: #{@senha}"
 
-            if(has_acessar_btn?)
-
-              acessar_btn.click 
-
-            end
-
-          end
-
-
+        usuario_input.set(@usuario)
+        has_senha_input?(wait:3)
+        senha_input.set(@senha)
+        has_acessar_btn?(wait:3)
+        acessar_btn.click  
+        
       end
 
-      if(has_cardapio_sistemas?)
+      if(has_cardapio_sistemas?(wait:5))
+
+        sleep(0.5)
 
         puts "Logando no SISMIGRA"
         click_link "SISMIGRA"
 
         switch_to_window(windows.last)
-        has_info_nome_span?
+        has_info_nome_span?(wait:5)
+
+      elsif(has_cardapio_sistemas?(wait:5))
+
+        sleep(0.5)
+
+        puts "Logando no SISMIGRA NOVAMENTE"
+        click_link "SISMIGRA"
+
+        switch_to_window(windows.last)
+        has_info_nome_span?(wait:5)
 
       end
 
-  end
-
-  def logar(usuario, senha)
-    usuario_input.set usuario
-    senha_input.set senha
-    acessar_btn.click
   end
 
 

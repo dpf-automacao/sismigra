@@ -111,3 +111,65 @@ Cenario: Situacao do Requerimento de Segunda Via CRMM do Imigrante que estava em
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
 
+# PROCEDIMENTOS DE REQUERIMENTO DE SEGUNDA VIA DE CRNM EM SITUACAO EM SUSPENSO
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_suspenso
+@gerar_requerimento_segunda_via_crnm_imigrante_em_suspenso
+Cenario: Gerar Requerimento de Segunda Via CRMM do Imigrante para situacao em Suspenso
+    Quando realizar o procedimento de "Segunda_via_CRNM" de Imigrante na Internet
+    E preencho Dados Pessoais do requerimento e clico em Proximo
+    E preencho Dados do Registro do requerimento e clico em Proximo
+    E preencho Dados do Endereco do requerimento e clico em Proximo
+    E preencho Dados da Declaracao e clico em Salvar
+    E processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
+    E preencher as informacoes para Pesquisar Solicitacao de "Segunda_via_CRNM" na Situacao "Em Aberto"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em "Suspender"
+    E processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
+    E preencher as informacoes para Pesquisar Solicitacao de "Segunda_via_CRNM" na Situacao "Suspenso"
+    Entao verifico o requerimento referente "Suspenso"
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_suspenso
+@verificar_protocolo_requerimento_segunda_via_crnm_imigrante_em_suspenso
+Cenario: Verificar Protocolo de Segunda Via CRMM do Imigrante em Suspenso na Internet
+    Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet
+    E preencho os Dados de "Segunda_via_CRNM" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar
+    Entao eu visualizo a Verificacao do Protocolo referente
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_suspenso
+@andamento_requerimento_segunda_via_crnm_imigrante_em_suspenso
+Cenario: Andamento do Requerimento de Segunda Via CRMM do Imigrante em Suspenso na Internet
+    Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet
+    E preencho os Dados de "Segunda_via_CRNM" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar
+    Entao eu visualizo o andamento do requerimento "Suspenso"
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_suspenso
+@situacao_requerimento_segunda_via_crnm_imigrante_em_suspenso
+Cenario: Situacao do Requerimento de Segunda Via CRMM do Imigrante em Suspenso na Intranet
+    Quando solicitar Situacao do Requerimento de "Segunda_via_CRNM" no menu "Situacao_do_Requerimento" na Intranet
+    E preencho o numero do Requerimento para verificar a Situacao do Requerimento
+    Entao eu visualizo a situacao do Requerimento "Suspenso"
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_suspenso
+@processar_atendimento_segunda_via_crnm_imigrante_suspenso
+Cenario: Processar Atendimento de Segunda Via CRMM do Imigrante em Suspenso na Intranet
+    Quando processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
+    E preencher as informacoes para Pesquisar Solicitacao de "Segunda_via_CRNM" na Situacao "Suspenso"
+    E preencho Dados Pessoais e clico em Proximo
+    E preencho Dados do Registro e clico em Proximo
+    E preencho Dados do Endereco e clico em Proximo
+    E preencho Dados de Documentos e clico em Proximo
+    E preencho Dados do Resultado da Pesquisa e clico em Proximo
+    E visualizo Dados da Previa da Carteira e clico em "Concluir"
+    Entao verifico o requerimento referente "Em Processamento"
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_suspenso
+@situacao_requerimento_segunda_via_crnm_imigrante_que_estava_em_suspenso_em_processamento
+Cenario: Situacao do Requerimento de Segunda Via CRMM do Imigrante que estava em suspenso em Processamento na Intranet
+    Quando solicitar Situacao do Requerimento de "Segunda_via_CRNM" no menu "Situacao_do_Requerimento" na Intranet
+    E preencho o numero do Requerimento para verificar a Situacao do Requerimento
+    Entao eu visualizo a situacao do Requerimento "Em Processamento"

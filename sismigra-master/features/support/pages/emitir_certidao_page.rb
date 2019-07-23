@@ -8,17 +8,22 @@ class EmitirCertidaoPage < PageHelper
     element :btn_imprimir_certidao, '#idFormularioCertidao\:imprimir'
 
     def pesquisar_por_RNM(rnm)
+
       rnm_input.set(rnm)
       btn_pesquisar.click
       aguardar_carregamento
       wait_until_resultado_pesquisa_visible
+
     end
 
     def emitir_certidao(certidao)
+
       btn_certidoes.click
       aguardar_carregamento
       choose(certidao)
       btn_imprimir_certidao.click
+      sleep(1)
+
     end
 
   end

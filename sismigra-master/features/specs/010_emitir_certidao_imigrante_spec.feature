@@ -1,5 +1,7 @@
  #language: pt
 
+@all_fc_emitir
+
 Funcionalidade: Emitir Certidão
 
   @emitir_certidao_registro

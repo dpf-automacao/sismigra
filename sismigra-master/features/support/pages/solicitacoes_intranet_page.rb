@@ -113,24 +113,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     # MAPEAMENTO DECISAO
 
-    element :anexar_formularios_btn, 'a[class="btnAnexar"]'
-    element :anexar_formularios_modal, 'div[id*="modalDocumentosRequerimentoHeader"]'
-    element :upload_anexo_formularios_btn, 'input[id*="upload:file"]'
-    element :selecionado_check, 'input[id*="dSelecionado"]'
-    element :deferir_btn, 'input[value="Deferir"]'
-    element :confirmar_deferimento_modal, :xpath, '//div[text()="Confirmar Deferimento de Processo"]'
-    element :deferir_sim_btn, 'input[value="Sim"]'
-
-    # def anexar_formularios_decisao
-
-    #     anexar_formularios_btn.click
-    #     wait_until_anexar_formularios_modal_visible
-
-    #     anexar(upload_anexo_formularios_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-
-    #     salvar_btn.click
-
-    # end
 
     def pesquisar_solicitacao(tipo_solicitacao, situacao_requerimento)
 
@@ -410,8 +392,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             sleep(1)
 
+            puts "Anexando arquivo"
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            has_arquivos_anexados?
+            has_arquivos_anexados?(wait:10)
 
             sleep(1)
 
@@ -475,8 +458,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             elsif(@tipo_finalizacao == "Suspender")
 
-                binding.pry
-
                 @justificativa_suspensao = "Suspendendo Solicitacao"
 
                 wait_until_suspender_btn_visible
@@ -486,12 +467,21 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 wait_until_gerar_termo_suspensao_btn_visible
                 gerar_termo_suspensao_btn.click
                 wait_until_carregamento_load_invisible
+
+                sleep(0.5)
+                
                 gerar_termo_suspensao_btn.click
                 wait_until_carregamento_load_invisible
 
                 switch_to_window(windows.last)
 
                 has_div_processo_suspenso?(wait:10)
+                sleep(0.5)
+                
+                page.execute_script "window.close();"
+                switch_to_window(windows.last)
+                page.execute_script "window.close();"
+                switch_to_window(windows.first)
 
             end
 

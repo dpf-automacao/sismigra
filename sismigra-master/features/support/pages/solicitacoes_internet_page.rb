@@ -589,7 +589,8 @@ include FileHelper
             if( @tipo_requerimento == "Alteracao_de_Prazo"              ||
                 @tipo_requerimento == "Recadastramento_Extemporaneo"    ||
                 @tipo_requerimento == "Substituicao_de_CRNM"            ||
-                @tipo_solicitacao == "Segunda_via_CRNM")
+                @tipo_requerimento == "Segunda_via_CRNM"                ||
+                @tipo_requerimento == "Autorizacao_Residencia")
 
                 @cep_exterior = "12345678"
                 @logradouro_exterior = "Logradouro A"
@@ -691,9 +692,15 @@ include FileHelper
             wait_until_telefone_celular_alteracao_endereco_residencial_input_visible
             telefone_celular_alteracao_endereco_residencial_input.click.set(@telefone_celular_alteracao_end_residencial)
 
-            puts "Anexando Arquivo Endereco Residencial"
+            sleep(0.5)
+
+            puts "Anexando arquivo de alteracao de endereco residencial"
             anexar(anexar_arquivo_alteracao_endereco_residencial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            wait_until_arquivo_anexado_alteracao_endereco_residencial_link_visible
+
+            sleep(0.5)
+            
+            has_arquivo_anexado_alteracao_endereco_residencial_link?(wait:10)
+
 
             # PREENCHER ENDERECO ALTERACAO COMERCIAL INTERNET
 
@@ -737,9 +744,14 @@ include FileHelper
             wait_until_telefone_alteracao_endereco_comercial_input_visible
             telefone_alteracao_endereco_comercial_input.click.set(@telefone_alteracao_end_comercial)
 
-            puts "Anexando Arquivo Endereco Comercial"
+            sleep(0.5)
+
+            puts "Anexando arquivo de alteracao de endereco comercial"
             anexar(anexar_arquivo_alteracao_endereco_comercial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            wait_until_arquivo_anexado_alteracao_endereco_comercial_link_visible
+
+            sleep(0.5)
+            
+            has_arquivo_anexado_alteracao_endereco_comercial_link?(wait:10)
 
             # PREENCHER ENDERECO ALTERACAO EXTERIOR INTERNET
 
@@ -780,9 +792,14 @@ include FileHelper
             wait_until_pais_alteracao_endereco_exterior_input_visible
             pais_alteracao_endereco_exterior_input.select(@pais_alteracao_end_exterior)
 
-            puts "Anexando Arquivo Endereco Exterior"
+            sleep(0.5)
+
+            puts "Anexando arquivo de alteracao de endereco exterior"
             anexar(anexar_arquivo_alteracao_endereco_exterior_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            wait_until_arquivo_anexado_alteracao_endereco_exterior_link_visible
+
+            sleep(0.5)
+            
+            has_arquivo_anexado_alteracao_endereco_exterior_link?(wait:10)
 
         end
 
