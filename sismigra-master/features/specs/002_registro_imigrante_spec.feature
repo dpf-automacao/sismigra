@@ -7,7 +7,7 @@ Funcionalidade: Registro Imigrante
 # PROCEDIMENTOS DE REQUERIMENTO DE REGISTRO EM SITUACAO ABERTO
 
 @procedimentos_requerimento_registro_imigrante_aberto
-@gerar_requerimento_registro_imigrante_aberto
+@gerar_requerimento_registro_imigrante_para_alteracao_de_tipo_aberto
 Cenario: Gerar Requerimento de Registro do Imigrante
     Quando realizar o procedimento de "Registro" de Imigrante na Internet
     E preencho Dados Pessoais do requerimento e clico em Proximo
@@ -29,6 +29,18 @@ Cenario: Andamento do Requerimento de Registro do Imigrante em Aberto na Interne
     Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet
     E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar
     Entao eu visualizo o andamento do requerimento "Em Aberto"
+
+# ALTERAR TIPO DE SOLICITACOES DE REGISTRO EM ABERTO
+
+@procedimentos_requerimento_registro_imigrante_aberto
+@alterar_tipos_de_solicitacoes_de_registro_em_aberto
+Cenario: Alterar Tipos de Solicitacoes de Registro do Imigrante em Aberto na Intranet
+    Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
+    E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Aberto"
+    E clico para Alterar o Tipo de Solicitacao de "Registro"
+
+# PROCESSAR ATENDIMENTO DE REGISTRO EM ABERTO
+
 
 @procedimentos_requerimento_registro_imigrante_aberto
 @situacao_requerimento_registro_imigrante_aberto
@@ -101,6 +113,17 @@ Cenario: Andamento do Requerimento de Registro do Imigrante em Analise na Intern
     E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar
     Entao eu visualizo o andamento do requerimento "Em análise"
 
+# ALTERAR TIPO DE SOLICITACOES DE REGISTRO EM ANALISE
+
+@procedimentos_requerimento_registro_imigrante_analise
+@alterar_tipos_de_solicitacoes_de_registro_em_analise
+Cenario: Alterar Tipos de Solicitacoes de Registro do Imigrante em Analise na Intranet
+    Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
+    E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em análise"
+    E clico para Alterar o Tipo de Solicitacao de "Registro"
+
+# PROCESSAR ATENDIMENTO DE REGISTRO EM ANALISE
+
 @procedimentos_requerimento_registro_imigrante_analise
 @situacao_requerimento_registro_imigrante_em_analise
 Cenario: Situacao do Requerimento de Registro do Imigrante em Analise na Intranet
@@ -163,6 +186,17 @@ Cenario: Andamento do Requerimento de Registro do Imigrante em Suspenso na Inter
     Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet
     E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar
     Entao eu visualizo o andamento do requerimento "Suspenso"
+
+# ALTERAR TIPO DE SOLICITACOES DE REGISTRO EM SUSPENSO
+
+@procedimentos_requerimento_registro_imigrante_suspenso
+@alterar_tipos_de_solicitacoes_de_registro_em_suspenso
+Cenario: Alterar Tipos de Solicitacoes de Registro do Imigrante em Suspenso na Intranet
+    Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
+    E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"
+    E clico para Alterar o Tipo de Solicitacao de "Registro"
+
+# PROCESSAR ATENDIMENTO DE REGISTRO EM SUSPENSO
 
 @procedimentos_requerimento_registro_imigrante_suspenso
 @situacao_requerimento_registro_imigrante_em_suspenso

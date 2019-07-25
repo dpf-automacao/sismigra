@@ -9,6 +9,8 @@ After do |scenario|
 
   puts "Cenario #{file_name} foi finalizado"
 
+  switch_to_window(windows.last)
+  page.execute_script "window.close();"
   switch_to_window(windows.first)
 
 end

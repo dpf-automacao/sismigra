@@ -12,12 +12,20 @@ Cenario: Gerar Requerimento de Alteracao Endereco do Imigrante
     E preencho Dados da Declaracao e clico em Salvar
     Entao visualizo a Impressao da Solicitacao referente
 
+# VERIFICAR AMPARO 211 ORG.JBOSS SEGUNDA VIA CRNM
+# OBSERVACOES: ESTA DANDO ERRO INESPERADO EM ANEXAR ARQUIVOS DE REQUERIMENTOS NOVOS POREM NAO IMPEDITIVO
+# AO SE SELECIONAR DOCUMENTOS NA ABA DOCUMENTOS NO PROCESSAR ATENDIMENTO NAO ESTA SENDO POSSIVEL REALIZAR SUA EXCLUSAO
+
+# HTTP ERRO
+
 @verificar_protocolo_alteracao_endereco_imigrante_aberto
 Cenario: Verificar Protocolo de Alteracao Endereco do Imigrante em Aberto na Internet
     Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet
     E preencho os Dados de "Alteracao_Endereco" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar 
     Entao eu visualizo a Verificacao do Protocolo referente
-    
+
+# NULL POINTER
+
 # @andamento_requerimento_alteracao_endereco_imigrante_aberto
 # Cenario: Andamento do Requerimento de Alteracao Endereco do Imigrante em Aberto na Internet
 #     Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet

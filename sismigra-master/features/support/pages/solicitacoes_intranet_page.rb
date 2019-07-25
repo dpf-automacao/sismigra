@@ -11,11 +11,15 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :tipo_solicitacao_select, "select[id*='formulario-pesquisar:tipo']"
     element :situacao_requerimento_select, "select[id*='formulario-pesquisar:situacao']"
     element :pesquisar_requerimento_btn, "input[id*='botaoPesquisar']"
+    element :alterar_tipo_solicitacao_btn, "input[title*='Alterar o Tipo de Solicitação']"
+    element :novo_tipo_solicitacao_select, "select[id*='alteracaoDeTipoSolicitacao']"
+    element :confirmar_alterar_tipo_solicitacao_btn, "input[id='alteracaoDeTipoSolicitacao:ok']"
 
     # MAPEAMENTO DE ELEMENTOS DA ABA DADOS PESSOAIS
 
     element :aba_dados_pessoais, "td[id*='DadosPessoais_lbl'][class*='dr-tbpnl-tb-act']"
     element :primeira_aba, 'td[id*="DadosPessoais_lbl"]'
+    element :tipo_registro_select, "select[name*='formulario-processar-cie:j_id124:j_id140']"
     element :amparo_legal_input, "input[id*='inputText_comboAmparo']"
     element :amparo_legal_disabled_input, "input[id*='inputText_comboAmparo'][disabled='disabled']"
     element :sugestao_amparo_load, "td[class*='suggestionSelectValue']"
@@ -172,7 +176,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         wait_until_periodo_final_input_visible
         periodo_final_input.click.set(@periodo_final)
 
-        puts "Pesquisando numero do requerimento"
+        puts "Pesquisando Requerimento de numero:#{@dados_requerimento_pesquisa}"
 
         wait_until_pesquisar_requerimento_btn_visible
         pesquisar_requerimento_btn.click
@@ -204,6 +208,199 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
+    def alterar_tipo_de_solicitacao(tipo_solicitacao)
+
+        @tipo_solicitacao = tipo_solicitacao
+
+        wait_until_alterar_tipo_solicitacao_btn_visible
+        alterar_tipo_solicitacao_btn.click
+        wait_until_novo_tipo_solicitacao_select_visible
+        novo_tipo_solicitacao_select.select(@tipo_solicitacao)
+        wait_until_confirmar_alterar_tipo_solicitacao_btn_visible
+        confirmar_alterar_tipo_solicitacao_btn.click
+
+        puts "Alterando tipo de solicitacao para #{@tipo_solicitacao}"
+
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        puts "Pesquisando tipo de solicitacao para #{@tipo_solicitacao}"
+
+        sleep(1)
+
+        wait_until_alterar_tipo_solicitacao_btn_visible
+        alterar_tipo_solicitacao_btn.click
+        wait_until_novo_tipo_solicitacao_select_visible
+        novo_tipo_solicitacao_select.select("Registro")
+        wait_until_confirmar_alterar_tipo_solicitacao_btn_visible
+        confirmar_alterar_tipo_solicitacao_btn.click
+
+        puts "Alterando tipo de solicitacao para Registro"
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Registro")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        puts "Pesquisando tipo de solicitacao para Registro"
+
+        sleep(1)
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Registro")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        wait_until_alterar_tipo_solicitacao_btn_visible
+        alterar_tipo_solicitacao_btn.click
+        wait_until_novo_tipo_solicitacao_select_visible
+        novo_tipo_solicitacao_select.select("Autorização de Residência")
+        wait_until_confirmar_alterar_tipo_solicitacao_btn_visible
+        confirmar_alterar_tipo_solicitacao_btn.click
+
+        puts "Alterando tipo de solicitacao para Autorizacao de Residencia"
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Autorização de Residência")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        puts "Pesquisando tipo de solicitacao para Autorizacao de Residencia"
+        
+
+        sleep(1)
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Autorização de Residência")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        wait_until_alterar_tipo_solicitacao_btn_visible
+        alterar_tipo_solicitacao_btn.click
+        wait_until_novo_tipo_solicitacao_select_visible
+        novo_tipo_solicitacao_select.select("Alteração de Prazo")
+        wait_until_confirmar_alterar_tipo_solicitacao_btn_visible
+        confirmar_alterar_tipo_solicitacao_btn.click
+
+        puts "Alterando tipo de solicitacao para Alteracao de Prazo"
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Alteração de Prazo")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        puts "Pesquisando tipo de solicitacao para Alteracao de Prazo"
+
+        sleep(1)
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Alteração de Prazo")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        wait_until_alterar_tipo_solicitacao_btn_visible
+        alterar_tipo_solicitacao_btn.click
+        wait_until_novo_tipo_solicitacao_select_visible
+        novo_tipo_solicitacao_select.select("Recadastramento Extemporâneo")
+        wait_until_confirmar_alterar_tipo_solicitacao_btn_visible
+        confirmar_alterar_tipo_solicitacao_btn.click
+
+        puts "Alterando tipo de solicitacao para Recadastramento Extemporaneo"
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Recadastramento Extemporâneo")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        puts "Pesquisando tipo de solicitacao para Recadastramento Extemporaneo"
+
+        sleep(1)
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Recadastramento Extemporâneo")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        wait_until_alterar_tipo_solicitacao_btn_visible
+        alterar_tipo_solicitacao_btn.click
+        wait_until_novo_tipo_solicitacao_select_visible
+        novo_tipo_solicitacao_select.select("Substituição de CRNM")
+        wait_until_confirmar_alterar_tipo_solicitacao_btn_visible
+        confirmar_alterar_tipo_solicitacao_btn.click
+
+        puts "Alterando tipo de solicitacao para Substituicao de CRNM"
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Substituição de CRNM")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        puts "Pesquisando tipo de solicitacao para Substituicao de CRNM"
+
+        sleep(1)
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Substituição de CRNM")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        wait_until_alterar_tipo_solicitacao_btn_visible
+        alterar_tipo_solicitacao_btn.click
+        wait_until_novo_tipo_solicitacao_select_visible
+        novo_tipo_solicitacao_select.select("Segunda via de CRNM")
+        wait_until_confirmar_alterar_tipo_solicitacao_btn_visible
+        confirmar_alterar_tipo_solicitacao_btn.click
+
+        puts "Alterando tipo de solicitacao para Segunda via de CRNM"
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Segunda via de CRNM")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        sleep(1)
+
+        puts "Pesquisando tipo de solicitacao para Substituicao de CRNM"
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select("Segunda via de CRNM")
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        wait_until_alterar_tipo_solicitacao_btn_visible
+        alterar_tipo_solicitacao_btn.click
+        wait_until_novo_tipo_solicitacao_select_visible
+        novo_tipo_solicitacao_select.select(@tipo_solicitacao)
+        wait_until_confirmar_alterar_tipo_solicitacao_btn_visible
+        confirmar_alterar_tipo_solicitacao_btn.click
+
+        puts "Alterando tipo de solicitacao para #{@tipo_solicitacao}"
+
+        wait_until_tipo_solicitacao_select_visible
+        tipo_solicitacao_select.select(@tipo_solicitacao)
+        wait_until_pesquisar_requerimento_btn_visible
+        pesquisar_requerimento_btn.click
+        wait_until_carregamento_load_invisible
+
+        puts "Pesquisando tipo de solicitacao para #{@tipo_solicitacao}"
+
+        sleep(1)
+
+    end
+
 
     def preencher_dados_pessoais
 
@@ -229,6 +426,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             if(@tipo_solicitacao != "Alteracao_Endereco")
 
+                @tipo_registro_req = "Registro de Visto Consular"
+                
+                # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
+
+                tipo_registro_select.select(@tipo_registro_req)
                 preencher_amparo_legal
 
             end

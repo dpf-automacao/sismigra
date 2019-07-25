@@ -41,20 +41,6 @@ class LoginPage < SitePrism::Page
           senha_input.set(@senha)
           has_acessar_btn?(wait:3)
           acessar_btn.click  
-          
-      elsif(has_usuario_input?(wait:5))
-
-        sleep(0.5)
-
-        puts "Logando no SISEG NOVAMENTE"
-        puts "Usuario: #{@usuario}"
-        puts "Senha: #{@senha}"
-
-        usuario_input.set(@usuario)
-        has_senha_input?(wait:3)
-        senha_input.set(@senha)
-        has_acessar_btn?(wait:3)
-        acessar_btn.click  
         
       end
 
@@ -63,16 +49,6 @@ class LoginPage < SitePrism::Page
         sleep(0.5)
 
         puts "Logando no SISMIGRA"
-        click_link "SISMIGRA"
-
-        switch_to_window(windows.last)
-        has_info_nome_span?(wait:5)
-
-      elsif(has_cardapio_sistemas?(wait:5))
-
-        sleep(0.5)
-
-        puts "Logando no SISMIGRA NOVAMENTE"
         click_link "SISMIGRA"
 
         switch_to_window(windows.last)

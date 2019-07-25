@@ -40,7 +40,6 @@ include FileHelper
     element :rnm_titular_input, "input[id='txt-rne']"
     element :sugestao_load, "td[class*='suggestionSelectValue']"
 
-
     # MAPEAMENTO DADOS REGISTRO
 
     element :possui_visto_sim_radio, "input[name='possuiVisto'][value='true']"
@@ -692,12 +691,12 @@ include FileHelper
             wait_until_telefone_celular_alteracao_endereco_residencial_input_visible
             telefone_celular_alteracao_endereco_residencial_input.click.set(@telefone_celular_alteracao_end_residencial)
 
-            sleep(0.5)
+            sleep(1)
 
             puts "Anexando arquivo de alteracao de endereco residencial"
             anexar(anexar_arquivo_alteracao_endereco_residencial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
 
-            sleep(0.5)
+            sleep(1)
             
             has_arquivo_anexado_alteracao_endereco_residencial_link?(wait:10)
 
@@ -744,12 +743,12 @@ include FileHelper
             wait_until_telefone_alteracao_endereco_comercial_input_visible
             telefone_alteracao_endereco_comercial_input.click.set(@telefone_alteracao_end_comercial)
 
-            sleep(0.5)
+            sleep(1)
 
             puts "Anexando arquivo de alteracao de endereco comercial"
             anexar(anexar_arquivo_alteracao_endereco_comercial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
 
-            sleep(0.5)
+            sleep(1)
             
             has_arquivo_anexado_alteracao_endereco_comercial_link?(wait:10)
 
@@ -792,12 +791,12 @@ include FileHelper
             wait_until_pais_alteracao_endereco_exterior_input_visible
             pais_alteracao_endereco_exterior_input.select(@pais_alteracao_end_exterior)
 
-            sleep(0.5)
+            sleep(1)
 
             puts "Anexando arquivo de alteracao de endereco exterior"
             anexar(anexar_arquivo_alteracao_endereco_exterior_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
 
-            sleep(0.5)
+            sleep(1)
             
             has_arquivo_anexado_alteracao_endereco_exterior_link?(wait:10)
 

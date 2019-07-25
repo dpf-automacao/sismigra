@@ -16,6 +16,8 @@ class MenuInternetPage < SitePrism::Page
 
         load
 
+        sleep(0.5)
+
         if(tipo_solicitacao == "Registro")
 
             menu_registro

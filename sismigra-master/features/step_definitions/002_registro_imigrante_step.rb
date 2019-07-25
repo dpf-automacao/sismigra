@@ -109,6 +109,14 @@ Quando("preencher as informacoes para Pesquisar Solicitacao de {string} na Situa
 
 end
 
+Quando("clico para Alterar o Tipo de Solicitacao de {string}") do |tipo_solicitacao_alteracao|
+
+    @tipo_solicitacao_alteracao = tipo_solicitacao_alteracao
+
+    @requerimento_imigrante_intranet.alterar_tipo_de_solicitacao(@tipo_solicitacao_alteracao)
+
+end
+
 Quando("clico no icone Home para abortar a solicitacao e pesquiso o requerimento novamente") do
 
     @requerimento_imigrante_intranet.abortar_solicitacao_para_analise
