@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1564155804809" stop="1564156267217">
+  <name>Registro Imigrante</name>
+  <title>Registro Imigrante</title>
+  <test-cases>
+    <test-case start="1564155804809" stop="1564155963495" status="passed">
+      <name>Gerar Requerimento de Registro do Imigrante para situacao em Suspenso</name>
+      <title>Gerar Requerimento de Registro do Imigrante para situacao em Suspenso</title>
+      <steps>
+        <step start="1564155806184" stop="1564155806184" status="passed">
+          <name>Quando realizar o procedimento de "Registro" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Registro" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1564155806184" stop="1564155815229" status="passed">
+          <name>E preencho Dados Pessoais do requerimento e clico em Proximo</name>
+          <title>E preencho Dados Pessoais do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564155815229" stop="1564155821220" status="passed">
+          <name>E preencho Dados do Registro do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Registro do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564155821220" stop="1564155837587" status="passed">
+          <name>E preencho Dados do Endereco do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Endereco do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564155837587" stop="1564155858809" status="passed">
+          <name>E preencho Dados da Declaracao e clico em Salvar</name>
+          <title>E preencho Dados da Declaracao e clico em Salvar</title>
+          <attachments/>
+        </step>
+        <step start="1564155858809" stop="1564155867510" status="passed">
+          <name>E processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1564155867510" stop="1564155881520" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Aberto"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Aberto"</title>
+          <attachments/>
+        </step>
+        <step start="1564155881520" stop="1564155894248" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564155894248" stop="1564155901384" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564155901384" stop="1564155906818" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564155906818" stop="1564155931663" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564155931663" stop="1564155938324" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564155938324" stop="1564155941988" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Suspender"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Suspender"</title>
+          <attachments/>
+        </step>
+        <step start="1564155941988" stop="1564155949526" status="passed">
+          <name>E processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1564155949526" stop="1564155963230" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"</title>
+          <attachments/>
+        </step>
+        <step start="1564155963230" stop="1564155963231" status="passed">
+          <name>Entao verifico o requerimento referente "Suspenso"</name>
+          <title>Entao verifico o requerimento referente "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="0bd2626692c66e4903d271ec2e18e9ee1a172ab386819ddfb43f24980afdbddb-attachment.png" title="Clique aqui para ver o print da tela" size="63783" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="37943900"/>
+        <label name="host" value="CGTI004797"/>
+        <label name="feature" value="Registro Imigrante"/>
+        <label name="story" value="Gerar Requerimento de Registro do Imigrante para situacao em Suspenso"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1564155963496" stop="1564155966919" status="passed">
+      <name>Verificar Protocolo de Registro do Imigrante em Suspenso na Internet</name>
+      <title>Verificar Protocolo de Registro do Imigrante em Suspenso na Internet</title>
+      <steps>
+        <step start="1564155964356" stop="1564155964356" status="passed">
+          <name>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1564155964356" stop="1564155966698" status="passed">
+          <name>E preencho os Dados de "Registro" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</name>
+          <title>E preencho os Dados de "Registro" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</title>
+          <attachments/>
+        </step>
+        <step start="1564155966698" stop="1564155966699" status="passed">
+          <name>Entao eu visualizo a Verificacao do Protocolo referente</name>
+          <title>Entao eu visualizo a Verificacao do Protocolo referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="488f74ae2bf1975f59e85df30278424cfee85751e87efccb6a48b650fea90a9b-attachment.png" title="Clique aqui para ver o print da tela" size="41043" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="37943900"/>
+        <label name="host" value="CGTI004797"/>
+        <label name="feature" value="Registro Imigrante"/>
+        <label name="story" value="Verificar Protocolo de Registro do Imigrante em Suspenso na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1564155966920" stop="1564155970596" status="passed">
+      <name>Andamento do Requerimento de Registro do Imigrante em Suspenso na Internet</name>
+      <title>Andamento do Requerimento de Registro do Imigrante em Suspenso na Internet</title>
+      <steps>
+        <step start="1564155967764" stop="1564155967764" status="passed">
+          <name>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1564155967764" stop="1564155970360" status="passed">
+          <name>E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</name>
+          <title>E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</title>
+          <attachments/>
+        </step>
+        <step start="1564155970360" stop="1564155970361" status="passed">
+          <name>Entao eu visualizo o andamento do requerimento "Suspenso"</name>
+          <title>Entao eu visualizo o andamento do requerimento "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="d60a509bbee2c75e56f159701f383f11c9a97b30649589eb6c88dd014849d990-attachment.png" title="Clique aqui para ver o print da tela" size="96959" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="37943900"/>
+        <label name="host" value="CGTI004797"/>
+        <label name="feature" value="Registro Imigrante"/>
+        <label name="story" value="Andamento do Requerimento de Registro do Imigrante em Suspenso na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1564155970597" stop="1564156176511" status="passed">
+      <name>Alterar Tipos de Solicitacoes de Registro do Imigrante em Suspenso na Intranet</name>
+      <title>Alterar Tipos de Solicitacoes de Registro do Imigrante em Suspenso na Intranet</title>
+      <steps>
+        <step start="1564155978002" stop="1564155978002" status="passed">
+          <name>Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet</name>
+          <title>Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1564155978002" stop="1564155990501" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"</title>
+          <attachments/>
+        </step>
+        <step start="1564155990501" stop="1564156176240" status="passed">
+          <name>E clico para Alterar o Tipo de Solicitacao de "Registro"</name>
+          <title>E clico para Alterar o Tipo de Solicitacao de "Registro"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="0bd2626692c66e4903d271ec2e18e9ee1a172ab386819ddfb43f24980afdbddb-attachment.png" title="Clique aqui para ver o print da tela" size="63783" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="37943900"/>
+        <label name="host" value="CGTI004797"/>
+        <label name="feature" value="Registro Imigrante"/>
+        <label name="story" value="Alterar Tipos de Solicitacoes de Registro do Imigrante em Suspenso na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1564156176514" stop="1564156186976" status="passed">
+      <name>Situacao do Requerimento de Registro do Imigrante em Suspenso na Intranet</name>
+      <title>Situacao do Requerimento de Registro do Imigrante em Suspenso na Intranet</title>
+      <steps>
+        <step start="1564156184093" stop="1564156184093" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1564156184093" stop="1564156186713" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1564156186713" stop="1564156186714" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Suspenso"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="233c10b1645032788c23728fcd49ac6a05141bfb6a33f3273623b0929a78c59f-attachment.png" title="Clique aqui para ver o print da tela" size="108548" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="37943900"/>
+        <label name="host" value="CGTI004797"/>
+        <label name="feature" value="Registro Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Registro do Imigrante em Suspenso na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1564156186978" stop="1564156256754" status="passed">
+      <name>Processar Atendimento de Registro do Imigrante em Suspenso na Intranet</name>
+      <title>Processar Atendimento de Registro do Imigrante em Suspenso na Intranet</title>
+      <steps>
+        <step start="1564156194345" stop="1564156194345" status="passed">
+          <name>Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet</name>
+          <title>Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1564156194345" stop="1564156207020" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"</title>
+          <attachments/>
+        </step>
+        <step start="1564156207020" stop="1564156218692" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564156218692" stop="1564156225093" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564156225093" stop="1564156230519" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564156230519" stop="1564156246958" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564156246958" stop="1564156253488" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1564156253488" stop="1564156256483" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Concluir"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Concluir"</title>
+          <attachments/>
+        </step>
+        <step start="1564156256483" stop="1564156256485" status="passed">
+          <name>Entao verifico o requerimento referente "Em Processamento"</name>
+          <title>Entao verifico o requerimento referente "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="a8fdaf7cd4659abdd6b6fca47bfeb18e02241a9968855df4db311ff7e52d9f27-attachment.png" title="Clique aqui para ver o print da tela" size="62732" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="37943900"/>
+        <label name="host" value="CGTI004797"/>
+        <label name="feature" value="Registro Imigrante"/>
+        <label name="story" value="Processar Atendimento de Registro do Imigrante em Suspenso na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1564156256756" stop="1564156267020" status="passed">
+      <name>Situacao do Requerimento de Registro do Imigrante que estava em suspenso em Processamento na Intranet</name>
+      <title>Situacao do Requerimento de Registro do Imigrante que estava em suspenso em Processamento na Intranet</title>
+      <steps>
+        <step start="1564156264083" stop="1564156264084" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Registro" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1564156264084" stop="1564156266743" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1564156266743" stop="1564156266745" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Processamento"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="be1f30b158b612095b59df901d87ff528148b4c6cc0c295ead393ae699ede7e7-attachment.png" title="Clique aqui para ver o print da tela" size="108539" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="37943900"/>
+        <label name="host" value="CGTI004797"/>
+        <label name="feature" value="Registro Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Registro do Imigrante que estava em suspenso em Processamento na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="severity" value="normal"/>
+    <label name="thread" value="37943900"/>
+    <label name="host" value="CGTI004797"/>
+  </labels>
+</ns2:test-suite>
