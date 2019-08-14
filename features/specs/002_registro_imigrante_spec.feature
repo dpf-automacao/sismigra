@@ -41,7 +41,6 @@ Cenario: Alterar Tipos de Solicitacoes de Registro do Imigrante em Aberto na Int
 
 # PROCESSAR ATENDIMENTO DE REGISTRO EM ABERTO
 
-
 @procedimentos_requerimento_registro_imigrante_aberto
 @situacao_requerimento_registro_imigrante_aberto
 Cenario: Situacao do Requerimento de Registro do Imigrante em Aberto na Intranet
@@ -69,14 +68,11 @@ Cenario: Situacao do Requerimento de Registro do Imigrante que estava em aberto 
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
 
-# @procedimentos_requerimento_registro_imigrante_aberto
-# @deferir_registro_imigrante
-# Cenário: Deferir Requerimento de Registro do Imigrante
-#     Quando solicitar Deferir o requerimento de "Registro" no menu "Decisao"
-#     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Processamento"
-#     E adiciono formulários ao requerimento
-#     E solicito deferir o requerimento
-#     E confirmo o deferimento do processo
+@procedimentos_requerimento_registro_imigrante_aberto
+@deferir_requerimento_registro_imigrante_em_processamento
+Cenario: Deferir Requerimento de Registro do Imigrante
+    Quando solicitar a Decisao de "Deferimento" de "Registro" no menu "Decisao" na Intranet
+    E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Processamento"
 
 # PROCEDIMENTOS DE REQUERIMENTO DE REGISTRO EM SITUACAO EM ANALISE
 

@@ -430,7 +430,12 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 
                 # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
 
-                tipo_registro_select.select(@tipo_registro_req)
+                if(has_tipo_registro_select?(wait:5))
+
+                    tipo_registro_select.select(@tipo_registro_req)
+
+                end
+
                 preencher_amparo_legal
 
             end
@@ -504,6 +509,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(wait_until_aba_dados_registro_visible)
 
+
             alterar_prazos
             preecher_uf_e_municipio
             recalcular_prazos
@@ -543,7 +549,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             while(@indice < @tamanho_documentos) do
 
-                sleep(1)
+                sleep(0.5)
                 tipo_de_ducumentos_checkbox[@indice].check
                 puts "Selecionando tipo de documentacao"
                 @indice += 1
@@ -557,7 +563,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
             @outros_documentos_texto = "Outra documentacao"
             puts "Preechendo #{@outros_documentos_texto}"
 
-            sleep(1)
+            sleep(0.5)
 
             wait_until_outros_documentos_input_visible
             outros_documentos_input.click.set(@outros_documentos_texto)
@@ -565,7 +571,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
             adicionar_documento_btn.click
             wait_until_remover_doc_recebidos_img_visible
             
-            sleep(1)
+            sleep(0.5)
 
         end
 
@@ -722,11 +728,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
             has_confirmar_alteracoes_btn?
             confirmar_alteracoes_btn.click
             wait_until_carregamento_load_invisible
+            avancar_proximo_processar_atendimento
 
             sleep(1)
-
-            proximo_btn.click
-            wait_until_carregamento_load_invisible
 
             if(has_justificativa_alteracoes_textarea?(wait:3))
 

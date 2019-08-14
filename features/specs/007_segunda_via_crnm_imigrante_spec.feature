@@ -4,6 +4,7 @@
 
 Funcionalidade: Segunda via CRNM Imigrante
 
+@procedimentos_requerimento_segunda_via_crnm_imigrante_aberto
 @gerar_requerimento_segunda_via_crnm_imigrante_aberto
 Cenario: Gerar Requerimento de Segunda via CRNM do Imigrante
     Quando realizar o procedimento de "Segunda_via_CRNM" de Imigrante na Internet
@@ -13,24 +14,28 @@ Cenario: Gerar Requerimento de Segunda via CRNM do Imigrante
     E preencho Dados da Declaracao e clico em Salvar
     Entao visualizo a Impressao da Solicitacao referente
 
+@procedimentos_requerimento_segunda_via_crnm_imigrante_aberto
 @verificar_protocolo_segunda_via_crnm_imigrante_aberto
 Cenario: Verificar Protocolo de Segunda via CRNM do Imigrante em Aberto na Internet
     Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet
     E preencho os Dados de "Segunda_via_CRNM" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar 
     Entao eu visualizo a Verificacao do Protocolo referente
-    
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_aberto  
 @andamento_requerimento_segunda_via_crnm_imigrante_aberto
 Cenario: Andamento do Requerimento de Segunda via CRNM do Imigrante em Aberto na Internet
     Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet
     E preencho os Dados de "Segunda_via_CRNM" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar 
     Entao eu visualizo o andamento do requerimento "Em Aberto"
 
+@procedimentos_requerimento_segunda_via_crnm_imigrante_aberto
 @situacao_requerimento_segunda_via_crnm_imigrante_aberto
 Cenario: Situacao do Requerimento de Segunda via CRNM do Imigrante em Aberto na Intranet
     Quando solicitar Situacao do Requerimento de "Segunda_via_CRNM" no menu "Situacao_do_Requerimento" na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Aberto"
 
+@procedimentos_requerimento_segunda_via_crnm_imigrante_aberto
 @processar_atendimento_segunda_via_crnm_imigrante_aberto
 Cenario: Processar Atendimento de Segunda via CRNM do Imigrante em Aberto na Intranet
     Quando processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
@@ -43,6 +48,7 @@ Cenario: Processar Atendimento de Segunda via CRNM do Imigrante em Aberto na Int
     E visualizo Dados da Previa da Carteira e clico em "Concluir"
     Entao verifico o requerimento referente "Em Processamento"
 
+@procedimentos_requerimento_segunda_via_crnm_imigrante_aberto
 @situacao_requerimento_segunda_via_crnm_imigrante_que_estava_em_aberto_em_processamento
 Cenario: Situacao do Requerimento de Segunda Via CRMM do Imigrante que estava em aberto em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Segunda_via_CRNM" no menu "Situacao_do_Requerimento" na Intranet

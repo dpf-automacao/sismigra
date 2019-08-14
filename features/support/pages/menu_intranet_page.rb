@@ -37,7 +37,7 @@ class MenuIntranetPage < SitePrism::Page
 
     elsif(tipo_menu == "Decisao")
 
-      decisao_submenu.click
+      submenu_decisao
 
     elsif(tipo_menu == "Alteracao_Endereco")
 

@@ -168,41 +168,28 @@ Entao("verifico o requerimento referente {string}") do |situacao_requerimento|
 
 end
 
-# DEFERIR ATENDIMENTO
+# DEFERIR ATENDIMENTOS
 
-Quando("solicitar Deferir o requerimento de {string} no menu {string}") do |tipo_requerimento, tipo_menu|
-
+Quando("solicitar a Decisao de {string} de {string} no menu {string} na Intranet") do |tipo_decisao, tipo_solicitacao, tipo_submenu|
+    
+    @logar_siseg = LoginPage.new
     @menu_intranet = MenuIntranetPage.new
     @requerimento_imigrante_intranet = SolicitacoesIntranetPage.new
-    @logar_siseg = LoginPage.new
+
     @logar_siseg.logar_siseg("dante.dlpf", "ctidpf")
-    @tipo_requerimento = tipo_requerimento
-    @menu_intranet.selecionar_menu_solicitacoes_intranet(tipo_menu)
+    @menu_intranet.selecionar_menu_solicitacoes_intranet(tipo_submenu)
 
+    
 end
 
-Quando("adiciono formulários ao requerimento") do
-
-    @requerimento_imigrante_intranet.anexar_formularios_decisao
-
-end
-
-Quando("solicito deferir o requerimento") do
-
-end
-
-Quando("confirmo o deferimento do processo") do
-
-end
-
+                                                                               
 Quando("preencho Dados do Endereco e clico Deferir e Encerro o deferimento") do
 
     @requerimento_imigrante_intranet.deferir_alteracao_endereco
 
-end
+end                                                                            
+                                                                                
+Entao("eu realizo o deferimento de alteracao de endereco com sucesso") do      
 
-Entao("eu realizo o deferimento de alteracao de endereco com sucesso") do
-
-
-
-end
+end                                                                            
+                                                                                

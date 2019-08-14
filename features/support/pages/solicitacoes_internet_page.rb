@@ -443,7 +443,7 @@ include FileHelper
         @meio_transporte = "Aéreo"
         @data_entrada = "11072019"
 
-        sleep(1)
+        sleep(2)
 
         if(@tipo_requerimento == "Registro" || @tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
 
