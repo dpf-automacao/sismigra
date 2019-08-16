@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1565967007625" stop="1565967931914">
+  <name>Substituicao CRNM Imigrante</name>
+  <title>Substituicao CRNM Imigrante</title>
+  <test-cases>
+    <test-case start="1565967007627" stop="1565967091378" status="passed">
+      <name>Gerar Requerimento de Substituicao CRNM do Imigrante</name>
+      <title>Gerar Requerimento de Substituicao CRNM do Imigrante</title>
+      <steps>
+        <step start="1565967009714" stop="1565967009715" status="passed">
+          <name>Quando realizar o procedimento de "Substituicao_de_CRNM" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Substituicao_de_CRNM" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967009715" stop="1565967024906" status="passed">
+          <name>E preencho Dados Pessoais do requerimento e clico em Proximo</name>
+          <title>E preencho Dados Pessoais do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967024906" stop="1565967031191" status="passed">
+          <name>E preencho Dados do Registro do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Registro do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967031191" stop="1565967050860" status="passed">
+          <name>E preencho Dados do Endereco do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Endereco do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967050860" stop="1565967091071" status="passed">
+          <name>E preencho Dados da Declaracao e clico em Salvar</name>
+          <title>E preencho Dados da Declaracao e clico em Salvar</title>
+          <attachments/>
+        </step>
+        <step start="1565967091071" stop="1565967091072" status="passed">
+          <name>Entao visualizo a Impressao da Solicitacao referente</name>
+          <title>Entao visualizo a Impressao da Solicitacao referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="daeb014c618439df7320b6d52712ff04b7bc4efdc7ac2b4af2bed5fdb3d98891-attachment.png" title="Clique aqui para ver o print da tela" size="42432" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Gerar Requerimento de Substituicao CRNM do Imigrante"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967091382" stop="1565967096153" status="passed">
+      <name>Verificar Protocolo de Substituicao CRNM do Imigrante em Aberto na Internet</name>
+      <title>Verificar Protocolo de Substituicao CRNM do Imigrante em Aberto na Internet</title>
+      <steps>
+        <step start="1565967092602" stop="1565967092602" status="passed">
+          <name>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967092602" stop="1565967095798" status="passed">
+          <name>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</name>
+          <title>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</title>
+          <attachments/>
+        </step>
+        <step start="1565967095799" stop="1565967095801" status="passed">
+          <name>Entao eu visualizo a Verificacao do Protocolo referente</name>
+          <title>Entao eu visualizo a Verificacao do Protocolo referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="cdf65b5657d2afd950df1c119ab841c3a6df2c9ed61e3588daa10cefdc5dec20-attachment.png" title="Clique aqui para ver o print da tela" size="31594" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Verificar Protocolo de Substituicao CRNM do Imigrante em Aberto na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967096156" stop="1565967099492" status="passed">
+      <name>Andamento do Requerimento de Substituicao CRNM do Imigrante em Aberto na Internet</name>
+      <title>Andamento do Requerimento de Substituicao CRNM do Imigrante em Aberto na Internet</title>
+      <steps>
+        <step start="1565967097258" stop="1565967097259" status="passed">
+          <name>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967097259" stop="1565967099201" status="passed">
+          <name>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</name>
+          <title>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</title>
+          <attachments/>
+        </step>
+        <step start="1565967099202" stop="1565967099204" status="passed">
+          <name>Entao eu visualizo o andamento do requerimento "Em Aberto"</name>
+          <title>Entao eu visualizo o andamento do requerimento "Em Aberto"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="800ad2e757d5a224613cb3ad9b305477afe2331c255864a699a396bb856000ad-attachment.png" title="Clique aqui para ver o print da tela" size="61243" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Andamento do Requerimento de Substituicao CRNM do Imigrante em Aberto na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967099494" stop="1565967114490" status="passed">
+      <name>Situacao do Requerimento de Substituicao CRNM do Imigrante em Aberto na Intranet</name>
+      <title>Situacao do Requerimento de Substituicao CRNM do Imigrante em Aberto na Intranet</title>
+      <steps>
+        <step start="1565967112119" stop="1565967112119" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967112119" stop="1565967114198" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1565967114198" stop="1565967114199" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Aberto"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Aberto"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="81fe96a6c61b218ac66ec62c528221ab93e5ce5771488f8b434afb4389969c4d-attachment.png" title="Clique aqui para ver o print da tela" size="69566" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Substituicao CRNM do Imigrante em Aberto na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967114493" stop="1565967226701" status="passed">
+      <name>Processar Atendimento de Substituicao CRNM do Imigrante em Aberto na Intranet</name>
+      <title>Processar Atendimento de Substituicao CRNM do Imigrante em Aberto na Intranet</title>
+      <steps>
+        <step start="1565967126220" stop="1565967126221" status="passed">
+          <name>Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</name>
+          <title>Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967126221" stop="1565967149836" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"</title>
+          <attachments/>
+        </step>
+        <step start="1565967149836" stop="1565967178580" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967178580" stop="1565967188192" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967188192" stop="1565967193848" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967193848" stop="1565967213737" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967213737" stop="1565967220877" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967220877" stop="1565967226300" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Concluir"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Concluir"</title>
+          <attachments/>
+        </step>
+        <step start="1565967226300" stop="1565967226301" status="passed">
+          <name>Entao verifico o requerimento referente "Em Processamento"</name>
+          <title>Entao verifico o requerimento referente "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="01c53793dd980c9998e222edbe535281e74d33b2cb6844a02eb80192c650a7b7-attachment.png" title="Clique aqui para ver o print da tela" size="56551" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Processar Atendimento de Substituicao CRNM do Imigrante em Aberto na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967226705" stop="1565967242215" status="passed">
+      <name>Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em aberto em Processamento na Intranet</name>
+      <title>Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em aberto em Processamento na Intranet</title>
+      <steps>
+        <step start="1565967238861" stop="1565967238861" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967238861" stop="1565967241845" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1565967241845" stop="1565967241848" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Processamento"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="a963bf9cc74da58cecf079e2f846056df567f6e87622f099349018512dc057a1-attachment.png" title="Clique aqui para ver o print da tela" size="69330" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em aberto em Processamento na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967242219" stop="1565967443213" status="passed">
+      <name>Gerar Requerimento de Substituicao CRNM do Imigrante para situacao em Analise</name>
+      <title>Gerar Requerimento de Substituicao CRNM do Imigrante para situacao em Analise</title>
+      <steps>
+        <step start="1565967243629" stop="1565967243629" status="passed">
+          <name>Quando realizar o procedimento de "Substituicao_de_CRNM" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Substituicao_de_CRNM" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967243629" stop="1565967252470" status="passed">
+          <name>E preencho Dados Pessoais do requerimento e clico em Proximo</name>
+          <title>E preencho Dados Pessoais do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967252470" stop="1565967258828" status="passed">
+          <name>E preencho Dados do Registro do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Registro do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967258828" stop="1565967278220" status="passed">
+          <name>E preencho Dados do Endereco do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Endereco do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967278220" stop="1565967302995" status="passed">
+          <name>E preencho Dados da Declaracao e clico em Salvar</name>
+          <title>E preencho Dados da Declaracao e clico em Salvar</title>
+          <attachments/>
+        </step>
+        <step start="1565967302995" stop="1565967315108" status="passed">
+          <name>E processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967315108" stop="1565967339452" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"</title>
+          <attachments/>
+        </step>
+        <step start="1565967339452" stop="1565967367231" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967367231" stop="1565967376981" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967376981" stop="1565967382610" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967382610" stop="1565967402578" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967402578" stop="1565967404140" status="passed">
+          <name>E clico no icone Home para abortar a solicitacao e pesquiso o requerimento novamente</name>
+          <title>E clico no icone Home para abortar a solicitacao e pesquiso o requerimento novamente</title>
+          <attachments/>
+        </step>
+        <step start="1565967404140" stop="1565967416597" status="passed">
+          <name>E processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967416597" stop="1565967442814" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em an&#xE1;lise"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+        <step start="1565967442815" stop="1565967442818" status="passed">
+          <name>Entao verifico o requerimento referente "Em an&#xE1;lise"</name>
+          <title>Entao verifico o requerimento referente "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="eff7b74a7ebf9f31ba10659453342fe2b24e1a390d99269dfc3eb6fd1beb90db-attachment.png" title="Clique aqui para ver o print da tela" size="56601" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Gerar Requerimento de Substituicao CRNM do Imigrante para situacao em Analise"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967443216" stop="1565967447829" status="passed">
+      <name>Verificar Protocolo de Substituicao CRNM do Imigrante em Analise na Internet</name>
+      <title>Verificar Protocolo de Substituicao CRNM do Imigrante em Analise na Internet</title>
+      <steps>
+        <step start="1565967444294" stop="1565967444294" status="passed">
+          <name>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967444294" stop="1565967447506" status="passed">
+          <name>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</name>
+          <title>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</title>
+          <attachments/>
+        </step>
+        <step start="1565967447506" stop="1565967447508" status="passed">
+          <name>Entao eu visualizo a Verificacao do Protocolo referente</name>
+          <title>Entao eu visualizo a Verificacao do Protocolo referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="b882b6fd90c674fa59806b7a54bdfb952dacdadb0f8d124857c8fd8d0ba1d1d7-attachment.png" title="Clique aqui para ver o print da tela" size="32327" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Verificar Protocolo de Substituicao CRNM do Imigrante em Analise na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967447831" stop="1565967451377" status="passed">
+      <name>Andamento do Requerimento de Substituicao CRNM do Imigrante em Analise na Internet</name>
+      <title>Andamento do Requerimento de Substituicao CRNM do Imigrante em Analise na Internet</title>
+      <steps>
+        <step start="1565967449037" stop="1565967449037" status="passed">
+          <name>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967449037" stop="1565967451079" status="passed">
+          <name>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</name>
+          <title>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</title>
+          <attachments/>
+        </step>
+        <step start="1565967451079" stop="1565967451082" status="passed">
+          <name>Entao eu visualizo o andamento do requerimento "Em an&#xE1;lise"</name>
+          <title>Entao eu visualizo o andamento do requerimento "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="3d4c5319959f5a458bf5e9ef8ff360f1a55055ea26a1814c8557813ab0b4258a-attachment.png" title="Clique aqui para ver o print da tela" size="60971" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Andamento do Requerimento de Substituicao CRNM do Imigrante em Analise na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967451380" stop="1565967465902" status="passed">
+      <name>Situacao do Requerimento de Substituicao CRNM do Imigrante em Analise na Intranet</name>
+      <title>Situacao do Requerimento de Substituicao CRNM do Imigrante em Analise na Intranet</title>
+      <steps>
+        <step start="1565967463529" stop="1565967463530" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967463530" stop="1565967465533" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1565967465533" stop="1565967465535" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em an&#xE1;lise"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="17768d924ac638695cff6a0eb99192bb665de4200ced8e691a5760eac98554c6-attachment.png" title="Clique aqui para ver o print da tela" size="69261" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Substituicao CRNM do Imigrante em Analise na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967465905" stop="1565967568251" status="passed">
+      <name>Processar Atendimento de Substituicao CRNM do Imigrante em Analise na Intranet</name>
+      <title>Processar Atendimento de Substituicao CRNM do Imigrante em Analise na Intranet</title>
+      <steps>
+        <step start="1565967477596" stop="1565967477596" status="passed">
+          <name>Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</name>
+          <title>Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967477596" stop="1565967499626" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em an&#xE1;lise"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+        <step start="1565967499626" stop="1565967523628" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967523628" stop="1565967533748" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967533748" stop="1565967539359" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967539359" stop="1565967555012" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967555012" stop="1565967562311" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967562311" stop="1565967567825" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Concluir"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Concluir"</title>
+          <attachments/>
+        </step>
+        <step start="1565967567825" stop="1565967567826" status="passed">
+          <name>Entao verifico o requerimento referente "Em Processamento"</name>
+          <title>Entao verifico o requerimento referente "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="4e516a8ac0a8d529ac08323b0d8121daa76dbe199700227f9af0ae800ad604b2-attachment.png" title="Clique aqui para ver o print da tela" size="56387" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Processar Atendimento de Substituicao CRNM do Imigrante em Analise na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967568253" stop="1565967584252" status="passed">
+      <name>Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em analise em Processamento na Intranet</name>
+      <title>Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em analise em Processamento na Intranet</title>
+      <steps>
+        <step start="1565967580424" stop="1565967580424" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967580424" stop="1565967583809" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1565967583809" stop="1565967583811" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Processamento"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="b91a5a91f460ea8f3dbc790b993cf1dfbc302bf7d50679ed51ecce8496d2e146-attachment.png" title="Clique aqui para ver o print da tela" size="69251" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em analise em Processamento na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967584255" stop="1565967785981" status="passed">
+      <name>Gerar Requerimento de Substituicao CRMM do Imigrante para situacao em Suspenso</name>
+      <title>Gerar Requerimento de Substituicao CRMM do Imigrante para situacao em Suspenso</title>
+      <steps>
+        <step start="1565967585684" stop="1565967585684" status="passed">
+          <name>Quando realizar o procedimento de "Substituicao_de_CRNM" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Substituicao_de_CRNM" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967585684" stop="1565967594621" status="passed">
+          <name>E preencho Dados Pessoais do requerimento e clico em Proximo</name>
+          <title>E preencho Dados Pessoais do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967594621" stop="1565967600888" status="passed">
+          <name>E preencho Dados do Registro do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Registro do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967600888" stop="1565967620594" status="passed">
+          <name>E preencho Dados do Endereco do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Endereco do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967620594" stop="1565967628086" status="passed">
+          <name>E preencho Dados da Declaracao e clico em Salvar</name>
+          <title>E preencho Dados da Declaracao e clico em Salvar</title>
+          <attachments/>
+        </step>
+        <step start="1565967628086" stop="1565967640312" status="passed">
+          <name>E processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967640312" stop="1565967668862" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"</title>
+          <attachments/>
+        </step>
+        <step start="1565967668862" stop="1565967698736" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967698736" stop="1565967708269" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967708270" stop="1565967713848" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967713848" stop="1565967733721" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967733721" stop="1565967741035" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967741036" stop="1565967747345" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Suspender"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Suspender"</title>
+          <attachments/>
+        </step>
+        <step start="1565967747345" stop="1565967759753" status="passed">
+          <name>E processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967759753" stop="1565967785610" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Suspenso"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Suspenso"</title>
+          <attachments/>
+        </step>
+        <step start="1565967785610" stop="1565967785612" status="passed">
+          <name>Entao verifico o requerimento referente "Suspenso"</name>
+          <title>Entao verifico o requerimento referente "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="f74d41f3e4fa2f257051ae2c0661778e6589cdc9700664053ce81578c8b32787-attachment.png" title="Clique aqui para ver o print da tela" size="57492" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Gerar Requerimento de Substituicao CRMM do Imigrante para situacao em Suspenso"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967785984" stop="1565967790508" status="passed">
+      <name>Verificar Protocolo de Substituicao CRMM do Imigrante em Suspenso na Internet</name>
+      <title>Verificar Protocolo de Substituicao CRMM do Imigrante em Suspenso na Internet</title>
+      <steps>
+        <step start="1565967787016" stop="1565967787016" status="passed">
+          <name>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967787016" stop="1565967790202" status="passed">
+          <name>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</name>
+          <title>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</title>
+          <attachments/>
+        </step>
+        <step start="1565967790202" stop="1565967790203" status="passed">
+          <name>Entao eu visualizo a Verificacao do Protocolo referente</name>
+          <title>Entao eu visualizo a Verificacao do Protocolo referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="9a19cf34ccec20b93fc5d82865e10cd98c8d6d1ebf8f14daccbaa85de92c1434-attachment.png" title="Clique aqui para ver o print da tela" size="32340" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Verificar Protocolo de Substituicao CRMM do Imigrante em Suspenso na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967790511" stop="1565967795220" status="passed">
+      <name>Andamento do Requerimento de Substituicao CRMM do Imigrante em Suspenso na Internet</name>
+      <title>Andamento do Requerimento de Substituicao CRMM do Imigrante em Suspenso na Internet</title>
+      <steps>
+        <step start="1565967791649" stop="1565967791650" status="passed">
+          <name>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1565967791650" stop="1565967794968" status="passed">
+          <name>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</name>
+          <title>E preencho os Dados de "Substituicao_de_CRNM" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</title>
+          <attachments/>
+        </step>
+        <step start="1565967794968" stop="1565967794970" status="passed">
+          <name>Entao eu visualizo o andamento do requerimento "Suspenso"</name>
+          <title>Entao eu visualizo o andamento do requerimento "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="01d40e94c87cf8a7b71cf01113e081e6661164358a7d7a289be4cf0ed69439d7-attachment.png" title="Clique aqui para ver o print da tela" size="61047" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Andamento do Requerimento de Substituicao CRMM do Imigrante em Suspenso na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967795222" stop="1565967811021" status="passed">
+      <name>Situacao do Requerimento de Substituicao CRMM do Imigrante em Suspenso na Intranet</name>
+      <title>Situacao do Requerimento de Substituicao CRMM do Imigrante em Suspenso na Intranet</title>
+      <steps>
+        <step start="1565967807306" stop="1565967807306" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967807307" stop="1565967810666" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1565967810666" stop="1565967810668" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Suspenso"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="da5ef15020fc73c16007d4b0e842b5247d03452c6d605e6ca09d87f1f9a89993-attachment.png" title="Clique aqui para ver o print da tela" size="69325" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Substituicao CRMM do Imigrante em Suspenso na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967811023" stop="1565967915514" status="passed">
+      <name>Processar Atendimento de Substituicao CRMM do Imigrante em Suspenso na Intranet</name>
+      <title>Processar Atendimento de Substituicao CRMM do Imigrante em Suspenso na Intranet</title>
+      <steps>
+        <step start="1565967822977" stop="1565967822977" status="passed">
+          <name>Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</name>
+          <title>Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967822977" stop="1565967846305" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Suspenso"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Suspenso"</title>
+          <attachments/>
+        </step>
+        <step start="1565967846305" stop="1565967871360" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967871360" stop="1565967881300" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967881300" stop="1565967886878" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967886878" stop="1565967902359" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967902360" stop="1565967909875" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1565967909875" stop="1565967915126" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Concluir"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Concluir"</title>
+          <attachments/>
+        </step>
+        <step start="1565967915126" stop="1565967915128" status="passed">
+          <name>Entao verifico o requerimento referente "Em Processamento"</name>
+          <title>Entao verifico o requerimento referente "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="30f75e1d39d9ef145838100af721403e361618cbfd993104ede93873fea07173-attachment.png" title="Clique aqui para ver o print da tela" size="56465" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Processar Atendimento de Substituicao CRMM do Imigrante em Suspenso na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1565967915517" stop="1565967931574" status="passed">
+      <name>Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em suspenso em Processamento na Intranet</name>
+      <title>Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em suspenso em Processamento na Intranet</title>
+      <steps>
+        <step start="1565967927642" stop="1565967927643" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Substituicao_de_CRNM" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1565967927645" stop="1565967931158" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1565967931158" stop="1565967931161" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Processamento"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="1569d5a1b3252a9ef7dd68dd9bc788a88e5195abbf7af2c3c38c8980ca87b296-attachment.png" title="Clique aqui para ver o print da tela" size="69289" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="21423260"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Substituicao CRNM Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Substituicao CRMM do Imigrante que estava em suspenso em Processamento na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="severity" value="normal"/>
+    <label name="thread" value="21423260"/>
+    <label name="host" value="DESKTOP-PVI2LJO"/>
+  </labels>
+</ns2:test-suite>
