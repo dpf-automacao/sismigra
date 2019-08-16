@@ -26,11 +26,11 @@ Cenario: Verificar Protocolo de Alteracao Endereco do Imigrante em Aberto na Int
 
 # NULL POINTER
 
-# @andamento_requerimento_alteracao_endereco_imigrante_aberto
-# Cenario: Andamento do Requerimento de Alteracao Endereco do Imigrante em Aberto na Internet
-#     Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet
-#     E preencho os Dados de "Alteracao_Endereco" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar 
-#     Entao eu visualizo o andamento do requerimento "Em Aberto"
+@andamento_requerimento_alteracao_endereco_imigrante_aberto
+Cenario: Andamento do Requerimento de Alteracao Endereco do Imigrante em Aberto na Internet
+    Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet
+    E preencho os Dados de "Alteracao_Endereco" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar 
+    Entao eu visualizo o andamento do requerimento "Em Aberto"
 
 @situacao_requerimento_alteracao_endereco_imigrante_aberto
 Cenario: Situacao do Requerimento de Alteracao Endereco do Imigrante em Aberto na Intranet

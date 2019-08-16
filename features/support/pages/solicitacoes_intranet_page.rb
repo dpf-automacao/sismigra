@@ -692,7 +692,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 gerar_termo_suspensao_btn.click
                 wait_until_carregamento_load_invisible
 
-                sleep(0.5)
+                sleep(1)
                 
                 gerar_termo_suspensao_btn.click
                 wait_until_carregamento_load_invisible
@@ -700,7 +700,8 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 switch_to_window(windows.last)
 
                 has_div_processo_suspenso?(wait:10)
-                sleep(0.5)
+                
+                sleep(1)
                 
                 page.execute_script "window.close();"
                 switch_to_window(windows.last)
