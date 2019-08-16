@@ -515,6 +515,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
             recalcular_prazos
             avancar_proximo_processar_atendimento
 
+        else
+
+            puts "Aba dados de registro não localizada"
+
         end
 
     end
@@ -533,6 +537,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
             sleep(1)
 
             avancar_proximo_processar_atendimento
+
+        else
+
+            puts "Aba dados de endereco não localizada"
 
         end
 
@@ -620,6 +628,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             end
 
+        else
+
+            puts "Aba dados de documentacao não localizada"
+
         end
 
     end
@@ -644,6 +656,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
             end
 
             avancar_proximo_processar_atendimento
+
+        else
+
+            puts "Aba dados de resultado de pesquisa não localizada"
 
         end
 
@@ -693,6 +709,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             end
 
+        else
+
+            puts "Aba previa da carteira não localizada"
+
         end
 
     end
@@ -719,7 +739,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def preencher_justificativa_alteracao
 
-        if(has_justificativa_alteracoes_textarea?(wait:3))
+        if(has_justificativa_alteracoes_textarea?(wait:5))
 
             justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
 
@@ -728,11 +748,14 @@ class SolicitacoesIntranetPage < SitePrism::Page
             has_confirmar_alteracoes_btn?
             confirmar_alteracoes_btn.click
             wait_until_carregamento_load_invisible
-            avancar_proximo_processar_atendimento
+            puts "Clicando em proximo apos preencher primeira justificativa"
+            proximo_btn.click
+            wait_until_carregamento_load_invisible
+
 
             sleep(1)
 
-            if(has_justificativa_alteracoes_textarea?(wait:3))
+            if(has_justificativa_alteracoes_textarea?(wait:5))
 
                 justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
 
@@ -740,6 +763,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
                 has_confirmar_alteracoes_btn?
                 confirmar_alteracoes_btn.click
+                puts "Confirmando segunda justificativa"
                 wait_until_carregamento_load_invisible
 
                 sleep(1)
@@ -754,7 +778,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(has_mensagem_erro?(wait:3))
 
-            puts "Clicando Proximo"
+            puts "Clicando Proximo apos exibicao de mensagem de erro"
             wait_until_proximo_btn_visible
             proximo_btn.click
             wait_until_carregamento_load_invisible
@@ -779,7 +803,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
                 if(wait_until_proximo_btn_visible)
 
-                    puts "Clicando em proximo novamente"
+                    puts "Clicando em proximo novamente (Depois de Associar Imigrante)"
 
                     sleep(1)
 
@@ -794,9 +818,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
                     validar_msg_erro
 
                 end
-
-                validar_dados_divergentes
-                preencher_justificativa_alteracao
 
             end
 
@@ -826,7 +847,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         sleep(1)
 
-        puts "Clicando Proximo"
+        puts "---------> Clicando em Proximo para avancar proxima aba"
         wait_until_proximo_btn_visible
         proximo_btn.click
         wait_until_carregamento_load_invisible
