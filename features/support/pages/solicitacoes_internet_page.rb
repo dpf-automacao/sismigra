@@ -205,7 +205,7 @@ include FileHelper
             @sobrenome_imigrante = Faker::Name.last_name
             @nome_anterior_completo = Faker::Name.name_with_middle
             @nome_social = Faker::Name.name_with_middle
-            @email_imigrante = Faker::Internet.email(@nome_imigrante)
+            @email_imigrante = Faker::Internet.email
             @cpf_imigrante = Faker::CPF.numeric
             @nome_filiacao_1 = Faker::Name.name_with_middle
             @nome_filiacao_2 = Faker::Name.name_with_middle
@@ -333,7 +333,7 @@ include FileHelper
             @sobrenome_imigrante_alteracao_end = Faker::Name.last_name
             @nome_anterior_completo_alteracao_end = Faker::Name.name_with_middle
             @nome_social_alteracao_end = Faker::Name.name_with_middle
-            @email_imigrante_alteracao_end = Faker::Internet.email(@nome_imigrante)
+            @email_imigrante_alteracao_end = Faker::Internet.email
             @cpf_imigrante_alteracao_end = Faker::CPF.numeric
             @nome_filiacao_1_alteracao_end = Faker::Name.name_with_middle
             @nome_filiacao_2_alteracao_end = Faker::Name.name_with_middle
