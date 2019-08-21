@@ -19,6 +19,7 @@ class ProcessarConferencia < PageHelper
     element :aba_dados_registro, 'td[id*="DadosRegistro_lbl"]'
     element :deferir_btn, "input[value='Deferir']"
     element :confirmar_deferimento_btn, "table[id='confirmacaoAssinaturaContentTable'] input[value='Sim']"
+    element :proximo_btn, 'input[value="Próximo"]'
 
     #Elementos processar conferencia - Dados conferidos com sucesso
     element :registrar_conferencia_btn, "a[title*='Registrar Conferência']"
@@ -52,11 +53,15 @@ class ProcessarConferencia < PageHelper
     def deferir_processo_devolvido
         tratar_processo_devolvido_btn.click
         aba_dados_registro.click
-        aba_previa_carteira.click
-        deferir_btn.click
+        if (has_proximo_btn?(wait:10))
+            aba_previa_carteira.click
+        end
+        if (has_deferir_btn?(wait:10))
+            aguardar_carregamento
+            deferir_btn.click
+        end
         aguardar_carregamento
         confirmar_deferimento_btn.click
-        binding.pry
         aguardar_carregamento
     end
 

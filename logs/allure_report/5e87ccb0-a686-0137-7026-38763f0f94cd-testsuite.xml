@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1566421913188" stop="1566421975989">
+  <name>Manuten&#xE7;&#xE3;o do registro</name>
+  <title>Manuten&#xE7;&#xE3;o do registro</title>
+  <test-cases>
+    <test-case start="1566421913190" stop="1566421957182" status="passed">
+      <name>Inativar registro do imigrante conferido</name>
+      <title>Inativar registro do imigrante conferido</title>
+      <steps>
+        <step start="1566421923304" stop="1566421923304" status="passed">
+          <name>Quando solicitar a manuten&#xE7;&#xE3;o do registro do imigrante</name>
+          <title>Quando solicitar a manuten&#xE7;&#xE3;o do registro do imigrante</title>
+          <attachments/>
+        </step>
+        <step start="1566421923305" stop="1566421937721" status="passed">
+          <name>E clicar no icone para detalhar imigrante</name>
+          <title>E clicar no icone para detalhar imigrante</title>
+          <attachments/>
+        </step>
+        <step start="1566421937721" stop="1566421956530" status="passed">
+          <name>E inativar registro do imigrante</name>
+          <title>E inativar registro do imigrante</title>
+          <attachments/>
+        </step>
+        <step start="1566421956530" stop="1566421956918" status="passed">
+          <name>Entao deve-se visualizar mensagem de sucesso</name>
+          <title>Entao deve-se visualizar mensagem de sucesso</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="d1506eb60822db6dab12874d98b0e3a05f4dd1f0531c368785ae33a08d133262-attachment.png" title="Clique aqui para ver o print da tela" size="39007" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="18643520"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Manuten&#xE7;&#xE3;o do registro"/>
+        <label name="story" value="Inativar registro do imigrante conferido"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566421957185" stop="1566421975937" status="passed">
+      <name>Imprimir requerimento ap&#xF3;s inativar</name>
+      <title>Imprimir requerimento ap&#xF3;s inativar</title>
+      <steps>
+        <step start="1566421967344" stop="1566421967345" status="passed">
+          <name>Quando solicitar a manuten&#xE7;&#xE3;o do registro do imigrante</name>
+          <title>Quando solicitar a manuten&#xE7;&#xE3;o do registro do imigrante</title>
+          <attachments/>
+        </step>
+        <step start="1566421967345" stop="1566421971518" status="passed">
+          <name>E clicar no icone imprimir protocolo atual</name>
+          <title>E clicar no icone imprimir protocolo atual</title>
+          <attachments/>
+        </step>
+        <step start="1566421971518" stop="1566421975544" status="passed">
+          <name>Entao deve-se visualizar a impressao</name>
+          <title>Entao deve-se visualizar a impressao</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="875b28a1a27b4636e82bd6c42889c144eea4b247bc3aca68e9c9d275396be853-attachment.png" title="Clique aqui para ver o print da tela" size="4990" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="18643520"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Manuten&#xE7;&#xE3;o do registro"/>
+        <label name="story" value="Imprimir requerimento ap&#xF3;s inativar"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="severity" value="normal"/>
+    <label name="thread" value="18643520"/>
+    <label name="host" value="DESKTOP-BGMR47K"/>
+  </labels>
+</ns2:test-suite>

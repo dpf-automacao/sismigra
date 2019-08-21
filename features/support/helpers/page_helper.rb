@@ -49,7 +49,7 @@ class PageHelper < SitePrism::Page
 
     switch_to_window(windows.last)
     puts "Visualizando impressão"
-    sleep(3)
+    sleep(4)
 
   end
 

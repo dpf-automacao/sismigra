@@ -44,7 +44,7 @@ Capybara.configure do |config|
 
 end
 
-Capybara.default_max_wait_time = 60
+Capybara.default_max_wait_time = 80
 Capybara.page.driver.browser.manage.window.maximize
 
 Cucumber::Core::Test::Step.module_eval do

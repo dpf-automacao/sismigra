@@ -1,6 +1,7 @@
 #language: pt
 
 #Esta funcionalidade depende da feature 011_decisao_requerimento
+@demanda
 @all_processar_conferncia
 Funcionalidade: Processar Conferencia
 

@@ -24,6 +24,7 @@ class DecisaoRequerimento < PageHelper
     element :deferir_btn, "input[value='Deferir']"
     element :confirmar_deferimento_btn, "table[id='confirmacaoAssinaturaContentTable'] input[value='Sim']"
     element :imprimir_btn, "input[value='Imprimir']"
+    element :proximo_btn, 'input[value="Próximo"]'
 
     def pesquisar_requerimento_registro
         puts "Pesquisando requerimento"
@@ -43,12 +44,18 @@ class DecisaoRequerimento < PageHelper
 
     def deferir_solicitacao
         puts "Deferindo requerimento"
+        aguardar_carregamento
         editar_solicitacao_btn.click
+        aguardar_carregamento
         aba_dados_registro.click
-        sleep(1)
-        aba_previa_carteira.click
-        sleep(1)
-        deferir_btn.click
+
+        if (has_proximo_btn?(wait:10))
+            aba_previa_carteira.click
+        end
+        if (has_deferir_btn?(wait:10))
+            aguardar_carregamento
+            deferir_btn.click
+        end
     end
 
     def confirmar_deferimento
@@ -68,6 +75,7 @@ class DecisaoRequerimento < PageHelper
         anexar_formulario_btn.click
         @path = File.join(Dir.pwd, "features/arquivos/arquivo_teste.jpg").gsub(File::SEPARATOR, File::ALT_SEPARATOR || File::SEPARATOR)
         upload_formulario_btn(visible: false).set(@path)
+        sleep(2)
         salvar_anexo_btn.click
     end
 end

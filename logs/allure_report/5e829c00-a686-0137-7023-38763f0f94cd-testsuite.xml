@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1566421770418" stop="1566421861803">
+  <name>Consultar imigrante conferido com sucesso</name>
+  <title>Consultar imigrante conferido com sucesso</title>
+  <test-cases>
+    <test-case start="1566421770420" stop="1566421800474" status="passed">
+      <name>Detalhar processo do imigrante conferido com sucesso</name>
+      <title>Detalhar processo do imigrante conferido com sucesso</title>
+      <steps>
+        <step start="1566421780660" stop="1566421780660" status="passed">
+          <name>Quando solicitar a consulta do imigrante conferido</name>
+          <title>Quando solicitar a consulta do imigrante conferido</title>
+          <attachments/>
+        </step>
+        <step start="1566421780660" stop="1566421795705" status="passed">
+          <name>E detalhar processo do imigrante</name>
+          <title>E detalhar processo do imigrante</title>
+          <attachments/>
+        </step>
+        <step start="1566421795705" stop="1566421800054" status="passed">
+          <name>Entao deve-se visualizar detalhamento do processo do imigrante conferido</name>
+          <title>Entao deve-se visualizar detalhamento do processo do imigrante conferido</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="87d2dc36a74ff4c6513d410cbe6e073639f8768255e1692af7c511aa30b8c38d-attachment.png" title="Clique aqui para ver o print da tela" size="108335" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="18643520"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Consultar imigrante conferido com sucesso"/>
+        <label name="story" value="Detalhar processo do imigrante conferido com sucesso"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566421800478" stop="1566421842068" status="passed">
+      <name>Renovar protocolo do imigrante conferido com sucesso</name>
+      <title>Renovar protocolo do imigrante conferido com sucesso</title>
+      <steps>
+        <step start="1566421819756" stop="1566421819756" status="passed">
+          <name>Quando solicitar a consulta do imigrante conferido</name>
+          <title>Quando solicitar a consulta do imigrante conferido</title>
+          <attachments/>
+        </step>
+        <step start="1566421819756" stop="1566421837310" status="passed">
+          <name>E clicar no icone para renovar protocolo</name>
+          <title>E clicar no icone para renovar protocolo</title>
+          <attachments/>
+        </step>
+        <step start="1566421837310" stop="1566421841603" status="passed">
+          <name>Entao deve-se visualizar protocolo renovado</name>
+          <title>Entao deve-se visualizar protocolo renovado</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="87c4226fa32d0b30b0b1808b46a43bdb2c442fbbd71a47396007e3a28bddc06f-attachment.png" title="Clique aqui para ver o print da tela" size="143487" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="18643520"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Consultar imigrante conferido com sucesso"/>
+        <label name="story" value="Renovar protocolo do imigrante conferido com sucesso"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566421842074" stop="1566421861802" status="passed">
+      <name>Reimprimir protocolo do imigrante conferido com sucesso</name>
+      <title>Reimprimir protocolo do imigrante conferido com sucesso</title>
+      <steps>
+        <step start="1566421852246" stop="1566421852246" status="passed">
+          <name>Quando solicitar a consulta do imigrante conferido</name>
+          <title>Quando solicitar a consulta do imigrante conferido</title>
+          <attachments/>
+        </step>
+        <step start="1566421852246" stop="1566421857371" status="passed">
+          <name>E clicar no icone para reimprimir protocolo atual</name>
+          <title>E clicar no icone para reimprimir protocolo atual</title>
+          <attachments/>
+        </step>
+        <step start="1566421857371" stop="1566421861398" status="passed">
+          <name>Entao deve-se visualizar protocolo atual</name>
+          <title>Entao deve-se visualizar protocolo atual</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="69eb3cb608d3f3ca7155f8be35af7fee84032baeed905e0689d1b190e978e248-attachment.png" title="Clique aqui para ver o print da tela" size="143509" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="18643520"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Consultar imigrante conferido com sucesso"/>
+        <label name="story" value="Reimprimir protocolo do imigrante conferido com sucesso"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="severity" value="normal"/>
+    <label name="thread" value="18643520"/>
+    <label name="host" value="DESKTOP-BGMR47K"/>
+  </labels>
+</ns2:test-suite>

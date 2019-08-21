@@ -1,4 +1,7 @@
 # Executando metodo para tirar foto depois de cada cenario
+Before do |scenario|
+  puts "\n Cenário em execução: " + scenario.name
+end
 
 After do |scenario|
 
@@ -6,8 +9,6 @@ After do |scenario|
   shot = "logs/shots/#{file_name}.png"
   page.save_screenshot(shot)
   embed(shot, 'image/png', 'Clique aqui para ver o print da tela')
-
-  puts "Cenario #{file_name} foi finalizado"
 
   switch_to_window(windows.last)
   page.execute_script "window.close();"
