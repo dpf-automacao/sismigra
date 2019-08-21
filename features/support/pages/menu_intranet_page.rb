@@ -12,6 +12,8 @@ class MenuIntranetPage < SitePrism::Page
   element :situacao_requerimento_submenu, :xpath, '//span[text()="Situação de Requerimento"]'
   element :tratar_pendencias_submenu, :xpath, '//span[text()="Tratar Pendências"]'
   element :alteracao_endereco_submenu, :xpath, '//span[text()="Alteração de Endereço"]'
+  element :processar_conferencia_submenu, :xpath, '//span[text()="Processar Conferência"]'
+  element :processos_devolvidos, :xpath, '//span[text()="Processos Devolvidos"]'
 
 
 <<<<<<< HEAD
@@ -29,7 +31,7 @@ class MenuIntranetPage < SitePrism::Page
   element :quantitativo_erro_material_submenu, :xpath, '//span[text()="Quantitativo de Erro Material"]'
   element :quantitativo_cedulas_nao_recebidas_submenu, :xpath, '//span[text()="Cédulas não recebidas"]'
   element :requerimentos_suspensos_submenu, :xpath, '//span[text()="Requerimentos Suspensos"]'
-
+  
 
   # DEFININDO METODO PARA SELECIONAR SUB MENU DO MENU PROCESSAR ATENDIMENTO
 >>>>>>> 91df32b601c05e9c761c16937e7ba4f55f812894
