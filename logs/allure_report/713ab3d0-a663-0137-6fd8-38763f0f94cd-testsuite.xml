@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1566406951093" stop="1566406975057">
+  <name>Consultar imigrante conferido com sucesso</name>
+  <title>Consultar imigrante conferido com sucesso</title>
+  <test-cases>
+    <test-case start="1566406951093" stop="1566406975010" status="passed">
+      <name>Reimprimir protocolo do imigrante conferido com sucesso</name>
+      <title>Reimprimir protocolo do imigrante conferido com sucesso</title>
+      <steps>
+        <step start="1566406967089" stop="1566406967089" status="passed">
+          <name>Quando solicitar a consulta do imigrante conferido</name>
+          <title>Quando solicitar a consulta do imigrante conferido</title>
+          <attachments/>
+        </step>
+        <step start="1566406967089" stop="1566406972401" status="passed">
+          <name>E clicar no icone para reimprimir protocolo atual</name>
+          <title>E clicar no icone para reimprimir protocolo atual</title>
+          <attachments/>
+        </step>
+        <step start="1566406972401" stop="1566406974448" status="passed">
+          <name>Entao deve-se visualizar protocolo atual</name>
+          <title>Entao deve-se visualizar protocolo atual</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="c21baa14c19df816637abc43946f894719575dc0015fc46dd74a2fe6e558158a-attachment.png" title="Clique aqui para ver o print da tela" size="143601" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="20642400"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Consultar imigrante conferido com sucesso"/>
+        <label name="story" value="Reimprimir protocolo do imigrante conferido com sucesso"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="severity" value="normal"/>
+    <label name="thread" value="20642400"/>
+    <label name="host" value="DESKTOP-BGMR47K"/>
+  </labels>
+</ns2:test-suite>

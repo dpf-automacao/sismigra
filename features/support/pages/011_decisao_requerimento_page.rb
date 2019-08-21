@@ -53,7 +53,6 @@ class DecisaoRequerimento < PageHelper
 
     def confirmar_deferimento
         confirmar_deferimento_btn.click
-        binding.pry
         imprimir_btn.click
         visualizar_impressao
     end
