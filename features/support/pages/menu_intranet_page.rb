@@ -15,9 +15,8 @@ class MenuIntranetPage < SitePrism::Page
   element :alteracao_endereco_submenu, :xpath, '//span[text()="Alteração de Endereço"]'
   element :processar_conferencia_submenu, :xpath, '//span[text()="Processar Conferência"]'
   element :processos_devolvidos, :xpath, '//span[text()="Processos Devolvidos"]'
-  # Mapeamento de elementos para validação
 
-
+  
   # Definindo metodo para selecionar submenu processar atendimento
 
   def selecionar_menu_solicitacoes_intranet(tipo_menu)
