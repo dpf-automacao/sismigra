@@ -101,5 +101,9 @@ class MenuIntranetPage < SitePrism::Page
 
   end
 
+  def submenu_decisao
+    solicitacoes_menu.hover
+    decisao_submenu.click
+  end
 
 end
