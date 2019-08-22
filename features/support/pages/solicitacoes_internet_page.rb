@@ -222,7 +222,6 @@ include FileHelper
             if(@tipo_requerimento == "Registro")
 
                 puts "Selecionando Tipo de Registro do imigrante: #{@tipo_registro}"
-                wait_until_tipo_de_registro_select_visible
                 tipo_de_registro_select.select(@tipo_registro)
 
             end
@@ -230,98 +229,76 @@ include FileHelper
             if(@tipo_requerimento == "Substituicao_de_CRNM")
 
                 puts "Selecionando Tipo de Substituicao: #{@tipo_substituicao}"
-                wait_until_tipo_de_substituicao_select_visible
                 tipo_de_substituicao_select.select(@tipo_substituicao)
 
             end
             
             puts "Preenchendo Nome do imigrante: #{@nome_imigrante}"
-            wait_until_nome_imigrante_input_visible
             nome_imigrante_input.set(@nome_imigrante)
 
             puts "Preenchendo Sobrenome do imigrante: #{@sobrenome_imigrante}"
-            wait_until_sobrenome_imigrante_input_visible
             sobrenome_imigrante_input.set(@sobrenome_imigrante)
 
             puts "Preenchendo Nome Anterior do imigrante: #{@nome_anterior_completo}"
-            wait_until_nome_anterior_completo_input_visible
             nome_anterior_completo_input.set(@nome_anterior_completo)
 
             puts "Selecionando Inclusao de Nome Social"
-            wait_until_incluir_nome_social_checkbox_visible
             incluir_nome_social_checkbox.check
 
             puts "Preenchendo Nome Social do imigrante: #{@nome_social}"
-            wait_until_nome_social_input_visible
             nome_social_input.set(@nome_social)
 
             puts "Selecionando Sexo Masculino do Imigrante"
-            wait_until_sexo_masculino_imigrante_radio_visible
             sexo_masculino_imigrante_radio.click
 
             puts "Selecionando Deficiencia fisica: NAO"
-            wait_until_deficiencia_fisica_nao_radio_visible
             deficiencia_fisica_nao_radio.click
 
             puts "Preenchendo Data de Nascimento do Imigrante: #{@data_nascimento}"
-            wait_until_data_nascimento_input_visible
             data_nascimento_input.set(@data_nascimento)
 
             puts "Selecionando Estado Civil de: #{@estado_civil}"
-            wait_until_estado_civil_select_visible
             estado_civil_select.select(@estado_civil)
 
             puts "Preenchendo Cidade de Nascimento do Imigrante: #{@cidade_nascimento}"
-            wait_until_cidade_nascimento_input_visible
             cidade_nascimento_input.set(@cidade_nascimento)
 
             puts "Preenchendo Pais de Nascimento do Imigrante: #{@pais_nascimento}"
-            wait_until_pais_nascimento_select_visible
             pais_nascimento_select.select(@pais_nascimento)
 
             puts "Preenchendo Pais de Nacionalidade do Imigrante: #{@pais_nacionalidade}"
-            wait_until_pais_nacionalidade_select_visible
             pais_nacionalidade_select.select(@pais_nacionalidade)
 
             puts "Preenchendo Email do Imigrante: #{@email_imigrante}"
-            wait_until_email_imigrante_input_visible
             email_imigrante_input.set(@email_imigrante)
 
             puts "Preenchendo Ocupacao Principal do Imigrante: #{@ocupacao_principal}"
-            wait_until_ocupacao_principal_textarea_visible
             ocupacao_principal_textarea.set(@ocupacao_principal)
             
             wait_until_sugestao_load_visible
             ocupacao_principal_textarea.send_keys(:enter)
 
             puts "Preenchendo CPF do Imigrante: #{@cpf_imigrante}"
-            wait_until_cpf_imigrante_input_visible
             cpf_imigrante_input.click.set(@cpf_imigrante)
 
             puts "Preenchendo Filiacao 1: #{@nome_filiacao_1}"
-            wait_until_filiacao_1_input_visible
             filiacao_1_input.set(@nome_filiacao_1)
 
             puts "Selecionando Sexo Filiacao 1: Masculino"
-            wait_until_sexo_masculino_filiacao_1_radio_visible
             sexo_masculino_filiacao_1_radio.click
 
             puts "Preenchendo Filiacao 1: #{@nome_filiacao_2}"
-            wait_until_filiacao_2_input_visible
             filiacao_2_input.set(@nome_filiacao_2)
 
             puts "Selecionando Sexo Filiacao 2: Masculino"
-            wait_until_sexo_masculino_filiacao_2_radio_visible
             sexo_masculino_filiacao_2_radio.click
 
             if(@tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
 
                 puts "Selecionando RNM TITULAR"
-                wait_until_rnm_titular_radio_visible
                 rnm_titular_radio.click
 
                 puts "Preenchendo RNM TITULAR: #{@rnm_titular}"
-                wait_until_rnm_titular_input_visible
                 rnm_titular_input.click.set(@rnm_titular)
 
             end
@@ -345,82 +322,63 @@ include FileHelper
             @ocupacao_principal_alteracao_end = "43 - MEDICO"
 
             puts "Preenchendo RNM - Alteracao Endereco: #{@rnm_alteracao_alteracao_end}"
-            wait_until_rnm_alteracao_endereco_input_visible
             rnm_alteracao_endereco_input.click.set(@rnm_alteracao_alteracao_end)
 
             puts "Preenchendo Nome Imigrante - Alteracao Endereco: #{@nome_imigrante_alteracao_end}"
-            wait_until_nome_completo_alteracao_endereco_input_visible
             nome_completo_alteracao_endereco_input.set(@nome_imigrante_alteracao_end)
 
             puts "Preenchendo Sobrenome Imigrante - Alteracao Endereco: #{@sobrenome_imigrante_alteracao_end}"
-            wait_until_sobrenome_imigrante_input_visible
             sobrenome_imigrante_input.click.set(@sobrenome_imigrante_alteracao_end)
 
             puts "Preenchendo Nome Anterior Imigrante - Alteracao Endereco: #{@nome_anterior_completo_alteracao_end}"
-            wait_until_nome_anterior_completo_input_visible
             nome_anterior_completo_input.click.set(@nome_anterior_completo_alteracao_end)
 
             puts "Selecionando Nome Social - Alteracao Endereco"
-            wait_until_incluir_nome_social_checkbox_visible
             incluir_nome_social_checkbox.check
 
             puts "Preenchendo Nome Social Imigrante - Alteracao Endereco: #{@nome_social_alteracao_end}"
-            wait_until_nome_social_input_visible
             nome_social_input.click.set(@nome_social_alteracao_end)
 
             puts "Selecionando Sexo Masculino do Imigrante - Alteracao Endereco"
-            wait_until_sexo_masculino_imigrante_alteracao_endereco_radio_visible
             sexo_masculino_imigrante_alteracao_endereco_radio.click
 
             puts "Selecionando Estado Civil - Alteracao Endereco: #{@estado_civil_alteracao_end}"
-            wait_until_estado_civil_alteracao_endereco_select_visible
             estado_civil_alteracao_endereco_select.select(@estado_civil_alteracao_end)
 
             puts "Preenchendo Filiacao 1 - Alteracao Endereco: #{@nome_filiacao_1_alteracao_end}"
-            wait_until_filiacao_1_alteracao_endereco_input_visible
             filiacao_1_alteracao_endereco_input.click.set(@nome_filiacao_1_alteracao_end)
 
             puts "Selecionando Sexo Masculino Filiacao 1 - Alteracao Endereco"
-            wait_until_sexo_masculino_filiacao_1_alteracao_endereco_radio_visible
             sexo_masculino_filiacao_1_alteracao_endereco_radio.click
 
             puts "Preenchendo Filiacao 1 - Alteracao Endereco: #{@nome_filiacao_2_alteracao_end}"
-            wait_until_filiacao_2_alteracao_endereco_input_visible
             filiacao_2_alteracao_endereco_input.click.set(@nome_filiacao_2_alteracao_end)
 
             puts "Selecionando Sexo Masculino Filiacao 2 - Alteracao Endereco"
-            wait_until_sexo_masculino_filiacao_2_alteracao_endereco_radio_visible
             sexo_masculino_filiacao_2_alteracao_endereco_radio.click
 
             puts "Preenchendo Data de Nascimento - Alteracao Endereco: #{@data_nascimento_alteracao_end}"
-            wait_until_data_nascimento_alteracao_endereco_input_visible
             data_nascimento_alteracao_endereco_input.click.set(@data_nascimento_alteracao_end)
 
             puts "Selecionando Pais de Nascimento - Alteracao Endereco: #{@pais_nascimento_alteracao_end}"
-            wait_until_pais_nascimento_alteracao_endereco_select_visible
             pais_nascimento_alteracao_endereco_select.select(@pais_nascimento_alteracao_end)
 
             puts "Preechendo CPF - Alteracao Endereco: #{@cpf_imigrante_alteracao_end}"
-            wait_until_cpf_alteracao_endereco_input_visible
             cpf_alteracao_endereco_input.click.set(@cpf_imigrante_alteracao_end)
 
             puts "Preechendo Ocupacao Principal - Alteracao Endereco: #{@ocupacao_principal_alteracao_end}"
-            wait_until_ocupacao_principal_alteracao_endereco_input_visible
             ocupacao_principal_alteracao_endereco_input.click.set(@ocupacao_principal_alteracao_end)
 
             wait_until_sugestao_load_visible
             ocupacao_principal_alteracao_endereco_input.send_keys(:enter)
 
             puts "Preechendo Cidade de Nascimento - Alteracao Endereco: #{@cidade_nascimento_alteracao_end}"
-            wait_until_cidade_nascimento_alteracao_endereco_input_visible
             cidade_nascimento_alteracao_endereco_input.click.set(@cidade_nascimento_alteracao_end)
 
             puts "Selecionando Pais de Nacionalidade - Alteracao Endereco: #{@cidade_nascimento_alteracao_end}"
-            wait_until_pais_nacionalidade_alteracao_endereco_select_visible
             pais_nacionalidade_alteracao_endereco_select.select(@pais_nacionalidade_alteracao_end)
 
             puts "Preenchendo Email - Alteracao Endereco: #{@cidade_nascimento_alteracao_end}"
-            wait_until_email_alteracao_endereco_input_visible
             email_alteracao_endereco_input.click.set(@email_imigrante_alteracao_end)
 
         end
@@ -448,55 +406,43 @@ include FileHelper
         if(@tipo_requerimento == "Registro" || @tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
 
             puts "Selecionando Visto: SIM"
-            wait_until_possui_visto_sim_radio_visible
             possui_visto_sim_radio.click
 
             puts "Preenchendo Numero do Visto: #{@numero_visto}"
-            wait_until_numero_visto_input_visible
             numero_visto_input.click.set(@numero_visto)
 
             puts "Preenchendo Data da Concessao do Visto: #{@data_da_concessao}"
-            wait_until_data_da_concessao_input_visible
             data_da_concessao_input.click.set(@data_da_concessao)
 
             puts "Preenchendo Cidade da Concessao do Visto: #{@cidade_da_concessao}"
-            wait_until_cidade_da_concessao_input_visible
             cidade_da_concessao_input.click.set(@cidade_da_concessao)
 
             puts "Selecionando Pais da Concessao do Visto: #{@pais_concedido}"
-            wait_until_pais_concedido_select_visible
             pais_concedido_select.select(@pais_concedido)
 
         end
 
         puts "Selecionando Documento de Viagem: #{@tipo_documento_viagem}"
-        wait_until_tipo_documento_viagem_select_visible
         tipo_documento_viagem_select.select(@tipo_documento_viagem)
 
         puts "Preenchendo Numero do Documento de Viagem: #{@numero_doc_viagem}"
-        wait_until_numero_doc_viagem_input_visible
         numero_doc_viagem_input.click.set(@numero_doc_viagem)
 
         puts "Selecionando Pais Expedidor do documento de Viagem: #{@pais_expedidor_doc}"
-        wait_until_pais_expedidor_doc_select_visible
         pais_expedidor_doc_select.select(@pais_expedidor_doc)
 
         if(@tipo_requerimento != "Alteracao_de_Prazo" && @tipo_requerimento != "Substituicao_de_CRNM" && @tipo_requerimento != "Segunda_via_CRNM")
 
             puts "Selecionando UF Entrada: #{@sigla_uf_entrada}"
-            wait_until_sigla_uf_entrada_select_visible
             sigla_uf_entrada_select.select(@sigla_uf_entrada)
 
             puts "Selecionando Local Entrada: #{@local_entrada}"
-            wait_until_local_entrada_select_visible
             local_entrada_select.select(@local_entrada)
 
             puts "Selecionando Meio de Transporte: #{@meio_transporte}"
-            wait_until_meio_transporte_select_visible
             meio_transporte_select.select(@meio_transporte)
 
             puts "Preenchendo Data de Entrada: #{@data_entrada}"
-            wait_until_data_entrada_input_visible
             data_entrada_input.click.set(@data_entrada)
 
         end
@@ -508,15 +454,12 @@ include FileHelper
             @orgao_concedente = "Ministerio do Trabalho"
 
             puts "Preenchendo Data de Publicacao: #{@data_entrada}"
-            wait_until_data_publicacao_input_visible
             data_publicacao_input.click.set(@data_publicacao)
 
             puts "Preenchendo Pagina da Publicacao: #{@pagina_publicacao}"
-            wait_until_pagina_publicacao_input_visible
             pagina_publicacao_input.click.set(@pagina_publicacao)
 
             puts "Selecionando Orgao Concedente: #{@orgao_concedente}"
-            wait_until_orgao_concedente_select_visible
             orgao_concedente_select.select(@orgao_concedente)
 
         end
@@ -545,10 +488,8 @@ include FileHelper
             sleep(1)
 
             puts "Preenchendo CEP Residencial: #{@cep_residencial}"
-            wait_until_cep_residencial_input_visible
             cep_residencial_input.click.set(@cep_residencial)
 
-            wait_until_complemento_residencial_input_visible
             complemento_residencial_input.send_keys(:tab)
 
             sleep(5)
@@ -557,32 +498,25 @@ include FileHelper
             complemento_residencial_input.click.set(@complemento_residencial)
 
             puts "Preenchendo Telefone Residencial: #{@telefone_residencial}"
-            wait_until_telefone_residencial_input_visible
             telefone_residencial_input.click.set(@telefone_residencial)
 
             puts "Preenchendo Telefone Residencial 2: #{@telefone2_residencial}"
-            wait_until_telefone2_residencial_input_visible
             telefone2_residencial_input.click.set(@telefone2_residencial)
 
             puts "Preenchendo CEP Comercial: #{@telefone2_residencial}"
-            wait_until_cep_comercial_input_visible
             cep_comercial_input.click.set(@cep_comercial)
 
-            wait_until_telefone2_residencial_input_visible
             telefone2_residencial_input.send_keys(:tab)
 
             sleep(5)
 
             puts "Preenchendo Nome Estabelecimento Comercial: #{@nome_estabelecimento_comercial}"
-            wait_until_nome_estabelecimento_comercial_input_visible
             nome_estabelecimento_comercial_input.click.set(@nome_estabelecimento_comercial)
 
             puts "Preenchendo Complemento Comercial: #{@complemento_comercial}"
-            wait_until_complemento_comercial_input_visible
             complemento_comercial_input.click.set(@complemento_comercial)
 
             puts "Preenchendo Telefone Comercial: #{@telefone_comercial}"
-            wait_until_telefone_comercial_input_visible
             telefone_comercial_input.click.set(@telefone_comercial)
 
             if( @tipo_requerimento == "Alteracao_de_Prazo"              ||
@@ -599,45 +533,35 @@ include FileHelper
                 @pais_exterior = "COLOMBIA"
 
                 puts "Preenchendo CEP Exterior: #{@cep_exterior}"
-                wait_until_cep_exterior_input_visible
                 cep_exterior_input.click.set(@cep_exterior)
 
                 puts "Preenchendo Logradouro Exterior: #{@logradouro_exterior}"
-                wait_until_logradouro_exterior_input_visible
                 logradouro_exterior_input.click.set(@logradouro_exterior)
 
                 puts "Preenchendo Complemento Exterior: #{@complemento_exterior}"
-                wait_until_complemento_exterior_input_visible
                 complemento_exterior_input.click.set(@complemento_exterior)
                 
                 puts "Preenchendo Estado Exterior: #{@estado_exterior}"
-                wait_until_estado_exterior_input_visible
                 estado_exterior_input.click.set(@estado_exterior)
 
                 puts "Preenchendo Cidade Exterior: #{@cidade_exterior}"
-                wait_until_cidade_exterior_input_visible
                 cidade_exterior_input.click.set(@cidade_exterior)
 
                 puts "Preenchendo Pais Exterior: #{@pais_exterior}"
-                wait_until_pais_exterior_input_visible
                 pais_exterior_input.select(@pais_exterior)
 
             end
 
             puts "Preenchendo Nome Contato: #{@nome_contato}"
-            wait_until_nome_contato_input_visible
             nome_contato_input.click.click.set(@nome_contato)
 
             puts "Preenchendo Telefone Contato: #{@telefone_contato}"
-            wait_until_telefone_contato_input_visible
             telefone_contato_input.click.set(@telefone_contato)
 
             puts "Preenchendo Vinculo Contato: #{@vinculo_contato}"
-            wait_until_vinculo_contato_input_visible
             vinculo_contato_input.click.set(@vinculo_contato)
 
             puts "Preenchendo Pais Contato: #{@pais_contato}"
-            wait_until_pais_contato_select_visible
             pais_contato_select.select(@pais_contato)
 
         elsif(@tipo_requerimento == "Alteracao_Endereco")
@@ -663,32 +587,26 @@ include FileHelper
             # PREENCHER ENDERECO ALTERACAO RESIDENCIAL INTERNET
 
             puts "Selecionando - Alteracao Endereco Residencial"
-            wait_until_alteracao_endereco_residencial_checkbox_visible
             alteracao_endereco_residencial_checkbox.click
 
             sleep(1)
 
             puts "Preenchendo CEP Residencial - Alteracao Endereco: #{@cep_alteracao_end_residencial}"
-            wait_until_cep_alteracao_endereco_residencial_input_visible
             cep_alteracao_endereco_residencial_input.click.set(@cep_alteracao_end_residencial)
 
             # --------------------------------------------- VERIFICAR POSSIBILIDADE DE MELHORIA ------------------------------------------------------
 
-            wait_until_complemento_alteracao_endereco_residencial_input_visible
             complemento_alteracao_endereco_residencial_input.send_keys(:tab)
 
             sleep(5)
             
             puts "Preenchendo Complemento Residencial - Alteracao Endereco: #{@complemento_alteracao_end_residencial}"
-            wait_until_complemento_alteracao_endereco_residencial_input_visible
             complemento_alteracao_endereco_residencial_input.click.set(@complemento_alteracao_end_residencial)
 
             puts "Preenchendo Telefone Residencial - Alteracao Endereco: #{@telefone_residencial_alteracao_end_residencial}"
-            wait_until_telefone_residencial_alteracao_endereco_residencial_input_visible
             telefone_residencial_alteracao_endereco_residencial_input.click.set(@telefone_residencial_alteracao_end_residencial)
 
             puts "Preenchendo Telefone Celular - Alteracao Endereco: #{@telefone_celular_alteracao_end_residencial}"
-            wait_until_telefone_celular_alteracao_endereco_residencial_input_visible
             telefone_celular_alteracao_endereco_residencial_input.click.set(@telefone_celular_alteracao_end_residencial)
 
             sleep(1)
@@ -700,47 +618,37 @@ include FileHelper
             
             has_arquivo_anexado_alteracao_endereco_residencial_link?(wait:10)
 
-
             # PREENCHER ENDERECO ALTERACAO COMERCIAL INTERNET
 
             puts "Selecionando - Alteracao Endereco Comercial"
-            wait_until_alteracao_endereco_comercial_checkbox_visible
             alteracao_endereco_comercial_checkbox.click
 
             sleep(1)
 
             puts "Preenchendo CEP Comercial - Alteracao Endereco: #{@cep_alteracao_end_comercial}"
-            wait_until_cep_alteracao_endereco_comercial_input_visible
             cep_alteracao_endereco_comercial_input.click.set(@cep_alteracao_end_comercial)
 
-            wait_until_complemento_alteracao_endereco_comercial_input_visible
             complemento_alteracao_endereco_comercial_input.send_keys(:tab)
 
             sleep(5)
 
             puts "Preenchendo Complemento Comercial - Alteracao Endereco: #{@complemento_alteracao_end_comercial}"
-            wait_until_complemento_alteracao_endereco_comercial_input_visible
             complemento_alteracao_endereco_comercial_input.click.set(@complemento_alteracao_end_comercial)
 
             puts "Selecionando Estado Endereco Comercial - Alteracao Endereco: #{@estado_alteracao_end_comercial}"
-            wait_until_estado_alteracao_endereco_comercial_select_visible
             estado_alteracao_endereco_comercial_select.select(@estado_alteracao_end_comercial)
 
             # --------------------------------------------- VERIFICAR POSSIBILIDADE DE MELHORIA ------------------------------------------------------
 
-            wait_until_estado_alteracao_endereco_comercial_select_visible
             estado_alteracao_endereco_comercial_select.send_keys(:up)
-            wait_until_estado_alteracao_endereco_comercial_select_visible
             estado_alteracao_endereco_comercial_select.send_keys(:down)
 
             sleep(5)
 
             puts "Selecionando Estado Endereco Comercial - Alteracao Endereco: #{@estado_alteracao_end_comercial}"
-            wait_until_cidade_alteracao_endereco_comercial_select_visible
             cidade_alteracao_endereco_comercial_select.select(@cidade_alteracao_end_comercial)
 
             puts "Preenchendo Telefone Comercial - Alteracao Endereco: #{@telefone_alteracao_end_comercial}"
-            wait_until_telefone_alteracao_endereco_comercial_input_visible
             telefone_alteracao_endereco_comercial_input.click.set(@telefone_alteracao_end_comercial)
 
             sleep(1)
@@ -755,40 +663,32 @@ include FileHelper
             # PREENCHER ENDERECO ALTERACAO EXTERIOR INTERNET
 
             puts "Selecionando - Alteracao Endereco Exterior"
-            wait_until_alteracao_endereco_exterior_checkbox_visible
             alteracao_endereco_exterior_checkbox.click
 
             sleep(1)
 
             puts "Preenchendo CEP Exterior - Alteracao Endereco: #{@cep_alteracao_end_exterior}"
-            wait_until_cep_alteracao_endereco_exterior_input_visible
             cep_alteracao_endereco_exterior_input.click.set(@cep_alteracao_end_exterior)
 
             # --------------------------------------------- VERIFICAR POSSIBILIDADE DE MELHORIA ------------------------------------------------------
 
-            wait_until_complemento_alteracao_endereco_exterior_input_visible
             complemento_alteracao_endereco_exterior_input.send_keys(:tab)
 
             sleep(5)
 
             puts "Preenchendo Complemento Endereco Exterior - Alteracao Endereco: #{@complemento_alteracao_end_exterior}"
-            wait_until_complemento_alteracao_endereco_exterior_input_visible
             complemento_alteracao_endereco_exterior_input.click.set(@complemento_alteracao_end_exterior)
 
             puts "Preenchendo Cidade Endereco Exterior - Alteracao Endereco: #{@cidade_alteracao_end_exterior}"
-            wait_until_cidade_alteracao_endereco_exterior_input_visible
             cidade_alteracao_endereco_exterior_input.click.set(@cidade_alteracao_end_exterior)
 
             puts "Preenchendo Logradouro Endereco Exterior - Alteracao Endereco: #{@logradouro_alteracao_end_exterior}"
-            wait_until_logradouro_alteracao_endereco_exterior_input_visible
             logradouro_alteracao_endereco_exterior_input.click.set(@logradouro_alteracao_end_exterior)
 
             puts "Preenchendo Estado Endereco Exterior - Alteracao Endereco: #{@estado_alteracao_end_exterior}"
-            wait_until_estado_alteracao_endereco_exterior_input_visible
             estado_alteracao_endereco_exterior_input.click.set(@estado_alteracao_end_exterior)
 
             puts "Preenchendo Pais Endereco Exterior - Alteracao Endereco: #{@pais_alteracao_end_exterior}"
-            wait_until_pais_alteracao_endereco_exterior_input_visible
             pais_alteracao_endereco_exterior_input.select(@pais_alteracao_end_exterior)
 
             sleep(1)
@@ -809,11 +709,9 @@ include FileHelper
     def preencher_declaracao(minutos_total)
 
         puts "Selecionando declaracao OK"
-        wait_until_declaracao_checkbox_visible
         declaracao_checkbox.check
 
         puts "Setando campo de Captcha"
-        wait_until_texto_imagem_input_visible
         texto_imagem_input.click
 
         @minuto_inicial = 1
@@ -841,28 +739,21 @@ include FileHelper
         if(tipo_verificacao == "Verificacao_de_Protocolo")
 
             puts "Verificando Protocolo de numero: #{@dados_requerimento_protocolo[0]}"
-            wait_until_numero_protocolo_requerimento_input_visible
             numero_protocolo_requerimento_input.click.set(@dados_requerimento_protocolo[0])
 
             puts "Clicando no botao para Verificar Protocolo"
-            wait_until_verificar_protocolo_btn_visible
             verificar_protocolo_btn.click
-
-            wait_until_validar_protocolo_table_visible
 
             sleep(1)
 
         elsif(tipo_verificacao == "Andamento_do_Requerimento")
 
             puts "Andamento Requerimento de numero: #{@dados_requerimento_protocolo[0]}"
-            wait_until_numero_andamento_requerimento_input_visible
             numero_andamento_requerimento_input.click.set(@dados_requerimento_protocolo[0])
 
             puts "Clicando no botao para Pesquisar Andamento"
-            wait_until_pesquisar_btn_visible
             pesquisar_btn.click
-
-            wait_until_carregamento_load_invisible
+            aguardar_carregamento_load
 
             sleep(1)
 
@@ -871,13 +762,17 @@ include FileHelper
 
     end
 
+    def aguardar_carregamento_load 
+
+        wait_until_carregamento_load_invisible
+
+    end
+
     def avancar_proximo
 
         puts "Clicando no botao Proximo"
-        wait_until_avancar_proximo_btn_visible
         avancar_proximo_btn.click
-
-        wait_until_carregamento_load_invisible
+        aguardar_carregamento_load
         
         sleep(1)
 
