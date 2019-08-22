@@ -1,5 +1,5 @@
 #language: pt
-
+#Esta funcionalidade depende da de requerimento de registro
 @all_decisao
 Funcionalidade: Decisão sobre o Requerimento
 
