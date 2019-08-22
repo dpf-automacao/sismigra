@@ -753,7 +753,7 @@ include FileHelper
 
             puts "Clicando no botao para Pesquisar Andamento"
             pesquisar_btn.click
-            wait_until_carregamento_load_invisible
+            aguardar_carregamento_load
 
             sleep(1)
 
@@ -762,11 +762,17 @@ include FileHelper
 
     end
 
+    def aguardar_carregamento_load 
+
+        wait_until_carregamento_load_invisible
+
+    end
+
     def avancar_proximo
 
         puts "Clicando no botao Proximo"
         avancar_proximo_btn.click
-        wait_until_carregamento_load_invisible
+        aguardar_carregamento_load
         
         sleep(1)
 
