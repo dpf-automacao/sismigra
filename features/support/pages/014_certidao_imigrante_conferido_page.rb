@@ -13,7 +13,7 @@ class EmitirCertidaoEmigrantePage < PageHelper
     #Elementos para emitir certidão de registro do imigrante conferido
     element :imprimir_certidao_historico_checkbox, 'input[value="SOLICITACAO"]'
 
-
+    ## MÉTODOS ## 
     def pesquisar_requerimento_registro
         puts "Pesquisando requerimento"
         @tipo_solicitacao = "registro"
@@ -24,12 +24,14 @@ class EmitirCertidaoEmigrantePage < PageHelper
     end
 
     def certidao_registro_imigrante_conferido
+        puts "Imprimindo certidão de registro"
         imprimir_certidao_btn.click
         imprimir_certidao_registro_checkbox.click
         visualizar_certidao_btn.click
     end
 
     def certidao_historico_imigrante_conferido
+        puts "Imprimindo certidão de histórico"
         imprimir_certidao_btn.click
         imprimir_certidao_historico_checkbox.click
         visualizar_certidao_btn.click

@@ -29,7 +29,8 @@ class ProcessarConferencia < PageHelper
     element :assinatura_select, 'select[id*="cmbAssinatura"]'
     element :concluir_btn,'input[value="Concluir"]'
 
-
+    
+    ## MÉTODOS ## 
     def pesquisar_requerimento_registro
         puts "Pesquisando requerimento"
         @tipo_solicitacao = "registro"
@@ -40,6 +41,7 @@ class ProcessarConferencia < PageHelper
     end
 
     def devolver_para_unidade_local
+        puts "Devolvendo registro para unidade local"
         registrar_conferencia_btn.click
         aba_resultado_conferencia.click
         devolver_para_unidade_radio.click
@@ -51,6 +53,7 @@ class ProcessarConferencia < PageHelper
     end
 
     def deferir_processo_devolvido
+        puts "Deferindo processo devolvido"
         tratar_processo_devolvido_btn.click
         aba_dados_registro.click
         if (has_proximo_btn?(wait:10))
@@ -66,6 +69,7 @@ class ProcessarConferencia < PageHelper
     end
 
     def dados_conferidos_sucesso
+        puts "Registrando conferencia"
         registrar_conferencia_btn.click
         aba_resultado_conferencia.click
         aguardar_carregamento

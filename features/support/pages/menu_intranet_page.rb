@@ -313,5 +313,3 @@ class MenuIntranetPage < SitePrism::Page
   end
 
 end
-
-end

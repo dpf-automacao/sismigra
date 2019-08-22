@@ -1,7 +1,6 @@
 #language: pt
 
 #Esta funcionalidade depende da feature 012_processar_conferencia
-@demanda
 @all_consultar_imigrante_conferido
 Funcionalidade: Consultar imigrante conferido com sucesso
 

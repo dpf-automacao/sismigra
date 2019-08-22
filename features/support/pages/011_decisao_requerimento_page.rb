@@ -26,6 +26,8 @@ class DecisaoRequerimento < PageHelper
     element :imprimir_btn, "input[value='Imprimir']"
     element :proximo_btn, 'input[value="Próximo"]'
 
+
+    ## MÉTODOS ## 
     def pesquisar_requerimento_registro
         puts "Pesquisando requerimento"
         @tipo_solicitacao = "registro"
@@ -59,6 +61,7 @@ class DecisaoRequerimento < PageHelper
     end
 
     def confirmar_deferimento
+        puts "Confirmando deferimento"
         confirmar_deferimento_btn.click
         imprimir_btn.click
         visualizar_impressao

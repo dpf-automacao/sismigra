@@ -20,6 +20,8 @@ class PesquisarImigrantePage < PageHelper
      #Elemento para reimprimir protocolo
      element :reimprimir_protocolo_btn, 'a[class="btnImprimir"]'
 
+
+     ## MÉTODOS ## 
     def pesquisar_requerimento_registro
         puts "Pesquisando requerimento"
         @tipo_solicitacao = "registro"
@@ -36,6 +38,7 @@ class PesquisarImigrantePage < PageHelper
     end
 
     def visualizar_detalhamento_processo
+        puts "Visualizabdo detalhamento do processo"
         imprimir_btn.click
         visualizar_impressao
     end
@@ -50,11 +53,13 @@ class PesquisarImigrantePage < PageHelper
     end
 
     def visualizar_protocolo_renovado
+        puts "Visualizando protocolo renovado"
         visualizar_protocolo_renovado_btn.click
         visualizar_impressao
     end
 
     def reimprimir_protocolo
+        puts "Reimprimir protocolo"
         aguardar_carregamento
         reimprimir_protocolo_btn.click
     end

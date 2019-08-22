@@ -1,5 +1,4 @@
 #language: pt
-@demanda
 @all_decisao
 Funcionalidade: Decisão sobre o Requerimento
 

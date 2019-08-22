@@ -1,7 +1,6 @@
 #language: pt
 
 #Esta funcionalidade depende da feature 013
-@demanda
 @all_manutencao_registro
 Funcionalidade: Manutenção do registro
 
