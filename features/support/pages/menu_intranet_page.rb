@@ -16,9 +16,6 @@ class MenuIntranetPage < SitePrism::Page
   element :processos_devolvidos, :xpath, '//span[text()="Processos Devolvidos"]'
 
 
-<<<<<<< HEAD
-  # Definindo metodo para selecionar submenu processar atendimento
-=======
   # MAPEAMENTO DE ELEMENTOS DE MENU RELATORIOS E SUBMENUS
   element :relatorios_imigrante_menu, :xpath, '//form//div//div[text()="Relatórios"]'
   element :relatorio_auditoria_submenu, :xpath, '//span[text()="Auditoria"]'
@@ -34,7 +31,6 @@ class MenuIntranetPage < SitePrism::Page
   
 
   # DEFININDO METODO PARA SELECIONAR SUB MENU DO MENU PROCESSAR ATENDIMENTO
->>>>>>> 91df32b601c05e9c761c16937e7ba4f55f812894
 
   def selecionar_menu_solicitacoes_intranet(tipo_menu)
 
