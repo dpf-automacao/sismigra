@@ -46,11 +46,11 @@ class MenuIntranetPage < SitePrism::Page
 
     elsif(tipo_menu == "Processar_Atendimento")
 
-      processar_atendimento_submenu.click
+      sub_menu_processar_atendimento
 
     elsif(tipo_menu == "Decisao")
 
-      decisao_submenu.click
+      submenu_decisao
 
     elsif(tipo_menu == "Alteracao_Endereco")
 
@@ -63,7 +63,7 @@ class MenuIntranetPage < SitePrism::Page
 
   # INICIO DEFINIR SUBMENUS DO PROCESSAR ATENDIMENTO
 
-  def menu_situacao_requerimento
+  def sub_menu_situacao_requerimento
 
     if(has_situacao_requerimento_submenu?)
     
@@ -73,7 +73,7 @@ class MenuIntranetPage < SitePrism::Page
 
   end
 
-  def menu_processar_atendimento
+  def sub_menu_processar_atendimento
 
     if(has_processar_atendimento_submenu?)
 
