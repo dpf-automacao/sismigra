@@ -18,9 +18,10 @@ class ManutencaoRegistroPage < PageHelper
     element :imprimir_protocolo_atual_btn, 'a[title="Reimprimir Protocolo Atual"]'
     
     def pesquisar_requerimento_registro
-        puts "Pesquisando requerimento"
         @tipo_solicitacao = "registro"
         @nr_registro = recuperar_dados("features/arquivos/requerimentos/#{@tipo_solicitacao}.txt")
+        wait_until_pesquisar_requerimento_btn_visible
+        puts "Pesquisando Requerimento numero:#{@nr_registro}"
         nr_requerimento_input.click.set(@nr_registro[0].chomp)
         pesquisar_requerimento_btn.click
         aguardar_carregamento

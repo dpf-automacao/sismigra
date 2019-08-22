@@ -1,5 +1,4 @@
 #language: pt
-
 #Esta funcionalidade depende da feature 013
 @all_emitir_certidao_conferido
 Funcionalidade: Emitir certidão emigrante conferido

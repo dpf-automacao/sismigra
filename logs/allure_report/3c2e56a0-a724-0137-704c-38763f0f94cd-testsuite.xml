@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1566489239380" stop="1566489471614">
+  <name>Processar Conferencia</name>
+  <title>Processar Conferencia</title>
+  <test-cases>
+    <test-case start="1566489239383" stop="1566489312178" status="passed">
+      <name>Processar confer&#xEA;ncia - Devolver para unidade local</name>
+      <title>Processar confer&#xEA;ncia - Devolver para unidade local</title>
+      <steps>
+        <step start="1566489254609" stop="1566489254609" status="passed">
+          <name>Quando solicitar processamento de conferencia</name>
+          <title>Quando solicitar processamento de conferencia</title>
+          <attachments/>
+        </step>
+        <step start="1566489254609" stop="1566489275880" status="passed">
+          <name>E registrar conferencia</name>
+          <title>E registrar conferencia</title>
+          <attachments/>
+        </step>
+        <step start="1566489275880" stop="1566489311877" status="passed">
+          <name>Entao deve-se devolver conferencia para unidade local</name>
+          <title>Entao deve-se devolver conferencia para unidade local</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="f04c2d1fc778a74a0a49d35a6a8e5fe3d3942804ad2def6b5071d838b6293bb1-attachment.png" title="Clique aqui para ver o print da tela" size="29989" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="18217520"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Processar Conferencia"/>
+        <label name="story" value="Processar confer&#xEA;ncia - Devolver para unidade local"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566489312182" stop="1566489419470" status="passed">
+      <name>Tratar pend&#xEA;ncia devolvida</name>
+      <title>Tratar pend&#xEA;ncia devolvida</title>
+      <steps>
+        <step start="1566489326881" stop="1566489326881" status="passed">
+          <name>Quando solicitar tratamento de pendencias devolvidas</name>
+          <title>Quando solicitar tratamento de pendencias devolvidas</title>
+          <attachments/>
+        </step>
+        <step start="1566489326881" stop="1566489374037" status="passed">
+          <name>E tratar o processo devolvido</name>
+          <title>E tratar o processo devolvido</title>
+          <attachments/>
+        </step>
+        <step start="1566489374038" stop="1566489419198" status="passed">
+          <name>Entao deve-se deferir a pendencia devolvida</name>
+          <title>Entao deve-se deferir a pendencia devolvida</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="b346b12cf041ba1f8bfef2c315efad5dfa6cc760cdcc6637ec45859091cf5de6-attachment.png" title="Clique aqui para ver o print da tela" size="29543" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="18217520"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Processar Conferencia"/>
+        <label name="story" value="Tratar pend&#xEA;ncia devolvida"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566489419474" stop="1566489471613" status="passed">
+      <name>Processar conferencia - Dados conferidos com sucesso</name>
+      <title>Processar conferencia - Dados conferidos com sucesso</title>
+      <steps>
+        <step start="1566489432685" stop="1566489432685" status="passed">
+          <name>Quando solicitar processamento de conferencia</name>
+          <title>Quando solicitar processamento de conferencia</title>
+          <attachments/>
+        </step>
+        <step start="1566489432685" stop="1566489453005" status="passed">
+          <name>E registrar conferencia</name>
+          <title>E registrar conferencia</title>
+          <attachments/>
+        </step>
+        <step start="1566489453006" stop="1566489471362" status="passed">
+          <name>Entao deve-se processar conferencia com sucesso</name>
+          <title>Entao deve-se processar conferencia com sucesso</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="61a48a2f99fa9c442c86d1518deb16510559dd590cd7d2dd52f7271b79543145-attachment.png" title="Clique aqui para ver o print da tela" size="50111" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="18217520"/>
+        <label name="host" value="DESKTOP-BGMR47K"/>
+        <label name="feature" value="Processar Conferencia"/>
+        <label name="story" value="Processar conferencia - Dados conferidos com sucesso"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="severity" value="normal"/>
+    <label name="thread" value="18217520"/>
+    <label name="host" value="DESKTOP-BGMR47K"/>
+  </labels>
+</ns2:test-suite>

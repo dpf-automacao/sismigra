@@ -4,6 +4,8 @@ class PageHelper < SitePrism::Page
   
   include FileHelper
 
+  element :visualizar_impressao, 'div[id="viewer"]'
+
   def initialize
 
     @menu = MenuIntranetPage.new
@@ -46,11 +48,10 @@ class PageHelper < SitePrism::Page
   end
 
   def visualizar_impressao
-
     switch_to_window(windows.last)
+    wait_until_visualizar_impressao_visible
     puts "Visualizando impressão"
-    sleep(4)
-
+    sleep(1)
   end
 
 end

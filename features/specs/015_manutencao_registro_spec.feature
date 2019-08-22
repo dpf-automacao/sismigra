@@ -1,5 +1,4 @@
 #language: pt
-
 #Esta funcionalidade depende da feature 013
 @all_manutencao_registro
 Funcionalidade: Manutenção do registro

@@ -287,27 +287,32 @@ class MenuIntranetPage < SitePrism::Page
   end
 
   def submenu_decisao
+    puts "Acessando submenu"
     solicitacoes_menu.hover
     decisao_submenu.click
   end
 
   def submenu_processar_conferencia
+    puts "Acessando submenu"
     solicitacoes_menu.hover
     processar_conferencia_submenu.click
   end
 
   def submenu_processos_devolvidos
+    puts "Acessando submenu"
     solicitacoes_menu.hover
     tratar_pendencias_submenu.hover
     processos_devolvidos.click
   end
 
   def submenu_pesquisar_imigrante
+    puts "Acessando submenu"
     imigrante_menu.hover
     consultar_imigrante_submenu.click
   end
 
   def submenu_manutencao_registro
+    puts "Acessando submenu"
     imigrante_menu.hover
     manutencao_registro_submenu.click
   end
