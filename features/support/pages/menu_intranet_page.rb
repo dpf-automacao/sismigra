@@ -34,26 +34,26 @@ class MenuIntranetPage < SitePrism::Page
 
   def selecionar_menu_solicitacoes_intranet(tipo_menu)
 
-    sleep(0.5)
-
-    solicitacoes_menu.hover
-
-    sleep(0.5)
+    wait_until_solicitacoes_menu_visible
 
     if(tipo_menu == "Situacao_do_Requerimento")
 
-      menu_situacao_requerimento
+      solicitacoes_menu.hover
+      sub_menu_situacao_requerimento
 
     elsif(tipo_menu == "Processar_Atendimento")
 
+      solicitacoes_menu.hover
       sub_menu_processar_atendimento
 
     elsif(tipo_menu == "Decisao")
 
+      solicitacoes_menu.hover
       submenu_decisao
 
     elsif(tipo_menu == "Alteracao_Endereco")
 
+      solicitacoes_menu.hover
       submenu_alteracao_endereco
 
     end

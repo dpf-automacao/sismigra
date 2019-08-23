@@ -5,8 +5,8 @@ class ConsultarImigrantePage < PageHelper
   element :rnm_input, :xpath, '//*[text()[contains(.,"RNM:")]]/../input'
   element :data_nasc_input, '#formulario-manter-estrangeiro\:calDtNascInputDate'
   element :resultado_pesquisa, 'tbody[id*="dataModelEstrangeiro"] tr'
-  element :qtd_dias_renovacao, '#formulario-manter-estrangeiro\:idQtdDias'
-  element :label_requerimentos_imigrante, '#formulario-manter-estrangeiro\:dvReqsRenovacao'
+  element :qtd_dias_renovacao, 'input[name*="idQtdDias"]'
+  element :label_requerimentos_imigrante, 'div[id*="dvReqsRenovacao"]'
 
   element :aba_dados_pessoais, 'td[id*="DadosPessoais_lbl"].rich-tab-active'
   element :aba_dados_registro, 'td[id*="DadosRegistro_lbl"].rich-tab-active'
@@ -49,6 +49,7 @@ class ConsultarImigrantePage < PageHelper
     if(label_requerimentos_imigrante.text.include?("2"))
 
       puts "\nPreenchendo renovacao"
+      @remetido="remetido"
       qtd_dias_renovacao.set(quantidade)
       puts "Confirmando renovacao"
       btn_confirmar.click

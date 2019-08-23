@@ -75,7 +75,7 @@ Quando("solicitar renovar o protocolo atual") do
 end
 
 Quando("confirmar a quantidade de dias para renovação") do
-  @consultar_imigrante_page.confirmar_dias_renovacao(80)
+  @consultar_imigrante_page.confirmar_dias_renovacao(10)
 end
 
 Então("o protocolo deve ser renovado") do
