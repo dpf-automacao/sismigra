@@ -8,7 +8,7 @@ Quando("realizar o procedimento de {string} de Imigrante na Internet") do |tipo_
 end
 
 Quando("preencho Dados Pessoais do requerimento e clico em Proximo") do
-    @requerimento_imigrante_internet.preencher_dados_pessoais(@tipo_requerimento)
+    @requerimento_imigrante_internet.preencher_dados_pessoais_internet(@tipo_requerimento)
 end
 
 Quando("preencho Dados do Registro do requerimento e clico em Proximo") do
@@ -47,6 +47,8 @@ Entao("eu visualizo o andamento do requerimento {string}") do |situacao_requerim
 end
 
 # FIM STEPS ---------------------  INTERNET
+
+
 
 # INICIO PROCEDIMENTOS INTRANET
 
@@ -95,7 +97,7 @@ end
 # PROCESSAR ATENDIMENTOS
 
 Quando("preencho Dados Pessoais e clico em Proximo") do
-    @requerimento_imigrante_intranet.preencher_dados_pessoais
+    @requerimento_imigrante_intranet.preencher_dados_pessoais_intranet
 end
 
 Quando("preencho Dados do Registro e clico em Proximo") do

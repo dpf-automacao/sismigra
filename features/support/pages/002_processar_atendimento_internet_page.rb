@@ -193,7 +193,7 @@ include FileHelper
     element :texto_imagem_input, "input[id*='verifyCaptcha']"
     element :imagem_captcha, "img[id='j_id657:capimg']"
 
-    def preencher_dados_pessoais(tipo_requerimento)
+    def preencher_dados_pessoais_internet(tipo_requerimento)
 
         @tipo_requerimento = tipo_requerimento
 
