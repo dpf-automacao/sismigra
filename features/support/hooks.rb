@@ -10,6 +10,7 @@ After do |scenario|
   page.save_screenshot(shot)
   embed(shot, 'image/png', 'Clique aqui para ver o print da tela')
 
+  # VINICIUS_VERIFICAR VERIFICAR MELHORIA DE PROCESSO DE ABAS
   switch_to_window(windows.last)
   page.execute_script "window.close();"
   switch_to_window(windows.first)

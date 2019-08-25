@@ -212,17 +212,17 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         puts "Pesquisando tipo de solicitacao para #{@tipo_solicitacao}"
 
+        # VINICIUS_VERIFICAR POSSIBILIDADE DE RETIRAR 1 ALTERACAO
         sleep(1)
 
         puts "Alterando tipo de solicitacao para Registro"
         alterar_tipo_solicitacao_btn.click
         novo_tipo_solicitacao_select.select("Registro")
         confirmar_alterar_tipo_solicitacao_btn.click
+        puts "Pesquisando tipo de solicitacao para Registro"
         tipo_solicitacao_select.select("Registro")
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
-
-        puts "Pesquisando tipo de solicitacao para Registro"
 
         sleep(1)
 
@@ -252,7 +252,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
 
-
         sleep(1)
 
         puts "Alterando tipo de solicitacao para Recadastramento Extemporaneo"
@@ -267,7 +266,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
 
-
         sleep(1)
 
         puts "Alterando tipo de solicitacao para Substituicao de CRNM"
@@ -281,7 +279,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         tipo_solicitacao_select.select("Substituição de CRNM")
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
-
 
         sleep(1)
 
@@ -315,8 +312,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
-
-    # VINICIUS_VERIFICAR PORQUE TEM 2 METODOS COM MESMO NOME
     def preencher_dados_pessoais_intranet
 
         if(@tipo_solicitacao == "Alteracao_Endereco")
@@ -385,7 +380,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
-        # VINICIUS_VERIFICAR UTILIZACAO
+    # VINICIUS_VERIFICAR UTILIZACAO
     def alterar_prazos
 
       if (@tipo_solicitacao == "Alteração de Prazo")
@@ -459,6 +454,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
+    #VINICIUS_VERIFICAR POSSIBILIDADE DE CRIAR 2
     def selecionar_documentos_obrigatorios
 
         @indice = 0
@@ -483,13 +479,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             @outros_documentos_texto = "Outra documentacao"
             puts "Preechendo #{@outros_documentos_texto}"
-
             sleep(0.5)
-
             outros_documentos_input.click.set(@outros_documentos_texto)
             adicionar_documento_btn.click
             wait_until_remover_doc_recebidos_img_visible
-            
             sleep(0.5)
 
         end
@@ -575,6 +568,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     end
 
+    #VINICIUS_VERIFICAR MELHORIA CONCLUIR_PREVIA_DA_CARTEIRA E SUSPENDER_PREVIA_DA_CARTEIRA
     def visualizar_previa_carteira(tipo_finalizacao)
 
         if(wait_until_aba_previa_carteira_visible)
@@ -611,6 +605,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 
                 sleep(1)
                 
+                # VINICIUS_VERIFICAR VERIFICAR MELHORIA DE PROCESSO DE ABAS
                 page.execute_script "window.close();"
                 switch_to_window(windows.last)
                 page.execute_script "window.close();"
@@ -628,7 +623,9 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def deferir_alteracao_endereco
 
+        puts "Clicando para deferir alteracao de endereco"
         deferir_alteracao_endereco_btn.click
+        puts "Clicando para encerrar alteracao de endereco"
         encerrar_alteracao_endereco_btn.click
 
     end
@@ -637,6 +634,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(has_dados_divergentes_erro?(wait:5))
 
+            puts "Clicando em proximo apos achar dados divergentes"
             proximo_btn.click
             aguardar_carregamento_load
 
@@ -677,7 +675,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(has_mensagem_erro?(wait:3))
 
-            puts "Clicando Proximo apos exibicao de mensagem de erro"
+            puts "Clicando em Proximo apos exibicao de mensagem de erro"
             proximo_btn.click
             aguardar_carregamento_load
 
@@ -689,11 +687,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(has_associar_checkbox?(wait:3))
 
-            # VINICIUS_VERIFICAR PORQUE NAO ESTA FORMATADO COM _
+            # VINICIUS_VERIFICAR PORQUE NAO ESTA FORMATADO COM _ NAS SOLICITACOES
             if(  (@tipo_solicitacao == "Substituição de CRNM") || (@tipo_solicitacao == "Segunda via de CRNM") || (@tipo_solicitacao == "Alteracao_Endereco") )
 
                 associar_checkbox(match: :first).click
-                puts "Confirmando Identidade"
+                puts "Confirmando Identidade de Imigrante"
                 confirmar_identidade_btn.click
 
                 if(wait_until_proximo_btn_visible)
@@ -707,7 +705,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
                 if(@tipo_solicitacao != "Alteracao_Endereco")
 
-                    puts "Validando mensagem de erro para solicitacoes diferentes de alteracao de endereco"
                     validar_msg_erro
 
                 end
@@ -731,12 +728,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
             aguardar_carregamento_load
 
         end
-
-    end
-
-    def aguardar_carregamento_load 
-
-        wait_until_carregamento_load_invisible
 
     end
 
@@ -764,12 +755,18 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def verificar_situacao_requerimento(tipo_requerimento)
 
-        puts "Verificando situacao do requerimento"
         @dados_situacao_requerimento = recuperar_dados("features/arquivos/requerimentos/#{tipo_requerimento}.txt")
+        puts "Verificando situacao do requerimento de numero: #{@dados_situacao_requerimento}"
         nr_requerimento_situacao_input.click.set(@dados_situacao_requerimento[0])
         btn_pesquisar.click
         aguardar_carregamento_load
         sleep(1)
+
+    end
+
+    def aguardar_carregamento_load 
+
+        wait_until_carregamento_load_invisible
 
     end
 
