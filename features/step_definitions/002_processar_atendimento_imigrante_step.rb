@@ -54,7 +54,7 @@ end
 
 # -----------------------------------------------> INICIO STEPS INTRANET <-------------------
 
-# SITUAÇÃO DO REQUERIMENTO INTRANET
+# SELECIONAR MENU SOLICITACOES PARA SITUACAO DO REQUERIMENTO INTRANET
 
 Quando("solicitar Situacao do Requerimento de {string} no menu {string} na Intranet") do |tipo_requerimento, tipo_menu|
     @menu_intranet = MenuIntranetPage.new
@@ -65,6 +65,8 @@ Quando("solicitar Situacao do Requerimento de {string} no menu {string} na Intra
     @menu_intranet.selecionar_menu_solicitacoes_intranet(tipo_menu)
 end
 
+# VERIFICAR SITUACAO DO REQUERIMENTO INTRANET
+
 Quando("preencho o numero do Requerimento para verificar a Situacao do Requerimento") do
     @requerimento_imigrante_intranet.verificar_situacao_requerimento(@tipo_requerimento)
 end
@@ -73,7 +75,7 @@ Entao("eu visualizo a situacao do Requerimento {string}") do |situacao_requerime
 
 end
 
-# PROCESSAR ATENDIMENTOS INTRANET
+# SELECIONAR MENU SOLICITACOES PARA PROCESSAR ATENDIMENTO INTRANET
 
 Quando("processar atendimento de {string} no menu {string} na Intranet") do |tipo_requerimento, tipo_menu|
     @menu_intranet = MenuIntranetPage.new
@@ -84,7 +86,7 @@ Quando("processar atendimento de {string} no menu {string} na Intranet") do |tip
     @menu_intranet.selecionar_menu_solicitacoes_intranet(tipo_menu)
 end
 
-# PESQUISAR SOLICITACAO
+# PESQUISAR SOLICITACAO INTRANET
 
 Quando("preencher as informacoes para Pesquisar Solicitacao de {string} na Situacao {string}") do |tipo_solicitacao_pesquisa, situacao_requerimento_pesquisa|
     @tipo_solicitacao_pesquisa = tipo_solicitacao_pesquisa
@@ -92,20 +94,20 @@ Quando("preencher as informacoes para Pesquisar Solicitacao de {string} na Situa
     @requerimento_imigrante_intranet.pesquisar_solicitacao(@tipo_solicitacao_pesquisa, @situacao_requerimento_pesquisa)
 end
 
-# ALTERAR TIPO\d DE SOLICITACOES
+# ALTERAR TIPO DE SOLICITACOES INTRANET
 
 Quando("clico para Alterar o Tipo de Solicitacao de {string}") do |tipo_solicitacao_alteracao|
     @tipo_solicitacao_alteracao = tipo_solicitacao_alteracao
     @requerimento_imigrante_intranet.alterar_tipo_de_solicitacao(@tipo_solicitacao_alteracao)
 end
 
-# ABORTAR ATENDIMENTO PARA TORNAR SITUACAO EM ANALISE
+# ABORTAR ATENDIMENTO PARA TORNAR SITUACAO EM ANALISE INTRANET
 
 Quando("clico no icone Home para abortar a solicitacao e pesquiso o requerimento novamente") do
     @requerimento_imigrante_intranet.abortar_solicitacao_para_analise
 end
 
-# PREENCHER DADOS PARA PROCESSAR ATENDIMENTO INTRANET
+# PREENCHER DADOS PARA PROCESSAR ATENDIMENTOS INTRANET
 
 Quando("preencho Dados Pessoais e clico em Proximo") do
     @requerimento_imigrante_intranet.preencher_dados_pessoais_intranet
@@ -126,6 +128,8 @@ end
 Quando("preencho Dados do Resultado da Pesquisa e clico em Proximo") do
     @requerimento_imigrante_intranet.preencher_resultado_da_pesquisa
 end
+
+# VISUALIZAR PREVIA DA CARTEIRA INTRANET
 
 Quando("visualizo Dados da Previa da Carteira e clico em {string}") do |tipo_finalizacao|
     @tipo_finalizacao = tipo_finalizacao
