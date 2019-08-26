@@ -60,14 +60,14 @@ Cenario: Gerar Relatorio de Quantitativo de Erro Material
 
 
 @relatorio_cedulas_nao_recebidas
-Cenario: Gerar Relatorio de Quantitativo de Erro Material
+Cenario: Gerar Relatorio de Quantitativo de Cedulas nao Recebidas
     Quando realizar o procedimento de consultar relatorio "Cédulas não recebidas"
     E preencho Dados de Contulta do relatorio de Cédulas não recebidas e clico em Gerar
     Entao visualizo a Impressao do relatorio referente
 
 
 @relatorio_requerimentos_suspensos
-Cenario: Gerar Relatorio de Quantitativo de Erro Material
+Cenario: Gerar Relatorio de Quantitativo de Requerimento Suspensos
     Quando realizar o procedimento de consultar relatorio "Requerimentos Suspensos"
     E preencho Dados de Contulta do relatorio de Requerimentos Suspensos e clico em Gerar
     Entao visualizo a Impressao do relatorio referente

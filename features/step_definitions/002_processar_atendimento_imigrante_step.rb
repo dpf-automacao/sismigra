@@ -73,6 +73,8 @@ end
 
 Entao("eu visualizo a situacao do Requerimento {string}") do |situacao_requerimento|
 
+    
+
 end
 
 # SELECIONAR MENU SOLICITACOES PARA PROCESSAR ATENDIMENTO INTRANET
@@ -147,6 +149,7 @@ Quando("preencho Dados do Endereco e clico Deferir e Encerro o deferimento") do
 end                                                                            
                                                                                 
 Entao("eu realizo o deferimento de alteracao de endereco com sucesso") do      
+
 
 end                                                                            
                                                                                 

@@ -1,5 +1,7 @@
 class DecisaoRequerimento < PageHelper
+    
     include FileHelper
+
     #Elementos para pesquisar o requerimento
     element :nr_requerimento_input, 'input[id*="numeroRequerimento"]'
     element :pesquisar_requerimento_btn, "input[id*='botaoPesquisar']"
