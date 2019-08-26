@@ -365,7 +365,8 @@ include FileHelper
             puts "Selecionando Visto: SIM"
             possui_visto_sim_radio.click
             puts "Preenchendo Numero do Visto: #{@numero_visto}"
-            numero_visto_input.click.set(@numero_visto)
+            numero_visto_input.click
+            numero_visto_input.set(@numero_visto)
             puts "Preenchendo Data da Concessao do Visto: #{@data_da_concessao}"
             data_da_concessao_input.click.set(@data_da_concessao)
             puts "Preenchendo Cidade da Concessao do Visto: #{@cidade_da_concessao}"

@@ -291,6 +291,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def preencher_dados_pessoais_intranet
 
+        #VINICIUS_VERIFICAR BINDING.PRY
+
+        puts @tipo_solicitacao
+
         if(@tipo_solicitacao == "Alteracao_Endereco")
 
             puts "Clicando no primeiro registro de alteracao de endereco para preencher dados pessoais"
@@ -604,6 +608,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
             proximo_btn.click
             aguardar_carregamento_load
 
+        else
+
+            puts "Não existe dados divergentes (aba dados pessoais)"
+
         end
 
     end
@@ -641,6 +649,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
             proximo_btn.click
             aguardar_carregamento_load
 
+        else
+
+            puts "Não existe mensagem de erro (aba dados pessoais)"
+
         end
 
     end
@@ -648,6 +660,10 @@ class SolicitacoesIntranetPage < SitePrism::Page
     def associar_imigrante
 
         if(has_associar_checkbox?(wait:3))
+
+            puts "Tipo de solicitação: #{@tipo_solicitacao}"
+
+            #VINICIUS_VERIFICAR BINDING.PRY
 
             # VINICIUS_VERIFICAR PORQUE NAO ESTA FORMATADO COM _ NAS SOLICITACOES
             if(  (@tipo_solicitacao == "Substituição de CRNM") || (@tipo_solicitacao == "Segunda via de CRNM") || (@tipo_solicitacao == "Alteracao_Endereco") )
