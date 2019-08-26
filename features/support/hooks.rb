@@ -13,8 +13,6 @@ After do |scenario|
   # VINICIUS_VERIFICAR VERIFICAR MELHORIA DE PROCESSO DE ABAS
   page.execute_script "window.close();"
   switch_to_window(windows.last)
-  page.execute_script "window.close();"
-  switch_to_window(windows.first)
 
 end
 

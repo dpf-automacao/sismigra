@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1566841149045" stop="1566841866100">
+  <name>Alteracao Prazo Imigrante</name>
+  <title>Alteracao Prazo Imigrante</title>
+  <test-cases>
+    <test-case start="1566841149047" stop="1566841190983" status="passed">
+      <name>Gerar Requerimento de Alteracao de Prazo do Imigrante</name>
+      <title>Gerar Requerimento de Alteracao de Prazo do Imigrante</title>
+      <steps>
+        <step start="1566841151215" stop="1566841151216" status="passed">
+          <name>Quando realizar o procedimento de "Alteracao_de_Prazo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Alteracao_de_Prazo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841151216" stop="1566841163479" status="passed">
+          <name>E preencho Dados Pessoais do requerimento e clico em Proximo</name>
+          <title>E preencho Dados Pessoais do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841163479" stop="1566841165116" status="passed">
+          <name>E preencho Dados do Registro do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Registro do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841165117" stop="1566841181602" status="passed">
+          <name>E preencho Dados do Endereco do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Endereco do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841181602" stop="1566841190735" status="passed">
+          <name>E preencho Dados da Declaracao e clico em Salvar</name>
+          <title>E preencho Dados da Declaracao e clico em Salvar</title>
+          <attachments/>
+        </step>
+        <step start="1566841190735" stop="1566841190737" status="passed">
+          <name>Entao visualizo a Impressao da Solicitacao referente</name>
+          <title>Entao visualizo a Impressao da Solicitacao referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="7989d7e010807a7f10764f92cb448d97aff357aa337d8fa2c87067f7b7f446ba-attachment.png" title="Clique aqui para ver o print da tela" size="42202" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Gerar Requerimento de Alteracao de Prazo do Imigrante"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841190987" stop="1566841192996" status="passed">
+      <name>Verificar Protocolo de Alteracao de Prazo do Imigrante em Aberto na Internet</name>
+      <title>Verificar Protocolo de Alteracao de Prazo do Imigrante em Aberto na Internet</title>
+      <steps>
+        <step start="1566841192184" stop="1566841192184" status="passed">
+          <name>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841192184" stop="1566841192769" status="passed">
+          <name>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</name>
+          <title>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</title>
+          <attachments/>
+        </step>
+        <step start="1566841192769" stop="1566841192770" status="passed">
+          <name>Entao eu visualizo a Verificacao do Protocolo referente</name>
+          <title>Entao eu visualizo a Verificacao do Protocolo referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="6fe7b0c3d0d126349b1ca6ab1e9002d07aeff40427ecf764124b374fe2ea9ed5-attachment.png" title="Clique aqui para ver o print da tela" size="19511" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Verificar Protocolo de Alteracao de Prazo do Imigrante em Aberto na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841193002" stop="1566841196277" status="passed">
+      <name>Andamento do Requerimento de Alteracao de Prazo do Imigrante em Aberto na Internet</name>
+      <title>Andamento do Requerimento de Alteracao de Prazo do Imigrante em Aberto na Internet</title>
+      <steps>
+        <step start="1566841194167" stop="1566841194167" status="passed">
+          <name>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841194169" stop="1566841196017" status="passed">
+          <name>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</name>
+          <title>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</title>
+          <attachments/>
+        </step>
+        <step start="1566841196017" stop="1566841196018" status="passed">
+          <name>Entao eu visualizo o andamento do requerimento "Em Aberto"</name>
+          <title>Entao eu visualizo o andamento do requerimento "Em Aberto"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="9b6c412442b92d73eaa7291028e52adbfd73376790914d77557245f82a810893-attachment.png" title="Clique aqui para ver o print da tela" size="61208" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Andamento do Requerimento de Alteracao de Prazo do Imigrante em Aberto na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841196282" stop="1566841206630" status="passed">
+      <name>Situacao do Requerimento de Alteracao de Prazo do Imigrante em Aberto na Intranet</name>
+      <title>Situacao do Requerimento de Alteracao de Prazo do Imigrante em Aberto na Intranet</title>
+      <steps>
+        <step start="1566841204426" stop="1566841204426" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841204426" stop="1566841206343" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1566841206343" stop="1566841206345" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Aberto"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Aberto"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="1d9c4eda1c9cc31b9565ee519bbb23490e11c7b4c771565bb59250d5358622bb-attachment.png" title="Clique aqui para ver o print da tela" size="69896" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Alteracao de Prazo do Imigrante em Aberto na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841206635" stop="1566841267773" status="passed">
+      <name>Processar Atendimento de Alteracao de Prazo do Imigrante em Aberto na Intranet</name>
+      <title>Processar Atendimento de Alteracao de Prazo do Imigrante em Aberto na Intranet</title>
+      <steps>
+        <step start="1566841213349" stop="1566841213349" status="passed">
+          <name>Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</name>
+          <title>Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841213349" stop="1566841217051" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"</title>
+          <attachments/>
+        </step>
+        <step start="1566841217051" stop="1566841231615" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841231615" stop="1566841239342" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841239342" stop="1566841243829" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841243829" stop="1566841255754" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841255754" stop="1566841261726" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841261726" stop="1566841267449" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Concluir"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Concluir"</title>
+          <attachments/>
+        </step>
+        <step start="1566841267449" stop="1566841267452" status="passed">
+          <name>Entao verifico o requerimento referente "Em Processamento"</name>
+          <title>Entao verifico o requerimento referente "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="55d74042460354c6134302c5bf1b1de1890b7d9c78e9f517fe3393706ff02606-attachment.png" title="Clique aqui para ver o print da tela" size="56636" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Processar Atendimento de Alteracao de Prazo do Imigrante em Aberto na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841267777" stop="1566841276286" status="passed">
+      <name>Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em aberto em Processamento na Intranet</name>
+      <title>Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em aberto em Processamento na Intranet</title>
+      <steps>
+        <step start="1566841274306" stop="1566841274306" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841274306" stop="1566841276000" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1566841276000" stop="1566841276001" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Processamento"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="24c2a54af5c4a6e31674ec22c7af4d1c9901b831ce1aa5546a0d213beb7a1f95-attachment.png" title="Clique aqui para ver o print da tela" size="69676" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em aberto em Processamento na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841276290" stop="1566841496413" status="passed">
+      <name>Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em Analise</name>
+      <title>Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em Analise</title>
+      <steps>
+        <step start="1566841278008" stop="1566841278009" status="passed">
+          <name>Quando realizar o procedimento de "Alteracao_de_Prazo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Alteracao_de_Prazo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841278009" stop="1566841282777" status="passed">
+          <name>E preencho Dados Pessoais do requerimento e clico em Proximo</name>
+          <title>E preencho Dados Pessoais do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841282777" stop="1566841284120" status="passed">
+          <name>E preencho Dados do Registro do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Registro do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841284120" stop="1566841300766" status="passed">
+          <name>E preencho Dados do Endereco do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Endereco do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841300766" stop="1566841432896" status="passed">
+          <name>E preencho Dados da Declaracao e clico em Salvar</name>
+          <title>E preencho Dados da Declaracao e clico em Salvar</title>
+          <attachments/>
+        </step>
+        <step start="1566841432896" stop="1566841440536" status="passed">
+          <name>E processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841440536" stop="1566841445162" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"</title>
+          <attachments/>
+        </step>
+        <step start="1566841445163" stop="1566841460004" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841460004" stop="1566841467810" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841467810" stop="1566841472197" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841472197" stop="1566841484054" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841484054" stop="1566841485485" status="passed">
+          <name>E clico no icone Home para abortar a solicitacao e pesquiso o requerimento novamente</name>
+          <title>E clico no icone Home para abortar a solicitacao e pesquiso o requerimento novamente</title>
+          <attachments/>
+        </step>
+        <step start="1566841485485" stop="1566841492098" status="passed">
+          <name>E processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841492098" stop="1566841495949" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em an&#xE1;lise"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+        <step start="1566841495950" stop="1566841495954" status="passed">
+          <name>Entao verifico o requerimento referente "Em an&#xE1;lise"</name>
+          <title>Entao verifico o requerimento referente "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="68576f631eebcdb7f5f1dd0922e37effd485dad02a60ab6c05039e2000fbdd63-attachment.png" title="Clique aqui para ver o print da tela" size="9477" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em Analise"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841496417" stop="1566841498432" status="passed">
+      <name>Verificar Protocolo de Alteracao de Prazo do Imigrante em Analise na Internet</name>
+      <title>Verificar Protocolo de Alteracao de Prazo do Imigrante em Analise na Internet</title>
+      <steps>
+        <step start="1566841497520" stop="1566841497520" status="passed">
+          <name>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841497520" stop="1566841498147" status="passed">
+          <name>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</name>
+          <title>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</title>
+          <attachments/>
+        </step>
+        <step start="1566841498147" stop="1566841498150" status="passed">
+          <name>Entao eu visualizo a Verificacao do Protocolo referente</name>
+          <title>Entao eu visualizo a Verificacao do Protocolo referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="817cb5a82b93e62f9f26588692aff324824098f2e1684867099728cca09e0910-attachment.png" title="Clique aqui para ver o print da tela" size="24102" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Verificar Protocolo de Alteracao de Prazo do Imigrante em Analise na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841498437" stop="1566841501946" status="passed">
+      <name>Andamento do Requerimento de Alteracao de Prazo do Imigrante em Analise na Internet</name>
+      <title>Andamento do Requerimento de Alteracao de Prazo do Imigrante em Analise na Internet</title>
+      <steps>
+        <step start="1566841499787" stop="1566841499787" status="passed">
+          <name>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841499787" stop="1566841501634" status="passed">
+          <name>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</name>
+          <title>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</title>
+          <attachments/>
+        </step>
+        <step start="1566841501634" stop="1566841501635" status="passed">
+          <name>Entao eu visualizo o andamento do requerimento "Em an&#xE1;lise"</name>
+          <title>Entao eu visualizo o andamento do requerimento "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="8776ba7de6ce60a8a8dcaab6f281a5d5020fbcc66fd6e3802903ab583af28358-attachment.png" title="Clique aqui para ver o print da tela" size="96999" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Andamento do Requerimento de Alteracao de Prazo do Imigrante em Analise na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841501952" stop="1566841510670" status="passed">
+      <name>Situacao do Requerimento de Alteracao de Prazo do Imigrante em Analise na Intranet</name>
+      <title>Situacao do Requerimento de Alteracao de Prazo do Imigrante em Analise na Intranet</title>
+      <steps>
+        <step start="1566841508555" stop="1566841508555" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841508555" stop="1566841510352" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1566841510353" stop="1566841510354" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em an&#xE1;lise"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="9246dc8a3ae3d515ec093f57873e89d28e13377fffc235696b9adfbc8273f061-attachment.png" title="Clique aqui para ver o print da tela" size="108643" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Alteracao de Prazo do Imigrante em Analise na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841510676" stop="1566841570009" status="passed">
+      <name>Processar Atendimento de Alteracao de Prazo do Imigrante em Analise na Intranet</name>
+      <title>Processar Atendimento de Alteracao de Prazo do Imigrante em Analise na Intranet</title>
+      <steps>
+        <step start="1566841517193" stop="1566841517194" status="passed">
+          <name>Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</name>
+          <title>Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841517194" stop="1566841520983" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em an&#xE1;lise"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em an&#xE1;lise"</title>
+          <attachments/>
+        </step>
+        <step start="1566841520983" stop="1566841535490" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841535490" stop="1566841542690" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841542690" stop="1566841547124" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841547124" stop="1566841558344" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841558344" stop="1566841564165" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841564165" stop="1566841569690" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Concluir"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Concluir"</title>
+          <attachments/>
+        </step>
+        <step start="1566841569690" stop="1566841569694" status="passed">
+          <name>Entao verifico o requerimento referente "Em Processamento"</name>
+          <title>Entao verifico o requerimento referente "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="24d18f50760af38679181fc8d80ff078864d9001996754bd375756296fbc7ec9-attachment.png" title="Clique aqui para ver o print da tela" size="63153" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Processar Atendimento de Alteracao de Prazo do Imigrante em Analise na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841570013" stop="1566841578736" status="passed">
+      <name>Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em analise em Processamento na Intranet</name>
+      <title>Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em analise em Processamento na Intranet</title>
+      <steps>
+        <step start="1566841576567" stop="1566841576567" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841576568" stop="1566841578431" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1566841578431" stop="1566841578432" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Processamento"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="cd1fdb0af519edd65fd6edba92bb567ed25ed434d8d43413001e5a74b85ff772-attachment.png" title="Clique aqui para ver o print da tela" size="108632" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em analise em Processamento na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841578740" stop="1566841782607" status="passed">
+      <name>Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em Suspenso</name>
+      <title>Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em Suspenso</title>
+      <steps>
+        <step start="1566841580164" stop="1566841580164" status="passed">
+          <name>Quando realizar o procedimento de "Alteracao_de_Prazo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Alteracao_de_Prazo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841580164" stop="1566841584730" status="passed">
+          <name>E preencho Dados Pessoais do requerimento e clico em Proximo</name>
+          <title>E preencho Dados Pessoais do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841584730" stop="1566841586023" status="passed">
+          <name>E preencho Dados do Registro do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Registro do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841586023" stop="1566841602406" status="passed">
+          <name>E preencho Dados do Endereco do requerimento e clico em Proximo</name>
+          <title>E preencho Dados do Endereco do requerimento e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841602406" stop="1566841711783" status="passed">
+          <name>E preencho Dados da Declaracao e clico em Salvar</name>
+          <title>E preencho Dados da Declaracao e clico em Salvar</title>
+          <attachments/>
+        </step>
+        <step start="1566841711783" stop="1566841719126" status="passed">
+          <name>E processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841719126" stop="1566841722837" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"</title>
+          <attachments/>
+        </step>
+        <step start="1566841722837" stop="1566841737636" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841737636" stop="1566841745464" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841745464" stop="1566841749852" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841749852" stop="1566841761868" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841761868" stop="1566841767928" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841767928" stop="1566841771478" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Suspender"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Suspender"</title>
+          <attachments/>
+        </step>
+        <step start="1566841771478" stop="1566841778198" status="passed">
+          <name>E processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</name>
+          <title>E processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841778199" stop="1566841782099" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Suspenso"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Suspenso"</title>
+          <attachments/>
+        </step>
+        <step start="1566841782099" stop="1566841782104" status="passed">
+          <name>Entao verifico o requerimento referente "Suspenso"</name>
+          <title>Entao verifico o requerimento referente "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="68576f631eebcdb7f5f1dd0922e37effd485dad02a60ab6c05039e2000fbdd63-attachment.png" title="Clique aqui para ver o print da tela" size="9477" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em Suspenso"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841782611" stop="1566841784575" status="passed">
+      <name>Verificar Protocolo de Alteracao de Prazo do Imigrante em Suspenso na Internet</name>
+      <title>Verificar Protocolo de Alteracao de Prazo do Imigrante em Suspenso na Internet</title>
+      <steps>
+        <step start="1566841783714" stop="1566841783714" status="passed">
+          <name>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Verificacao_de_Protocolo" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841783714" stop="1566841784307" status="passed">
+          <name>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</name>
+          <title>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Verificacao_de_Protocolo" e clico em Verificar</title>
+          <attachments/>
+        </step>
+        <step start="1566841784307" stop="1566841784308" status="passed">
+          <name>Entao eu visualizo a Verificacao do Protocolo referente</name>
+          <title>Entao eu visualizo a Verificacao do Protocolo referente</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="7aa579339b7108f53772a200fce9e14407d7f600959fb1e1115297dd90585b68-attachment.png" title="Clique aqui para ver o print da tela" size="24138" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Verificar Protocolo de Alteracao de Prazo do Imigrante em Suspenso na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841784580" stop="1566841787857" status="passed">
+      <name>Andamento do Requerimento de Alteracao de Prazo do Imigrante em Suspenso na Internet</name>
+      <title>Andamento do Requerimento de Alteracao de Prazo do Imigrante em Suspenso na Internet</title>
+      <steps>
+        <step start="1566841785778" stop="1566841785778" status="passed">
+          <name>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</name>
+          <title>Quando realizar o procedimento de "Andamento_do_Requerimento" de Imigrante na Internet</title>
+          <attachments/>
+        </step>
+        <step start="1566841785778" stop="1566841787566" status="passed">
+          <name>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</name>
+          <title>E preencho os Dados de "Alteracao_de_Prazo" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar</title>
+          <attachments/>
+        </step>
+        <step start="1566841787566" stop="1566841787567" status="passed">
+          <name>Entao eu visualizo o andamento do requerimento "Suspenso"</name>
+          <title>Entao eu visualizo o andamento do requerimento "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="ab9492dcd592e3489ba1d73b52002ea52ff60b90b1fb3f90225dd534e0b3e610-attachment.png" title="Clique aqui para ver o print da tela" size="96978" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Andamento do Requerimento de Alteracao de Prazo do Imigrante em Suspenso na Internet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841787862" stop="1566841796551" status="passed">
+      <name>Situacao do Requerimento de Alteracao de Prazo do Imigrante em Suspenso na Intranet</name>
+      <title>Situacao do Requerimento de Alteracao de Prazo do Imigrante em Suspenso na Intranet</title>
+      <steps>
+        <step start="1566841794387" stop="1566841794387" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841794387" stop="1566841796233" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1566841796233" stop="1566841796235" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Suspenso"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Suspenso"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="f61e7d1bcb6b69b8ddb0648cfa5417100e36f8c11dd89d267be83e4fa8704e45-attachment.png" title="Clique aqui para ver o print da tela" size="108716" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Alteracao de Prazo do Imigrante em Suspenso na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841796556" stop="1566841857030" status="passed">
+      <name>Processar Atendimento de Alteracao de Prazo do Imigrante em Suspenso na Intranet</name>
+      <title>Processar Atendimento de Alteracao de Prazo do Imigrante em Suspenso na Intranet</title>
+      <steps>
+        <step start="1566841803209" stop="1566841803209" status="passed">
+          <name>Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</name>
+          <title>Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841803210" stop="1566841807390" status="passed">
+          <name>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Suspenso"</name>
+          <title>E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Suspenso"</title>
+          <attachments/>
+        </step>
+        <step start="1566841807390" stop="1566841822408" status="passed">
+          <name>E preencho Dados Pessoais e clico em Proximo</name>
+          <title>E preencho Dados Pessoais e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841822408" stop="1566841829487" status="passed">
+          <name>E preencho Dados do Registro e clico em Proximo</name>
+          <title>E preencho Dados do Registro e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841829487" stop="1566841833930" status="passed">
+          <name>E preencho Dados do Endereco e clico em Proximo</name>
+          <title>E preencho Dados do Endereco e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841833930" stop="1566841845300" status="passed">
+          <name>E preencho Dados de Documentos e clico em Proximo</name>
+          <title>E preencho Dados de Documentos e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841845300" stop="1566841850956" status="passed">
+          <name>E preencho Dados do Resultado da Pesquisa e clico em Proximo</name>
+          <title>E preencho Dados do Resultado da Pesquisa e clico em Proximo</title>
+          <attachments/>
+        </step>
+        <step start="1566841850956" stop="1566841856696" status="passed">
+          <name>E visualizo Dados da Previa da Carteira e clico em "Concluir"</name>
+          <title>E visualizo Dados da Previa da Carteira e clico em "Concluir"</title>
+          <attachments/>
+        </step>
+        <step start="1566841856696" stop="1566841856698" status="passed">
+          <name>Entao verifico o requerimento referente "Em Processamento"</name>
+          <title>Entao verifico o requerimento referente "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="f91530690c585fc82a4ebd5976d8c0d01091a3b1a790bd2d046b750f2a572b90-attachment.png" title="Clique aqui para ver o print da tela" size="63302" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Processar Atendimento de Alteracao de Prazo do Imigrante em Suspenso na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1566841857035" stop="1566841865758" status="passed">
+      <name>Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em suspenso em Processamento na Intranet</name>
+      <title>Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em suspenso em Processamento na Intranet</title>
+      <steps>
+        <step start="1566841863481" stop="1566841863481" status="passed">
+          <name>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</name>
+          <title>Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet</title>
+          <attachments/>
+        </step>
+        <step start="1566841863481" stop="1566841865454" status="passed">
+          <name>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</name>
+          <title>E preencho o numero do Requerimento para verificar a Situacao do Requerimento</title>
+          <attachments/>
+        </step>
+        <step start="1566841865454" stop="1566841865455" status="passed">
+          <name>Entao eu visualizo a situacao do Requerimento "Em Processamento"</name>
+          <title>Entao eu visualizo a situacao do Requerimento "Em Processamento"</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments>
+        <attachment source="bb536eaac7585bab16ed3b4d36fc6947523da6f7adff26c918aec07292e59a47-attachment.png" title="Clique aqui para ver o print da tela" size="108708" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="19555500"/>
+        <label name="host" value="DESKTOP-PVI2LJO"/>
+        <label name="feature" value="Alteracao Prazo Imigrante"/>
+        <label name="story" value="Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em suspenso em Processamento na Intranet"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="severity" value="normal"/>
+    <label name="thread" value="19555500"/>
+    <label name="host" value="DESKTOP-PVI2LJO"/>
+  </labels>
+</ns2:test-suite>

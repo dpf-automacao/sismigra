@@ -706,7 +706,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         
         else
 
-            puts "Aba dados pessoais nao encontrada"
+            puts "Verificacao de Associacao, dados divergentes e preenchimento de justificativa e feita apenas na aba dados pessoais"
 
         end
 
