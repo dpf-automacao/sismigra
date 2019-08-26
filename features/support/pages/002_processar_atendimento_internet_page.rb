@@ -216,8 +216,6 @@ include FileHelper
             @pais_nacionalidade = "COLOMBIA"
             @ocupacao_principal = "19 - "
             @rnm_titular = "V9707268"
-            
-            sleep(1)
 
             if(@tipo_requerimento == "Registro")
 
@@ -362,8 +360,6 @@ include FileHelper
         @meio_transporte = "Aéreo"
         @data_entrada = "11072019"
 
-        sleep(2)
-
         if(@tipo_requerimento == "Registro" || @tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
 
             puts "Selecionando Visto: SIM"
@@ -435,7 +431,6 @@ include FileHelper
             @vinculo_contato = "Parente"
             @pais_contato = "BRASIL"
 
-            sleep(1)
             puts "Preenchendo CEP Residencial: #{@cep_residencial}"
             cep_residencial_input.click.set(@cep_residencial)
             complemento_residencial_input.send_keys(:tab)
@@ -521,7 +516,6 @@ include FileHelper
 
             puts "Selecionando - Alteracao Endereco Residencial"
             alteracao_endereco_residencial_checkbox.click
-            sleep(1)
             puts "Preenchendo CEP Residencial - Alteracao Endereco: #{@cep_alteracao_end_residencial}"
             cep_alteracao_endereco_residencial_input.click.set(@cep_alteracao_end_residencial)
 
@@ -535,17 +529,14 @@ include FileHelper
             telefone_residencial_alteracao_endereco_residencial_input.click.set(@telefone_residencial_alteracao_end_residencial)
             puts "Preenchendo Telefone Celular - Alteracao Endereco: #{@telefone_celular_alteracao_end_residencial}"
             telefone_celular_alteracao_endereco_residencial_input.click.set(@telefone_celular_alteracao_end_residencial)
-            sleep(1)
             puts "Anexando arquivo de alteracao de endereco residencial"
             anexar(anexar_arquivo_alteracao_endereco_residencial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            sleep(1)
             has_arquivo_anexado_alteracao_endereco_residencial_link?(wait:10)
 
             # PREENCHER ENDERECO ALTERACAO COMERCIAL INTERNET
 
             puts "Selecionando - Alteracao Endereco Comercial"
             alteracao_endereco_comercial_checkbox.click
-            sleep(1)
             puts "Preenchendo CEP Comercial - Alteracao Endereco: #{@cep_alteracao_end_comercial}"
             cep_alteracao_endereco_comercial_input.click.set(@cep_alteracao_end_comercial)
             complemento_alteracao_endereco_comercial_input.send_keys(:tab)
@@ -564,17 +555,14 @@ include FileHelper
             cidade_alteracao_endereco_comercial_select.select(@cidade_alteracao_end_comercial)
             puts "Preenchendo Telefone Comercial - Alteracao Endereco: #{@telefone_alteracao_end_comercial}"
             telefone_alteracao_endereco_comercial_input.click.set(@telefone_alteracao_end_comercial)
-            sleep(1)
             puts "Anexando arquivo de alteracao de endereco comercial"
             anexar(anexar_arquivo_alteracao_endereco_comercial_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            sleep(1)
             has_arquivo_anexado_alteracao_endereco_comercial_link?(wait:10)
 
             # PREENCHER ENDERECO ALTERACAO EXTERIOR INTERNET
 
             puts "Selecionando - Alteracao Endereco Exterior"
             alteracao_endereco_exterior_checkbox.click
-            sleep(1)
             puts "Preenchendo CEP Exterior - Alteracao Endereco: #{@cep_alteracao_end_exterior}"
             cep_alteracao_endereco_exterior_input.click.set(@cep_alteracao_end_exterior)
 
@@ -592,10 +580,8 @@ include FileHelper
             estado_alteracao_endereco_exterior_input.click.set(@estado_alteracao_end_exterior)
             puts "Preenchendo Pais Endereco Exterior - Alteracao Endereco: #{@pais_alteracao_end_exterior}"
             pais_alteracao_endereco_exterior_input.select(@pais_alteracao_end_exterior)
-            sleep(1)
             puts "Anexando arquivo de alteracao de endereco exterior"
             anexar(anexar_arquivo_alteracao_endereco_exterior_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            sleep(1)
             has_arquivo_anexado_alteracao_endereco_exterior_link?(wait:10)
 
         end
@@ -639,7 +625,6 @@ include FileHelper
             numero_protocolo_requerimento_input.click.set(@dados_requerimento_protocolo[0])
             puts "Clicando no botao para Verificar Protocolo"
             verificar_protocolo_btn.click
-            sleep(1)
 
         elsif(tipo_verificacao == "Andamento_do_Requerimento")
 
@@ -648,7 +633,6 @@ include FileHelper
             puts "Clicando no botao para Pesquisar Andamento"
             pesquisar_btn.click
             aguardar_carregamento_load
-            sleep(1)
 
         end
 
@@ -666,7 +650,6 @@ include FileHelper
         puts "Clicando no botao Proximo"
         avancar_proximo_btn.click
         aguardar_carregamento_load
-        sleep(1)
 
     end
 

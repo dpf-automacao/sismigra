@@ -19,7 +19,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     element :aba_dados_pessoais, "td[id*='DadosPessoais_lbl'][class*='dr-tbpnl-tb-act']"
     element :primeira_aba, 'td[id*="DadosPessoais_lbl"]'
-    element :tipo_registro_select, "select[name*='formulario-processar-cie:j_id124:j_id140']"
+    element :tipo_registro_select, "select[name*='j_id138']"
     element :amparo_legal_input, "input[id*='inputText_comboAmparo']"
     element :amparo_legal_disabled_input, "input[id*='inputText_comboAmparo'][disabled='disabled']"
     element :sugestao_amparo_load, "td[class*='suggestionSelectValue']"
@@ -124,7 +124,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         # MUDAR CONTROLADORES PARA NOME DO CAMPO NORMAL PARA SELECIONAR NA PESQUISA
 
-
         # VINICIUS_VERIFICAR POSSILIBIDADE DE CONTROLE MELHOR UTILIZANDO GSUB 
 
         # @tipo_solicitacao.gsub(/[_]/, ' ')
@@ -155,8 +154,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         end
 
-        sleep(1)
-
         nr_requerimento_situacao_input.click.set(@dados_requerimento_pesquisa[0].chomp)
 
         if(@tipo_solicitacao != "Alteracao_Endereco")
@@ -166,15 +163,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         end
 
-        sleep(1)
-
         periodo_inicial_input.click.set(@periodo_inicial)
         periodo_final_input.click.set(@periodo_final)
         puts "Pesquisando Requerimento de numero:#{@dados_requerimento_pesquisa}"
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
-
-        sleep(1)
 
     end
 
@@ -212,7 +205,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         puts "Pesquisando tipo de solicitacao para #{@tipo_solicitacao}"
 
         # VINICIUS_VERIFICAR POSSIBILIDADE DE RETIRAR 1 ALTERACAO
-        sleep(1)
 
         puts "Alterando tipo de solicitacao para Registro"
         alterar_tipo_solicitacao_btn.click
@@ -222,8 +214,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         tipo_solicitacao_select.select("Registro")
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
-
-        sleep(1)
 
         puts "Alterando tipo de solicitacao para Autorizacao de Residencia"
         tipo_solicitacao_select.select("Registro")
@@ -236,8 +226,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         tipo_solicitacao_select.select("Autorização de Residência")
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
-        
-        sleep(1)
 
         puts "Alterando tipo de solicitacao para Alteracao de Prazo"
         tipo_solicitacao_select.select("Autorização de Residência")
@@ -251,8 +239,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
 
-        sleep(1)
-
         puts "Alterando tipo de solicitacao para Recadastramento Extemporaneo"
         tipo_solicitacao_select.select("Alteração de Prazo")
         pesquisar_requerimento_btn.click
@@ -264,8 +250,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         tipo_solicitacao_select.select("Recadastramento Extemporâneo")
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
-
-        sleep(1)
 
         puts "Alterando tipo de solicitacao para Substituicao de CRNM"
         tipo_solicitacao_select.select("Recadastramento Extemporâneo")
@@ -279,8 +263,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
 
-        sleep(1)
-
         puts "Alterando tipo de solicitacao para Segunda via de CRNM"
         tipo_solicitacao_select.select("Substituição de CRNM")
         pesquisar_requerimento_btn.click
@@ -293,8 +275,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
 
-        sleep(1)
-
         puts "Alterando tipo de solicitacao para #{@tipo_solicitacao}"
         tipo_solicitacao_select.select("Segunda via de CRNM")
         pesquisar_requerimento_btn.click
@@ -306,8 +286,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         tipo_solicitacao_select.select(@tipo_solicitacao)
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
-
-        sleep(1)
 
     end
 
@@ -333,22 +311,19 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
         if(wait_until_aba_dados_pessoais_visible)
 
-            if(@tipo_solicitacao != "Alteracao_Endereco")
+            @tipo_registro_req = "Registro de Visto Consular"
+            
+            # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
 
-                @tipo_registro_req = "Registro de Visto Consular"
-                
-                # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
+            if(has_tipo_registro_select?(wait:3))
 
-                if(has_tipo_registro_select?(wait:5))
-
-                    puts "Selecionando tipo de registro: #{tipo_registro_req}"
-                    tipo_registro_select.select(@tipo_registro_req)
-
-                end
-
-                preencher_amparo_legal
+                # ALGUNS TIPO DE REGISTROS NAO ESTAVA PREENCHIDO VINDO PELA INTERNET POR ISSO A SOLUCAO ABAIXO
+                puts "Selecionando tipo de registro: #{@tipo_registro_req}"
+                tipo_registro_select.select(@tipo_registro_req)
 
             end
+
+            preencher_amparo_legal
 
             avancar_proximo_processar_atendimento
 
@@ -463,7 +438,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             while(@indice < @tamanho_documentos) do
 
-                sleep(0.5)
+                sleep(0.1)
                 puts "Selecionando tipo de documentacao"
                 tipo_de_ducumentos_checkbox[@indice].check
                 @indice += 1
@@ -476,11 +451,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             @outros_documentos_texto = "Outra documentacao"
             puts "Preechendo #{@outros_documentos_texto}"
-            sleep(0.5)
+            sleep(0.1)
             outros_documentos_input.click.set(@outros_documentos_texto)
             adicionar_documento_btn.click
             wait_until_remover_doc_recebidos_img_visible
-            sleep(0.5)
+            sleep(0.1)
 
         end
 
@@ -505,11 +480,11 @@ class SolicitacoesIntranetPage < SitePrism::Page
             puts "Confirmando pagamento para GRU"
             confirmar_pagamento_gru_radio.click
             selecionar_documentos_obrigatorios
-            sleep(1)
+            sleep(0.1)
             puts "Anexando arquivo"
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
             has_arquivos_anexados?(wait:10)
-            sleep(1)
+            sleep(0.1)
             avancar_proximo_processar_atendimento
 
             if(has_justificativa_documentos_textarea?(wait:5))
@@ -588,15 +563,13 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 gerar_termo_suspensao_btn.click
                 aguardar_carregamento_load
 
-                sleep(1)
-
                 # VINICIUS_VERIFICAR PORQUE ESTA 2X
                 gerar_termo_suspensao_btn.click
                 aguardar_carregamento_load
                 switch_to_window(windows.last)
                 has_div_processo_suspenso?(wait:10)
-                
-                sleep(1)
+
+                sleep(0.1)
                 
                 # VINICIUS_VERIFICAR VERIFICAR MELHORIA DE PROCESSO DE ABAS
                 page.execute_script "window.close();"
@@ -640,23 +613,19 @@ class SolicitacoesIntranetPage < SitePrism::Page
         if(has_justificativa_alteracoes_textarea?(wait:5))
 
             justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
-            sleep(1)
             puts "Confirmando primeira justificativa"
             confirmar_alteracoes_btn.click
             aguardar_carregamento_load
             puts "Preenchendo Modal justificativa habilitada uma vez"
             proximo_btn.click
             aguardar_carregamento_load
-            sleep(1)
 
             if(has_justificativa_alteracoes_textarea?(wait:5))
 
                 justificativa_alteracoes_textarea.set("Preenchendo Modal justificativa habilitada segunda vez (VERFICAR ERRO DE PORQUE ESTA HABILIDATA 2x)")
-                sleep(1)
                 puts "Confirmando segunda justificativa"
                 confirmar_alteracoes_btn.click
                 aguardar_carregamento_load
-                sleep(1)
     
             end
 
@@ -690,7 +659,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
                 if(wait_until_proximo_btn_visible)
 
                     puts "Clicando em proximo novamente (Depois de Associar Imigrante)"
-                    sleep(1)
                     proximo_btn.click
                     aguardar_carregamento_load
 
@@ -726,7 +694,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
     def avancar_proximo_processar_atendimento
 
-        sleep(1)
         puts "---------> Clicando em Proximo para avancar proxima aba"
         proximo_btn.click
         aguardar_carregamento_load
@@ -736,7 +703,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
             associar_imigrante
             validar_dados_divergentes
             preencher_justificativa_alteracao
-            sleep(1)
         
         else
 
@@ -753,7 +719,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         nr_requerimento_situacao_input.click.set(@dados_situacao_requerimento[0])
         btn_pesquisar.click
         aguardar_carregamento_load
-        sleep(1)
 
     end
 

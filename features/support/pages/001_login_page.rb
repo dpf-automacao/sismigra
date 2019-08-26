@@ -28,8 +28,6 @@ class LoginPage < SitePrism::Page
 
       if(has_usuario_input?(wait:5))
 
-        sleep(1)
-
           puts "Logando no SISEG"
           puts "Usuario: #{@usuario}"
           puts "Senha: #{@senha}"
@@ -39,22 +37,18 @@ class LoginPage < SitePrism::Page
           senha_input.set(@senha)
           has_acessar_btn?(wait:3)
           acessar_btn.click  
-
-          sleep(1)
         
       end
 
-      if(has_cardapio_sistemas?(wait:5))
+      sleep(1)
 
-        sleep(1)
+      if(has_cardapio_sistemas?(wait:5))
 
         puts "Logando no SISMIGRA"
         click_link "SISMIGRA"
 
         switch_to_window(windows.last)
         has_info_nome_span?(wait:5)
-
-        sleep(1)
 
       end
 
