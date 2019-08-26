@@ -185,7 +185,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         @amparo_legal = "36 - ART  "
 
         puts "Preenchendo amparo legal #{@amparo_legal}"
-
         amparo_legal_input.click.set(@amparo_legal)
         wait_until_sugestao_amparo_load_visible
         amparo_legal_input.send_keys(:enter)
@@ -390,6 +389,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         @data_estada = @data_atual.strftime("%d/%m/2022")
         @data_carteira = @data_atual.strftime("%d/%m/2022")
         @justificativa_alteracao_prazo = "Justificativa alteração de prazos script de test"
+
         puts "Clicando para editar prazos"
         editar_prazos_btn.click
         puts "Preenchendo justificativa de alteracao de prazos #{@justificativa_alteracao_prazo}"
@@ -508,9 +508,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
             puts "Confirmando pagamento para GRU"
             confirmar_pagamento_gru_radio.click
             selecionar_documentos_obrigatorios
-
             sleep(1)
-
             puts "Anexando arquivo"
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
             has_arquivos_anexados?(wait:10)
