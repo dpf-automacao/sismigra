@@ -439,11 +439,8 @@ class SolicitacoesIntranetPage < SitePrism::Page
             @unidade_vinculada = "DELEMIG/DREX/SR/PF/SP"
 
             puts "Preenchendo unidade vinculada #{@unidade_vinculada} e telefone #{@telefone_contato}"
-
             unidade_vinculada_select.select(@unidade_vinculada)
-
             sleep(1)
-
             avancar_proximo_processar_atendimento
 
         else
@@ -512,9 +509,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
             puts "Anexando arquivo"
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
             has_arquivos_anexados?(wait:10)
-
             sleep(1)
-
             avancar_proximo_processar_atendimento
 
             if(has_justificativa_documentos_textarea?(wait:5))
