@@ -398,7 +398,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         aguardar_carregamento_load
         puts "Alterando prazos, (data da estada: #{@data_estada}"
         data_estada_input.click.set(@data_estada)
-        puts "Alterando prazos, (data de validade da carteira: #{@data_estada}"
+        puts "Alterando prazos, (data de validade da carteira: #{@data_carteira}"
         data_validade_carteira_input.click.set(@data_carteira)
 
       end
