@@ -22,7 +22,7 @@ Quando("preencho Dados do Endereco do requerimento e clico em Proximo") do
 end
 
 Quando("preencho Dados da Declaracao e clico em Salvar") do
-    @requerimento_imigrante_internet.preencher_declaracao(0)
+    @requerimento_imigrante_internet.preencher_declaracao_captcha(0)
 end
 
 Entao("visualizo a Impressao da Solicitacao referente") do

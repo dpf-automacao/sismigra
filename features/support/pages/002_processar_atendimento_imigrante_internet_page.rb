@@ -591,7 +591,7 @@ include FileHelper
 
     end
 
-    def preencher_declaracao(minutos_total)
+    def preencher_declaracao_captcha(minutos_total)
 
         puts "Selecionando declaracao OK"
         declaracao_checkbox.check
@@ -610,7 +610,7 @@ include FileHelper
         else
 
             puts "O Captcha nao foi preenchido num perido de #{@minutos_total} minutos, favor Preencher Captcha para terminar Solicitacao"
-            preencher_declaracao(@minutos_total)
+            preencher_declaracao_captcha(@minutos_total)
 
         end
 
