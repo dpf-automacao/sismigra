@@ -31,7 +31,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :confirmar_alteracoes_btn, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] input[value*='Confirmar']"
     element :dados_divergentes_erro, "dl[id='mensagens'] dt[class='mensagem_erro']"
 
-    elements :btns_atendimento, "input[class='btnAtendimento']"
+    elements :atendimento_btns, "input[class='btnAtendimento']"
     elements :mensagem_erro, "div.cRed"
     
     # MAPEAMENTO DE ELEMENTOS DA ABA DADOS DE REGISTRO
@@ -67,7 +67,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :confirmar_justificativa_documento, "input[id*='justificar-documento'][value='Confirmar']"
 
     elements :tipo_de_ducumentos_checkbox, "input[type='checkbox']"
-    elements :arquivos_anexados, "td a[onclick*='idTabelaArquivos']"
+    elements :arquivos_anexados_link, "td a[onclick*='idTabelaArquivos']"
     elements :remover_doc_recebidos_img, "img[title='Remover']"
 
     # MAPEAMENTO DE ELEMENTOS DA ABA DE RESULTADO DA PESQUISA
@@ -95,15 +95,15 @@ class SolicitacoesIntranetPage < SitePrism::Page
     element :deferir_alteracao_endereco_btn, "input[value='Deferir']"
     element :encerrar_alteracao_endereco_btn, "input[value='Encerrar']"
     
-    elements :btns_alteracao_endereco, "input[title='Avaliar Alteração de Endereço']"
+    elements :alteracao_endereco_btns, "input[title='Avaliar Alteração de Endereço']"
 
     # MAPEAMENTO DE ELEMENTOS DE SITUACAO DO REQUERIMENTO
 
-    element :status_requerimento_aberto, "td[id*='status'] img[src*='aberto']"
-    element :status_requerimento_analise, "td[id*='status'] img[src*='analise']"
-    element :status_requerimento_suspenso, "td[id*='status'] img[src*='suspenso']"
-    element :status_requerimento_processamento, "td[id*='status'] img[src*='processamento']"
-    element :btn_pesquisar, 'input[value="Pesquisar"]'
+    element :status_requerimento_aberto_img, "td[id*='status'] img[src*='aberto']"
+    element :status_requerimento_analise_img, "td[id*='status'] img[src*='analise']"
+    element :status_requerimento_suspenso_img, "td[id*='status'] img[src*='suspenso']"
+    element :status_requerimento_processamento_img, "td[id*='status'] img[src*='processamento']"
+    element :pesquisar_btn, 'input[value="Pesquisar"]'
 
     # MAPEAMENTO DE ELEMENTOS GERAIS
 
@@ -298,13 +298,13 @@ class SolicitacoesIntranetPage < SitePrism::Page
         if(@tipo_solicitacao == "Alteracao_Endereco")
 
             puts "Clicando no primeiro registro de alteracao de endereco para preencher dados pessoais"
-            btns_alteracao_endereco[0].click
+            alteracao_endereco_btns[0].click
             aguardar_carregamento_load
 
         else
 
             puts "Clicando no primeiro registro diferente de alteracao de endereco para preencher dados pessoais"
-            btns_atendimento[0].click
+            atendimento_btns[0].click
             aguardar_carregamento_load
 
         end
@@ -321,7 +321,8 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             if(has_tipo_registro_select?(wait:3))
 
-                # ALGUNS TIPO DE REGISTROS NAO ESTAVA PREENCHIDO VINDO PELA INTERNET POR ISSO A SOLUCAO ABAIXO
+                #VINICIUS_VERIFICAR APOS PROCESSAR ATENDIMENTO O QUE OCORREU
+                # ALGUNS TIPO DE REGISTROS NAO ESTAVA PREENCHIDO VINDO PELA INTERNET
                 puts "Selecionando tipo de registro: #{@tipo_registro_req}"
                 tipo_registro_select.select(@tipo_registro_req)
 
@@ -334,7 +335,6 @@ class SolicitacoesIntranetPage < SitePrism::Page
         end
 
     end
-
 
     def preecher_uf_e_municipio
 
@@ -487,7 +487,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
             sleep(0.1)
             puts "Anexando arquivo"
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
-            has_arquivos_anexados?(wait:10)
+            has_arquivos_anexados_link?(wait:10)
             sleep(0.1)
             avancar_proximo_processar_atendimento
 
@@ -560,14 +560,15 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
                 puts "Clicando para suspender solicitacao"
                 suspender_btn.click
-                justificativa_suspensao_textarea.click.set(@justificativa_suspensao)
                 puts "Preenchendo justificativa de suspensao: #{@justificativa_suspensao}"
+                justificativa_suspensao_textarea.click.set(@justificativa_suspensao)
                 puts "Clicando para gerar termo de suspensao"
                 # VINICIUS_VERIFICAR PORQUE ESTA 1X
                 gerar_termo_suspensao_btn.click
                 aguardar_carregamento_load
 
                 # VINICIUS_VERIFICAR PORQUE ESTA 2X
+                puts "Clicando para gerar termo de suspensao segunda vez"
                 gerar_termo_suspensao_btn.click
                 aguardar_carregamento_load
                 switch_to_window(windows.last)
@@ -663,7 +664,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
 
             puts "Tipo de solicitação: #{@tipo_solicitacao}"
 
-            #VINICIUS_VERIFICAR BINDING.PRY
+            #VINICIUS_VERIFICAR BINDING.PRY PARA VER SE ESTA ENTRANDO NOS TIPOS DE SOLICITACOES CITADOS
 
             # VINICIUS_VERIFICAR PORQUE NAO ESTA FORMATADO COM _ NAS SOLICITACOES
             if(  (@tipo_solicitacao == "Substituição de CRNM") || (@tipo_solicitacao == "Segunda via de CRNM") || (@tipo_solicitacao == "Alteracao_Endereco") )
@@ -733,7 +734,7 @@ class SolicitacoesIntranetPage < SitePrism::Page
         @dados_situacao_requerimento = recuperar_dados("features/arquivos/requerimentos/#{tipo_requerimento}.txt")
         puts "Verificando situacao do requerimento de numero: #{@dados_situacao_requerimento}"
         nr_requerimento_situacao_input.click.set(@dados_situacao_requerimento[0])
-        btn_pesquisar.click
+        pesquisar_btn.click
         aguardar_carregamento_load
 
     end

@@ -1,4 +1,5 @@
-# -----------------------------------------------> INICIO STEPS INTERNET <-------------------
+
+# -------------------> INICIO STEPS INTERNET <-------------------
 
 # PROCESSAR ATENDIMENTOS NA INTERNET
 
@@ -26,8 +27,7 @@ Quando("preencho Dados da Declaracao e clico em Salvar") do
 end
 
 Entao("visualizo a Impressao da Solicitacao referente") do
-
-
+    #VINICIUS_VERIFICAR EXPECT
 end
 
 # VERIFICAR PROTOCOLO INTERNET
@@ -37,8 +37,7 @@ Quando("preencho os Dados de {string} do requerimento para {string} e clico em V
 end
 
 Entao("eu visualizo a Verificacao do Protocolo referente") do
-
-
+    #VINICIUS_VERIFICAR EXPECT
 end
 
 # ANDAMENTO DO REQUERIMENTO INTERNET
@@ -48,11 +47,10 @@ Quando("preencho os Dados de {string} do requerimento para {string} e clico em P
 end
 
 Entao("eu visualizo o andamento do requerimento {string}") do |situacao_requerimento|
-
-
+    #VINICIUS_VERIFICAR EXPECT
 end
 
-# -----------------------------------------------> INICIO STEPS INTRANET <-------------------
+# -------------------> INICIO STEPS INTRANET <-------------------
 
 # SELECIONAR MENU SOLICITACOES PARA SITUACAO DO REQUERIMENTO INTRANET
 
@@ -69,12 +67,11 @@ end
 
 Quando("preencho o numero do Requerimento para verificar a Situacao do Requerimento") do
     @requerimento_imigrante_intranet.verificar_situacao_requerimento(@tipo_requerimento)
+    #VINICIUS_VERIFICAR EXPECT
 end
 
 Entao("eu visualizo a situacao do Requerimento {string}") do |situacao_requerimento|
-
-    
-
+    #VINICIUS_VERIFICAR EXPECT
 end
 
 # SELECIONAR MENU SOLICITACOES PARA PROCESSAR ATENDIMENTO INTRANET
@@ -131,7 +128,7 @@ Quando("preencho Dados do Resultado da Pesquisa e clico em Proximo") do
     @requerimento_imigrante_intranet.preencher_resultado_da_pesquisa
 end
 
-# VISUALIZAR PREVIA DA CARTEIRA INTRANET
+# VISUALIZAR PREVIA DA CARTEIRA PARA PROCESSAR ATENDIMENTO INTRANET
 
 Quando("visualizo Dados da Previa da Carteira e clico em {string}") do |tipo_finalizacao|
     @tipo_finalizacao = tipo_finalizacao
@@ -140,6 +137,7 @@ end
 
 Entao("verifico o requerimento referente {string}") do |situacao_requerimento|
     @situacao_requerimento = situacao_requerimento
+    #VINICIUS_VERIFICAR EXPECT
 end
 
 # DEFERIR ATENDIMENTO DE ALTERAÇÃO DE ENDEREÇO NA INTRANET
@@ -150,6 +148,7 @@ end
                                                                                 
 Entao("eu realizo o deferimento de alteracao de endereco com sucesso") do      
 
+    #VINICIUS_VERIFICAR EXPECT
 
 end                                                                            
                                                                                 

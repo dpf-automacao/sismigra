@@ -178,10 +178,10 @@ include FileHelper
 
     element :numero_andamento_requerimento_input, "input[id*='numeroRequerimento']"
     element :pesquisar_btn, "input[value='Pesquisar']"
-    element :status_requerimento_aberto, "td[id*='status'] img[src*='aberto']"
-    element :status_requerimento_analise, "td[id*='status'] img[src*='analise']"
-    element :status_requerimento_suspenso, "td[id*='status'] img[src*='suspenso']"
-    element :status_requerimento_processamento, "td[id*='status'] img[src*='processamento']"
+    element :status_requerimento_aberto_img, "td[id*='status'] img[src*='aberto']"
+    element :status_requerimento_analise_img, "td[id*='status'] img[src*='analise']"
+    element :status_requerimento_suspenso_img, "td[id*='status'] img[src*='suspenso']"
+    element :status_requerimento_processamento_img, "td[id*='status'] img[src*='processamento']"
 
     # MAPEAMENTO AVANCAR
 
@@ -215,6 +215,7 @@ include FileHelper
             @pais_nascimento = "COLOMBIA"
             @pais_nacionalidade = "COLOMBIA"
             @ocupacao_principal = "19 - "
+            #VINICIUS_VERIFICAR RNM PROCESSADO INTRANET
             @rnm_titular = "V9707268"
 
             if(@tipo_requerimento == "Registro")
