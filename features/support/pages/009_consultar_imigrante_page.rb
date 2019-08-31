@@ -1,5 +1,13 @@
-
 class ConsultarImigrantePage < PageHelper
+
+=begin
+
+Autor: Jerfersson Fragoso e Vinicius Fernando Costa Coutinho
+Data: 31/08/2019
+Versão: 1.0
+Contato: vfcoutinho@stefanini.com
+
+=end
 
   element :nome_input, '#formulario-manter-estrangeiro\:nome'
   element :rnm_input, :xpath, '//*[text()[contains(.,"RNM:")]]/../input'
@@ -21,78 +29,56 @@ class ConsultarImigrantePage < PageHelper
   element :btn_proximo, 'input[value="Próximo"]'
 
   def pesquisar_por_RNM(rnm)
-
     puts "Pesquisando imigrante pelo RNM"
-
     rnm_input.set(rnm)
+    puts "Clicando no botao de pesquisar"
     btn_pesquisar.click
     aguardar_carregamento
     wait_until_resultado_pesquisa_visible
-
   end
 
   def pesquisar_por_filtro(dados)
-
     puts "Pesquisando imigrante por #{dados}"
-
     nome_input.set(dados[:valor]) if dados[:filtro] == 'nome'
     rnm_input.set(dados[:valor]) if dados[:filtro] == 'RNM'
-
+    puts "Clicando no botao de pesquisar"
     btn_pesquisar.click
     aguardar_carregamento
     wait_until_resultado_pesquisa_visible
-
   end
 
   def confirmar_dias_renovacao(quantidade)
-
     if(label_requerimentos_imigrante.text.include?("2"))
-
       puts "\nPreenchendo renovacao"
       @remetido="remetido"
       qtd_dias_renovacao.set(quantidade)
       puts "Confirmando renovacao"
       btn_confirmar.click
       aguardar_carregamento
-
     else
-
       print "."
       confirmar_dias_renovacao(quantidade)
-
     end
-
   end
 
   def validar_registro_encontrado
-
     puts "Visualizando informações do registro encontrado"
-
   end
 
   def validar_dados_pessoais
-
     puts "Validando informações dos dados pessoais do imigrante"
-
   end
 
   def validar_dados_registro
-
     puts "Validando informações dos dados do registro do imigrante"
-
-
   end
 
   def validar_dados_endereco
-
     puts "Validando informações dos dados do endereço do imigrante"
-
   end
 
   def validar_dados_historico
-
     puts "Validando informações dos dados do histórico do imigrante"
-
   end
 
 end

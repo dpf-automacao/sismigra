@@ -1,5 +1,14 @@
 class MenuIntranetPage < SitePrism::Page
 
+=begin
+
+Autor: Vinicius Fernando Costa Coutinho
+Data: 31/08/2019
+Versão: 1.0
+Contato: vfcoutinho@stefanini.com
+
+=end
+
   # MAPEAMENTO DE ELEMENTOS PARA PROCESSAR ATENDIMENTO
 
   element :solicitacoes_menu, :xpath, "//div[text()='Solicitações']"
@@ -33,200 +42,99 @@ class MenuIntranetPage < SitePrism::Page
   # DEFININDO METODO PARA SELECIONAR SUB MENU DO MENU PROCESSAR ATENDIMENTO
 
   def selecionar_menu_solicitacoes_intranet(tipo_menu)
-
     wait_until_solicitacoes_menu_visible
-
     if(tipo_menu == "Situacao_do_Requerimento")
-
       solicitacoes_menu.hover
       sub_menu_situacao_requerimento
-
     elsif(tipo_menu == "Processar_Atendimento")
-
       solicitacoes_menu.hover
       sub_menu_processar_atendimento
-
     elsif(tipo_menu == "Decisao")
-
       solicitacoes_menu.hover
       submenu_decisao
-
     elsif(tipo_menu == "Alteracao_Endereco")
-
       solicitacoes_menu.hover
       submenu_alteracao_endereco
-
     end
-
   end
 
 
   # INICIO DEFINIR SUBMENUS DO PROCESSAR ATENDIMENTO
 
   def sub_menu_situacao_requerimento
-
-    if(has_situacao_requerimento_submenu?)
-    
-      situacao_requerimento_submenu.click
-
-    end
-
+    sub_menu_situacao_requerimento.hover
+    situacao_requerimento_submenu.click
   end
 
   def sub_menu_processar_atendimento
-
-    if(has_processar_atendimento_submenu?)
-
-      processar_atendimento_submenu.click
-
-    end
-
+    sub_menu_processar_atendimento.hover
+    processar_atendimento_submenu.click
   end
 
   def submenu_decisao
-
-    if(has_decisao_submenu?)
-    
-      decisao_submenu.click
-
-    end
-
+    submenu_decisao.hover
+    decisao_submenu.click
   end
 
   def submenu_tratar_pendencias
-
-    if(has_tratar_pendencias_submenu?)
-      
-      tratar_pendencias_submenu.hover
-
-    end
-    
+    tratar_pendencias_submenu.hover
   end
 
   def submenu_alteracao_endereco
-    
     submenu_tratar_pendencias
-
-    if(has_alteracao_endereco_submenu?)
-
-      alteracao_endereco_submenu.click
-
-    end
-
+    submenu_alteracao_endereco.hover
+    alteracao_endereco_submenu.click
   end
 
   # --------------- FIM DEFINIR SUBMENUS DO PROCESSAR ATENDIMENTO
 
-  
   # INICIO DEFINIR SUBMENUS DO HISTORICO DO IMIGRANTE
 
   def submenu_relatorio_auditoria
-
-    if(has_relatorio_auditoria_submenu?)
-      
-      relatorio_auditoria_submenu.click
-
-    end
-
+    relatorio_auditoria_submenu.click
   end
 
-
   def submenu_historico_imigrante
-
-   if(has_historico_imigrante_submenu?)
-    
     historico_imigrante_submenu.click
-   
-    end
-
   end
 
   # INICIO DEFINIR SUBMENUS QUANTITATIVO DE ERRO MATERIAL NÚMERO RNM
 
   def submenu_quantitativo_erro_rnm
-
-    if(has_quantitativo_erro_rnm_submenu?)
-    
     quantitativo_erro_rnm_submenu.click
-
-    end
-  
   end
 
-  
   def submenu_quantitativo_cedulas
-
-    if(has_quantitativo_cedulas_submenu?)
-
       quantitativo_cedulas_submenu.click
-  
-    end
-
   end
 
   
   def submenu_quantitativo_imigrantes_registrados
-
-    if(has_quantitativo_imigrantes_registrados_submenu?)
-
       quantitativo_imigrantes_registrados_submenu.click
-
-    end
-
   end
 
 
   def submenu_solicitacoes_indeferidas_decisao
-      
-    if(has_solicitacoes_indeferidas_decisao_submenu?)
-      
       solicitacoes_indeferidas_decisao_submenu.click
-
-    end
-
   end
 
 
   def submenu_quantitativo_solicitacao_cadastradas
-
-      if(has_solicitacoes_indeferidas_decisao_submenu?)
-
-        quantitativo_solicitacoes_cadastradas_submenu.click
-      
-      end
-
+      quantitativo_solicitacoes_cadastradas_submenu.click
   end
 
 
   def submenu_quantitativo_erro_material
-
-    if(has_quantitativo_erro_material_submenu?)
-
       quantitativo_erro_material_submenu.click
-    
-    end
-
   end
 
 
   def submenu_quantitativo_cedulas_nao_reebidas
-
-    if(has_quantitativo_cedulas_nao_recebidas_submenu?)
-
-      quantitativo_cedulas_nao_recebidas_submenu.click
-    
-    end
-  
+    quantitativo_cedulas_nao_recebidas_submenu.click
   end
 
   def submenu_requerimentos_suspensos
-
-    if(has_requerimentos_suspensos_submenu?)
-      
-      requerimentos_suspensos_submenu.click
-
-    end
-
+    requerimentos_suspensos_submenu.click
   end
 
   # --------------- FIM DEFINIR SUBMENUS DO HISTORICO DO IMIGRANTE
@@ -235,55 +143,30 @@ class MenuIntranetPage < SitePrism::Page
   # DEFININDO METODO PARA SELECIONAR SUB MENU DO HISTORICO DO IMIGRANTE
 
   def selecionar_submenu_relatorios(tipo_submenu_relatorio)
-      
     sleep(0.5)
-
     relatorios_imigrante_menu.hover
-
     sleep(0.5)
-
     if(tipo_submenu_relatorio == "Historico de imigrante")
-
       submenu_historico_imigrante
-
     elsif (tipo_submenu_relatorio == "Auditoria")
-
       submenu_relatorio_auditoria
-
     elsif (tipo_submenu_relatorio == "Quantitativo de Erro no Número do RNM")
-
       submenu_quantitativo_erro_rnm
-
     elsif (tipo_submenu_relatorio == "Quantitativo de Cédulas")
-
       submenu_quantitativo_cedulas
-
     elsif (tipo_submenu_relatorio == "Quantitativo de imigrantes registrados")
-
       submenu_quantitativo_imigrantes_registrados
-
     elsif (tipo_submenu_relatorio == "Solicitações Indeferidas na Decisão")
-
       submenu_solicitacoes_indeferidas_decisao
-
     elsif (tipo_submenu_relatorio == "Quantitativo de Solicitação Cadastradas")
-
       submenu_quantitativo_solicitacao_cadastradas
-
     elsif (tipo_submenu_relatorio == "Quantitativo de Erro Material")
-
       submenu_quantitativo_erro_material
-
     elsif (tipo_submenu_relatorio == "Cédulas não recebidas")
-
       submenu_quantitativo_cedulas_nao_reebidas
-
     else (tipo_submenu_relatorio == "requerimentos_suspensos_submenu")
-
       submenu_requerimentos_suspensos
-    
     end
-
   end
 
   def submenu_decisao
