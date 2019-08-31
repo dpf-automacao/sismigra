@@ -32,24 +32,23 @@ Contato: vfcoutinho@stefanini.com
             menu_registro
         elsif(tipo_solicitacao == "Autorizacao_Residencia")
             menu_autorizacao_residencia
-            elsif(tipo_solicitacao == "Alteracao_de_Prazo")
-            menu_alteracao_prazo
-                elsif(tipo_solicitacao == "Recadastramento_Extemporaneo")
-                    menu_recad_extemporaneo
-                    elsif(tipo_solicitacao == "Substituicao_de_CRNM")
-                        menu_substituicao_crnm
-                        elsif(tipo_solicitacao == "Segunda_via_CRNM")
-                            menu_segunda_via_crnm
-                            elsif(tipo_solicitacao == "Alteracao_Endereco")
-                                menu_alteracao_endereco
-                                elsif(tipo_solicitacao == "Verificacao_de_Protocolo")
-                                    menu_verificar_protocolo
-                                    elsif(tipo_solicitacao == "Andamento_do_Requerimento")
-                                        menu_andamento_requerimento
-                                        else
-                                            puts "Nenum menu foi localizado"
-                                        end
-
+        elsif(tipo_solicitacao == "Alteracao_de_Prazo")
+        menu_alteracao_prazo
+        elsif(tipo_solicitacao == "Recadastramento_Extemporaneo")
+            menu_recad_extemporaneo
+        elsif(tipo_solicitacao == "Substituicao_de_CRNM")
+                menu_substituicao_crnm
+        elsif(tipo_solicitacao == "Segunda_via_CRNM")
+            menu_segunda_via_crnm
+        elsif(tipo_solicitacao == "Alteracao_Endereco")
+            menu_alteracao_endereco
+        elsif(tipo_solicitacao == "Verificacao_de_Protocolo")
+            menu_verificar_protocolo
+        elsif(tipo_solicitacao == "Andamento_do_Requerimento")
+            menu_andamento_requerimento
+        else
+            puts "Nenum menu foi localizado"
+        end
     end
 
     def menu_registro
