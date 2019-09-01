@@ -612,15 +612,14 @@ include FileHelper
             numero_protocolo_requerimento_input.click.set(@dados_requerimento_protocolo[0])
             puts "Clicando no botao para Verificar Protocolo"
             verificar_protocolo_btn.click
-            elsif(tipo_verificacao == "Andamento_do_Requerimento")
-                puts "Andamento Requerimento de numero: #{@dados_requerimento_protocolo[0]}"
-                numero_andamento_requerimento_input.click.set(@dados_requerimento_protocolo[0])
-                puts "Clicando no botao para Pesquisar Andamento"
-                pesquisar_btn.click
-                aguardar_carregamento_load
-                else
-                    puts "Menu de verificacao e andamento de protocolo nao foi localizado."
-                end
+        elsif(tipo_verificacao == "Andamento_do_Requerimento")
+            puts "Andamento Requerimento de numero: #{@dados_requerimento_protocolo[0]}"
+            numero_andamento_requerimento_input.click.set(@dados_requerimento_protocolo[0])
+            puts "Clicando no botao para Pesquisar Andamento"
+            pesquisar_btn.click
+            aguardar_carregamento_load
+        else
+            puts "Menu de verificacao e andamento de protocolo nao foi localizado."
         end
     end
 
