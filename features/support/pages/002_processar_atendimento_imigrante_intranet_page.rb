@@ -214,7 +214,7 @@ Contato: vfcoutinho@stefanini.com
 
         puts "Pesquisando tipo de solicitacao para #{@tipo_solicitacao}"
 
-        # VINICIUS_VERIFICAR POSSIBILIDADE DE RETIRAR 1 ALTERACAO
+        # VINICIUS_VERIFICAR POSSIBILIDADE DE FAZER UM ARRAY
 
         puts "Alterando tipo de solicitacao para Registro"
         alterar_tipo_solicitacao_btn.click
