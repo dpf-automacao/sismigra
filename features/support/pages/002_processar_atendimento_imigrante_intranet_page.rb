@@ -173,7 +173,9 @@ Contato: vfcoutinho@stefanini.com
 
         end
 
+        puts "Preenchendo periodo inicial: #{@periodo_inicial}"
         periodo_inicial_input.click.set(@periodo_inicial)
+        puts "Preenchendo periodo final: #{@periodo_final}"
         periodo_final_input.click.set(@periodo_final)
         puts "Pesquisando Requerimento de numero:#{@dados_requerimento_pesquisa}"
         pesquisar_requerimento_btn.click
@@ -478,11 +480,11 @@ Contato: vfcoutinho@stefanini.com
     def abortar_solicitacao_para_analise
 
         if(wait_until_icone_inicio_btn_visible)
-
             puts "Clicando no icone de inicio para abortar solicitacao para analise"
             icone_inicio_btn.click
             wait_until_formulario_pagina_inicial_visible
-
+        else
+            puts "Icone de Pagina de inicio nao localizado"
         end
 
     end
