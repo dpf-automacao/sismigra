@@ -1,5 +1,14 @@
 class RelatoriosPage < SitePrism::Page
 
+=begin
+
+Autor: Maria Emilia
+Data: 31/08/2019
+Versão: 1.0
+Contato: 
+
+=end
+
     #MAPEAMENTO ELEMENTOS DA TELA - HISTORICO DE IMIGRANTE
     element :rnm_input, 'input[id*="formulario-auditoria:campoRNE"]'
     element :nome_input, 'input[id*="formulario-auditoria:inputText_idTipoServidor"]'
@@ -75,25 +84,18 @@ class RelatoriosPage < SitePrism::Page
     element :unidade_circunscricao_select7, 'select[name*="formulario-relatorioRequerimentosSuspensos:j_id122"]'
     element :radio_button_prazo_suspensao, 'input[id*="formulario-relatorioRequerimentosSuspensos:j_id128:0"]'
     element :gerar_button10, 'input[name*="formulario-relatorioRequerimentosSuspensos:j_id132"]'
-
-
-
-   
    
    #METODO PARA RELATORIO - AUDITORIA
     def preencher_relatorio_auditoria
-
-        puts 'Preenchendo parâmetros de Relatório de Auditoria'
-
         @data_atual = Time.now
         @periodo_inicial = "01/08/2019"
         @periodo_final = "02/08/2019"
-        # @periodo_final = @data_atual.strftime("%d/%m/%Y")
         @nome_servidor = "DANTE LUIZ PIPPI FILHO"
-
+        # @periodo_final = @data_atual.strftime("%d/%m/%Y")
         # find('input[id*="formulario-auditoria:periodoInicioAuditoriaInputDate"]').set("13/07/2019")
         # find('input[id*="formulario-auditoria:periodoFinalAuditoriaInputDate"]').set("13/08/2019")
-
+        puts 'Preenchendo parâmetros de Relatório de Auditoria'
+        puts "Preenchendo periodo inicial: #{@periodo_inicial}"
         periodo_inicial_input.click.set(@periodo_inicial)
         sleep(1)
         periodo_final_input.click.set(@periodo_final)
@@ -105,15 +107,12 @@ class RelatoriosPage < SitePrism::Page
         gerar_button2.click
         wait_until_load_carregar_invisible
         sleep(3)
-
     end
 
 
     #METODO PARA RELATORIO - HISTORICO DE IMIGRANTE
     def preencher_relatorio_historico
-
         puts 'Preenchendo parâmetros de Relatório de Histórico de Imigrante'
-
         find('input[id*="formulario-auditoria:campoRNE"]').set('F1400397')
         find('input[id*="formulario-auditoria:inputText_idTipoServidor"')#.send_keys(:enter)
         wait_until_imprimir_tela_radio_visible
@@ -122,18 +121,14 @@ class RelatoriosPage < SitePrism::Page
         gerar_button.click
         wait_until_load_carregar_invisible
         sleep(3)
-       
     end
 
     #METODO PARA RELATORIO - Quantitativo de Erro no Número do RNM
     def preencher_relatorio_quantitativo_erro_rnm
-
         puts 'Preenchendo parâmetros de relatório de Quantitativo de Erro no Número do RNM'
-        
         #@data_atual = Time.now
         #@periodo_inicial = "01/08/2018"
         #@periodo_final = @data_atual.strftime("%d/%m/%Y")
-
         # periodo_inicial_input2.click.set(@periodo_inicial)
         # periodo_final_input.click.set(@periodo_final)
         find('input[id*="formulario-relatorio-erro-rne:dataInicioInputDate"]').set("01/08/2018")
@@ -147,13 +142,11 @@ class RelatoriosPage < SitePrism::Page
         gerar_button3.click
         wait_until_load_carregar_invisible
         sleep(3)
-
     end
 
     def preencher_relatorio_quantitativo_cedulas
 
         puts 'Preenchendo parâmetros de Relatório de Quantitativo de Cédulas'
-
         @periodo_inicial = "01/08/2019"
         @periodo_final = "14/08/2019"
         @unidade_circunscricao = "DELEMIG/DREX/SR/PF/DF"

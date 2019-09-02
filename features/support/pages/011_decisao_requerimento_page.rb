@@ -1,4 +1,13 @@
 class DecisaoRequerimento < PageHelper
+
+=begin
+
+Autor: Claudio Junior
+Data: 31/08/2019
+Versão: 1.0
+Contato: 
+
+=end
     
     include FileHelper
 

@@ -1,5 +1,14 @@
 class LoginPage < SitePrism::Page
 
+=begin
+
+Autor: Vinicius Fernando Costa Coutinho
+Data: 31/08/2019
+Versão: 1.0
+Contato: vfcoutinho@stefanini.com
+
+=end
+
   # Mapeamento de elementos de preenchimento
 
   element :usuario_input, "input[id='emailcti']"

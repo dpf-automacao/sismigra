@@ -1,5 +1,14 @@
 require_relative "../helpers/file_helper.rb"
 
+=begin
+
+Autor: Vinicius Fernando Costa Coutinho
+Data: 31/08/2019
+Versão: 1.0
+Contato: vfcoutinho@stefanini.com
+
+=end
+
 class SolicitacoesInternetPage < SitePrism::Page
 
 include FileHelper
@@ -219,17 +228,13 @@ include FileHelper
             @rnm_titular = "V9707268"
 
             if(@tipo_requerimento == "Registro")
-
                 puts "Selecionando Tipo de Registro do imigrante: #{@tipo_registro}"
                 tipo_de_registro_select.select(@tipo_registro)
-
             end
 
             if(@tipo_requerimento == "Substituicao_de_CRNM")
-
                 puts "Selecionando Tipo de Substituicao: #{@tipo_substituicao}"
                 tipo_de_substituicao_select.select(@tipo_substituicao)
-
             end
             
             puts "Preenchendo Nome do imigrante: #{@nome_imigrante}"
@@ -274,12 +279,10 @@ include FileHelper
             sexo_masculino_filiacao_2_radio.click
 
             if(@tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
-
                 puts "Selecionando RNM TITULAR"
                 rnm_titular_radio.click
                 puts "Preenchendo RNM TITULAR: #{@rnm_titular}"
                 rnm_titular_input.click.set(@rnm_titular)
-
             end
 
         elsif(@tipo_requerimento == "Alteracao_Endereco")
@@ -362,7 +365,6 @@ include FileHelper
         @data_entrada = "11072019"
 
         if(@tipo_requerimento == "Registro" || @tipo_requerimento == "Substituicao_de_CRNM" || @tipo_requerimento == "Segunda_via_CRNM")
-
             puts "Selecionando Visto: SIM"
             possui_visto_sim_radio.click
             puts "Preenchendo Numero do Visto: #{@numero_visto}"
@@ -374,7 +376,6 @@ include FileHelper
             cidade_da_concessao_input.click.set(@cidade_da_concessao)
             puts "Selecionando Pais da Concessao do Visto: #{@pais_concedido}"
             pais_concedido_select.select(@pais_concedido)
-
         end
 
         puts "Selecionando Documento de Viagem: #{@tipo_documento_viagem}"
@@ -385,7 +386,6 @@ include FileHelper
         pais_expedidor_doc_select.select(@pais_expedidor_doc)
 
         if(@tipo_requerimento != "Alteracao_de_Prazo" && @tipo_requerimento != "Substituicao_de_CRNM" && @tipo_requerimento != "Segunda_via_CRNM")
-
             puts "Selecionando UF Entrada: #{@sigla_uf_entrada}"
             sigla_uf_entrada_select.select(@sigla_uf_entrada)
             puts "Selecionando Local Entrada: #{@local_entrada}"
@@ -394,7 +394,6 @@ include FileHelper
             meio_transporte_select.select(@meio_transporte)
             puts "Preenchendo Data de Entrada: #{@data_entrada}"
             data_entrada_input.click.set(@data_entrada)
-
         end
 
         if(@tipo_requerimento == "Recadastramento_Extemporaneo")
@@ -567,9 +566,7 @@ include FileHelper
             alteracao_endereco_exterior_checkbox.click
             puts "Preenchendo CEP Exterior - Alteracao Endereco: #{@cep_alteracao_end_exterior}"
             cep_alteracao_endereco_exterior_input.click.set(@cep_alteracao_end_exterior)
-
             # --------------------------------------------- VERIFICAR POSSIBILIDADE DE MELHORIA ------------------------------------------------------
-
             complemento_alteracao_endereco_exterior_input.send_keys(:tab)
             sleep(5)
             puts "Preenchendo Complemento Endereco Exterior - Alteracao Endereco: #{@complemento_alteracao_end_exterior}"
@@ -585,7 +582,6 @@ include FileHelper
             puts "Anexando arquivo de alteracao de endereco exterior"
             anexar(anexar_arquivo_alteracao_endereco_exterior_input(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
             has_arquivo_anexado_alteracao_endereco_exterior_link?(wait:10)
-
         end
 
         avancar_proximo
@@ -593,66 +589,49 @@ include FileHelper
     end
 
     def preencher_declaracao_captcha(minutos_total)
-
         puts "Selecionando declaracao OK"
         declaracao_checkbox.check
         puts "Setando campo de Captcha"
         texto_imagem_input.click
-
         @minuto_inicial = 1
         @minutos_total = @minuto_inicial + minutos_total
-
         if(has_impressao_da_solicitacao_form?(wait:60))
-
             puts "Visualizando tela de Impressao de Solicitacao #{@tipo_requerimento}"
             @nr_req = numero_requerimento_span.text
             gravar_dados("features/arquivos/requerimentos/#{@tipo_requerimento}.txt", @nr_req)
-
         else
-
             puts "O Captcha nao foi preenchido num perido de #{@minutos_total} minutos, favor Preencher Captcha para terminar Solicitacao"
             preencher_declaracao_captcha(@minutos_total)
-
         end
-
     end
 
     def verificar_protocolo_e_andamento_do_requerimento(tipo_requerimento, tipo_verificacao)
-
         @dados_requerimento_protocolo = recuperar_dados("features/arquivos/requerimentos/#{tipo_requerimento}.txt")
-
         if(tipo_verificacao == "Verificacao_de_Protocolo")
-
             puts "Verificando Protocolo de numero: #{@dados_requerimento_protocolo[0]}"
             numero_protocolo_requerimento_input.click.set(@dados_requerimento_protocolo[0])
             puts "Clicando no botao para Verificar Protocolo"
             verificar_protocolo_btn.click
-
         elsif(tipo_verificacao == "Andamento_do_Requerimento")
-
             puts "Andamento Requerimento de numero: #{@dados_requerimento_protocolo[0]}"
             numero_andamento_requerimento_input.click.set(@dados_requerimento_protocolo[0])
             puts "Clicando no botao para Pesquisar Andamento"
             pesquisar_btn.click
             aguardar_carregamento_load
-
+        else
+            puts "Menu de verificacao e andamento de protocolo nao foi localizado."
         end
-
-
     end
 
     def aguardar_carregamento_load 
-
+        puts "Carregando load"
         wait_until_carregamento_load_invisible
-
     end
 
     def avancar_proximo
-
         puts "Clicando no botao Proximo"
         avancar_proximo_btn.click
         aguardar_carregamento_load
-
     end
 
 end
