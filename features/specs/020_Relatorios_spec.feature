@@ -23,7 +23,6 @@ Cenario: Gerar Relatorio de Quantitativo de Erro no Número do RNM
     E preencho Dados de Contulta do relatorio de quantitativo e clico em Gerar
     Entao visualizo a Impressao do relatorio referente
 
-
 @relatorio_quantitativo_cedulas
 Cenario: Gerar Relatorio de Quantitativo de Erro no Número do RNM
     Quando realizar o procedimento de consultar relatorio "Quantitativo de Cédulas"

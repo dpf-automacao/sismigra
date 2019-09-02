@@ -9,8 +9,9 @@ Quando("solicitar a decisão do requerimento") do
 end
   
 
-Quando("indeferir o requerimento") do
-    @decisao_requerimento.pesquisar_requerimento_registro
+Quando("indeferir o requerimento de {string}") do |tipo_solicitacao|
+    @tipo_solicitacao = tipo_solicitacao
+    @decisao_requerimento.pesquisar_requerimento(@tipo_solicitacao)
     @decisao_requerimento.indeferir_solicitacao
 end
   
@@ -20,8 +21,9 @@ Entao("deve-se gerar o termo de indeferimento") do
 end
   
 
-Quando("anexar formulário") do
-    @decisao_requerimento.pesquisar_requerimento_registro
+Quando("anexar formulário para requerimento de {string}") do |tipo_solicitacao|
+    @tipo_solicitacao = tipo_solicitacao
+    @decisao_requerimento.pesquisar_requerimento(@tipo_solicitacao)
     @decisao_requerimento.anexar_formulario
 end
   

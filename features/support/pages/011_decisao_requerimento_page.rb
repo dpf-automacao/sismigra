@@ -30,8 +30,8 @@ class DecisaoRequerimento < PageHelper
 
 
     ## MÉTODOS ## 
-    def pesquisar_requerimento_registro
-        @tipo_solicitacao = "registro"
+    def pesquisar_requerimento(tipo_solicitacao)
+        @tipo_solicitacao = tipo_solicitacao
         @nr_registro = recuperar_dados("features/arquivos/requerimentos/#{@tipo_solicitacao}.txt")
         wait_until_pesquisar_requerimento_btn_visible
         puts "Pesquisando Requerimento numero:#{@nr_registro}"
