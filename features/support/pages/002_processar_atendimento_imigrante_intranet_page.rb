@@ -205,99 +205,39 @@ Contato: vfcoutinho@stefanini.com
 
     def alterar_tipo_de_solicitacao(tipo_solicitacao)
 
-        @tipo_solicitacao = tipo_solicitacao
+        todos_tipos_de_solicitacao = [
+            tipo_solicitacao,
+            "Registro",
+            "Autorização de Residência",
+            "Alteração de Prazo",
+            "Recadastramento Extemporâneo",
+            "Substituição de CRNM",
+            "Segunda via de CRNM"
+        ]
 
-        puts "Alterando tipo de solicitacao para #{@tipo_solicitacao}"
+        @indice = 0
+
+        while(@indice < todos_tipos_de_solicitacao.size) do
+            puts "Alterando tipo de solicitacao para #{todos_tipos_de_solicitacao[@indice]}"
+            alterar_tipo_solicitacao_btn.click
+            novo_tipo_solicitacao_select.select(todos_tipos_de_solicitacao[@indice])
+            confirmar_alterar_tipo_solicitacao_btn.click
+            puts "Pesquisando tipo de solicitacao de #{todos_tipos_de_solicitacao[@indice]}"
+            tipo_solicitacao_select.select(todos_tipos_de_solicitacao[@indice])
+            pesquisar_requerimento_btn.click
+            aguardar_carregamento_load
+            @indice += 1
+        end
+
+        puts "Alterando tipo de solicitacao para #{todos_tipos_de_solicitacao[0]}"
         alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select(@tipo_solicitacao)
+        novo_tipo_solicitacao_select.select(todos_tipos_de_solicitacao[0])
         confirmar_alterar_tipo_solicitacao_btn.click
+        puts "Pesquisando tipo de solicitacao de #{todos_tipos_de_solicitacao[0]}"
+        tipo_solicitacao_select.select(todos_tipos_de_solicitacao[0])
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
-
-        puts "Pesquisando tipo de solicitacao para #{@tipo_solicitacao}"
-
-        # VINICIUS_VERIFICAR POSSIBILIDADE DE FAZER UM ARRAY
-
-        puts "Alterando tipo de solicitacao para Registro"
-        alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select("Registro")
-        confirmar_alterar_tipo_solicitacao_btn.click
-        puts "Pesquisando tipo de solicitacao para Registro"
-        tipo_solicitacao_select.select("Registro")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-
-        puts "Alterando tipo de solicitacao para Autorizacao de Residencia"
-        tipo_solicitacao_select.select("Registro")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-        alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select("Autorização de Residência")
-        confirmar_alterar_tipo_solicitacao_btn.click
-        puts "Pesquisando tipo de solicitacao para Autorizacao de Residencia"
-        tipo_solicitacao_select.select("Autorização de Residência")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-
-        puts "Alterando tipo de solicitacao para Alteracao de Prazo"
-        tipo_solicitacao_select.select("Autorização de Residência")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-        alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select("Alteração de Prazo")
-        confirmar_alterar_tipo_solicitacao_btn.click
-        puts "Pesquisando tipo de solicitacao para Alteracao de Prazo"
-        tipo_solicitacao_select.select("Alteração de Prazo")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-
-        puts "Alterando tipo de solicitacao para Recadastramento Extemporaneo"
-        tipo_solicitacao_select.select("Alteração de Prazo")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-        alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select("Recadastramento Extemporâneo")
-        confirmar_alterar_tipo_solicitacao_btn.click
-        puts "Pesquisando tipo de solicitacao para Recadastramento Extemporaneo"
-        tipo_solicitacao_select.select("Recadastramento Extemporâneo")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-
-        puts "Alterando tipo de solicitacao para Substituicao de CRNM"
-        tipo_solicitacao_select.select("Recadastramento Extemporâneo")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-        alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select("Substituição de CRNM")
-        confirmar_alterar_tipo_solicitacao_btn.click
-        puts "Pesquisando tipo de solicitacao para Substituicao de CRNM"
-        tipo_solicitacao_select.select("Substituição de CRNM")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-
-        puts "Alterando tipo de solicitacao para Segunda via de CRNM"
-        tipo_solicitacao_select.select("Substituição de CRNM")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-        alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select("Segunda via de CRNM")
-        confirmar_alterar_tipo_solicitacao_btn.click
-        puts "Pesquisando tipo de solicitacao para Substituicao de CRNM"
-        tipo_solicitacao_select.select("Segunda via de CRNM")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-
-        puts "Alterando tipo de solicitacao para #{@tipo_solicitacao}"
-        tipo_solicitacao_select.select("Segunda via de CRNM")
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-        alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select(@tipo_solicitacao)
-        confirmar_alterar_tipo_solicitacao_btn.click
-        puts "Pesquisando tipo de solicitacao para #{@tipo_solicitacao}"
-        tipo_solicitacao_select.select(@tipo_solicitacao)
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
+        @indice += 1
 
     end
 
@@ -328,6 +268,8 @@ Contato: vfcoutinho@stefanini.com
         if(wait_until_aba_dados_pessoais_visible)
 
             @tipo_registro_req = "Registro de Visto Consular"
+
+            binding.pry
             
             # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
 
@@ -722,6 +664,8 @@ Contato: vfcoutinho@stefanini.com
     end
 
     def avancar_proximo_processar_atendimento
+
+        binding.pry
 
         puts "---------> Clicando em Proximo para avancar proxima aba"
         proximo_btn.click
