@@ -62,17 +62,17 @@ Contato: vfcoutinho@stefanini.com
   # INICIO DEFINIR SUBMENUS DO PROCESSAR ATENDIMENTO
 
   def sub_menu_situacao_requerimento
-    sub_menu_situacao_requerimento.hover
+    situacao_requerimento_submenu.hover
     situacao_requerimento_submenu.click
   end
 
   def sub_menu_processar_atendimento
-    sub_menu_processar_atendimento.hover
+    processar_atendimento_submenu.hover
     processar_atendimento_submenu.click
   end
 
   def submenu_decisao
-    submenu_decisao.hover
+    decisao_submenu.hover
     decisao_submenu.click
   end
 
@@ -82,7 +82,7 @@ Contato: vfcoutinho@stefanini.com
 
   def submenu_alteracao_endereco
     submenu_tratar_pendencias
-    submenu_alteracao_endereco.hover
+    alteracao_endereco_submenu.hover
     alteracao_endereco_submenu.click
   end
 
