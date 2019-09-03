@@ -29,7 +29,7 @@ Contato: vfcoutinho@stefanini.com
 
     element :aba_dados_pessoais, "td[id*='DadosPessoais_lbl'][class*='dr-tbpnl-tb-act']"
     element :primeira_aba, 'td[id*="DadosPessoais_lbl"]'
-    element :tipo_registro_select, "select[name*='j_id138']"
+    element :tipo_registro_select, "fieldset[class*='fLeft'] select[name*='formulario-processar-cie']"
     element :amparo_legal_input, "input[id*='inputText_comboAmparo']"
     element :amparo_legal_disabled_input, "input[id*='inputText_comboAmparo'][disabled='disabled']"
     element :sugestao_amparo_load, "td[class*='suggestionSelectValue']"
@@ -268,22 +268,14 @@ Contato: vfcoutinho@stefanini.com
         if(wait_until_aba_dados_pessoais_visible)
 
             @tipo_registro_req = "Registro de Visto Consular"
-
-            binding.pry
-            
             # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
 
-            if(has_tipo_registro_select?(wait:3))
-
-                #VINICIUS_VERIFICAR APOS PROCESSAR ATENDIMENTO O QUE OCORREU
-                # ALGUNS TIPO DE REGISTROS NAO ESTAVA PREENCHIDO VINDO PELA INTERNET
-                puts "Selecionando tipo de registro: #{@tipo_registro_req}"
-                tipo_registro_select.select(@tipo_registro_req)
-
-            end
+            #VINICIUS_VERIFICAR APOS PROCESSAR ATENDIMENTO O QUE OCORREU
+            # ALGUNS TIPO DE REGISTROS NAO ESTAVA PREENCHIDO VINDO PELA INTERNET
+            puts "Selecionando tipo de registro: #{@tipo_registro_req}"
+            tipo_registro_select.select(@tipo_registro_req)
 
             preencher_amparo_legal
-
             avancar_proximo_processar_atendimento
 
         end
