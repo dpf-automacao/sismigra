@@ -212,7 +212,8 @@ Contato: vfcoutinho@stefanini.com
             "Alteração de Prazo",
             "Recadastramento Extemporâneo",
             "Substituição de CRNM",
-            "Segunda via de CRNM"
+            "Segunda via de CRNM",
+            tipo_solicitacao
         ]
 
         @indice = 0
@@ -228,16 +229,6 @@ Contato: vfcoutinho@stefanini.com
             aguardar_carregamento_load
             @indice += 1
         end
-
-        puts "Alterando tipo de solicitacao para #{todos_tipos_de_solicitacao[0]}"
-        alterar_tipo_solicitacao_btn.click
-        novo_tipo_solicitacao_select.select(todos_tipos_de_solicitacao[0])
-        confirmar_alterar_tipo_solicitacao_btn.click
-        puts "Pesquisando tipo de solicitacao de #{todos_tipos_de_solicitacao[0]}"
-        tipo_solicitacao_select.select(todos_tipos_de_solicitacao[0])
-        pesquisar_requerimento_btn.click
-        aguardar_carregamento_load
-        @indice += 1
 
     end
 
@@ -656,8 +647,6 @@ Contato: vfcoutinho@stefanini.com
     end
 
     def avancar_proximo_processar_atendimento
-
-        binding.pry
 
         puts "---------> Clicando em Proximo para avancar proxima aba"
         proximo_btn.click
