@@ -596,6 +596,7 @@ include FileHelper
         @minuto_inicial = 1
         @minutos_total = @minuto_inicial + minutos_total
         if(has_impressao_da_solicitacao_form?(wait:60))
+            wait_until_numero_requerimento_span_visible
             puts "Visualizando tela de Impressao de Solicitacao #{@tipo_requerimento}"
             @nr_req = numero_requerimento_span.text
             gravar_dados("features/arquivos/requerimentos/#{@tipo_requerimento}.txt", @nr_req)

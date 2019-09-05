@@ -67,7 +67,6 @@ end
 
 Quando("preencho o numero do Requerimento para verificar a Situacao do Requerimento") do
     @requerimento_imigrante_intranet.verificar_situacao_requerimento(@tipo_requerimento)
-    #VINICIUS_VERIFICAR EXPECT
 end
 
 Entao("eu visualizo a situacao do Requerimento {string}") do |situacao_requerimento|

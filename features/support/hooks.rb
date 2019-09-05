@@ -11,8 +11,6 @@ After do |scenario|
   embed(shot, 'image/png', 'Clique aqui para ver o print da tela')
 
   # VINICIUS_VERIFICAR VERIFICAR MELHORIA DE PROCESSO DE ABAS
-  page.execute_script "window.close();"
-  switch_to_window(windows.last)
 
 end
 
