@@ -221,8 +221,8 @@ include FileHelper
             @data_nascimento = "01011970"
             @estado_civil = "SOLTEIRO"
             @cidade_nascimento = "BOGOTA"
-            @pais_nascimento = "COLOMBIA"
-            @pais_nacionalidade = "COLOMBIA"
+            @pais_nascimento = "Colômbia"
+            @pais_nacionalidade = "Colômbia"
             @ocupacao_principal = "19 - "
             #VINICIUS_VERIFICAR RNM PROCESSADO INTRANET
             @rnm_titular = "V9707268"
@@ -355,10 +355,10 @@ include FileHelper
         @numero_visto = "123456AB"
         @data_da_concessao = "01072019"
         @cidade_da_concessao = "BOGOTA"
-        @pais_concedido = "COLOMBIA"
+        @pais_concedido = "Colômbia"
         @tipo_documento_viagem = "Passaporte"
         @numero_doc_viagem = "99999999999"
-        @pais_expedidor_doc = "COLOMBIA"
+        @pais_expedidor_doc = "Colômbia"
         @sigla_uf_entrada = "DF"
         @local_entrada = "BRASILIA"
         @meio_transporte = "Aéreo"
@@ -430,7 +430,7 @@ include FileHelper
             @nome_contato = Faker::Name.name_with_middle
             @telefone_contato = "61999998888"
             @vinculo_contato = "Parente"
-            @pais_contato = "BRASIL"
+            @pais_contato = "Brasil"
 
             puts "Preenchendo CEP Residencial: #{@cep_residencial}"
             cep_residencial_input.click.set(@cep_residencial)
@@ -464,7 +464,7 @@ include FileHelper
                 @complemento_exterior = "NUMERO 10"
                 @estado_exterior = "REGIAO DE BOGOTA"
                 @cidade_exterior = "BOGOTA"
-                @pais_exterior = "COLOMBIA"
+                @pais_exterior = "Colômbia"
 
                 puts "Preenchendo CEP Exterior: #{@cep_exterior}"
                 cep_exterior_input.click.set(@cep_exterior)
@@ -597,9 +597,11 @@ include FileHelper
         @minutos_total = @minuto_inicial + minutos_total
         if(has_impressao_da_solicitacao_form?(wait:60))
             wait_until_numero_requerimento_span_visible
+            sleep(0.3)
             puts "Visualizando tela de Impressao de Solicitacao #{@tipo_requerimento}"
             @nr_req = numero_requerimento_span.text
             gravar_dados("features/arquivos/requerimentos/#{@tipo_requerimento}.txt", @nr_req)
+            sleep(0.3)
         else
             puts "O Captcha nao foi preenchido num perido de #{@minutos_total} minutos, favor Preencher Captcha para terminar Solicitacao"
             preencher_declaracao_captcha(@minutos_total)

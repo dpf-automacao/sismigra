@@ -174,8 +174,12 @@ Contato: vfcoutinho@stefanini.com
         end
 
         puts "Preenchendo periodo inicial: #{@periodo_inicial}"
-        periodo_inicial_input.click.set(@periodo_inicial)
+        periodo_inicial_input.click
+        sleep(0.1)
+        periodo_inicial_input.set(@periodo_inicial)
         puts "Preenchendo periodo final: #{@periodo_final}"
+        periodo_final_input.click
+        sleep(0.1)
         periodo_final_input.click.set(@periodo_final)
         puts "Pesquisando Requerimento de numero:#{@dados_requerimento_pesquisa}"
         pesquisar_requerimento_btn.click
@@ -218,16 +222,24 @@ Contato: vfcoutinho@stefanini.com
 
         @indice = 0
 
+
         while(@indice < todos_tipos_de_solicitacao.size) do
+
             puts "Alterando tipo de solicitacao para #{todos_tipos_de_solicitacao[@indice]}"
             alterar_tipo_solicitacao_btn.click
+            aguardar_carregamento_load
+            sleep(0.2)
             novo_tipo_solicitacao_select.select(todos_tipos_de_solicitacao[@indice])
             confirmar_alterar_tipo_solicitacao_btn.click
+            sleep(0.2)
+            aguardar_carregamento_load
             puts "Pesquisando tipo de solicitacao de #{todos_tipos_de_solicitacao[@indice]}"
             tipo_solicitacao_select.select(todos_tipos_de_solicitacao[@indice])
             pesquisar_requerimento_btn.click
+            sleep(0.2)
             aguardar_carregamento_load
             @indice += 1
+            sleep(0.2)
         end
 
     end

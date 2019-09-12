@@ -30,34 +30,41 @@ Contato: vfcoutinho@stefanini.com
 
       visit("/")
 
-      sleep(1)
-
       @usuario = usuario
       @senha = senha
 
       if(has_usuario_input?(wait:5))
 
+          sleep(1)
+
           puts "Logando no SISEG"
           puts "Usuario: #{@usuario}"
           puts "Senha: #{@senha}"
 
+          sleep(0.5)
           usuario_input.set(@usuario)
           has_senha_input?(wait:3)
+          sleep(0.5)
           senha_input.set(@senha)
           has_acessar_btn?(wait:3)
+          sleep(0.5)
           acessar_btn.click  
         
       end
 
-      sleep(1)
-
       if(has_cardapio_sistemas?(wait:5))
 
+        sleep(1)
+
+        switch_to_window(windows.last)
+
         puts "Logando no SISMIGRA"
+        sleep(0.5)
         click_link "SISMIGRA"
 
         switch_to_window(windows.last)
         has_info_nome_span?(wait:5)
+        sleep(0.5)
 
       end
 
