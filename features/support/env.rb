@@ -47,14 +47,13 @@ end
 Capybara.default_max_wait_time = 100
 Capybara.page.driver.browser.manage.window.maximize
 
+
 Cucumber::Core::Test::Step.module_eval do
 
   def name
-
     return text if text == 'Before hook'
     return text if text == 'After hook'
     "#{source.last.keyword}#{text}"
-
   end
 
 end
