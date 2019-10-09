@@ -12,7 +12,7 @@ After do |scenario|
 
   # VINICIUS_VERIFICAR VERIFICAR MELHORIA DE PROCESSO DE ABAS
 
-  sleep(1)
+  sleep(2)
 
 end
 

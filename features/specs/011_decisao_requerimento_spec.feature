@@ -5,35 +5,35 @@ Funcionalidade: Decisão sobre o Requerimento
 
 # INDEFERIR E DEFERIR REQUERIMENTOS DE REGISTRO
 
-@indeferir_e_deferir_requerimento_registro
-@indeferir_requerimento_registro
-Cenario: Indeferir requerimento de registro
-    Quando solicitar a decisão do requerimento
-    E indeferir o requerimento de "Registro"
-    Entao deve-se gerar o termo de indeferimento
+# @indeferir_e_deferir_requerimento_registro
+# @indeferir_requerimento_registro
+# Cenario: Indeferir requerimento de registro
+#     Quando solicitar a decisão do requerimento
+#     E indeferir o requerimento de "Registro"
+#     Entao deve-se gerar o termo de indeferimento
 
-@indeferir_e_deferir_requerimento_registro
-@deferir_requerimento_registro
-Cenario: Deferir requerimento de registro
-    Quando solicitar a decisão do requerimento
-    E anexar formulário para requerimento de "Registro"
-    Entao deve-se deferir o requerimento
+# @indeferir_e_deferir_requerimento_registro
+# @deferir_requerimento_registro
+# Cenario: Deferir requerimento de registro
+#     Quando solicitar a decisão do requerimento
+#     E anexar formulário para requerimento de "Registro"
+#     Entao deve-se deferir o requerimento
 
-# INDEFERIR E DEFERIR REQUERIMENTOS DE AUTORIZAÇÃO DE RESIDÊNCIA
+# # INDEFERIR E DEFERIR REQUERIMENTOS DE AUTORIZAÇÃO DE RESIDÊNCIA
 
-@indeferir_e_deferir_requerimento_autorizacao_residencia
-@indeferir_requerimento_autorizacao_residencia
-Cenario: Indeferir requerimento de Autorizacao de Residencia
-    Quando solicitar a decisão do requerimento
-    E indeferir o requerimento de "Autorizacao_residencia"
-    Entao deve-se gerar o termo de indeferimento
+# @indeferir_e_deferir_requerimento_autorizacao_residencia
+# @indeferir_requerimento_autorizacao_residencia
+# Cenario: Indeferir requerimento de Autorizacao de Residencia
+#     Quando solicitar a decisão do requerimento
+#     E indeferir o requerimento de "Autorizacao_residencia"
+#     Entao deve-se gerar o termo de indeferimento
 
-@indeferir_e_deferir_requerimento_autorizacao_residencia
-@deferir_requerimento_autorizacao_residencia
-Cenario: Deferir requerimento de Autorizacao de Residencia
-    Quando solicitar a decisão do requerimento
-    E anexar formulário para requerimento de "Autorizacao_residencia"
-    Entao deve-se deferir o requerimento
+# @indeferir_e_deferir_requerimento_autorizacao_residencia
+# @deferir_requerimento_autorizacao_residencia
+# Cenario: Deferir requerimento de Autorizacao de Residencia
+#     Quando solicitar a decisão do requerimento
+#     E anexar formulário para requerimento de "Autorizacao_residencia"
+#     Entao deve-se deferir o requerimento
 
 # INDEFERIR E DEFERIR REQUERIMENTOS DE ALTERAÇÃO DE PRAZO
 

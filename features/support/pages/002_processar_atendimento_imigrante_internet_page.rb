@@ -299,8 +299,8 @@ include FileHelper
             @data_nascimento_alteracao_end = "01011980"
             @estado_civil_alteracao_end = "CASADO"
             @cidade_nascimento_alteracao_end = "BERLIM"
-            @pais_nascimento_alteracao_end = "ALEMANHA"
-            @pais_nacionalidade_alteracao_end = "ALEMANHA"
+            @pais_nascimento_alteracao_end = "Alemanha"
+            @pais_nacionalidade_alteracao_end = "Alemanha"
             @ocupacao_principal_alteracao_end = "43 - MEDICO"
 
             puts "Preenchendo RNM - Alteracao Endereco: #{@rnm_alteracao_alteracao_end}"
@@ -369,7 +369,8 @@ include FileHelper
             possui_visto_sim_radio.click
             puts "Preenchendo Numero do Visto: #{@numero_visto}"
             numero_visto_input.click
-            numero_visto_input.set(@numero_visto)
+            sleep(1)
+            numero_visto_input.click.set(@numero_visto)
             puts "Preenchendo Data da Concessao do Visto: #{@data_da_concessao}"
             data_da_concessao_input.click.set(@data_da_concessao)
             puts "Preenchendo Cidade da Concessao do Visto: #{@cidade_da_concessao}"
@@ -435,7 +436,7 @@ include FileHelper
             puts "Preenchendo CEP Residencial: #{@cep_residencial}"
             cep_residencial_input.click.set(@cep_residencial)
             complemento_residencial_input.send_keys(:tab)
-            sleep(5)
+            sleep(3)
             puts "Preenchendo Complemento Residencial: #{@cep_residencial}"
             complemento_residencial_input.click.set(@complemento_residencial)
             puts "Preenchendo Telefone Residencial: #{@telefone_residencial}"
@@ -445,7 +446,7 @@ include FileHelper
             puts "Preenchendo CEP Comercial: #{@telefone2_residencial}"
             cep_comercial_input.click.set(@cep_comercial)
             telefone2_residencial_input.send_keys(:tab)
-            sleep(5)
+            sleep(3)
             puts "Preenchendo Nome Estabelecimento Comercial: #{@nome_estabelecimento_comercial}"
             nome_estabelecimento_comercial_input.click.set(@nome_estabelecimento_comercial)
             puts "Preenchendo Complemento Comercial: #{@complemento_comercial}"
@@ -511,7 +512,7 @@ include FileHelper
             @cidade_alteracao_end_exterior = "BERLIM"
             @logradouro_alteracao_end_exterior = "LOGRADOURO RUA X 123"
             @estado_alteracao_end_exterior = "ESTADO DE BERLIM"
-            @pais_alteracao_end_exterior = "ALEMANHA"
+            @pais_alteracao_end_exterior = "Alemanha"
 
             # PREENCHER ENDERECO ALTERACAO RESIDENCIAL INTERNET
 

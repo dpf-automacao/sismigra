@@ -17,6 +17,7 @@ Contato:
 
     #Elementos para anexar formulário
     element :anexar_formulario_btn, "a[title*='Anexar Formulário']" 
+    element :substituir_formulario_sim_btn, "div[id*='panelBotoesConfirmacaoSubstituicaoDocumento'] input[value='Sim']"
     element :upload_formulario_btn, 'input[id="form:upload:file"]'
 
     #Elementos para indeferir o requerimento
@@ -89,9 +90,14 @@ Contato:
     def anexar_formulario
         puts "Anexando formulário"
         anexar_formulario_btn.click
+        sleep(1)
         @path = File.join(Dir.pwd, "features/arquivos/arquivo_teste.jpg").gsub(File::SEPARATOR, File::ALT_SEPARATOR || File::SEPARATOR)
         upload_formulario_btn(visible: false).set(@path)
-        sleep(2)
+        sleep(1)
         salvar_anexo_btn.click
+        sleep(1)
+        if(has_substituir_formulario_sim_btn?(wait:2))
+            substituir_formulario_sim_btn.click
+        end
     end
 end

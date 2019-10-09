@@ -1,6 +1,6 @@
 #language: pt
 #Esta funcionalidade depende da feature 011_decisao_requerimento
-@all_processar_conferncia
+@all_processar_conferencia
 Funcionalidade: Processar Conferencia
 
     @devolver_para_unidade_local

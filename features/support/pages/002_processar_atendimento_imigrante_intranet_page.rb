@@ -248,7 +248,7 @@ Contato: vfcoutinho@stefanini.com
 
         #VINICIUS_VERIFICAR BINDING.PRY
 
-        puts @tipo_solicitacao
+        sleep(1)
 
         if(@tipo_solicitacao == "Alteracao_Endereco")
 
@@ -270,15 +270,18 @@ Contato: vfcoutinho@stefanini.com
 
         if(wait_until_aba_dados_pessoais_visible)
 
-            @tipo_registro_req = "Registro de Visto Consular"
-            # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
+            if(@tipo_solicitacao == "Registro")
+                puts "Tipo de solicitacao de registro"
+                @tipo_registro_req = "Registro de Visto Consular"
+                # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
+                puts "Selecionando tipo de registro: #{@tipo_registro_req}"
+                tipo_registro_select.select(@tipo_registro_req)
 
-            #VINICIUS_VERIFICAR APOS PROCESSAR ATENDIMENTO O QUE OCORREU
-            # ALGUNS TIPO DE REGISTROS NAO ESTAVA PREENCHIDO VINDO PELA INTERNET
-            puts "Selecionando tipo de registro: #{@tipo_registro_req}"
-            tipo_registro_select.select(@tipo_registro_req)
+                preencher_amparo_legal
+            else
+                puts "Tipo de solicitacao desabilitado para #{@tipo_solicitacao}"
+            end
 
-            preencher_amparo_legal
             avancar_proximo_processar_atendimento
 
         end
@@ -384,6 +387,8 @@ Contato: vfcoutinho@stefanini.com
 
         @indice = 0
 
+        sleep(0.1)
+
         if(wait_until_tipo_de_ducumentos_checkbox_visible)
 
             @tamanho_documentos = tipo_de_ducumentos_checkbox.size
@@ -391,7 +396,7 @@ Contato: vfcoutinho@stefanini.com
 
             while(@indice < @tamanho_documentos) do
 
-                sleep(0.1)
+                sleep(0.2)
                 puts "Selecionando tipo de documentacao"
                 tipo_de_ducumentos_checkbox[@indice].check
                 @indice += 1
@@ -404,7 +409,7 @@ Contato: vfcoutinho@stefanini.com
 
             @outros_documentos_texto = "Outra documentacao"
             puts "Preechendo #{@outros_documentos_texto}"
-            sleep(0.1)
+            sleep(0.2)
             outros_documentos_input.click.set(@outros_documentos_texto)
             adicionar_documento_btn.click
             wait_until_remover_doc_recebidos_img_visible
@@ -570,16 +575,17 @@ Contato: vfcoutinho@stefanini.com
 
         if(has_justificativa_alteracoes_textarea?(wait:5))
 
+            puts "Preenchendo Modal justificativa habilitada uma vez"
             justificativa_alteracoes_textarea.set("Preenchendo justificativa de alteracao de dados do imigrante")
             puts "Confirmando primeira justificativa"
             confirmar_alteracoes_btn.click
             aguardar_carregamento_load
-            puts "Preenchendo Modal justificativa habilitada uma vez"
             proximo_btn.click
             aguardar_carregamento_load
 
             if(has_justificativa_alteracoes_textarea?(wait:5))
 
+                puts "Preenchendo Modal justificativa habilitada duas vezes"
                 justificativa_alteracoes_textarea.set("Preenchendo Modal justificativa habilitada segunda vez (VERFICAR ERRO DE PORQUE ESTA HABILIDATA 2x)")
                 puts "Confirmando segunda justificativa"
                 confirmar_alteracoes_btn.click
@@ -620,6 +626,7 @@ Contato: vfcoutinho@stefanini.com
 
                 associar_checkbox(match: :first).click
                 puts "Confirmando Identidade de Imigrante"
+                sleep(1)
                 confirmar_identidade_btn.click
 
                 if(wait_until_proximo_btn_visible)

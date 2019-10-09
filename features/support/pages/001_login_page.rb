@@ -33,9 +33,9 @@ Contato: vfcoutinho@stefanini.com
       @usuario = usuario
       @senha = senha
 
-      if(has_usuario_input?(wait:5))
+      sleep(2)
 
-          sleep(1)
+      if(has_usuario_input?(wait:5))
 
           puts "Logando no SISEG"
           puts "Usuario: #{@usuario}"
@@ -48,13 +48,11 @@ Contato: vfcoutinho@stefanini.com
           senha_input.set(@senha)
           has_acessar_btn?(wait:3)
           sleep(0.5)
-          acessar_btn.click  
+          acessar_btn.click
         
       end
 
       if(has_cardapio_sistemas?(wait:5))
-
-        sleep(1)
 
         switch_to_window(windows.last)
 
