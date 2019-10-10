@@ -65,15 +65,18 @@ Cenario: Gerar Requerimento de Segunda via CRNM do Imigrante para situacao em An
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo
     E preencho Dados da Declaracao e clico em Salvar
-    E processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
+    Entao visualizo a Impressao da Solicitacao referente
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_analise
+@processar_atendimento_segunda_via_crnm_imigrante_analise
+Cenario: Processar Atendimento de Segunda via CRNM do Imigrante em Analise na Intranet
+    Quando processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Segunda_via_CRNM" na Situacao "Em Aberto"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
     E clico no icone Home para abortar a solicitacao e pesquiso o requerimento novamente
-    E processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
-    E preencher as informacoes para Pesquisar Solicitacao de "Segunda_via_CRNM" na Situacao "Em análise"
     Entao verifico o requerimento referente "Em análise"
 
 @procedimentos_requerimento_segunda_via_crnm_imigrante_analise
@@ -127,7 +130,12 @@ Cenario: Gerar Requerimento de Segunda Via CRMM do Imigrante para situacao em Su
     E preencho Dados do Registro do requerimento e clico em Proximo
     E preencho Dados do Endereco do requerimento e clico em Proximo
     E preencho Dados da Declaracao e clico em Salvar
-    E processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
+    Entao visualizo a Impressao da Solicitacao referente
+
+@procedimentos_requerimento_segunda_via_crnm_imigrante_suspenso
+@processar_atendimento_segunda_via_crnm_imigrante_suspenso
+Cenario: Processar Atendimento de Segunda via CRNM do Imigrante em Suspenso na Intranet
+    Quando processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Segunda_via_CRNM" na Situacao "Em Aberto"
     E preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
