@@ -41,7 +41,7 @@ Capybara.configure do |config|
 
   config.default_driver = :selenium
   # config.app_host = "http://projetosdesenv.dpf.gov.br/siseg-prehom"
-  config.app_host = "https://projetoshom.dpf.gov.br/siseg/"
+  config.app_host = "https://projetoshom.dpf.gov.br/siseg"
 
 end
 

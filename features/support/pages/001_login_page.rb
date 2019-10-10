@@ -45,6 +45,7 @@ Contato: vfcoutinho@stefanini.com
       if(has_siseg_btn?(wait:5))
         sleep(2)
         siseg_btn.click
+        sleep(1)
         switch_to_window(windows.last)
       end
 

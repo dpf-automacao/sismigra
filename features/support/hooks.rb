@@ -14,5 +14,12 @@ After do |scenario|
 
   sleep(2)
 
+  switch_to_window(windows.last)
+  page.execute_script "window.close();"
+  switch_to_window(windows.last)
+  page.execute_script "window.close();"
+  switch_to_window(windows.last)
+  page.execute_script "window.close();"
+
 end
 
