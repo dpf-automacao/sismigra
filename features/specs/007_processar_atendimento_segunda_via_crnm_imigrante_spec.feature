@@ -143,8 +143,6 @@ Cenario: Processar Atendimento de Segunda via CRNM do Imigrante em Suspenso na I
     E preencho Dados de Documentos e clico em Proximo
     E preencho Dados do Resultado da Pesquisa e clico em Proximo
     E visualizo Dados da Previa da Carteira e clico em "Suspender"
-    E processar atendimento de "Segunda_via_CRNM" no menu "Processar_Atendimento" na Intranet
-    E preencher as informacoes para Pesquisar Solicitacao de "Segunda_via_CRNM" na Situacao "Suspenso"
     Entao verifico o requerimento referente "Suspenso"
 
 @procedimentos_requerimento_segunda_via_crnm_imigrante_suspenso
