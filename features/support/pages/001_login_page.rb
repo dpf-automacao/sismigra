@@ -17,6 +17,7 @@ Contato: vfcoutinho@stefanini.com
   # Mapeamento de botoes, links
 
   element :acessar_btn, "input[id='acessarcti']"
+  element :siseg_btn, "a[href='https://projetoshom.dpf.gov.br/siseg/siseg.php']"
 
   # Mapeamento de elementos para validação
 
@@ -40,6 +41,12 @@ Contato: vfcoutinho@stefanini.com
       @senha = senha
 
       sleep(2)
+
+      if(has_siseg_btn?(wait:5))
+        sleep(2)
+        siseg_btn.click
+        switch_to_window(windows.last)
+      end
 
       if(has_usuario_input?(wait:5))
           puts "Logando no SISEG"

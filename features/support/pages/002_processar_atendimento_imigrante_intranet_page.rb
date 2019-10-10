@@ -225,6 +225,7 @@ Contato: vfcoutinho@stefanini.com
 
         while(@indice < todos_tipos_de_solicitacao.size) do
 
+            sleep(0.2)
             puts "Alterando tipo de solicitacao para #{todos_tipos_de_solicitacao[@indice]}"
             alterar_tipo_solicitacao_btn.click
             aguardar_carregamento_load
