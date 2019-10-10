@@ -11,7 +11,7 @@ Contato:
 
     #MAPEAMENTO ELEMENTOS DA TELA - AUDITORIA
     element :periodo_inicial_input, "input[id*='Inicio'][type='text']"
-    element :periodo_final_input, "input[id*='Final'][type='text']"
+    element :periodo_final_input, "input[id*='Fi'][type='text']"
     element :nome_servidor_input, "input[id*='idTipoServidor'][type='text']"
     element :imprimir_tela_radio, "input[value='EM_TELA']"
     element :gerar_button, "input[value='Gerar']"
@@ -48,19 +48,61 @@ Contato:
 
     #MAPEAMENTO ELEMENTOS DA TELA - CÉDULAS NÃO RECEBIDAS
     element :unidade_circunscricao_select6, "select[name*='relatorioSolicitacao']"
-    element :radio_button_prazo_enviada_30_dias, "input[value='DIAS30']"
+    element :radio_button_prazo_enviada_90_dias, "input[value='DIAS90']"
 
     #MAPEAMENTO ELEMENTOS DA TELA - REQUERIMENTOS SUSPENSOS
     element :unidade_circunscricao_select7, "select[name*='relatorioRequerimentosSuspensos']"
-    element :radio_button_prazo_suspensao_60_dias, "input[value='DIAS60']"
+    element :radio_button_prazo_suspensao_90_dias, "input[value='DIAS90']"
 
+    element :titulo_cedulas_span, "div[align='center'] span[class='titulo']"
 
     #METODO PARA RELATORIO - AUDITORIA
 
-    def preencher_relatorio_auditoria
+    def preencher_data
         @data_atual = Time.now
-        @periodo_inicial = "01/08/2019"
+
+        @dia = @data_atual.strftime("%d")
+        @mes = @data_atual.strftime("%m")
+        @ano = @data_atual.strftime("%Y")
+        
+        if(@dia.to_i == 1)
+
+            @dia = "28"
+
+            @mes = @mes.to_i - 1
+
+            if(@mes < 10)
+                @mes = "0" + @mes.to_s 
+            end
+
+            if(@mes.to_i == 1)
+                @ano = @ano.to_i - 1
+            end
+
+            if(@mes.to_i == 0)
+                @mes = "12"
+            end
+
+        else
+
+            @dia = @dia.to_i - 1
+
+            if(@dia < 10)
+                @dia = "0" + @dia.to_s
+            end
+
+        end
+
+        @periodo_inicial = @data_atual.strftime("#{@dia}/#{@mes}/#{@ano}")
         @periodo_final = @data_atual.strftime("%d/%m/%Y")
+    end
+
+    def preencher_unidade
+        @unidade_circunscricao = 'DELEMIG/DREX/SR/PF/DF'
+    end
+
+    def preencher_relatorio_auditoria
+        preencher_data
         @nome_servidor = "DANTE LUIZ PIPPI FILHO"
         puts "Preenchendo parâmetros de Relatório de Auditoria"
         puts "Preenchendo periodo inicial: #{@periodo_inicial}"
@@ -88,9 +130,7 @@ Contato:
     #METODO PARA RELATORIO - Quantitativo de Erro no Número do RNM
 
     def preencher_relatorio_quantitativo_erro_rnm
-        @data_atual = Time.now
-        @periodo_inicial = "01/08/2019"
-        @periodo_final = @data_atual.strftime("%d/%m/%Y")
+        preencher_data
         puts 'Preenchendo parâmetros de relatório de Quantitativo de Erro no Número do RNM'
         periodo_inicial_input.click.set(@periodo_inicial)
         periodo_final_input.click.set(@periodo_final)
@@ -102,9 +142,8 @@ Contato:
     end
 
     def preencher_relatorio_quantitativo_cedulas
-        @data_atual = Time.now
-        @periodo_inicial = "01/08/2019"
-        @periodo_final = @data_atual.strftime("%d/%m/%Y")
+        preencher_data
+        preencher_unidade
         puts 'Preenchendo parâmetros de Relatório de Quantitativo de Cédulas'
         periodo_inicial_input.click.set(@periodo_inicial)
         periodo_final_input.click.set(@periodo_final)
@@ -117,12 +156,10 @@ Contato:
     end
 
     def preencher_relatorio_quantitativo_imigrantes_registrados
-        @data_atual = Time.now
-        @periodo_inicial = "01/08/2019"
-        @periodo_final = @data_atual.strftime("%d/%m/%Y")
-        @unidade_circunscricao = 'DELEMIG/DREX/SR/PF/DF'
+        preencher_data
+        preencher_unidade
         puts 'Preenchendo parâmetros de Relatório de quantitativo de imigrantes registrados'
-        @pais_nacionalidade = "BOLIVIA"
+        @pais_nacionalidade = "Bolívia"
         periodo_inicial_input.click.set(@periodo_inicial)
         periodo_final_input.click.set(@periodo_final)
         pais_nacionalidade_select.select(@pais_nacionalidade)
@@ -133,10 +170,8 @@ Contato:
     end
 
     def preencher_relatorio_solicitacoes_indeferida_decisao
-        @data_atual = Time.now
-        @periodo_inicial = "01/08/2019"
-        @periodo_final = @data_atual.strftime("%d/%m/%Y")
-        @unidade_circunscricao = 'DELEMIG/DREX/SR/PF/DF'
+        preencher_data
+        preencher_unidade
         puts 'Preenchendo parâmetros de Relatório de Solicitações indeferidas na decisão'
         periodo_inicial_input.click.set(@periodo_inicial)
         periodo_final_input.click.set(@periodo_final)
@@ -147,10 +182,8 @@ Contato:
     end
 
     def preencher_relatorio_quantitativo_solicitacoes_cadastradas
-        @data_atual = Time.now
-        @periodo_inicial = "01/08/2019"
-        @periodo_final = @data_atual.strftime("%d/%m/%Y")
-        @unidade_circunscricao = 'DELEMIG/DREX/SR/PF/DF'
+        preencher_data
+        preencher_unidade
         puts 'Preenchendo parâmetros de Relatório de quantitativo de solicitações cadastradas'
         periodo_inicial_input.click.set(@periodo_inicial)
         periodo_final_input.click.set(@periodo_final)
@@ -161,10 +194,8 @@ Contato:
     end
 
     def preencher_relatorio_quantitativo_erro_material
-        @data_atual = Time.now
-        @periodo_inicial = "01/08/2019"
-        @periodo_final = @data_atual.strftime("%d/%m/%Y")
-        @unidade_circunscricao = 'DELEMIG/DREX/SR/PF/DF'
+        preencher_data
+        preencher_unidade
         puts 'Preenchendo pâmetros de Relatório de Quantitativo de Erro Material'
         periodo_inicial_input.click.set(@periodo_inicial)
         periodo_final_input.click.set(@periodo_final)
@@ -175,22 +206,22 @@ Contato:
     end
 
     def preencher_relatorio_cedulas_nao_recebidas
-        @unidade_circunscricao = 'DELEMIG/DREX/SR/PF/DF'
+        preencher_unidade
         puts 'Preenchendo pâmetros de Relatório de Cédulas não Recebidas'
         unidade_circunscricao_select6.set(@unidade_circunscricao)
-        radio_button_prazo_enviada_30_dias.click
+        radio_button_prazo_enviada_90_dias.click
         gerar_button.click
-        wait_until_load_carregar_invisible
+        has_titulo_cedulas_span?
     end
 
 
     def preencher_relatorio_requerimentos_suspensos
-        @unidade_circunscricao = 'DELEMIG/DREX/SR/PF/DF'
+        preencher_unidade
         puts 'Preenchendo pâmetros de Relatório de Requerimentos Suspensos'
         unidade_circunscricao_select7.set(@unidade_circunscricao)
-        radio_button_prazo_suspensao_60_dias.click
+        radio_button_prazo_suspensao_90_dias.click
         gerar_button.click
-        wait_until_load_carregar_invisible
+        has_titulo_cedulas_span?
     end
 
 

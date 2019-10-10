@@ -1,6 +1,6 @@
 #language:pt
 
-@all_features
+@all_relatorios
 Funcionalidade: Gerar Relatorios do imigrante
 
 @relatorio_auditoria

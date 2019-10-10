@@ -21,8 +21,14 @@ Contato: vfcoutinho@stefanini.com
   # Mapeamento de elementos para validação
 
   element :info_nome_span, "span[id='infoNome']"
-  element :cardapio_sistemas, "div[id='caixa_central']"
+  element :cardapio_sistemas_div1, "div[id='portal-breadcrumbs']"
+  element :cardapio_sistemas_div2, "div[id='caixa_central']"
+  element :login_acesso_div, "div[id='loginAcesso']"
   element :deslogar_btn, "img[src*='sair']"
+
+  # Mapeamento de elementos para verificacao no siseg
+  element :sismigra_siseg_link, "a[id='216']"
+
 
   # Definindo metodo para entrar no siseg
 
@@ -36,11 +42,9 @@ Contato: vfcoutinho@stefanini.com
       sleep(2)
 
       if(has_usuario_input?(wait:5))
-
           puts "Logando no SISEG"
           puts "Usuario: #{@usuario}"
           puts "Senha: #{@senha}"
-
           sleep(0.5)
           usuario_input.set(@usuario)
           has_senha_input?(wait:3)
@@ -49,21 +53,20 @@ Contato: vfcoutinho@stefanini.com
           has_acessar_btn?(wait:3)
           sleep(0.5)
           acessar_btn.click
-        
+          switch_to_window(windows.last)
       end
 
-      if(has_cardapio_sistemas?(wait:5))
-
+      if(has_cardapio_sistemas_div1?(wait:5))
+        has_cardapio_sistemas_div2?(wait:5)
+        has_sismigra_siseg_link?(wait:5)
+        has_login_acesso_div?(wait:5)
         switch_to_window(windows.last)
-
         puts "Logando no SISMIGRA"
         sleep(0.5)
         click_link "SISMIGRA"
-
         switch_to_window(windows.last)
         has_info_nome_span?(wait:5)
         sleep(0.5)
-
       end
 
   end
