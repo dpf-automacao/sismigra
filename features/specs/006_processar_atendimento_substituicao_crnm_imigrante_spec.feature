@@ -40,7 +40,7 @@ Cenario: Situacao do Requerimento de Substituicao CRNM do Imigrante em Aberto na
 Cenario: Processar Atendimento de Substituicao CRNM do Imigrante em Aberto na Intranet
     Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -72,7 +72,7 @@ Cenario: Gerar Requerimento de Substituicao CRNM do Imigrante para situacao em A
 Cenario: Processar Atendimento de Substituicao CRNM do Imigrante em Analise na Intranet
     Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -105,7 +105,7 @@ Cenario: Situacao do Requerimento de Substituicao CRNM do Imigrante em Analise n
 Cenario: Processar Atendimento de Substituicao CRNM do Imigrante em Analise na Intranet
     Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em análise"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -137,7 +137,7 @@ Cenario: Gerar Requerimento de Substituicao CRMM do Imigrante para situacao em S
 Cenario: Processar Atendimento de Substituicao CRNM do Imigrante em Suspender na Intranet
     Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -171,7 +171,7 @@ Cenario: Situacao do Requerimento de Substituicao CRMM do Imigrante em Suspenso 
 Cenario: Processar Atendimento de Substituicao CRMM do Imigrante em Suspenso na Intranet
     Quando processar atendimento de "Substituicao_de_CRNM" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Substituicao_de_CRNM" na Situacao "Suspenso"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo

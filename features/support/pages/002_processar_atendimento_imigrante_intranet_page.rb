@@ -27,6 +27,8 @@ Contato: vfcoutinho@stefanini.com
 
     # MAPEAMENTO DE ELEMENTOS DA ABA DADOS PESSOAIS
 
+    element :avancar_com_perifetico_btn, "form[id='j_id265'] input[value='Avançar']"
+    element :avancar_sem_periferico_btn, "form[id='j_id254'] input[value='Avançar']"
     element :aba_dados_pessoais, "td[id*='DadosPessoais_lbl'][class*='dr-tbpnl-tb-act']"
     element :primeira_aba, 'td[id*="DadosPessoais_lbl"]'
     element :tipo_registro_select, "fieldset[class*='fLeft'] select[name*='formulario-processar-cie']"
@@ -40,8 +42,13 @@ Contato: vfcoutinho@stefanini.com
     element :justificativa_alteracoes_textarea, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] textarea"
     element :confirmar_alteracoes_btn, "table[id='modalJustificativaAlteracaoDadosPessoaisContentTable'] input[value*='Confirmar']"
     element :dados_divergentes_erro, "dl[id='mensagens'] dt[class='mensagem_erro']"
+    element :impossibilidade_digital_btn, "table[id*='idMotivoAusenciaDigital'] input[value='IMPOSSIBILIDADE']"
+    element :impossibilidade_digital_textarea, "div[id*='JustificativaAusenciaDigital'] textarea"
+    element :impossibilidade_assinatura_btn, "table[id*='idMotivoAusenciaAssinatura'] input[value='IMPOSSIBILIDADE']"
+    element :impossibilidade_assinatura_textarea, "div[id*='JustificativaAusenciaAssinatura'] textarea"
 
     elements :atendimento_btns, "input[class='btnAtendimento']"
+    elements :periferico_btns, "input[class='btnPeriferico']"
     elements :mensagem_erro, "div.cRed"
     
     # MAPEAMENTO DE ELEMENTOS DA ABA DADOS DE REGISTRO
@@ -174,14 +181,13 @@ Contato: vfcoutinho@stefanini.com
         end
 
         puts "Preenchendo periodo inicial: #{@periodo_inicial}"
-        periodo_inicial_input.click
-        sleep(0.1)
-        periodo_inicial_input.set(@periodo_inicial)
+        sleep(0.5)
+        periodo_inicial_input.click.set(@periodo_inicial)
         puts "Preenchendo periodo final: #{@periodo_final}"
-        periodo_final_input.click
-        sleep(0.1)
+        sleep(0.5)
         periodo_final_input.click.set(@periodo_final)
         puts "Pesquisando Requerimento de numero:#{@dados_requerimento_pesquisa}"
+        sleep(0.5)
         pesquisar_requerimento_btn.click
         aguardar_carregamento_load
 
@@ -225,31 +231,34 @@ Contato: vfcoutinho@stefanini.com
 
         while(@indice < todos_tipos_de_solicitacao.size) do
 
-            sleep(0.2)
+            sleep(0.5)
             puts "Alterando tipo de solicitacao para #{todos_tipos_de_solicitacao[@indice]}"
             alterar_tipo_solicitacao_btn.click
             aguardar_carregamento_load
-            sleep(0.2)
+            sleep(0.5)
             novo_tipo_solicitacao_select.select(todos_tipos_de_solicitacao[@indice])
+            sleep(0.5)
             confirmar_alterar_tipo_solicitacao_btn.click
-            sleep(0.2)
             aguardar_carregamento_load
             puts "Pesquisando tipo de solicitacao de #{todos_tipos_de_solicitacao[@indice]}"
+            sleep(0.5)
             tipo_solicitacao_select.select(todos_tipos_de_solicitacao[@indice])
+            sleep(0.5)
             pesquisar_requerimento_btn.click
-            sleep(0.2)
             aguardar_carregamento_load
+            sleep(0.5)
             @indice += 1
-            sleep(0.2)
         end
 
     end
 
-    def preencher_dados_pessoais_intranet
+    def preencher_dados_pessoais_intranet(periferico)
 
         #VINICIUS_VERIFICAR BINDING.PRY
 
         sleep(1)
+
+        @periferico = periferico
 
         if(@tipo_solicitacao == "Alteracao_Endereco")
 
@@ -260,10 +269,32 @@ Contato: vfcoutinho@stefanini.com
         else
 
             puts "Clicando no primeiro registro diferente de alteracao de endereco para preencher dados pessoais"
-            atendimento_btns[0].click
+
+            if(@periferico == "Com Periferico")
+                puts "-----------> Atendimento COM periférico <------------"
+                periferico_btns[0].click
+                if(has_avancar_com_perifetico_btn?(wait:2))
+                    avancar_com_perifetico_btn.click
+                else
+                    puts "Botao para avancar com periferico inabilitado"
+                end
+            elsif(@periferico == "Sem Periferico")
+                puts "-----------> Atendimento SEM periférico <------------"
+                atendimento_btns[0].click
+                if(has_avancar_sem_periferico_btn?(wait:2))
+                    avancar_sem_periferico_btn.click
+                else
+                    puts "Botao para avancar sem periferico inabilitado"
+                end
+            else
+                puts "Houve um erro ao selecionar com periferico ou sem periferico"
+            end
+
             aguardar_carregamento_load
 
         end
+
+
 
         puts "Selecionando primeira aba"
         primeira_aba.click
@@ -277,11 +308,11 @@ Contato: vfcoutinho@stefanini.com
                 # @tipo_registro_req = "Registro após publicação no Diário Oficial da União"
                 puts "Selecionando tipo de registro: #{@tipo_registro_req}"
                 tipo_registro_select.select(@tipo_registro_req)
-
-                preencher_amparo_legal
             else
                 puts "Tipo de solicitacao desabilitado para #{@tipo_solicitacao}"
             end
+
+            preencher_amparo_legal
 
             avancar_proximo_processar_atendimento
 
@@ -314,35 +345,37 @@ Contato: vfcoutinho@stefanini.com
     # VINICIUS_VERIFICAR UTILIZACAO
     def alterar_prazos
 
-      if (@tipo_solicitacao == "Alteração de Prazo")
+        if (@tipo_solicitacao == "Alteração de Prazo")
 
-        @data_atual = Time.now
-        # VINICIUS_VERIFICAR FORMATACAO DE DATA DE ESTADA PARA PEGAR O ANO ATUAL +3 ANOS FIXOS
-        @data_estada = @data_atual.strftime("%d/%m/2022")
-        @data_carteira = @data_atual.strftime("%d/%m/2022")
-        @justificativa_alteracao_prazo = "Justificativa alteração de prazos script de test"
+            @data_atual = Time.now
+            # VINICIUS_VERIFICAR FORMATACAO DE DATA DE ESTADA PARA PEGAR O ANO ATUAL +3 ANOS FIXOS
+            @data_estada = @data_atual.strftime("%d/%m/2022")
+            @data_carteira = @data_atual.strftime("%d/%m/2022")
+            @justificativa_alteracao_prazo = "Justificativa alteração de prazos script de test"
 
-        puts "Clicando para editar prazos"
-        editar_prazos_btn.click
-        puts "Preenchendo justificativa de alteracao de prazos #{@justificativa_alteracao_prazo}"
-        justificativa_alteracao_prazo.set(@justificativa_alteracao_prazo)
-        salvar_btn.click
-        aguardar_carregamento_load
-        puts "Alterando prazos, (data da estada: #{@data_estada}"
-        data_estada_input.click.set(@data_estada)
-        puts "Alterando prazos, (data de validade da carteira: #{@data_carteira}"
-        data_validade_carteira_input.click.set(@data_carteira)
+            puts "Clicando para editar prazos"
+            editar_prazos_btn.click
+            puts "Preenchendo justificativa de alteracao de prazos #{@justificativa_alteracao_prazo}"
+            justificativa_alteracao_prazo.set(@justificativa_alteracao_prazo)
+            salvar_btn.click
+            aguardar_carregamento_load
+            puts "Alterando prazos, (data da estada: #{@data_estada}"
+            data_estada_input.click.set(@data_estada)
+            puts "Alterando prazos, (data de validade da carteira: #{@data_carteira}"
+            data_validade_carteira_input.click.set(@data_carteira)
 
-      end
+        end
 
     end
 
     # VINICIUS_VERIFICAR UTILIZACAO
     def recalcular_prazos
 
-        puts "Recalculando prazos"
-        recalcular_prazos_btn.click if (@tipo_solicitacao == 'Segunda via de CRNM')
-        aguardar_carregamento_load
+        if (@tipo_solicitacao == 'Segunda via de CRNM')
+            puts "Recalculando prazos"
+            recalcular_prazos_btn.click
+            aguardar_carregamento_load
+        end
 
     end
 
@@ -409,7 +442,7 @@ Contato: vfcoutinho@stefanini.com
         if(wait_until_outros_documentos_input_visible)
 
             @outros_documentos_texto = "Outra documentacao"
-            puts "Preechendo #{@outros_documentos_texto}"
+            puts "Preenchendo #{@outros_documentos_texto}"
             sleep(0.2)
             outros_documentos_input.click.set(@outros_documentos_texto)
             adicionar_documento_btn.click
@@ -443,6 +476,7 @@ Contato: vfcoutinho@stefanini.com
             puts "Anexando arquivo"
             anexar(anexar_arquivo_btn(visible: false)["id"], "features/arquivos/arquivo_teste.jpg")
             has_arquivos_anexados_link?(wait:10)
+            puts "Arquivo anexado"
             sleep(0.1)
             avancar_proximo_processar_atendimento
 
@@ -478,7 +512,7 @@ Contato: vfcoutinho@stefanini.com
 
                 alterar_dados_dos_registros[@indice].click
                 resultado_da_pesquisa_textarea.set(@justificativa_resultado_pesquisa)
-                puts "Preechendo justificativa da pesquisa #{@justificativa_resultado_pesquisa} de numero #{@indice}"
+                puts "Preenchendo justificativa da pesquisa #{@justificativa_resultado_pesquisa} de numero #{@indice}"
                 salvar_btn.click
                 aguardar_carregamento_load
                 @indice += 1
@@ -502,7 +536,7 @@ Contato: vfcoutinho@stefanini.com
 
             @tipo_finalizacao = tipo_finalizacao
 
-            if(@tipo_finalizacao == "Concluir")
+            if(@tipo_finalizacao == "Concluir" && @periferico == "Sem Periferico")
 
                 puts "Visualizando e Encerrando Previa da carteira"
                 concluir_btn.click
@@ -537,6 +571,15 @@ Contato: vfcoutinho@stefanini.com
                 page.execute_script "window.close();"
                 switch_to_window(windows.first)
 
+            elsif(@tipo_finalizacao == "Concluir" && @periferico == "Com Periferico")
+                avancar_proximo_processar_atendimento
+                impossibilidade_digital_btn.click
+                impossibilidade_digital_textarea.click.set("Impossibilitado para impressão de digital")
+                impossibilidade_assinatura_btn.click
+                impossibilidade_assinatura_textarea.click.set("Impossibilitado para assinatura")
+                concluir_btn.click
+                page.assert_text('Dados salvos com sucesso')
+                encerrar_btn.click
             end
 
         else
@@ -623,28 +666,28 @@ Contato: vfcoutinho@stefanini.com
             #VINICIUS_VERIFICAR BINDING.PRY PARA VER SE ESTA ENTRANDO NOS TIPOS DE SOLICITACOES CITADOS
 
             # VINICIUS_VERIFICAR PORQUE NAO ESTA FORMATADO COM _ NAS SOLICITACOES
-            if(  (@tipo_solicitacao == "Substituição de CRNM") || (@tipo_solicitacao == "Segunda via de CRNM") || (@tipo_solicitacao == "Alteracao_Endereco") )
+            # if(  (@tipo_solicitacao == "Substituição de CRNM") || (@tipo_solicitacao == "Segunda via de CRNM") || (@tipo_solicitacao == "Alteracao_Endereco") )
 
-                associar_checkbox(match: :first).click
-                puts "Confirmando Identidade de Imigrante"
-                sleep(1)
-                confirmar_identidade_btn.click
+            associar_checkbox(match: :first).click
+            puts "Confirmando Identidade de Imigrante"
+            sleep(1)
+            confirmar_identidade_btn.click
 
-                if(wait_until_proximo_btn_visible)
+            if(wait_until_proximo_btn_visible)
 
-                    puts "Clicando em proximo novamente (Depois de Associar Imigrante)"
-                    proximo_btn.click
-                    aguardar_carregamento_load
-
-                end
-
-                if(@tipo_solicitacao != "Alteracao_Endereco")
-
-                    validar_msg_erro
-
-                end
+                puts "Clicando em proximo novamente (Depois de Associar Imigrante)"
+                proximo_btn.click
+                aguardar_carregamento_load
 
             end
+
+            if(@tipo_solicitacao != "Alteracao_Endereco")
+
+                validar_msg_erro
+
+            end
+
+            # end
 
         end
 
@@ -668,9 +711,11 @@ Contato: vfcoutinho@stefanini.com
 
     def avancar_proximo_processar_atendimento
 
+        sleep(1)
         puts "---------> Clicando em Proximo para avancar proxima aba"
         proximo_btn.click
         aguardar_carregamento_load
+        sleep(1)
 
         if(has_aba_dados_pessoais?(wait:3))
 

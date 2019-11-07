@@ -42,7 +42,7 @@ Cenario: Situacao do Requerimento de Autorizacao de Residencia do Imigrante em A
 Cenario: Processar Atendimento de Autorizacao de Residencia do Imigrante em Aberto na Intranet
     Quando processar atendimento de "Autorizacao_Residencia" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Autorizacao_Residencia" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -70,11 +70,11 @@ Cenario: Gerar Requerimento de Autorizacao de Residencia do Imigrante para situa
     Entao visualizo a Impressao da Solicitacao referente
 
 @procedimentos_requerimento_autorizacao_residencia_imigrante_analise
-@processar_atendimento_autorizacao_residencia_imigrante_analise
-Cenario: Processar Atendimento de Autorizacao de Residencia do Imigrante em Analise na Intranet
+@mudar_requerimento_de_autorizacao_de_residencia_para_situacao_em_analise
+Cenario: Mudar Requerimento de Autorizacao de Residencia do Imigrante para Analise na Intranet
     Quando processar atendimento de "Autorizacao_Residencia" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Autorizacao_Residencia" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -107,7 +107,7 @@ Cenario: Situacao do Requerimento de Autorizacao de Residencia do Imigrante em A
 Cenario: Processar Atendimento de Autorizacao de Residencia do Imigrante em Analise na Intranet
     Quando processar atendimento de "Autorizacao_Residencia" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Autorizacao_Residencia" na Situacao "Em análise"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -135,11 +135,11 @@ Cenario: Gerar Requerimento de Autorizacao de Residencia do Imigrante para situa
     Entao visualizo a Impressao da Solicitacao referente
 
 @procedimentos_requerimento_autorizacao_residencia_imigrante_suspenso
-@processar_atendimento_autorizacao_residencia_imigrante_suspenso
-Cenario: Processar Atendimento de Autorizacao de Residencia do Imigrante em Suspenso na Intranet
+@mudar_requerimento_de_autorizacao_de_residencia_para_situacao_em_suspenso
+Cenario: Mudar Requerimento de Autorizacao de Residencia do Imigrante para Suspenso na Intranet
     Quando processar atendimento de "Autorizacao_Residencia" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Autorizacao_Residencia" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -173,7 +173,7 @@ Cenario: Situacao do Requerimento de Autorizacao de Residencia do Imigrante em S
 Cenario: Processar Atendimento de Autorizacao de Residencia do Imigrante em Suspenso na Intranet
     Quando processar atendimento de "Autorizacao_Residencia" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Autorizacao_Residencia" na Situacao "Suspenso"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo

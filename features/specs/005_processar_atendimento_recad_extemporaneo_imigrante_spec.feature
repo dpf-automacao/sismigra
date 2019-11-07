@@ -35,7 +35,7 @@ Cenario: Situacao do Requerimento de Recadastramento Extemporaneo do Imigrante e
 Cenario: Processar Atendimento de Recadastramento Extemporaneo do Imigrante em Aberto na Intranet
     Quando processar atendimento de "Recadastramento_Extemporaneo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Recadastramento_Extemporaneo" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -66,7 +66,7 @@ Cenario: Gerar Requerimento de Recadastramento Extemporaneo do Imigrante para si
 Cenario: Processar Atendimento de Recadastramento Extemporaneo do Imigrante em Analise na Intranet
     Quando processar atendimento de "Recadastramento_Extemporaneo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Recadastramento_Extemporaneo" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -99,7 +99,7 @@ Cenario: Situacao do Requerimento de Recadastramento Extemporaneo do Imigrante e
 Cenario: Processar Atendimento de Recadastramento Extemporaneo do Imigrante em Analise na Intranet
     Quando processar atendimento de "Recadastramento_Extemporaneo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Recadastramento_Extemporaneo" na Situacao "Em análise"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -132,7 +132,7 @@ Cenario: Processar Atendimento de Recadastramento Extemporaneo do Imigrante em S
     Quando processar atendimento de "Recadastramento_Extemporaneo" no menu "Processar_Atendimento" na Intranet
     E processar atendimento de "Recadastramento_Extemporaneo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Recadastramento_Extemporaneo" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -166,7 +166,7 @@ Cenario: Situacao do Requerimento de Recadastramento Extemporaneo do Imigrante e
 Cenario: Processar Atendimento de Recadastramento Extemporaneo do Imigrante em Suspenso na Intranet
     Quando processar atendimento de "Recadastramento_Extemporaneo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Recadastramento_Extemporaneo" na Situacao "Suspenso"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo

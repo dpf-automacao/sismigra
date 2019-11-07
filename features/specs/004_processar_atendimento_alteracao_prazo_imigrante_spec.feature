@@ -42,7 +42,7 @@ Cenario: Situacao do Requerimento de Alteracao de Prazo do Imigrante em Aberto n
 Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Aberto na Intranet
     Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -74,7 +74,7 @@ Cenario: Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em 
 Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Analise na Intranet
     Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -107,7 +107,7 @@ Cenario: Situacao do Requerimento de Alteracao de Prazo do Imigrante em Analise 
 Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Analise na Intranet
     Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em análise"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -139,7 +139,7 @@ Cenario: Gerar Requerimento de Alteracao de Prazo do Imigrante para situacao em 
 Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Suspenso na Intranet
     Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -173,7 +173,7 @@ Cenario: Situacao do Requerimento de Alteracao de Prazo do Imigrante em Suspenso
 Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Suspenso na Intranet
     Quando processar atendimento de "Alteracao_de_Prazo" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Alteracao_de_Prazo" na Situacao "Suspenso"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo

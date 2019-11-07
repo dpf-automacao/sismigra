@@ -202,6 +202,8 @@ include FileHelper
     element :texto_imagem_input, "input[id*='verifyCaptcha']"
     element :imagem_captcha, "img[id='j_id657:capimg']"
 
+    element :teste_dmd_salvar, "input[value='Salvar']"
+
     def preencher_dados_pessoais_internet(tipo_requerimento)
 
         @tipo_requerimento = tipo_requerimento
@@ -331,13 +333,13 @@ include FileHelper
             data_nascimento_alteracao_endereco_input.click.set(@data_nascimento_alteracao_end)
             puts "Selecionando Pais de Nascimento - Alteracao Endereco: #{@pais_nascimento_alteracao_end}"
             pais_nascimento_alteracao_endereco_select.select(@pais_nascimento_alteracao_end)
-            puts "Preechendo CPF - Alteracao Endereco: #{@cpf_imigrante_alteracao_end}"
+            puts "Preenchendo CPF - Alteracao Endereco: #{@cpf_imigrante_alteracao_end}"
             cpf_alteracao_endereco_input.click.set(@cpf_imigrante_alteracao_end)
-            puts "Preechendo Ocupacao Principal - Alteracao Endereco: #{@ocupacao_principal_alteracao_end}"
+            puts "Preenchendo Ocupacao Principal - Alteracao Endereco: #{@ocupacao_principal_alteracao_end}"
             ocupacao_principal_alteracao_endereco_input.click.set(@ocupacao_principal_alteracao_end)
             wait_until_sugestao_load_visible
             ocupacao_principal_alteracao_endereco_input.send_keys(:enter)
-            puts "Preechendo Cidade de Nascimento - Alteracao Endereco: #{@cidade_nascimento_alteracao_end}"
+            puts "Preenchendo Cidade de Nascimento - Alteracao Endereco: #{@cidade_nascimento_alteracao_end}"
             cidade_nascimento_alteracao_endereco_input.click.set(@cidade_nascimento_alteracao_end)
             puts "Selecionando Pais de Nacionalidade - Alteracao Endereco: #{@cidade_nascimento_alteracao_end}"
             pais_nacionalidade_alteracao_endereco_select.select(@pais_nacionalidade_alteracao_end)
@@ -596,17 +598,20 @@ include FileHelper
         texto_imagem_input.click
         @minuto_inicial = 1
         @minutos_total = @minuto_inicial + minutos_total
+
         if(has_impressao_da_solicitacao_form?(wait:60))
             wait_until_numero_requerimento_span_visible
             sleep(0.3)
             puts "Visualizando tela de Impressao de Solicitacao #{@tipo_requerimento}"
             @nr_req = numero_requerimento_span.text
+            puts @nr_req
             gravar_dados("features/arquivos/requerimentos/#{@tipo_requerimento}.txt", @nr_req)
             sleep(0.3)
         else
             puts "O Captcha nao foi preenchido num perido de #{@minutos_total} minutos, favor Preencher Captcha para terminar Solicitacao"
             preencher_declaracao_captcha(@minutos_total)
         end
+
     end
 
     def verificar_protocolo_e_andamento_do_requerimento(tipo_requerimento, tipo_verificacao)
@@ -616,6 +621,7 @@ include FileHelper
             numero_protocolo_requerimento_input.click.set(@dados_requerimento_protocolo[0])
             puts "Clicando no botao para Verificar Protocolo"
             verificar_protocolo_btn.click
+            aguardar_carregamento_load
         elsif(tipo_verificacao == "Andamento_do_Requerimento")
             puts "Andamento Requerimento de numero: #{@dados_requerimento_protocolo[0]}"
             numero_andamento_requerimento_input.click.set(@dados_requerimento_protocolo[0])

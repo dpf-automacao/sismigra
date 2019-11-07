@@ -42,36 +42,36 @@ Contato: vfcoutinho@stefanini.com
 
       sleep(2)
 
-      if(has_siseg_btn?(wait:5))
-        sleep(2)
-        siseg_btn.click
-        sleep(1)
-        switch_to_window(windows.last)
-      end
+      # if(has_siseg_btn?(wait:5))
+      #   sleep(2)
+      #   siseg_btn.click
+      #   sleep(1)
+      #   switch_to_window(windows.last)
+      # end
 
-      if(has_usuario_input?(wait:5))
+      if(has_usuario_input?(wait:10))
           puts "Logando no SISEG"
           puts "Usuario: #{@usuario}"
           puts "Senha: #{@senha}"
           sleep(0.5)
           usuario_input.set(@usuario)
-          has_senha_input?(wait:3)
+          has_senha_input?(wait:10)
           sleep(0.5)
           senha_input.set(@senha)
-          has_acessar_btn?(wait:3)
+          has_acessar_btn?(wait:10)
           sleep(0.5)
           acessar_btn.click
       end
 
-      if(has_cardapio_sistemas_div1?(wait:5))
-        has_cardapio_sistemas_div2?(wait:5)
+      if(has_cardapio_sistemas_div1?(wait:10))
+        has_cardapio_sistemas_div2?(wait:10)
         switch_to_window(windows.last)
         puts "Logando no SISMIGRA"
-        sleep(0.5)
+        sleep(2)
         click_link "SISMIGRA"
         switch_to_window(windows.last)
-        has_info_nome_span?(wait:5)
-        sleep(0.5)
+        has_info_nome_span?(wait:10)
+        sleep(2)
       end
 
   end

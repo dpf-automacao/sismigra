@@ -30,7 +30,7 @@ Cenario: Andamento do Requerimento de Registro do Imigrante em Aberto na Interne
     E preencho os Dados de "Registro" do requerimento para "Andamento_do_Requerimento" e clico em Pesquisar
     Entao eu visualizo o andamento do requerimento "Em Aberto"
 
-# ALTERAR TIPO DE SOLICITACOES DE REGISTRO EM ABERTO
+# # ALTERAR TIPO DE SOLICITACOES DE REGISTRO EM ABERTO
 
 @procedimentos_requerimento_registro_imigrante_aberto
 @alterar_tipos_de_solicitacoes_de_registro_em_aberto
@@ -39,7 +39,7 @@ Cenario: Alterar Tipos de Solicitacoes de Registro do Imigrante em Aberto na Int
     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Aberto"
     E clico para Alterar o Tipo de Solicitacao de "Registro"
 
-# PROCESSAR ATENDIMENTO DE REGISTRO EM ABERTO
+# # PROCESSAR ATENDIMENTO DE REGISTRO EM ABERTO
 
 @procedimentos_requerimento_registro_imigrante_aberto
 @situacao_requerimento_registro_imigrante_aberto
@@ -53,7 +53,7 @@ Cenario: Situacao do Requerimento de Registro do Imigrante em Aberto na Intranet
 Cenario: Processar Atendimento de Registro do Imigrante em Aberto na Intranet
     Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -81,11 +81,11 @@ Cenario: Gerar Requerimento de Registro do Imigrante para situacao em Analise
     Entao visualizo a Impressao da Solicitacao referente
 
 @procedimentos_requerimento_registro_imigrante_analise
-@processar_atendimento_registro_imigrante_analise
-Cenario: Processar Atendimento de Registro do Imigrante em Analise na Intranet
+@mudar_requerimento_de_registro_para_situacao_em_analise
+Cenario: Mudar Situacao do Requerimento de Registro do Imigrante para Analise na Intranet
     Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -129,7 +129,7 @@ Cenario: Situacao do Requerimento de Registro do Imigrante em Analise na Intrane
 Cenario: Processar Atendimento de Registro do Imigrante em Analise na Intranet
     Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em análise"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -157,11 +157,11 @@ Cenario: Gerar Requerimento de Registro do Imigrante para situacao em Suspenso
     Entao visualizo a Impressao da Solicitacao referente
 
 @procedimentos_requerimento_registro_imigrante_suspenso
-@processar_atendimento_registro_imigrante_suspenso
-Cenario: Processar Atendimento de Registro do Imigrante em Suspenso na Intranet
+@mudar_requerimento_de_registro_para_situacao_suspenso
+Cenario: Mudar Situacao do Requerimento de Registro do Imigrante para Suspenso na Intranet
     Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Em Aberto"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo
@@ -206,7 +206,7 @@ Cenario: Situacao do Requerimento de Registro do Imigrante em Suspenso na Intran
 Cenario: Processar Atendimento de Registro do Imigrante em Suspenso na Intranet
     Quando processar atendimento de "Registro" no menu "Processar_Atendimento" na Intranet
     E preencher as informacoes para Pesquisar Solicitacao de "Registro" na Situacao "Suspenso"
-    E preencho Dados Pessoais e clico em Proximo
+    E seleciono o tipo de dados "Sem Periferico" e preencho Dados Pessoais e clico em Proximo
     E preencho Dados do Registro e clico em Proximo
     E preencho Dados do Endereco e clico em Proximo
     E preencho Dados de Documentos e clico em Proximo

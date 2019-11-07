@@ -105,36 +105,31 @@ Contato: vfcoutinho@stefanini.com
   end
 
   def submenu_quantitativo_cedulas
-      quantitativo_cedulas_submenu.click
+    quantitativo_cedulas_submenu.click
   end
 
-  
   def submenu_quantitativo_imigrantes_registrados
-      quantitativo_imigrantes_registrados_submenu.click
+    quantitativo_imigrantes_registrados_submenu.click
   end
-
 
   def submenu_solicitacoes_indeferidas_decisao
-      solicitacoes_indeferidas_decisao_submenu.click
+    solicitacoes_indeferidas_decisao_submenu.click
   end
-
 
   def submenu_quantitativo_solicitacao_cadastradas
-      quantitativo_solicitacoes_cadastradas_submenu.click
+    quantitativo_solicitacoes_cadastradas_submenu.click
   end
-
 
   def submenu_quantitativo_erro_material
-      quantitativo_erro_material_submenu.click
+    quantitativo_erro_material_submenu.click
   end
-
 
   def submenu_quantitativo_cedulas_nao_reebidas
     quantitativo_cedulas_nao_recebidas_submenu.click
   end
 
   def submenu_requerimentos_suspensos
-    requerimentos_suspensos_submenu.click
+    equerimentos_suspensos_submenu.click
   end
 
   # --------------- FIM DEFINIR SUBMENUS DO HISTORICO DO IMIGRANTE

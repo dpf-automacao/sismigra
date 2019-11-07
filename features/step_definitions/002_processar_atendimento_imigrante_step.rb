@@ -107,8 +107,8 @@ end
 
 # PREENCHER DADOS PARA PROCESSAR ATENDIMENTOS INTRANET
 
-Quando("preencho Dados Pessoais e clico em Proximo") do
-    @requerimento_imigrante_intranet.preencher_dados_pessoais_intranet
+Quando("seleciono o tipo de dados {string} e preencho Dados Pessoais e clico em Proximo") do |periferico|
+    @requerimento_imigrante_intranet.preencher_dados_pessoais_intranet(periferico)
 end
 
 Quando("preencho Dados do Registro e clico em Proximo") do
