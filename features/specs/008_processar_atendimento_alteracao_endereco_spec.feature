@@ -4,6 +4,7 @@
 
 Funcionalidade: Alteracao Endereco Imigrante
 
+@Teste_Entrega_Pendente
 @gerar_requerimento_alteracao_endereco_imigrante_aberto
 Cenario: Gerar Requerimento de Alteracao Endereco do Imigrante
     Quando realizar o procedimento de "Alteracao_Endereco" de Imigrante na Internet
@@ -38,6 +39,7 @@ Cenario: Situacao do Requerimento de Alteracao Endereco do Imigrante em Aberto n
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Aberto"
 
+@Teste_Entrega_Pendente
 @deferir_alteracao_endereco_imigrante_aberto
 Cenario: Deferir Alteracao de Endereco do Imigrante em Aberto na Intranet
     Quando processar atendimento de "Alteracao_Endereco" no menu "Alteracao_Endereco" na Intranet

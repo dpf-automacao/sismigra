@@ -6,6 +6,7 @@ Funcionalidade: Autorizacao Residencia Imigrante
 
 # PROCEDIMENTOS DE REQUERIMENTO DE AUTORIZACAO DE RESIDENCIA EM SITUACAO ABERTO
 
+@Teste_Entrega
 @procedimentos_requerimento_autorizacao_residencia_imigrante_aberto
 @gerar_requerimento_autorizacao_residencia_imigrante_aberto
 Cenario: Gerar Requerimento de Autorizacao Residencia do Imigrante
@@ -37,6 +38,7 @@ Cenario: Situacao do Requerimento de Autorizacao de Residencia do Imigrante em A
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Aberto"
 
+@Teste_Entrega
 @procedimentos_requerimento_autorizacao_residencia_imigrante_aberto
 @processar_atendimento_autorizacao_residencia_imigrante_aberto
 Cenario: Processar Atendimento de Autorizacao de Residencia do Imigrante em Aberto na Intranet

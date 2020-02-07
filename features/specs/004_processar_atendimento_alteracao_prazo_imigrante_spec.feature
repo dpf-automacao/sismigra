@@ -5,7 +5,7 @@
 Funcionalidade: Alteracao Prazo Imigrante
 
 # PROCEDIMENTOS DE REQUERIMENTO DE ALTERACAO DE PRAZO EM SITUACAO ABERTO
-
+@Teste_Entrega
 @procedimentos_requerimento_alteracao_prazo_imigrante_aberto
 @gerar_requerimento_alteracao_prazo_imigrante_aberto
 Cenario: Gerar Requerimento de Alteracao de Prazo do Imigrante
@@ -37,6 +37,7 @@ Cenario: Situacao do Requerimento de Alteracao de Prazo do Imigrante em Aberto n
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Aberto"
 
+@Teste_Entrega
 @procedimentos_requerimento_alteracao_prazo_imigrante_aberto
 @processar_atendimento_alteracao_prazo_imigrante_aberto
 Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Aberto na Intranet
@@ -54,7 +55,7 @@ Cenario: Processar Atendimento de Alteracao de Prazo do Imigrante em Aberto na I
 @situacao_requerimento_alteracao_prazo_imigrante_que_estava_em_aberto_em_processamento
 Cenario: Situacao do Requerimento de Alteracao de Prazo do Imigrante que estava em aberto em Processamento na Intranet
     Quando solicitar Situacao do Requerimento de "Alteracao_de_Prazo" no menu "Situacao_do_Requerimento" na Intranet
-    E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
+    E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Processamento"
 
 # PROCEDIMENTOS DE REQUERIMENTO DE ALTERACAO DE PRAZO EM SITUACAO ANALISE

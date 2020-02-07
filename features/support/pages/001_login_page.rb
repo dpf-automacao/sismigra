@@ -42,15 +42,16 @@ Contato: vfcoutinho@stefanini.com
 
       sleep(2)
 
-      # if(has_siseg_btn?(wait:5))
-      #   sleep(2)
-      #   siseg_btn.click
-      #   sleep(1)
-      #   switch_to_window(windows.last)
-      # end
+      if(has_siseg_btn?(wait:5))
+        sleep(2)
+        puts "Logando no SISEG"
+        siseg_btn.click
+        sleep(1)
+        switch_to_window(windows.last)
+      end
 
       if(has_usuario_input?(wait:10))
-          puts "Logando no SISEG"
+          puts "Logando no CARDAPIO"
           puts "Usuario: #{@usuario}"
           puts "Senha: #{@senha}"
           sleep(0.5)

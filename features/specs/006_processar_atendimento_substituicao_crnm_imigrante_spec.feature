@@ -4,6 +4,7 @@
 
 Funcionalidade: Substituicao CRNM Imigrante
 
+@Teste_Entrega
 @procedimentos_requerimento_substituicao_crnm_imigrante_aberto
 @gerar_requerimento_substituicao_crnm_imigrante_aberto
 Cenario: Gerar Requerimento de Substituicao CRNM do Imigrante
@@ -35,6 +36,7 @@ Cenario: Situacao do Requerimento de Substituicao CRNM do Imigrante em Aberto na
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Aberto"
 
+@Teste_Entrega
 @procedimentos_requerimento_substituicao_crnm_imigrante_aberto
 @processar_atendimento_substituicao_crnm_imigrante_aberto
 Cenario: Processar Atendimento de Substituicao CRNM do Imigrante em Aberto na Intranet

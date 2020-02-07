@@ -4,6 +4,7 @@
 
 Funcionalidade: Recadastramento Extemporaneo Imigrante
 
+@Teste_Entrega
 @gerar_requerimento_recad_extemporaneo_imigrante_aberto
 Cenario: Gerar Requerimento de Recadastramento Extemporaneo do Imigrante
     Quando realizar o procedimento de "Recadastramento_Extemporaneo" de Imigrante na Internet
@@ -31,6 +32,7 @@ Cenario: Situacao do Requerimento de Recadastramento Extemporaneo do Imigrante e
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento 
     Entao eu visualizo a situacao do Requerimento "Em Aberto"
 
+@Teste_Entrega
 @processar_atendimento_recad_extemporaneo_imigrante_aberto
 Cenario: Processar Atendimento de Recadastramento Extemporaneo do Imigrante em Aberto na Intranet
     Quando processar atendimento de "Recadastramento_Extemporaneo" no menu "Processar_Atendimento" na Intranet

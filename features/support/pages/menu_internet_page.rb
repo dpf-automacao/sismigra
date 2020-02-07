@@ -9,8 +9,8 @@ Contato: vfcoutinho@stefanini.com
 
 =end
 
-    set_url "http://10.2.96.51:8180/sismigra-internet/home.seam"
-    # set_url "https://servicoshom.dpf.gov.br/sismigra-internet/home.seam"
+    # set_url "http://10.2.96.51:8180/sismigra-internet/home.seam"
+    set_url "https://servicoshom.dpf.gov.br/sismigra-internet/home.seam"
 
     #  MAPEAMENTO DE ELEMENTOS DA INTERNET
 
