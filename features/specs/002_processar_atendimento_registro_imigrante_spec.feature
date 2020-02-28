@@ -5,7 +5,7 @@
 Funcionalidade: Registro Imigrante
 
 # PROCEDIMENTOS DE REQUERIMENTO DE REGISTRO EM SITUACAO ABERTO
-@Teste_Entrega
+
 @procedimentos_requerimento_registro_imigrante_aberto
 @gerar_requerimento_registro_imigrante_para_alteracao_de_tipo_aberto
 Cenario: Gerar Requerimento de Registro do Imigrante
@@ -48,7 +48,7 @@ Cenario: Situacao do Requerimento de Registro do Imigrante em Aberto na Intranet
     E preencho o numero do Requerimento para verificar a Situacao do Requerimento
     Entao eu visualizo a situacao do Requerimento "Em Aberto"
 
-@Teste_Entrega
+
 @procedimentos_requerimento_registro_imigrante_aberto
 @processar_atendimento_registro_imigrante_aberto
 Cenario: Processar Atendimento de Registro do Imigrante em Aberto na Intranet
