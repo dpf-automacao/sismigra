@@ -264,7 +264,8 @@ Contato: vfcoutinho@stefanini.com
     puts "Selecionando primeira aba"
     primeira_aba.click
     aguardar_carregamento_load
-
+    refresh
+    aguardar_carregamento_load
     if (wait_until_aba_dados_pessoais_visible)
       if (@tipo_solicitacao == "Registro")
         puts "Tipo de solicitacao de registro"

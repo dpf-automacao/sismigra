@@ -1,7 +1,6 @@
-require_relative 'file_helper.rb'
+require_relative "file_helper.rb"
 
 class PageHelper < SitePrism::Page
-  
   include FileHelper
 
   element :visualizar_impressao, 'div[id="viewer"]'
@@ -44,4 +43,7 @@ class PageHelper < SitePrism::Page
     sleep(1)
   end
 
+  def refresh
+    browser.navigate.refresh
+  end
 end

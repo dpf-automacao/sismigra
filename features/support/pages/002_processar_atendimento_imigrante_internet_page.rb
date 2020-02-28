@@ -200,7 +200,7 @@ class SolicitacoesInternetPage < SitePrism::Page
   element :carregamento_load, "img[src*='spinner.gif']"
   element :texto_imagem_input, "input[id*='verifyCaptcha']"
   element :imagem_captcha, "img[id='j_id657:capimg']"
-
+  element :btn_salvar, "#idSalvar"
   element :teste_dmd_salvar, "input[value='Salvar']"
 
   def preencher_dados_pessoais_internet(tipo_requerimento)
@@ -581,6 +581,10 @@ class SolicitacoesInternetPage < SitePrism::Page
     texto_imagem_input.click
     @minuto_inicial = 1
     @minutos_total = @minuto_inicial + minutos_total
+
+    # if (texto_imagem_input.value.size == 6)
+    #   btn_salvar.click
+    # end
 
     if (has_impressao_da_solicitacao_form?(wait: 60))
       wait_until_numero_requerimento_span_visible
